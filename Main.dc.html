@@ -129,7 +129,11 @@
   .problem-card { background: linear-gradient(160deg, #F7FAFD 0%, #E9F1F8 100%); border: 1px solid #D7E4EE; border-left: 4px solid #DC2626; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 8px 20px rgba(11,31,53,0.14); transition: transform 0.18s ease, box-shadow 0.18s ease; min-width: 0; }
   .problem-icon { animation: problem-pulse 2.4s ease-in-out infinite; }
   .service-card { display: flex; flex-direction: column; gap: 7px; padding: 14px; border: 1px solid #E7EEF5; border-left: 4px solid #DC2626; border-radius: 14px; background: #FFFFFF; box-shadow: 0 10px 26px rgba(4,20,40,0.3); transition: transform 0.15s ease, box-shadow 0.15s ease; min-width: 0; }
-  .service-cta { display: flex; align-items: center; justify-content: center; gap: 6px; font-weight: 800; min-height: 42px; padding: 10px 14px; border-radius: 10px; background: #25D366; color: #FFFFFF !important; margin-top: 4px; box-shadow: 0 6px 14px rgba(6,33,15,0.22); }
+  /* margin-top: auto empurra o botão pro fim do card — sem isso, cards com
+     título/descrição mais curtos (na mesma linha da grade que um vizinho
+     com texto maior) deixavam o botão "flutuando" em alturas diferentes,
+     mesmo com os cards já do mesmo tamanho (desalinhado visualmente). */
+  .service-cta { display: flex; align-items: center; justify-content: center; gap: 6px; font-weight: 800; min-height: 42px; padding: 10px 14px; border-radius: 10px; background: #25D366; color: #FFFFFF !important; margin-top: auto; box-shadow: 0 6px 14px rgba(6,33,15,0.22); }
   .service-icon, .audience-icon { background: rgba(220,38,38,0.1) !important; border: 1px solid rgba(220,38,38,0.28) !important; }
   .guarantee-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 800; color: #0B3B60; background: #EAF1F8; border: 1px solid #D7E4EE; border-radius: 999px; padding: 4px 9px; align-self: flex-start; }
   .countdown-block { animation: countdown-glow 2.2s ease-in-out infinite; }
@@ -258,7 +262,7 @@
         </span>
         <span style="display: inline-flex; align-items: center; gap: 4px; font-size: 11.5px; font-weight: 700; color: #FFFFFF; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.3); border-radius: 999px; padding: 5px 10px;">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-          Garantia de 90 dias
+          Garantia em todos os serviços
         </span>
         <span style="display: inline-flex; align-items: center; gap: 4px; font-size: 11.5px; font-weight: 700; color: #FFFFFF; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.3); border-radius: 999px; padding: 5px 10px;">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
@@ -337,7 +341,7 @@
     </div>
     <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; margin-top: 14px;">
       <span style="font-size: 12.5px; font-weight: 700; color: #C3D2E0;">Preciso de atendimento urgente</span>
-      <a href="{{esgotoLink}}" onClick="{{onWhatsAppClick}}" class="btn btn-whatsapp" style="background: #25D366; color: #06210F;">Desentupimento urgente</a>
+      <a href="{{esgotoLink}}" onClick="{{onWhatsAppClick}}" class="btn btn-whatsapp" style="background: #25D366; color: #06210F;">Solicitar orçamento sem compromisso</a>
     </div>
   </section>
 
@@ -373,7 +377,7 @@
           <h3 style="margin: 0; font-size: 14.5px; font-weight: 800; color: #14202B; line-height: 1.25; letter-spacing: -0.01em; overflow-wrap: anywhere;">Vaso Sanitário</h3>
         </div>
         <p style="margin: 4px 0 0; font-size: 12.5px; font-weight: 600; line-height: 1.45; color: #2A3743;">Desentupimos sem sujeira e sem danificar o piso.</p>
-        <span class="guarantee-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7" stroke="{{primaryColor}}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>Garantia de 90 dias</span>
+        <span class="guarantee-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7" stroke="{{primaryColor}}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>Garantia em todos os serviços</span>
         <a href="{{vasoLink}}" onClick="{{onWhatsAppClick}}" class="service-cta" style="font-size: 13px;">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Z" stroke="#FFFFFF" stroke-width="1.6" stroke-linejoin="round"></path><path d="M8.5 8.7c.2-.6.6-.6 1-.6h.5c.3 0 .5.1.6.4l.7 1.7c.1.2 0 .5-.1.6l-.6.6c.4 1 1.3 1.9 2.3 2.3l.6-.6c.2-.2.4-.2.6-.1l1.7.7c.3.1.4.3.4.6v.5c0 .4 0 .8-.6 1-1.4.5-3.5-.2-5.3-2s-2.5-3.9-2-5.3Z" fill="#FFFFFF"></path></svg>
           Solicitar orçamento →
@@ -387,7 +391,7 @@
           <h3 style="margin: 0; font-size: 14.5px; font-weight: 800; color: #14202B; line-height: 1.25; letter-spacing: -0.01em; overflow-wrap: anywhere;">Pia</h3>
         </div>
         <p style="margin: 4px 0 0; font-size: 12.5px; font-weight: 600; line-height: 1.45; color: #2A3743;">Atendimento rápido para cozinha e banheiro.</p>
-        <span class="guarantee-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7" stroke="{{primaryColor}}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>Garantia de 90 dias</span>
+        <span class="guarantee-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7" stroke="{{primaryColor}}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>Garantia em todos os serviços</span>
         <a href="{{piaLink}}" onClick="{{onWhatsAppClick}}" class="service-cta" style="font-size: 13px;">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Z" stroke="#FFFFFF" stroke-width="1.6" stroke-linejoin="round"></path><path d="M8.5 8.7c.2-.6.6-.6 1-.6h.5c.3 0 .5.1.6.4l.7 1.7c.1.2 0 .5-.1.6l-.6.6c.4 1 1.3 1.9 2.3 2.3l.6-.6c.2-.2.4-.2.6-.1l1.7.7c.3.1.4.3.4.6v.5c0 .4 0 .8-.6 1-1.4.5-3.5-.2-5.3-2s-2.5-3.9-2-5.3Z" fill="#FFFFFF"></path></svg>
           Solicitar orçamento →
@@ -401,7 +405,7 @@
           <h3 style="margin: 0; font-size: 14.5px; font-weight: 800; color: #14202B; line-height: 1.25; letter-spacing: -0.01em; overflow-wrap: anywhere;">Ralos</h3>
         </div>
         <p style="margin: 4px 0 0; font-size: 12.5px; font-weight: 600; line-height: 1.45; color: #2A3743;">Identificamos e resolvemos a causa do entupimento.</p>
-        <span class="guarantee-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7" stroke="{{primaryColor}}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>Garantia de 90 dias</span>
+        <span class="guarantee-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7" stroke="{{primaryColor}}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>Garantia em todos os serviços</span>
         <a href="{{ralosLink}}" onClick="{{onWhatsAppClick}}" class="service-cta" style="font-size: 13px;">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Z" stroke="#FFFFFF" stroke-width="1.6" stroke-linejoin="round"></path><path d="M8.5 8.7c.2-.6.6-.6 1-.6h.5c.3 0 .5.1.6.4l.7 1.7c.1.2 0 .5-.1.6l-.6.6c.4 1 1.3 1.9 2.3 2.3l.6-.6c.2-.2.4-.2.6-.1l1.7.7c.3.1.4.3.4.6v.5c0 .4 0 .8-.6 1-1.4.5-3.5-.2-5.3-2s-2.5-3.9-2-5.3Z" fill="#FFFFFF"></path></svg>
           Solicitar orçamento →
@@ -415,7 +419,7 @@
           <h3 style="margin: 0; font-size: 14.5px; font-weight: 800; color: #14202B; line-height: 1.25; letter-spacing: -0.01em; overflow-wrap: anywhere;">Caixa de Gordura</h3>
         </div>
         <p style="margin: 4px 0 0; font-size: 12.5px; font-weight: 600; line-height: 1.45; color: #2A3743;">Limpeza completa da caixa de gordura.</p>
-        <span class="guarantee-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7" stroke="{{primaryColor}}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>Garantia de 90 dias</span>
+        <span class="guarantee-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7" stroke="{{primaryColor}}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>Garantia em todos os serviços</span>
         <a href="{{caixaLink}}" onClick="{{onWhatsAppClick}}" class="service-cta" style="font-size: 13px;">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Z" stroke="#FFFFFF" stroke-width="1.6" stroke-linejoin="round"></path><path d="M8.5 8.7c.2-.6.6-.6 1-.6h.5c.3 0 .5.1.6.4l.7 1.7c.1.2 0 .5-.1.6l-.6.6c.4 1 1.3 1.9 2.3 2.3l.6-.6c.2-.2.4-.2.6-.1l1.7.7c.3.1.4.3.4.6v.5c0 .4 0 .8-.6 1-1.4.5-3.5-.2-5.3-2s-2.5-3.9-2-5.3Z" fill="#FFFFFF"></path></svg>
           Solicitar orçamento →
@@ -429,7 +433,7 @@
           <h3 style="margin: 0; font-size: 14.5px; font-weight: 800; color: #14202B; line-height: 1.25; letter-spacing: -0.01em; overflow-wrap: anywhere;">Rede Pluvial</h3>
         </div>
         <p style="margin: 4px 0 0; font-size: 12.5px; font-weight: 600; line-height: 1.45; color: #2A3743;">Desobstrução de captação e escoamento de água de chuva.</p>
-        <span class="guarantee-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7" stroke="{{primaryColor}}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>Garantia de 90 dias</span>
+        <span class="guarantee-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7" stroke="{{primaryColor}}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>Garantia em todos os serviços</span>
         <a href="{{pluvialLink}}" onClick="{{onWhatsAppClick}}" class="service-cta" style="font-size: 13px;">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Z" stroke="#FFFFFF" stroke-width="1.6" stroke-linejoin="round"></path><path d="M8.5 8.7c.2-.6.6-.6 1-.6h.5c.3 0 .5.1.6.4l.7 1.7c.1.2 0 .5-.1.6l-.6.6c.4 1 1.3 1.9 2.3 2.3l.6-.6c.2-.2.4-.2.6-.1l1.7.7c.3.1.4.3.4.6v.5c0 .4 0 .8-.6 1-1.4.5-3.5-.2-5.3-2s-2.5-3.9-2-5.3Z" fill="#FFFFFF"></path></svg>
           Solicitar orçamento →
@@ -443,7 +447,7 @@
           <h3 style="margin: 0; font-size: 14.5px; font-weight: 800; color: #14202B; line-height: 1.25; letter-spacing: -0.01em; overflow-wrap: anywhere;">Hidrojateamento</h3>
         </div>
         <p style="margin: 4px 0 0; font-size: 12.5px; font-weight: 600; line-height: 1.45; color: #2A3743;">Equipamento de alta pressão para casos mais difíceis.</p>
-        <span class="guarantee-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7" stroke="{{primaryColor}}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>Garantia de 90 dias</span>
+        <span class="guarantee-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7" stroke="{{primaryColor}}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>Garantia em todos os serviços</span>
         <a href="{{hidroLink}}" onClick="{{onWhatsAppClick}}" class="service-cta" style="font-size: 13px;">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Z" stroke="#FFFFFF" stroke-width="1.6" stroke-linejoin="round"></path><path d="M8.5 8.7c.2-.6.6-.6 1-.6h.5c.3 0 .5.1.6.4l.7 1.7c.1.2 0 .5-.1.6l-.6.6c.4 1 1.3 1.9 2.3 2.3l.6-.6c.2-.2.4-.2.6-.1l1.7.7c.3.1.4.3.4.6v.5c0 .4 0 .8-.6 1-1.4.5-3.5-.2-5.3-2s-2.5-3.9-2-5.3Z" fill="#FFFFFF"></path></svg>
           Solicitar orçamento →
@@ -477,59 +481,6 @@
       <sc-for list="{{galleryDots}}" as="dot" hint-placeholder-count="6">
         <span class="carousel-dot" style="background: {{dot.color}};"></span>
       </sc-for>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       AVALIAÇÕES — dados reais da ficha da BV Desentupidora no Google
-       (nota geral e comentários), confirmada pelo cliente.
-  ============================================================= -->
-  <section class="section" style="background: #F7F9FB; display: flex; flex-direction: column;">
-    <div class="section-head">
-      <span style="display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 800; letter-spacing: 0.03em; text-transform: uppercase; color: #34454F; margin-bottom: 2px;">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21.8 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.5a4.7 4.7 0 0 1-2 3.1v2.6h3.3c1.9-1.8 3-4.4 3-7.6Z" fill="#4285F4"></path><path d="M12 22c2.7 0 5-.9 6.7-2.4l-3.3-2.5c-.9.6-2 1-3.4 1a5.9 5.9 0 0 1-5.6-4.1H3v2.6A10 10 0 0 0 12 22Z" fill="#34A853"></path><path d="M6.4 14a6 6 0 0 1 0-3.9V7.4H3a10 10 0 0 0 0 9.1l3.4-2.6Z" fill="#FBBC05"></path><path d="M12 6a5.4 5.4 0 0 1 3.8 1.5l2.9-2.9A9.6 9.6 0 0 0 12 2a10 10 0 0 0-9 5.4l3.4 2.6A5.9 5.9 0 0 1 12 6Z" fill="#EA4335"></path></svg>
-        Avaliações reais no Google
-      </span>
-      <h2>O que dizem nossos clientes</h2>
-      <div style="display: flex; align-items: center; justify-content: center; gap: 6px; margin: 2px 0;">
-        <span style="font-size: 15px; color: #F2994A; letter-spacing: 1px;">★★★★★</span>
-        <span style="font-size: 13.5px; font-weight: 800; color: #14202B;">{{googleRating}} no Google</span>
-        <span style="font-size: 12.5px; font-weight: 700; color: #9BAAB6;">· {{googleReviewCount}} avaliações</span>
-      </div>
-    </div>
-    <div class="carousel-viewport" id="reviews-track">
-      <div class="carousel-scroller">
-        <div class="carousel-inner">
-          <sc-for list="{{reviews}}" as="item" hint-placeholder-count="6">
-            <div class="review-card">
-              <div style="display: flex; gap: 3px;">
-                <sc-for list="{{item.stars}}" as="star" hint-placeholder-count="5">
-                  <span style="font-size: 15px; color: #F2994A;">★</span>
-                </sc-for>
-              </div>
-              <p style="margin: 0; font-size: 14.5px; line-height: 1.5; color: #14202B; font-weight: 600;">"{{item.text}}"</p>
-              <span style="font-size: 13px; font-weight: 700; color: #34454F;">{{item.name}}</span>
-            </div>
-          </sc-for>
-        </div>
-        <div class="carousel-clones"></div>
-      </div>
-    </div>
-    <div class="carousel-dots">
-      <sc-for list="{{reviewDots}}" as="dot" hint-placeholder-count="3">
-        <span class="carousel-dot" style="background: {{dot.color}};"></span>
-      </sc-for>
-    </div>
-    <div class="final-actions" style="display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 14px; width: 100%;">
-      <span style="text-align: center; font-size: 13.5px; font-weight: 700; color: #14202B; margin-bottom: 0;">Precisa resolver seu entupimento?</span>
-      <a href="{{nearTeamUrl}}" onClick="{{onWhatsAppClick}}" class="btn btn-whatsapp" style="background: #25D366; color: #06210F; box-shadow: 0 8px 20px rgba(6,33,15,0.3);">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Z" stroke="#06210F" stroke-width="1.6" stroke-linejoin="round"></path><path d="M8.5 8.7c.2-.6.6-.6 1-.6h.5c.3 0 .5.1.6.4l.7 1.7c.1.2 0 .5-.1.6l-.6.6c.4 1 1.3 1.9 2.3 2.3l.6-.6c.2-.2.4-.2.6-.1l1.7.7c.3.1.4.3.4.6v.5c0 .4 0 .8-.6 1-1.4.5-3.5-.2-5.3-2s-2.5-3.9-2-5.3Z" fill="#06210F"></path></svg>
-        Solicitar equipe mais próxima
-      </a>
-      <a href="{{telUrl}}" onClick="{{onCallClick}}" class="btn btn-ligar" style="background: #DC2626; color: #FFFFFF; border: none; box-shadow: 0 8px 20px rgba(220,38,38,0.35);">
-        <span class="ring-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z" stroke="#FFFFFF" stroke-width="1.7" stroke-linejoin="round"></path></svg></span>
-        Ligar agora
-      </a>
     </div>
   </section>
 
@@ -649,6 +600,10 @@
         </a>
       </div>
     </div>
+    <div style="display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 16px; text-align: center;">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="flex-shrink: 0;"><path d="M7 3h10a1 1 0 0 1 1 1v16l-3-2-3 2-3-2-3 2V4a1 1 0 0 1 1-1Z" stroke="#0B3B60" stroke-width="1.6" stroke-linejoin="round"></path><path d="M9 8h6M9 12h6" stroke="#0B3B60" stroke-width="1.6" stroke-linecap="round"></path></svg>
+      <span style="font-size: 12.5px; font-weight: 700; color: #2A3743;">Temos nota fiscal e toda a documentação que sua empresa precisar.</span>
+    </div>
   </section>
 
   <!-- ============================================================
@@ -659,7 +614,7 @@
       <svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21c-4 0-6-2.5-6-6 0-4 6-10 6-10s6 6 6 10c0 3.5-2 6-6 6Z" stroke="#FFFFFF" stroke-width="1.7" stroke-linejoin="round"></path><circle cx="12" cy="11" r="2" stroke="#FFFFFF" stroke-width="1.7"></circle></svg>
     </div>
     <h2 style="margin: 0; font-size: 20px; font-weight: 800; color: #FFFFFF;">Atendemos Goiânia e região</h2>
-    <p style="margin: 0; max-width: 480px; font-size: 13px; color: #D7E2EC;">Mande sua localização no WhatsApp para confirmarmos o atendimento no seu bairro.</p>
+    <p style="margin: 0; max-width: 480px; font-size: 13px; color: #D7E2EC;">Mande sua localização no WhatsApp para mandarmos a equipe mais próxima ao seu bairro.</p>
     <a href="{{locationUrl}}" onClick="{{onWhatsAppClick}}" class="btn btn-whatsapp" style="background: #25D366; color: #06210F; margin-top: 4px;">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21c-4 0-6-2.5-6-6 0-4 6-10 6-10s6 6 6 10c0 3.5-2 6-6 6Z" stroke="#06210F" stroke-width="1.6" stroke-linejoin="round"></path><path d="M8 15c0 2 1.5 3.5 4 3.5" stroke="#06210F" stroke-width="1.6" stroke-linecap="round"></path></svg>
       Mandar minha localização no WhatsApp
@@ -691,6 +646,59 @@
   </section>
 
   <!-- ============================================================
+       AVALIAÇÕES — dados reais da ficha da BV Desentupidora no Google
+       (nota geral e comentários), confirmada pelo cliente.
+  ============================================================= -->
+  <section class="section" style="background: #F7F9FB; display: flex; flex-direction: column;">
+    <div class="section-head">
+      <span style="display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 800; letter-spacing: 0.03em; text-transform: uppercase; color: #34454F; margin-bottom: 2px;">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21.8 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.5a4.7 4.7 0 0 1-2 3.1v2.6h3.3c1.9-1.8 3-4.4 3-7.6Z" fill="#4285F4"></path><path d="M12 22c2.7 0 5-.9 6.7-2.4l-3.3-2.5c-.9.6-2 1-3.4 1a5.9 5.9 0 0 1-5.6-4.1H3v2.6A10 10 0 0 0 12 22Z" fill="#34A853"></path><path d="M6.4 14a6 6 0 0 1 0-3.9V7.4H3a10 10 0 0 0 0 9.1l3.4-2.6Z" fill="#FBBC05"></path><path d="M12 6a5.4 5.4 0 0 1 3.8 1.5l2.9-2.9A9.6 9.6 0 0 0 12 2a10 10 0 0 0-9 5.4l3.4 2.6A5.9 5.9 0 0 1 12 6Z" fill="#EA4335"></path></svg>
+        Avaliações reais no Google
+      </span>
+      <h2>O que dizem nossos clientes</h2>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 6px; margin: 2px 0;">
+        <span style="font-size: 15px; color: #F2994A; letter-spacing: 1px;">★★★★★</span>
+        <span style="font-size: 13.5px; font-weight: 800; color: #14202B;">{{googleRating}} no Google</span>
+        <span style="font-size: 12.5px; font-weight: 700; color: #9BAAB6;">· {{googleReviewCount}} avaliações</span>
+      </div>
+    </div>
+    <div class="carousel-viewport" id="reviews-track">
+      <div class="carousel-scroller">
+        <div class="carousel-inner">
+          <sc-for list="{{reviews}}" as="item" hint-placeholder-count="6">
+            <div class="review-card">
+              <div style="display: flex; gap: 3px;">
+                <sc-for list="{{item.stars}}" as="star" hint-placeholder-count="5">
+                  <span style="font-size: 15px; color: #F2994A;">★</span>
+                </sc-for>
+              </div>
+              <p style="margin: 0; font-size: 14.5px; line-height: 1.5; color: #14202B; font-weight: 600;">"{{item.text}}"</p>
+              <span style="font-size: 13px; font-weight: 700; color: #34454F;">{{item.name}}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div class="carousel-clones"></div>
+      </div>
+    </div>
+    <div class="carousel-dots">
+      <sc-for list="{{reviewDots}}" as="dot" hint-placeholder-count="3">
+        <span class="carousel-dot" style="background: {{dot.color}};"></span>
+      </sc-for>
+    </div>
+    <div class="final-actions" style="display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 14px; width: 100%;">
+      <span style="text-align: center; font-size: 13.5px; font-weight: 700; color: #14202B; margin-bottom: 0;">Precisa resolver seu entupimento?</span>
+      <a href="{{nearTeamUrl}}" onClick="{{onWhatsAppClick}}" class="btn btn-whatsapp" style="background: #25D366; color: #06210F; box-shadow: 0 8px 20px rgba(6,33,15,0.3);">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Z" stroke="#06210F" stroke-width="1.6" stroke-linejoin="round"></path><path d="M8.5 8.7c.2-.6.6-.6 1-.6h.5c.3 0 .5.1.6.4l.7 1.7c.1.2 0 .5-.1.6l-.6.6c.4 1 1.3 1.9 2.3 2.3l.6-.6c.2-.2.4-.2.6-.1l1.7.7c.3.1.4.3.4.6v.5c0 .4 0 .8-.6 1-1.4.5-3.5-.2-5.3-2s-2.5-3.9-2-5.3Z" fill="#06210F"></path></svg>
+        Quero solicitar atendimento
+      </a>
+      <a href="{{telUrl}}" onClick="{{onCallClick}}" class="btn btn-ligar" style="background: #DC2626; color: #FFFFFF; border: none; box-shadow: 0 8px 20px rgba(220,38,38,0.35);">
+        <span class="ring-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z" stroke="#FFFFFF" stroke-width="1.7" stroke-linejoin="round"></path></svg></span>
+        Ligar agora
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================================================
        CTA FINAL (antes do rodapé)
   ============================================================= -->
   <section class="section" style="padding-top: 26px; padding-bottom: 26px; background: {{primaryColor}}; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center;">
@@ -698,7 +706,7 @@
       <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4 2.5 20h19L12 4Z" stroke="#FFFFFF" stroke-width="1.7" stroke-linejoin="round"></path><path d="M12 10v4" stroke="#FFFFFF" stroke-width="1.9" stroke-linecap="round"></path><circle cx="12" cy="17" r="1" fill="#FFFFFF"></circle></svg>
       Precisa de desentupimento?
     </h2>
-    <p style="margin: 0; font-size: 13px; color: #D7E2EC;">Fale agora com nossa equipe.</p>
+    <p style="margin: 0; font-size: 13px; color: #D7E2EC;">Equipe de plantão 24 horas. Fale agora com a gente.</p>
     <div class="final-actions" style="display: flex; flex-direction: column; align-items: center; gap: 8px; width: 100%;">
       <a href="{{urgentUrl}}" onClick="{{onWhatsAppClick}}" class="btn btn-whatsapp" style="background: #25D366; color: #06210F;">Preciso de atendimento urgente</a>
       <a href="{{telUrl}}" onClick="{{onCallClick}}" class="btn btn-ligar" style="background: #DC2626; color: #FFFFFF; border: none; box-shadow: 0 8px 20px rgba(220,38,38,0.35);">
@@ -783,8 +791,8 @@
         </button>
 
         <div style="width: 100%; padding: 26px 26px 2px; display: flex; flex-direction: column; align-items: center; gap: 7px;">
-          <span style="display: inline-flex; align-items: center; gap: 6px; background: {{accentColor}}; color: #2A1200; font-size: 12px; font-weight: 800; letter-spacing: 0.03em; text-transform: uppercase; padding: 6px 13px; border-radius: 999px; box-shadow: 0 4px 12px rgba(242,153,74,0.35);">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2c1 3-2 4-2 7a3 3 0 0 0 6 0c1.5 1.5 2 3.3 2 5a6 6 0 0 1-12 0c0-3.5 2-5 3-7 .5-1 .5-2.5-1-5 1.8.3 3.5 1.3 4 2Z" stroke="#2A1200" stroke-width="1.6" stroke-linejoin="round"></path></svg>
+          <span style="display: inline-flex; align-items: center; gap: 6px; background: #EF4444; color: #FFFFFF; font-size: 12px; font-weight: 800; letter-spacing: 0.03em; text-transform: uppercase; padding: 6px 13px; border-radius: 999px; box-shadow: 0 4px 12px rgba(220,38,38,0.45);">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2c1 3-2 4-2 7a3 3 0 0 0 6 0c1.5 1.5 2 3.3 2 5a6 6 0 0 1-12 0c0-3.5 2-5 3-7 .5-1 .5-2.5-1-5 1.8.3 3.5 1.3 4 2Z" stroke="#FFFFFF" stroke-width="1.6" stroke-linejoin="round"></path></svg>
             Condição especial
           </span>
           <p style="margin: 2px 0 0; font-size: 13px; font-weight: 700; color: #D7E2EC; max-width: 300px; line-height: 1.4;">Seu problema de entupimento não precisa esperar.</p>
@@ -1053,7 +1061,7 @@ class Component extends DCLogic {
       'Equipamentos adequados para cada tipo de entupimento',
       'Atendimento em Goiânia e região',
       'Orçamento conforme o serviço',
-      'Garantia de 90 dias no serviço',
+      'Garantia em todos os serviços',
       'Chegamos em até 30 minutos'
     ];
 
