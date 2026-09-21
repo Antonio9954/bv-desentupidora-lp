@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Desentupimento de Rede de Esgoto em Goiânia | BV Desentupidora</title>
 <meta name="description" content="Desentupimento de rede de esgoto em Goiânia com equipe equipada para desobstrução de tubulações e pontos de entupimento. Atendimento rápido, garantia de 90 dias. Chame no WhatsApp.">
-<script src="./vendor/react.js"></script>
-<script src="./vendor/react-dom.js"></script>
-<script src="./support.js"></script>
+<script src="./vendor/react.js" defer></script>
+<script src="./vendor/react-dom.js" defer></script>
+<script src="./support.js" defer></script>
 </head>
 <body>
 <x-dc>
@@ -113,23 +113,31 @@
   .section { width: 100%; padding: 22px 18px; }
   .section-head { display: flex; flex-direction: column; gap: 4px; text-align: center; align-items: center; margin-bottom: 12px; }
   .section-head h2 { margin: 0; font-size: 22px; font-weight: 800; letter-spacing: -0.01em; color: #14202B; line-height: 1.2; }
-  .section-head p { margin: 0; max-width: 540px; font-size: 14px; color: #4A5B68; line-height: 1.4; }
+  .section-head p { margin: 0; max-width: 540px; font-size: 14px; color: #34454F; line-height: 1.4; }
   .grid-3 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
   .grid-2 { display: flex; flex-direction: column; gap: 8px; }
   .check-item { display: flex; align-items: flex-start; gap: 9px; font-size: 14.5px; font-weight: 700; color: #14202B; padding: 12px; background: #F7F9FB; border-radius: 11px; }
   .card { display: flex; flex-direction: column; gap: 8px; padding: 14px; border: 1px solid #E7EBEF; border-radius: 14px; background: #F7F9FB; }
   .pain-row { display: flex; align-items: center; gap: 10px; padding: 10px 12px; background: #FFFFFF; border: 1px solid #E7EBEF; border-radius: 11px; }
   .review-card { display: flex; flex-direction: column; gap: 6px; padding: 14px; border-radius: 14px; background: #FFFFFF; border: 1px solid #E7EBEF; box-shadow: 0 2px 10px rgba(11,59,96,0.05); }
-  .carousel-track { display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding: 2px 2px 4px; }
-  .carousel-track::-webkit-scrollbar { display: none; }
+  /* Carrossel: viewport com overflow escondido + trilha interna que desliza
+     via transform (GPU, suave) — nada de scroll-snap brigando com o autoplay. */
+  .carousel-viewport { width: 100%; overflow: hidden; padding: 2px 2px 4px; touch-action: pan-y; cursor: grab; }
+  .carousel-viewport:active { cursor: grabbing; }
+  .carousel-scroller { display: flex; gap: 10px; will-change: transform; }
+  /* display:contents: o container "some" do layout e os itens de dentro
+     (.gallery-item / .review-card, com largura em %) participam direto do
+     flex do .carousel-scroller — senão a % não tem uma largura definida
+     pra resolver (o container intermediário não tinha largura própria). */
+  .carousel-inner, .carousel-clones { display: contents; }
   .carousel-dots { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 10px; }
   .carousel-dot { width: 7px; height: 7px; border-radius: 50%; background: #D7DEE5; transition: background 0.2s ease, transform 0.2s ease; flex-shrink: 0; }
-  .review-card { flex: 0 0 90%; max-width: 340px; scroll-snap-align: center; scroll-snap-stop: always; }
-  .gallery-item { flex: 0 0 90%; max-width: 340px; scroll-snap-align: center; scroll-snap-stop: always; border-radius: 14px; overflow: hidden; border: 1px solid #E7EBEF; background: #FFFFFF; box-shadow: 0 4px 16px rgba(11,59,96,0.09); }
+  .review-card { flex: 0 0 100%; max-width: none; }
+  .gallery-item { flex: 0 0 100%; max-width: none; border-radius: 14px; overflow: hidden; border: 1px solid #E7EBEF; background: #FFFFFF; box-shadow: 0 4px 16px rgba(11,59,96,0.09); }
   .problem-card { background: linear-gradient(160deg, #F7FAFD 0%, #E9F1F8 100%); border: 1px solid #D7E4EE; border-left: 4px solid #DC2626; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 8px 20px rgba(11,31,53,0.14); transition: transform 0.18s ease, box-shadow 0.18s ease; }
   .problem-icon { animation: problem-pulse 2.4s ease-in-out infinite; }
   .service-card { display: flex; flex-direction: column; gap: 7px; padding: 14px; border: 1px solid #E7EEF5; border-radius: 16px; background: #FFFFFF; box-shadow: 0 10px 26px rgba(4,20,40,0.3); transition: transform 0.15s ease, box-shadow 0.15s ease; }
-  .service-cta { display: inline-flex; align-items: center; gap: 4px; font-weight: 800; min-height: 30px; padding: 6px 11px; border-radius: 999px; background: rgba(11,59,96,0.08); margin-top: 2px; align-self: flex-start; }
+  .service-cta { display: inline-flex; align-items: center; gap: 4px; font-weight: 800; min-height: 30px; padding: 6px 11px; border-radius: 999px; background: rgba(37,211,102,0.16); margin-top: 2px; align-self: flex-start; }
   .service-icon { background: rgba(11,59,96,0.08) !important; border: 1px solid rgba(11,59,96,0.18) !important; }
   .countdown-block { animation: countdown-glow 2.2s ease-in-out infinite; }
 
@@ -181,7 +189,7 @@
     .btn-whatsapp, .btn-whatsapp::after, .btn-ligar, .btn-ligar .ring-icon,
     .wa-float, .wa-header-btn, .problem-icon, .countdown-block,
     .popup-card, .popup-backdrop { animation: none !important; }
-    .carousel-track { scroll-behavior: auto; }
+    .carousel-scroller { transition: none !important; }
   }
 </style>
 </helmet>
@@ -281,7 +289,7 @@
           </div>
           <h3 style="margin: 0; font-size: 13.5px; font-weight: 800; color: {{primaryColor}}; line-height: 1.2;">Esgoto retornando</h3>
         </div>
-        <p style="margin: 0; font-size: 12.5px; line-height: 1.4; color: #4A5B68;">Água ou dejetos voltando pelo ralo ou vaso.</p>
+        <p style="margin: 0; font-size: 12.5px; line-height: 1.4; color: #34454F;">Água ou dejetos voltando pelo ralo ou vaso.</p>
       </div>
       <div class="problem-card">
         <div style="display: flex; align-items: center; gap: 8px;">
@@ -290,7 +298,7 @@
           </div>
           <h3 style="margin: 0; font-size: 13.5px; font-weight: 800; color: {{primaryColor}}; line-height: 1.2;">Água demorando a escoar</h3>
         </div>
-        <p style="margin: 0; font-size: 12.5px; line-height: 1.4; color: #4A5B68;">Escoamento lento é sinal de obstrução na rede.</p>
+        <p style="margin: 0; font-size: 12.5px; line-height: 1.4; color: #34454F;">Escoamento lento é sinal de obstrução na rede.</p>
       </div>
       <div class="problem-card">
         <div style="display: flex; align-items: center; gap: 8px;">
@@ -299,7 +307,7 @@
           </div>
           <h3 style="margin: 0; font-size: 13.5px; font-weight: 800; color: {{primaryColor}}; line-height: 1.2;">Tubulação obstruída</h3>
         </div>
-        <p style="margin: 0; font-size: 12.5px; line-height: 1.4; color: #4A5B68;">Entupimento completo, sem passagem nenhuma.</p>
+        <p style="margin: 0; font-size: 12.5px; line-height: 1.4; color: #34454F;">Entupimento completo, sem passagem nenhuma.</p>
       </div>
       <div class="problem-card">
         <div style="display: flex; align-items: center; gap: 8px;">
@@ -308,7 +316,7 @@
           </div>
           <h3 style="margin: 0; font-size: 13.5px; font-weight: 800; color: {{primaryColor}}; line-height: 1.2;">Mau cheiro na rede</h3>
         </div>
-        <p style="margin: 0; font-size: 12.5px; line-height: 1.4; color: #4A5B68;">Cheiro forte de esgoto dentro ou fora de casa.</p>
+        <p style="margin: 0; font-size: 12.5px; line-height: 1.4; color: #34454F;">Cheiro forte de esgoto dentro ou fora de casa.</p>
       </div>
       <div class="problem-card">
         <div style="display: flex; align-items: center; gap: 8px;">
@@ -317,7 +325,7 @@
           </div>
           <h3 style="margin: 0; font-size: 13.5px; font-weight: 800; color: {{primaryColor}}; line-height: 1.2;">Esgoto transbordando</h3>
         </div>
-        <p style="margin: 0; font-size: 12.5px; line-height: 1.4; color: #4A5B68;">Vazamento ou transbordo em pontos da rede.</p>
+        <p style="margin: 0; font-size: 12.5px; line-height: 1.4; color: #34454F;">Vazamento ou transbordo em pontos da rede.</p>
       </div>
       <div class="problem-card">
         <div style="display: flex; align-items: center; gap: 8px;">
@@ -326,7 +334,7 @@
           </div>
           <h3 style="margin: 0; font-size: 13.5px; font-weight: 800; color: {{primaryColor}}; line-height: 1.2;">Entupimento recorrente</h3>
         </div>
-        <p style="margin: 0; font-size: 12.5px; line-height: 1.4; color: #4A5B68;">Problema que volta com frequência.</p>
+        <p style="margin: 0; font-size: 12.5px; line-height: 1.4; color: #34454F;">Problema que volta com frequência.</p>
       </div>
     </div>
     <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; margin-top: 14px;">
@@ -366,8 +374,8 @@
           </div>
           <h3 style="margin: 0; font-size: 13px; font-weight: 800; color: #14202B; line-height: 1.2;">Vaso Sanitário</h3>
         </div>
-        <p style="margin: 0; font-size: 11.5px; line-height: 1.35; color: #4A5B68;">Desentupimos sem sujeira e sem danificar o piso.</p>
-        <a href="{{vasoLink}}" onClick="{{onWhatsAppClick}}" class="service-cta" style="font-size: 13px; color: {{primaryColor}};">Solicitar orçamento →</a>
+        <p style="margin: 0; font-size: 11.5px; line-height: 1.35; color: #34454F;">Desentupimos sem sujeira e sem danificar o piso.</p>
+        <a href="{{vasoLink}}" onClick="{{onWhatsAppClick}}" class="service-cta" style="font-size: 13px; color: #0F7A3D;">Solicitar orçamento →</a>
       </div>
       <div class="service-card">
         <div style="display: flex; align-items: center; gap: 7px;">
@@ -376,8 +384,8 @@
           </div>
           <h3 style="margin: 0; font-size: 13px; font-weight: 800; color: #14202B; line-height: 1.2;">Pia</h3>
         </div>
-        <p style="margin: 0; font-size: 11.5px; line-height: 1.35; color: #4A5B68;">Atendimento rápido para cozinha e banheiro.</p>
-        <a href="{{piaLink}}" onClick="{{onWhatsAppClick}}" class="service-cta" style="font-size: 13px; color: {{primaryColor}};">Solicitar orçamento →</a>
+        <p style="margin: 0; font-size: 11.5px; line-height: 1.35; color: #34454F;">Atendimento rápido para cozinha e banheiro.</p>
+        <a href="{{piaLink}}" onClick="{{onWhatsAppClick}}" class="service-cta" style="font-size: 13px; color: #0F7A3D;">Solicitar orçamento →</a>
       </div>
       <div class="service-card">
         <div style="display: flex; align-items: center; gap: 7px;">
@@ -386,8 +394,8 @@
           </div>
           <h3 style="margin: 0; font-size: 13px; font-weight: 800; color: #14202B; line-height: 1.2;">Ralos</h3>
         </div>
-        <p style="margin: 0; font-size: 11.5px; line-height: 1.35; color: #4A5B68;">Identificamos e resolvemos a causa do entupimento.</p>
-        <a href="{{ralosLink}}" onClick="{{onWhatsAppClick}}" class="service-cta" style="font-size: 13px; color: {{primaryColor}};">Solicitar orçamento →</a>
+        <p style="margin: 0; font-size: 11.5px; line-height: 1.35; color: #34454F;">Identificamos e resolvemos a causa do entupimento.</p>
+        <a href="{{ralosLink}}" onClick="{{onWhatsAppClick}}" class="service-cta" style="font-size: 13px; color: #0F7A3D;">Solicitar orçamento →</a>
       </div>
       <div class="service-card">
         <div style="display: flex; align-items: center; gap: 7px;">
@@ -396,8 +404,8 @@
           </div>
           <h3 style="margin: 0; font-size: 13px; font-weight: 800; color: #14202B; line-height: 1.2;">Caixa de Gordura</h3>
         </div>
-        <p style="margin: 0; font-size: 11.5px; line-height: 1.35; color: #4A5B68;">Limpeza completa da caixa de gordura.</p>
-        <a href="{{caixaLink}}" onClick="{{onWhatsAppClick}}" class="service-cta" style="font-size: 13px; color: {{primaryColor}};">Solicitar orçamento →</a>
+        <p style="margin: 0; font-size: 11.5px; line-height: 1.35; color: #34454F;">Limpeza completa da caixa de gordura.</p>
+        <a href="{{caixaLink}}" onClick="{{onWhatsAppClick}}" class="service-cta" style="font-size: 13px; color: #0F7A3D;">Solicitar orçamento →</a>
       </div>
       <div class="service-card">
         <div style="display: flex; align-items: center; gap: 7px;">
@@ -406,8 +414,8 @@
           </div>
           <h3 style="margin: 0; font-size: 13px; font-weight: 800; color: #14202B; line-height: 1.2;">Rede Pluvial</h3>
         </div>
-        <p style="margin: 0; font-size: 11.5px; line-height: 1.35; color: #4A5B68;">Desobstrução de captação e escoamento de água de chuva.</p>
-        <a href="{{pluvialLink}}" onClick="{{onWhatsAppClick}}" class="service-cta" style="font-size: 13px; color: {{primaryColor}};">Solicitar orçamento →</a>
+        <p style="margin: 0; font-size: 11.5px; line-height: 1.35; color: #34454F;">Desobstrução de captação e escoamento de água de chuva.</p>
+        <a href="{{pluvialLink}}" onClick="{{onWhatsAppClick}}" class="service-cta" style="font-size: 13px; color: #0F7A3D;">Solicitar orçamento →</a>
       </div>
       <div class="service-card">
         <div style="display: flex; align-items: center; gap: 7px;">
@@ -416,8 +424,8 @@
           </div>
           <h3 style="margin: 0; font-size: 13px; font-weight: 800; color: #14202B; line-height: 1.2;">Hidrojateamento</h3>
         </div>
-        <p style="margin: 0; font-size: 11.5px; line-height: 1.35; color: #4A5B68;">Equipamento de alta pressão para casos mais difíceis.</p>
-        <a href="{{hidroLink}}" onClick="{{onWhatsAppClick}}" class="service-cta" style="font-size: 13px; color: {{primaryColor}};">Solicitar orçamento →</a>
+        <p style="margin: 0; font-size: 11.5px; line-height: 1.35; color: #34454F;">Equipamento de alta pressão para casos mais difíceis.</p>
+        <a href="{{hidroLink}}" onClick="{{onWhatsAppClick}}" class="service-cta" style="font-size: 13px; color: #0F7A3D;">Solicitar orçamento →</a>
       </div>
     </div>
   </section>
@@ -430,13 +438,18 @@
       <h2>Equipamento e equipe preparados para o serviço</h2>
       <p>Fotos reais da nossa estrutura, equipamentos e atendimentos.</p>
     </div>
-    <div class="carousel-track" id="gallery-track">
-      <sc-for list="{{gallery}}" as="item" hint-placeholder-count="6">
-        <div class="gallery-item">
-          <img src="{{item.img}}" alt="{{item.caption}}" loading="lazy" style="width: 100%; height: 210px; object-fit: cover; display: block;">
-          <div style="padding: 8px 10px; font-size: 12.5px; font-weight: 700; color: #4A5B68;">{{item.caption}}</div>
+    <div class="carousel-viewport" id="gallery-track">
+      <div class="carousel-scroller">
+        <div class="carousel-inner">
+          <sc-for list="{{gallery}}" as="item" hint-placeholder-count="6">
+            <div class="gallery-item">
+              <img src="{{item.img}}" alt="{{item.caption}}" loading="lazy" decoding="async" style="width: 100%; height: 210px; object-fit: cover; display: block;">
+              <div style="padding: 8px 10px; font-size: 12.5px; font-weight: 700; color: #34454F;">{{item.caption}}</div>
+            </div>
+          </sc-for>
         </div>
-      </sc-for>
+        <div class="carousel-clones"></div>
+      </div>
     </div>
     <div class="carousel-dots">
       <sc-for list="{{galleryDots}}" as="dot" hint-placeholder-count="6">
@@ -451,7 +464,7 @@
   ============================================================= -->
   <section class="section" style="background: #F7F9FB; display: flex; flex-direction: column;">
     <div class="section-head">
-      <span style="display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 800; letter-spacing: 0.03em; text-transform: uppercase; color: #4A5B68; margin-bottom: 2px;">
+      <span style="display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 800; letter-spacing: 0.03em; text-transform: uppercase; color: #34454F; margin-bottom: 2px;">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21.8 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.5a4.7 4.7 0 0 1-2 3.1v2.6h3.3c1.9-1.8 3-4.4 3-7.6Z" fill="#4285F4"></path><path d="M12 22c2.7 0 5-.9 6.7-2.4l-3.3-2.5c-.9.6-2 1-3.4 1a5.9 5.9 0 0 1-5.6-4.1H3v2.6A10 10 0 0 0 12 22Z" fill="#34A853"></path><path d="M6.4 14a6 6 0 0 1 0-3.9V7.4H3a10 10 0 0 0 0 9.1l3.4-2.6Z" fill="#FBBC05"></path><path d="M12 6a5.4 5.4 0 0 1 3.8 1.5l2.9-2.9A9.6 9.6 0 0 0 12 2a10 10 0 0 0-9 5.4l3.4 2.6A5.9 5.9 0 0 1 12 6Z" fill="#EA4335"></path></svg>
         Avaliações reais no Google
       </span>
@@ -462,18 +475,23 @@
         <span style="font-size: 12.5px; font-weight: 700; color: #9BAAB6;">· {{googleReviewCount}} avaliações</span>
       </div>
     </div>
-    <div class="carousel-track" id="reviews-track">
-      <sc-for list="{{reviews}}" as="item" hint-placeholder-count="6">
-        <div class="review-card">
-          <div style="display: flex; gap: 3px;">
-            <sc-for list="{{item.stars}}" as="star" hint-placeholder-count="5">
-              <span style="font-size: 15px; color: #F2994A;">★</span>
-            </sc-for>
-          </div>
-          <p style="margin: 0; font-size: 14.5px; line-height: 1.5; color: #14202B; font-weight: 600;">"{{item.text}}"</p>
-          <span style="font-size: 13px; font-weight: 700; color: #4A5B68;">{{item.name}}</span>
+    <div class="carousel-viewport" id="reviews-track">
+      <div class="carousel-scroller">
+        <div class="carousel-inner">
+          <sc-for list="{{reviews}}" as="item" hint-placeholder-count="6">
+            <div class="review-card">
+              <div style="display: flex; gap: 3px;">
+                <sc-for list="{{item.stars}}" as="star" hint-placeholder-count="5">
+                  <span style="font-size: 15px; color: #F2994A;">★</span>
+                </sc-for>
+              </div>
+              <p style="margin: 0; font-size: 14.5px; line-height: 1.5; color: #14202B; font-weight: 600;">"{{item.text}}"</p>
+              <span style="font-size: 13px; font-weight: 700; color: #34454F;">{{item.name}}</span>
+            </div>
+          </sc-for>
         </div>
-      </sc-for>
+        <div class="carousel-clones"></div>
+      </div>
     </div>
     <div class="carousel-dots">
       <sc-for list="{{reviewDots}}" as="dot" hint-placeholder-count="3">
@@ -559,7 +577,7 @@
             </span>
           </button>
           <sc-if value="{{item.open}}" hint-placeholder-val="{{true}}">
-            <div style="padding: 0 16px 16px; font-size: 14.5px; line-height: 1.55; color: #4A5B68;">{{item.a}}</div>
+            <div style="padding: 0 16px 16px; font-size: 14.5px; line-height: 1.55; color: #34454F;">{{item.a}}</div>
           </sc-if>
         </div>
       </sc-for>
@@ -693,7 +711,9 @@
           </div>
         </div>
 
-        <a href="{{popupWhatsappUrl}}" onClick="{{onPopupClick}}" class="btn btn-whatsapp" style="width: calc(100% - 40px); max-width: none; background: #25D366; color: #06210F; margin: 16px 20px 20px; font-size: 16.5px; font-weight: 800; min-height: 52px; box-shadow: 0 10px 26px rgba(6,33,15,0.4);">
+        <p style="margin: 14px 20px 0; font-size: 13.5px; font-weight: 800; color: #FFFFFF; text-align: center; line-height: 1.3;">Solicite agora e garanta 20% OFF</p>
+
+        <a href="{{popupWhatsappUrl}}" onClick="{{onPopupClick}}" class="btn btn-whatsapp" style="width: calc(100% - 40px); max-width: none; background: #25D366; color: #06210F; margin: 10px 20px 20px; font-size: 16.5px; font-weight: 800; min-height: 52px; box-shadow: 0 10px 26px rgba(6,33,15,0.4);">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Z" stroke="#06210F" stroke-width="1.6" stroke-linejoin="round"></path><path d="M8.5 8.7c.2-.6.6-.6 1-.6h.5c.3 0 .5.1.6.4l.7 1.7c.1.2 0 .5-.1.6l-.6.6c.4 1 1.3 1.9 2.3 2.3l.6-.6c.2-.2.4-.2.6-.1l1.7.7c.3.1.4.3.4.6v.5c0 .4 0 .8-.6 1-1.4.5-3.5-.2-5.3-2s-2.5-3.9-2-5.3Z" fill="#06210F"></path></svg>
           Quero meu desconto
         </a>
@@ -723,124 +743,141 @@
    remontar durante esse processo, o timer seria destruído antes de completar
    um ciclo e o carrossel pareceria "travado". Guardando tudo em `window`,
    o autoplay sobrevive independente de qualquer remontagem do componente. */
-function bvSmoothScrollTo(el, target, duration) {
-  if (el._bvScrollRaf) cancelAnimationFrame(el._bvScrollRaf);
-  const start = el.scrollLeft;
-  const distance = target - start;
-  const startTime = performance.now();
-  const ease = (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
-  return new Promise((resolve) => {
-    const stepFrame = (now) => {
-      const t = Math.min((now - startTime) / duration, 1);
-      el.scrollLeft = start + distance * ease(t);
-      if (t < 1) { el._bvScrollRaf = requestAnimationFrame(stepFrame); } else { el._bvScrollRaf = null; resolve(); }
-    };
-    el._bvScrollRaf = requestAnimationFrame(stepFrame);
-  });
-}
-
-/* Carrossel com loop infinito de verdade: clona os primeiros itens e anexa
-   no fim da trilha, então o autoplay sempre avança pra frente. Ao alcançar
-   o clone (idêntico ao item real 0), o scroll volta pro início SEM animação
-   — como visualmente é a mesma imagem/card, a troca é imperceptível e evita
-   aquele "pulo" de voltar do último item direto pro primeiro. */
+/* Carrossel via transform + transição CSS (GPU, sem disputa com scroll
+   nativo/scroll-snap — é isso que deixava o movimento "robótico"). Loop
+   infinito de verdade: clona os primeiros itens e anexa no fim da trilha;
+   o autoplay sempre avança pra frente e, ao TERMINAR a transição de chegar
+   num clone (idêntico ao item real correspondente), a posição volta pro
+   item real sem transição — troca imperceptível, sem pulo visível.
+   Também dá pra arrastar (Pointer Events, mouse + touch) — arrastar pausa
+   o autoplay por um tempo e depois ele retoma sozinho. */
 function bvStartCarousel(elementId, itemCount, stateKey) {
   if (!itemCount) return;
   window.__bvCarousels = window.__bvCarousels || {};
   if (window.__bvCarousels[elementId]) return; // já está rodando — nunca duplica o timer
   window.__bvCarousels[elementId] = true;
 
-  const el = document.getElementById(elementId);
-  if (!el) return;
+  const viewport = document.getElementById(elementId);
+  if (!viewport) return;
+  // `track` é o elemento que recebe o transform (dois grupos lado a lado:
+  // os itens reais, geridos pelo framework via sc-for, e os clones, que só
+  // eu toco). `realGroup` é o container do sc-for — nunca escrevo nele,
+  // só leio, porque toda vez que o app re-renderiza (ex.: o timer do popup
+  // força um re-render por segundo) o framework pode recriar esses nós; se
+  // meus clones estivessem no MESMO container, essa reconciliação corrompia
+  // um deles (chegou a pedir a URL literal "{{item.img}}", 404). Mantendo os
+  // clones num container próprio, fora do que o sc-for gerencia, eles nunca
+  // são tocados por um re-render.
+  const track = viewport.querySelector('.carousel-scroller');
+  const realGroup = viewport.querySelector('.carousel-inner');
+  const cloneGroup = viewport.querySelector('.carousel-clones');
+  if (!track || !realGroup || !cloneGroup) return;
 
-  const originals = Array.from(el.children).slice(0, itemCount);
+  const originals = Array.from(realGroup.children).slice(0, itemCount);
   const cloneCount = Math.min(itemCount, 3);
   for (let i = 0; i < cloneCount; i++) {
     const clone = originals[i].cloneNode(true);
     clone.setAttribute('aria-hidden', 'true');
     clone.setAttribute('inert', '');
-    el.appendChild(clone);
+    cloneGroup.appendChild(clone);
   }
 
-  // Usuários com "reduzir movimento" ativado: itens clonados ficam prontos
-  // (não atrapalha o scroll manual), mas sem autoplay.
-  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduceMotion) return;
-
   const stepSize = () => {
-    const first = el.firstElementChild;
-    const w = (first && first.getBoundingClientRect().width) || el.clientWidth || 1;
-    const cs = window.getComputedStyle(el);
+    const first = realGroup.firstElementChild;
+    const w = (first && first.getBoundingClientRect().width) || viewport.clientWidth || 1;
+    // .carousel-inner é `display:contents` (não é container flex em si) —
+    // o gap real é o do .carousel-scroller (track), que é quem tem display:flex.
+    const cs = window.getComputedStyle(track);
     const gapPx = parseFloat(cs.columnGap || cs.gap || '0') || 0;
     return w + gapPx;
   };
 
-  // Quanto falta rolar pra mostrar o último item REAL (ignora os clones) —
-  // se já cabe tudo na tela (ex.: 3 avaliações no desktop), não roda o autoplay.
-  const realMaxScroll = () => {
-    const last = originals[itemCount - 1];
-    if (!last) return 0;
-    // offsetLeft não serve aqui: .carousel-track não tem `position`, então
-    // offsetLeft dos itens é relativo a um ancestral mais acima, não à trilha.
-    // getBoundingClientRect() + scrollLeft dá a posição real dentro da trilha,
-    // já que o retângulo do item se move visualmente conforme o scroll.
-    const contentRightEdge = (last.getBoundingClientRect().right - el.getBoundingClientRect().left) + el.scrollLeft;
-    return Math.max(0, Math.round(contentRightEdge - el.clientWidth));
+  // Se todos os itens reais já cabem na largura do viewport (ex.: 3
+  // avaliações no desktop), não faz sentido animar — fica parado.
+  const fitsWithoutScroll = () => {
+    const s = stepSize();
+    const cs = window.getComputedStyle(track);
+    const gapPx = parseFloat(cs.columnGap || cs.gap || '0') || 0;
+    return (itemCount * s - gapPx) <= viewport.clientWidth + 2;
   };
 
   let index = 0;
   let pauseUntil = 0;
-  let resetting = false;
+  let dragging = false;
+  let dragStartX = 0;
+  let dragBaseX = 0;
 
-  if (!el.dataset.bvBound) {
-    el.dataset.bvBound = '1';
-    let raf = null;
-    el.addEventListener('scroll', () => {
-      if (resetting) return;
-      if (raf) return;
-      raf = requestAnimationFrame(() => {
-        raf = null;
-        const idx = Math.round(el.scrollLeft / stepSize());
-        const realIdx = ((idx % itemCount) + itemCount) % itemCount;
-        const comp = window.__bvComponent;
-        if (comp && comp.state[stateKey] !== realIdx) comp.setState({ [stateKey]: realIdx });
-      });
-    }, { passive: true });
-    const onUserInteract = () => { pauseUntil = Date.now() + 6000; };
-    el.addEventListener('touchstart', onUserInteract, { passive: true });
-    el.addEventListener('mousedown', onUserInteract);
-    el.addEventListener('wheel', onUserInteract, { passive: true });
-    // Se a aba ficar em segundo plano no meio de uma animação, o navegador
-    // pausa o requestAnimationFrame; ao voltar, destrava o autoplay em vez
-    // de deixá-lo preso em "avançando" para sempre.
-    document.addEventListener('visibilitychange', () => {
-      if (document.visibilityState === 'visible') { el._bvAdvancing = false; }
-    });
+  const setTransform = (px, animate) => {
+    // .carousel-scroller { transition: none !important } sob prefers-reduced-motion
+    // já cuida de desligar a transição — não precisa checar isso aqui.
+    track.style.transition = animate ? 'transform 0.7s cubic-bezier(0.65,0,0.35,1)' : 'none';
+    track.style.transform = 'translateX(' + px + 'px)';
+  };
+
+  const updateDot = (realIdx) => {
+    const comp = window.__bvComponent;
+    if (comp && comp.state[stateKey] !== realIdx) comp.setState({ [stateKey]: realIdx });
+  };
+
+  const goTo = (newIndex, animate) => {
+    index = newIndex;
+    setTransform(-index * stepSize(), animate);
+  };
+
+  track.addEventListener('transitionend', (e) => {
+    if (e.propertyName !== 'transform') return;
+    if (index >= itemCount) {
+      index -= itemCount;
+      setTransform(-index * stepSize(), false);
+    }
+  });
+
+  setTransform(0, false);
+
+  if (!viewport.dataset.bvBound) {
+    viewport.dataset.bvBound = '1';
+
+    const onPointerDown = (e) => {
+      dragging = true;
+      pauseUntil = Date.now() + 8000;
+      dragStartX = e.clientX;
+      dragBaseX = -index * stepSize();
+      track.style.transition = 'none';
+      if (viewport.setPointerCapture) { try { viewport.setPointerCapture(e.pointerId); } catch (err) {} }
+    };
+    const onPointerMove = (e) => {
+      if (!dragging) return;
+      const dx = e.clientX - dragStartX;
+      track.style.transform = 'translateX(' + (dragBaseX + dx) + 'px)';
+    };
+    const onPointerUp = (e) => {
+      if (!dragging) return;
+      dragging = false;
+      const dx = e.clientX - dragStartX;
+      const s = stepSize();
+      const threshold = s * 0.18;
+      let next = index;
+      if (dx <= -threshold) next = index + 1;
+      else if (dx >= threshold) next = Math.max(0, index - 1);
+      goTo(next, true);
+      updateDot(((next % itemCount) + itemCount) % itemCount);
+    };
+    viewport.addEventListener('pointerdown', onPointerDown);
+    viewport.addEventListener('pointermove', onPointerMove);
+    viewport.addEventListener('pointerup', onPointerUp);
+    viewport.addEventListener('pointercancel', onPointerUp);
   }
 
-  setInterval(async () => {
-    if (Date.now() < pauseUntil || el._bvAdvancing) return;
-    if (realMaxScroll() <= 1) return; // itens já cabem todos na tela, nada pra rolar
-    el._bvAdvancing = true;
-    try {
-      const s = stepSize();
-      index += 1;
-      const target = Math.min(index * s, el.scrollWidth - el.clientWidth);
-      await bvSmoothScrollTo(el, target, 650);
-      if (index >= itemCount) {
-        // já rolou até o clone do item 0 — volta pro item real 0 sem animação
-        resetting = true;
-        index = 0;
-        el.scrollLeft = 0;
-        requestAnimationFrame(() => { resetting = false; });
-      }
-      const comp = window.__bvComponent;
-      if (comp && comp.state[stateKey] !== index) comp.setState({ [stateKey]: index });
-    } finally {
-      // garante que nunca fica travado em "avançando" — mesmo se a aba for
-      // pra segundo plano no meio da animação (rAF pausa) ou algo lançar erro.
-      el._bvAdvancing = false;
-    }
+  // Usuários com "reduzir movimento" ativado: itens clonados ficam prontos e
+  // dá pra arrastar manualmente, mas sem autoplay automático.
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) return;
+
+  setInterval(() => {
+    if (dragging || Date.now() < pauseUntil) return;
+    if (fitsWithoutScroll()) return;
+    goTo(index + 1, true);
+    updateDot(((index % itemCount) + itemCount) % itemCount);
   }, 2800);
 }
 
