@@ -64,6 +64,14 @@
     to { opacity: 1; transform: translateY(0) scale(1); }
   }
   @keyframes backdrop-in { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes problem-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(220,38,38,0.35); }
+    50% { box-shadow: 0 0 0 5px rgba(220,38,38,0); }
+  }
+  @keyframes countdown-glow {
+    0%, 100% { box-shadow: inset 0 2px 5px rgba(0,0,0,0.4), 0 2px 6px rgba(0,0,0,0.25), 0 0 0 0 rgba(220,38,38,0.28); }
+    50% { box-shadow: inset 0 2px 5px rgba(0,0,0,0.4), 0 2px 6px rgba(0,0,0,0.25), 0 0 0 4px rgba(220,38,38,0.12); }
+  }
 
   .btn-whatsapp { position: relative; overflow: hidden; animation: wa-pulse 1.7s ease-in-out infinite; transition: transform 0.15s ease; }
   .btn-whatsapp:active { transform: scale(0.98); }
@@ -118,9 +126,12 @@
   .carousel-dot { width: 7px; height: 7px; border-radius: 50%; background: #D7DEE5; transition: background 0.2s ease, transform 0.2s ease; flex-shrink: 0; }
   .review-card { flex: 0 0 90%; max-width: 340px; scroll-snap-align: center; scroll-snap-stop: always; }
   .gallery-item { flex: 0 0 90%; max-width: 340px; scroll-snap-align: center; scroll-snap-stop: always; border-radius: 14px; overflow: hidden; border: 1px solid #E7EBEF; background: #FFFFFF; box-shadow: 0 4px 16px rgba(11,59,96,0.09); }
-  .problem-card { background: linear-gradient(160deg, #FDFEFE 0%, #F2F5F7 100%); border: 1px solid rgba(220,38,38,0.22); border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 6px 18px rgba(0,0,0,0.28); transition: transform 0.18s ease, box-shadow 0.18s ease; }
-  .service-card { display: flex; flex-direction: column; gap: 7px; padding: 13px; border: 1px solid #AFCBE3; border-radius: 14px; background: linear-gradient(155deg, #E4EFF9 0%, #CFE2F2 100%); box-shadow: 0 5px 16px rgba(11,59,96,0.14); transition: transform 0.15s ease, box-shadow 0.15s ease; }
-  .service-cta { display: inline-flex; align-items: center; gap: 4px; font-weight: 800; min-height: 30px; padding: 6px 11px; border-radius: 999px; background: rgba(255,255,255,0.65); margin-top: 2px; align-self: flex-start; }
+  .problem-card { background: linear-gradient(160deg, #F7FAFD 0%, #E9F1F8 100%); border: 1px solid #D7E4EE; border-left: 4px solid #DC2626; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 8px 20px rgba(11,31,53,0.14); transition: transform 0.18s ease, box-shadow 0.18s ease; }
+  .problem-icon { animation: problem-pulse 2.4s ease-in-out infinite; }
+  .service-card { display: flex; flex-direction: column; gap: 7px; padding: 14px; border: 1px solid #E7EEF5; border-radius: 16px; background: #FFFFFF; box-shadow: 0 10px 26px rgba(4,20,40,0.3); transition: transform 0.15s ease, box-shadow 0.15s ease; }
+  .service-cta { display: inline-flex; align-items: center; gap: 4px; font-weight: 800; min-height: 30px; padding: 6px 11px; border-radius: 999px; background: rgba(11,59,96,0.08); margin-top: 2px; align-self: flex-start; }
+  .service-icon { background: rgba(11,59,96,0.08) !important; border: 1px solid rgba(11,59,96,0.18) !important; }
+  .countdown-block { animation: countdown-glow 2.2s ease-in-out infinite; }
 
   /* ===================== TABLET (min 641px) ===================== */
   @media (min-width: 641px) {
@@ -164,6 +175,14 @@
   .sticky-bar { display: flex; }
   .popup-card { animation: popup-in 0.28s ease-out; }
   .popup-backdrop { animation: backdrop-in 0.2s ease-out; }
+
+  /* ===================== ACESSIBILIDADE — prefers-reduced-motion ===================== */
+  @media (prefers-reduced-motion: reduce) {
+    .btn-whatsapp, .btn-whatsapp::after, .btn-ligar, .btn-ligar .ring-icon,
+    .wa-float, .wa-header-btn, .problem-icon, .countdown-block,
+    .popup-card, .popup-backdrop { animation: none !important; }
+    .carousel-track { scroll-behavior: auto; }
+  }
 </style>
 </helmet>
 <div style="width: 100%; min-height: 100%; display: flex; flex-direction: column; background: #FFFFFF;">
@@ -257,7 +276,7 @@
     <div class="grid-3">
       <div class="problem-card">
         <div style="display: flex; align-items: center; gap: 8px;">
-          <div style="width: 34px; height: 34px; border-radius: 10px; background: rgba(220,38,38,0.09); border: 1px solid rgba(220,38,38,0.32); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <div class="problem-icon" style="width: 34px; height: 34px; border-radius: 10px; background: rgba(220,38,38,0.12); border: 1px solid rgba(220,38,38,0.4); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21c-4 0-6-2.5-6-6 0-4 6-10 6-10s6 6 6 10c0 3.5-2 6-6 6Z" stroke="#DC2626" stroke-width="1.6" stroke-linejoin="round"></path><path d="M8 15c0 2 1.5 3.5 4 3.5" stroke="#DC2626" stroke-width="1.6" stroke-linecap="round"></path></svg>
           </div>
           <h3 style="margin: 0; font-size: 13.5px; font-weight: 800; color: {{primaryColor}}; line-height: 1.2;">Esgoto retornando</h3>
@@ -266,7 +285,7 @@
       </div>
       <div class="problem-card">
         <div style="display: flex; align-items: center; gap: 8px;">
-          <div style="width: 34px; height: 34px; border-radius: 10px; background: rgba(220,38,38,0.09); border: 1px solid rgba(220,38,38,0.32); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <div class="problem-icon" style="width: 34px; height: 34px; border-radius: 10px; background: rgba(220,38,38,0.12); border: 1px solid rgba(220,38,38,0.4); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#DC2626" stroke-width="1.6"></circle><path d="M12 7v5l3.5 2" stroke="#DC2626" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
           </div>
           <h3 style="margin: 0; font-size: 13.5px; font-weight: 800; color: {{primaryColor}}; line-height: 1.2;">Água demorando a escoar</h3>
@@ -275,7 +294,7 @@
       </div>
       <div class="problem-card">
         <div style="display: flex; align-items: center; gap: 8px;">
-          <div style="width: 34px; height: 34px; border-radius: 10px; background: rgba(220,38,38,0.09); border: 1px solid rgba(220,38,38,0.32); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <div class="problem-icon" style="width: 34px; height: 34px; border-radius: 10px; background: rgba(220,38,38,0.12); border: 1px solid rgba(220,38,38,0.4); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h16" stroke="#DC2626" stroke-width="1.6" stroke-linecap="round"></path><rect x="9" y="8" width="6" height="8" rx="1" stroke="#DC2626" stroke-width="1.6"></rect></svg>
           </div>
           <h3 style="margin: 0; font-size: 13.5px; font-weight: 800; color: {{primaryColor}}; line-height: 1.2;">Tubulação obstruída</h3>
@@ -284,7 +303,7 @@
       </div>
       <div class="problem-card">
         <div style="display: flex; align-items: center; gap: 8px;">
-          <div style="width: 34px; height: 34px; border-radius: 10px; background: rgba(220,38,38,0.09); border: 1px solid rgba(220,38,38,0.32); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <div class="problem-icon" style="width: 34px; height: 34px; border-radius: 10px; background: rgba(220,38,38,0.12); border: 1px solid rgba(220,38,38,0.4); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 18c4-1 6-4 6-8 4 1 6 3 6 6M16 8l4-4M16 12l3-1M13 5l1-3" stroke="#DC2626" stroke-width="1.6" stroke-linecap="round"></path></svg>
           </div>
           <h3 style="margin: 0; font-size: 13.5px; font-weight: 800; color: {{primaryColor}}; line-height: 1.2;">Mau cheiro na rede</h3>
@@ -293,7 +312,7 @@
       </div>
       <div class="problem-card">
         <div style="display: flex; align-items: center; gap: 8px;">
-          <div style="width: 34px; height: 34px; border-radius: 10px; background: rgba(220,38,38,0.09); border: 1px solid rgba(220,38,38,0.32); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <div class="problem-icon" style="width: 34px; height: 34px; border-radius: 10px; background: rgba(220,38,38,0.12); border: 1px solid rgba(220,38,38,0.4); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 16h16" stroke="#DC2626" stroke-width="1.6" stroke-linecap="round"></path><path d="M6 16c0-4 2-7 6-7s6 3 6 7" stroke="#DC2626" stroke-width="1.6"></path><path d="M4 19h16" stroke="#DC2626" stroke-width="1.6" stroke-linecap="round"></path></svg>
           </div>
           <h3 style="margin: 0; font-size: 13.5px; font-weight: 800; color: {{primaryColor}}; line-height: 1.2;">Esgoto transbordando</h3>
@@ -302,7 +321,7 @@
       </div>
       <div class="problem-card">
         <div style="display: flex; align-items: center; gap: 8px;">
-          <div style="width: 34px; height: 34px; border-radius: 10px; background: rgba(220,38,38,0.09); border: 1px solid rgba(220,38,38,0.32); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <div class="problem-icon" style="width: 34px; height: 34px; border-radius: 10px; background: rgba(220,38,38,0.12); border: 1px solid rgba(220,38,38,0.4); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12a8 8 0 0 1 13.6-5.7M20 12a8 8 0 0 1-13.6 5.7" stroke="#DC2626" stroke-width="1.6" stroke-linecap="round"></path><path d="M17 4v3h-3M7 20v-3h3" stroke="#DC2626" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
           </div>
           <h3 style="margin: 0; font-size: 13.5px; font-weight: 800; color: {{primaryColor}}; line-height: 1.2;">Entupimento recorrente</h3>
@@ -334,15 +353,15 @@
   <!-- ============================================================
        OUTROS SERVIÇOS — secundário, não disputa foco com esgoto
   ============================================================= -->
-  <section id="servicos" class="section" style="background: #F4F8FB; display: flex; flex-direction: column;">
+  <section id="servicos" class="section" style="background: linear-gradient(160deg, #12508A 0%, #0B3B60 100%); display: flex; flex-direction: column;">
     <div class="section-head">
-      <h2 style="font-size: 19px;">Outros serviços de desentupimento</h2>
-      <p>Também atendemos residências, comércios e indústrias nestes casos.</p>
+      <h2 style="font-size: 19px; color: #FFFFFF;">Outros serviços de desentupimento</h2>
+      <p style="color: #D7E2EC;">Também atendemos residências, comércios e indústrias nestes casos.</p>
     </div>
     <div class="grid-3">
       <div class="service-card">
         <div style="display: flex; align-items: center; gap: 7px;">
-          <div style="width: 28px; height: 28px; border-radius: 8px; background: rgba(255,255,255,0.75); border: 1px solid rgba(255,255,255,0.6); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <div class="service-icon" style="width: 30px; height: 30px; border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 10h10v3a5 5 0 0 1-5 5 5 5 0 0 1-5-5v-3Z" stroke="{{primaryColor}}" stroke-width="1.6" stroke-linejoin="round"></path><path d="M7 10V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3" stroke="{{primaryColor}}" stroke-width="1.6"></path><path d="M9 21h6" stroke="{{primaryColor}}" stroke-width="1.6" stroke-linecap="round"></path></svg>
           </div>
           <h3 style="margin: 0; font-size: 13px; font-weight: 800; color: #14202B; line-height: 1.2;">Vaso Sanitário</h3>
@@ -352,7 +371,7 @@
       </div>
       <div class="service-card">
         <div style="display: flex; align-items: center; gap: 7px;">
-          <div style="width: 28px; height: 28px; border-radius: 8px; background: rgba(255,255,255,0.75); border: 1px solid rgba(255,255,255,0.6); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <div class="service-icon" style="width: 30px; height: 30px; border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 11h16" stroke="{{primaryColor}}" stroke-width="1.6" stroke-linecap="round"></path><path d="M4 11a8 3.2 0 0 0 16 0" stroke="{{primaryColor}}" stroke-width="1.6"></path><path d="M12 11v4a2 2 0 0 0 2 2h1" stroke="{{primaryColor}}" stroke-width="1.6" stroke-linecap="round"></path><path d="M9 6v2M9 3.5v.1" stroke="{{primaryColor}}" stroke-width="1.6" stroke-linecap="round"></path></svg>
           </div>
           <h3 style="margin: 0; font-size: 13px; font-weight: 800; color: #14202B; line-height: 1.2;">Pia</h3>
@@ -362,7 +381,7 @@
       </div>
       <div class="service-card">
         <div style="display: flex; align-items: center; gap: 7px;">
-          <div style="width: 28px; height: 28px; border-radius: 8px; background: rgba(255,255,255,0.75); border: 1px solid rgba(255,255,255,0.6); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <div class="service-icon" style="width: 30px; height: 30px; border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8" stroke="{{primaryColor}}" stroke-width="1.6"></circle><path d="M8 9l8 6M16 9l-8 6" stroke="{{primaryColor}}" stroke-width="1.6" stroke-linecap="round"></path></svg>
           </div>
           <h3 style="margin: 0; font-size: 13px; font-weight: 800; color: #14202B; line-height: 1.2;">Ralos</h3>
@@ -372,7 +391,7 @@
       </div>
       <div class="service-card">
         <div style="display: flex; align-items: center; gap: 7px;">
-          <div style="width: 28px; height: 28px; border-radius: 8px; background: rgba(255,255,255,0.75); border: 1px solid rgba(255,255,255,0.6); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <div class="service-icon" style="width: 30px; height: 30px; border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="8" width="16" height="11" rx="1.5" stroke="{{primaryColor}}" stroke-width="1.6"></rect><path d="M4 8l3-3h10l3 3" stroke="{{primaryColor}}" stroke-width="1.6" stroke-linejoin="round"></path></svg>
           </div>
           <h3 style="margin: 0; font-size: 13px; font-weight: 800; color: #14202B; line-height: 1.2;">Caixa de Gordura</h3>
@@ -382,7 +401,7 @@
       </div>
       <div class="service-card">
         <div style="display: flex; align-items: center; gap: 7px;">
-          <div style="width: 28px; height: 28px; border-radius: 8px; background: rgba(255,255,255,0.75); border: 1px solid rgba(255,255,255,0.6); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <div class="service-icon" style="width: 30px; height: 30px; border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 15c0-5 3-9 8-9s8 4 8 9" stroke="{{primaryColor}}" stroke-width="1.6" stroke-linecap="round"></path><path d="M4 15h16v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3Z" stroke="{{primaryColor}}" stroke-width="1.6" stroke-linejoin="round"></path></svg>
           </div>
           <h3 style="margin: 0; font-size: 13px; font-weight: 800; color: #14202B; line-height: 1.2;">Rede Pluvial</h3>
@@ -392,7 +411,7 @@
       </div>
       <div class="service-card">
         <div style="display: flex; align-items: center; gap: 7px;">
-          <div style="width: 28px; height: 28px; border-radius: 8px; background: rgba(255,255,255,0.75); border: 1px solid rgba(255,255,255,0.6); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <div class="service-icon" style="width: 30px; height: 30px; border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 18c4-1 6-4 6-8 4 1 6 3 6 6M16 8l4-4M16 12l3-1M13 5l1-3" stroke="{{primaryColor}}" stroke-width="1.6" stroke-linecap="round"></path></svg>
           </div>
           <h3 style="margin: 0; font-size: 13px; font-weight: 800; color: #14202B; line-height: 1.2;">Hidrojateamento</h3>
@@ -656,14 +675,14 @@
           <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.09em; color: {{accentColor}}; text-transform: uppercase;">Oferta termina em</span>
           <div style="display: flex; align-items: center; justify-content: center; gap: 9px;">
             <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
-              <div style="background: #0B1720; border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 7px 12px; min-width: 58px; box-shadow: inset 0 2px 5px rgba(0,0,0,0.4), 0 2px 6px rgba(0,0,0,0.25);">
+              <div class="countdown-block" style="background: #0B1720; border: 1px solid rgba(220,38,38,0.35); border-radius: 10px; padding: 7px 12px; min-width: 58px; box-shadow: inset 0 2px 5px rgba(0,0,0,0.4), 0 2px 6px rgba(0,0,0,0.25);">
                 <span style="font-size: 30px; font-weight: 900; color: #FFFFFF; font-variant-numeric: tabular-nums;">{{minutesText}}</span>
               </div>
               <span style="font-size: 9.5px; font-weight: 800; letter-spacing: 0.06em; color: #9BAAB6;">MIN</span>
             </div>
             <span style="font-size: 26px; font-weight: 900; color: {{accentColor}}; margin-bottom: 16px;">:</span>
             <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
-              <div style="background: #0B1720; border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 7px 12px; min-width: 58px; box-shadow: inset 0 2px 5px rgba(0,0,0,0.4), 0 2px 6px rgba(0,0,0,0.25);">
+              <div class="countdown-block" style="background: #0B1720; border: 1px solid rgba(220,38,38,0.35); border-radius: 10px; padding: 7px 12px; min-width: 58px; box-shadow: inset 0 2px 5px rgba(0,0,0,0.4), 0 2px 6px rgba(0,0,0,0.25);">
                 <span style="font-size: 30px; font-weight: 900; color: #FFFFFF; font-variant-numeric: tabular-nums;">{{secondsText}}</span>
               </div>
               <span style="font-size: 9.5px; font-weight: 800; letter-spacing: 0.06em; color: #9BAAB6;">SEG</span>
@@ -710,21 +729,45 @@ function bvSmoothScrollTo(el, target, duration) {
   const distance = target - start;
   const startTime = performance.now();
   const ease = (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
-  const stepFrame = (now) => {
-    const t = Math.min((now - startTime) / duration, 1);
-    el.scrollLeft = start + distance * ease(t);
-    if (t < 1) { el._bvScrollRaf = requestAnimationFrame(stepFrame); } else { el._bvScrollRaf = null; }
-  };
-  el._bvScrollRaf = requestAnimationFrame(stepFrame);
+  return new Promise((resolve) => {
+    const stepFrame = (now) => {
+      const t = Math.min((now - startTime) / duration, 1);
+      el.scrollLeft = start + distance * ease(t);
+      if (t < 1) { el._bvScrollRaf = requestAnimationFrame(stepFrame); } else { el._bvScrollRaf = null; resolve(); }
+    };
+    el._bvScrollRaf = requestAnimationFrame(stepFrame);
+  });
 }
 
+/* Carrossel com loop infinito de verdade: clona os primeiros itens e anexa
+   no fim da trilha, então o autoplay sempre avança pra frente. Ao alcançar
+   o clone (idêntico ao item real 0), o scroll volta pro início SEM animação
+   — como visualmente é a mesma imagem/card, a troca é imperceptível e evita
+   aquele "pulo" de voltar do último item direto pro primeiro. */
 function bvStartCarousel(elementId, itemCount, stateKey) {
   if (!itemCount) return;
   window.__bvCarousels = window.__bvCarousels || {};
   if (window.__bvCarousels[elementId]) return; // já está rodando — nunca duplica o timer
   window.__bvCarousels[elementId] = true;
 
-  const stepSize = (el) => {
+  const el = document.getElementById(elementId);
+  if (!el) return;
+
+  const originals = Array.from(el.children).slice(0, itemCount);
+  const cloneCount = Math.min(itemCount, 3);
+  for (let i = 0; i < cloneCount; i++) {
+    const clone = originals[i].cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    clone.setAttribute('inert', '');
+    el.appendChild(clone);
+  }
+
+  // Usuários com "reduzir movimento" ativado: itens clonados ficam prontos
+  // (não atrapalha o scroll manual), mas sem autoplay.
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) return;
+
+  const stepSize = () => {
     const first = el.firstElementChild;
     const w = (first && first.getBoundingClientRect().width) || el.clientWidth || 1;
     const cs = window.getComputedStyle(el);
@@ -732,39 +775,73 @@ function bvStartCarousel(elementId, itemCount, stateKey) {
     return w + gapPx;
   };
 
+  // Quanto falta rolar pra mostrar o último item REAL (ignora os clones) —
+  // se já cabe tudo na tela (ex.: 3 avaliações no desktop), não roda o autoplay.
+  const realMaxScroll = () => {
+    const last = originals[itemCount - 1];
+    if (!last) return 0;
+    // offsetLeft não serve aqui: .carousel-track não tem `position`, então
+    // offsetLeft dos itens é relativo a um ancestral mais acima, não à trilha.
+    // getBoundingClientRect() + scrollLeft dá a posição real dentro da trilha,
+    // já que o retângulo do item se move visualmente conforme o scroll.
+    const contentRightEdge = (last.getBoundingClientRect().right - el.getBoundingClientRect().left) + el.scrollLeft;
+    return Math.max(0, Math.round(contentRightEdge - el.clientWidth));
+  };
+
+  let index = 0;
   let pauseUntil = 0;
-  const bindInteractionOnce = (el) => {
-    if (el.dataset.bvBound) return;
+  let resetting = false;
+
+  if (!el.dataset.bvBound) {
     el.dataset.bvBound = '1';
     let raf = null;
     el.addEventListener('scroll', () => {
+      if (resetting) return;
       if (raf) return;
       raf = requestAnimationFrame(() => {
         raf = null;
-        const idx = Math.round(el.scrollLeft / stepSize(el));
+        const idx = Math.round(el.scrollLeft / stepSize());
+        const realIdx = ((idx % itemCount) + itemCount) % itemCount;
         const comp = window.__bvComponent;
-        if (comp && comp.state[stateKey] !== idx) comp.setState({ [stateKey]: idx });
+        if (comp && comp.state[stateKey] !== realIdx) comp.setState({ [stateKey]: realIdx });
       });
     }, { passive: true });
     const onUserInteract = () => { pauseUntil = Date.now() + 6000; };
     el.addEventListener('touchstart', onUserInteract, { passive: true });
     el.addEventListener('mousedown', onUserInteract);
     el.addEventListener('wheel', onUserInteract, { passive: true });
-  };
+    // Se a aba ficar em segundo plano no meio de uma animação, o navegador
+    // pausa o requestAnimationFrame; ao voltar, destrava o autoplay em vez
+    // de deixá-lo preso em "avançando" para sempre.
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') { el._bvAdvancing = false; }
+    });
+  }
 
-  setInterval(() => {
-    const el = document.getElementById(elementId);
-    if (!el) return;
-    bindInteractionOnce(el);
-    if (Date.now() < pauseUntil) return;
-    const s = stepSize(el);
-    const maxScroll = el.scrollWidth - el.clientWidth;
-    if (maxScroll <= 1) return; // itens já cabem todos na tela, nada pra rolar
-    const current = Math.round(el.scrollLeft / s);
-    const next = current + 1;
-    const target = next >= itemCount ? 0 : Math.min(next * s, maxScroll);
-    bvSmoothScrollTo(el, target, 900);
-  }, 4500);
+  setInterval(async () => {
+    if (Date.now() < pauseUntil || el._bvAdvancing) return;
+    if (realMaxScroll() <= 1) return; // itens já cabem todos na tela, nada pra rolar
+    el._bvAdvancing = true;
+    try {
+      const s = stepSize();
+      index += 1;
+      const target = Math.min(index * s, el.scrollWidth - el.clientWidth);
+      await bvSmoothScrollTo(el, target, 650);
+      if (index >= itemCount) {
+        // já rolou até o clone do item 0 — volta pro item real 0 sem animação
+        resetting = true;
+        index = 0;
+        el.scrollLeft = 0;
+        requestAnimationFrame(() => { resetting = false; });
+      }
+      const comp = window.__bvComponent;
+      if (comp && comp.state[stateKey] !== index) comp.setState({ [stateKey]: index });
+    } finally {
+      // garante que nunca fica travado em "avançando" — mesmo se a aba for
+      // pra segundo plano no meio da animação (rAF pausa) ou algo lançar erro.
+      el._bvAdvancing = false;
+    }
+  }, 2800);
 }
 
 class Component extends DCLogic {
