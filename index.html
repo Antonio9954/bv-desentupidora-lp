@@ -61,7 +61,7 @@
      1025px = desktop, apenas ampliam por cima da base mobile.
      ========================================================================= */
   * { box-sizing: border-box; }
-  body { margin: 0; font-family: 'Inter', system-ui, sans-serif; background: #FFFFFF; color: #14202B; -webkit-tap-highlight-color: transparent; }
+  body { margin: 0; font-family: 'Inter', system-ui, sans-serif; background: #FFFFFF; color: #071A33; -webkit-tap-highlight-color: transparent; }
   a { text-decoration: none; color: inherit; }
   h1, h2, h3 { font-family: inherit; }
   button { font-family: inherit; }
@@ -69,10 +69,10 @@
 
   /* ===================== BOTÕES ===================== */
   .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 12px; padding: 13px 22px; font-weight: 700; font-size: 15px; border: none; cursor: pointer; width: auto; min-height: 48px; max-width: 300px; margin: 0 auto; transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease; }
-  .btn:focus-visible { outline: 3px solid #14202B; outline-offset: 2px; }
+  .btn:focus-visible { outline: 3px solid #071A33; outline-offset: 2px; }
   .btn:active { transform: scale(0.98); }
   .btn-whatsapp { background: #25D366; color: #06210F; }
-  .btn-ligar { background: #DC2626; color: #FFFFFF; box-shadow: 0 6px 16px rgba(220,38,38,0.28); }
+  .btn-ligar { background: #E53935; color: #FFFFFF; box-shadow: 0 6px 16px rgba(220,38,38,0.28); }
   @media (hover: hover) {
     .btn-whatsapp:hover { filter: brightness(1.05); box-shadow: 0 10px 22px rgba(6,33,15,0.28); }
     .btn-ligar:hover { filter: brightness(1.06); box-shadow: 0 10px 20px rgba(220,38,38,0.36); }
@@ -100,7 +100,7 @@
   .hero-hook { display: inline-flex; align-items: center; gap: 6px; width: fit-content; background: rgba(255,184,77,0.16); border: 1px solid rgba(255,184,77,0.42); border-radius: 999px; padding: 6px 13px; color: #FFC876; font-size: 12.5px; font-weight: 800; letter-spacing: 0.01em; line-height: 1.3; margin: 0 0 12px; }
   .hero-h1 { margin: 0 0 11px; color: #FFFFFF; font-weight: 800; font-size: 29px; line-height: 1.1; letter-spacing: -0.01em; max-width: 275px; }
   .hero-sub { margin: 0 0 20px; color: #FFFFFF; font-weight: 600; font-size: 16px; line-height: 1.5; max-width: 340px; opacity: 0.94; }
-  .btn-hero-whatsapp { width: 100%; max-width: 380px; min-height: 54px; padding: 13px clamp(8px, 3vw, 20px); font-size: clamp(11px, 3.4vw, 15px); font-weight: 800; letter-spacing: 0; border-radius: 13px; white-space: nowrap; gap: 6px; }
+  .btn-hero-whatsapp { width: 100%; max-width: 380px; min-height: 54px; padding: 13px clamp(8px, 3vw, 20px); font-size: clamp(11px, 3.5vw, 14px); font-weight: 800; letter-spacing: 0; border-radius: 13px; white-space: nowrap; gap: 6px; }
   .btn-hero-whatsapp svg { width: 16px; height: 16px; flex-shrink: 0; }
   .btn-hero-ligar { width: 100%; max-width: 280px; min-height: 52px; padding: 13px 18px; font-size: 14px; font-weight: 700; border-radius: 12px; box-shadow: none; opacity: 0.94; }
 
@@ -113,28 +113,28 @@
   .grid-4 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
 
   /* Sistema único de card — usado em sinais / serviços / imóveis / benefícios */
-  .info-card { display: flex; flex-direction: column; gap: 7px; height: 100%; background: #FFFFFF; border: 1px solid #E7EBEF; border-radius: 16px; padding: 15px; box-shadow: 0 3px 12px rgba(11,31,53,0.06); transition: transform 0.18s ease, box-shadow 0.18s ease; min-width: 0; }
-  .info-card h3 { margin: 0; font-size: 15.5px; font-weight: 700; color: #0B3B60; line-height: 1.28; overflow-wrap: break-word; -webkit-hyphens: auto; hyphens: auto; }
+  .info-card { display: flex; flex-direction: column; gap: 7px; height: 100%; background: #FFFFFF; border: 1px solid #E7EBEF; border-radius: 16px; padding: 15px; box-shadow: 0 8px 24px rgba(7,26,51,0.08); transition: transform 0.18s ease, box-shadow 0.18s ease; min-width: 0; }
+  .info-card h3 { margin: 0; font-size: 15.5px; font-weight: 700; color: #071A33; line-height: 1.28; overflow-wrap: break-word; -webkit-hyphens: auto; hyphens: auto; }
   .info-card p { margin: 0; font-size: 13px; font-weight: 500; color: #4A5A66; line-height: 1.48; }
   .info-icon { width: 32px; height: 32px; border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .info-icon.tone-red { background: rgba(220,38,38,0.08); }
-  .info-icon.tone-navy { background: rgba(11,59,96,0.08); }
-  .card-cta { margin-top: auto; padding-top: 6px; display: inline-flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 700; color: #0B3B60; }
+  .info-icon.tone-red { background: rgba(229,57,53,0.09); }
+  .info-icon.tone-navy { background: rgba(10,61,98,0.09); }
+  .card-cta { margin-top: auto; padding-top: 6px; display: inline-flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 700; color: #071A33; }
   a.info-card { cursor: pointer; }
 
-  .step-card { display: flex; align-items: flex-start; gap: 11px; text-align: left; background: #FFFFFF; border: 1px solid #E7EBEF; border-radius: 16px; padding: 14px 15px; height: 100%; transition: transform 0.18s ease, box-shadow 0.18s ease; box-shadow: 0 3px 12px rgba(11,31,53,0.06); }
-  .step-card h3 { margin: 0 0 2px; font-size: 15px; font-weight: 700; color: #0B3B60; line-height: 1.25; }
+  .step-card { display: flex; align-items: flex-start; gap: 11px; text-align: left; background: #FFFFFF; border: 1px solid #E7EBEF; border-radius: 16px; padding: 14px 15px; height: 100%; transition: transform 0.18s ease, box-shadow 0.18s ease; box-shadow: 0 8px 24px rgba(7,26,51,0.08); }
+  .step-card h3 { margin: 0 0 2px; font-size: 15px; font-weight: 700; color: #071A33; line-height: 1.25; }
   .step-card p { margin: 0; font-size: 13px; font-weight: 500; line-height: 1.48; color: #4A5A66; }
-  .step-num { width: 30px; height: 30px; border-radius: 50%; background: #0B3B60; color: #FFFFFF; font-weight: 800; font-size: 13.5px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .step-num { width: 30px; height: 30px; border-radius: 50%; background: #071A33; color: #FFFFFF; font-weight: 800; font-size: 13.5px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 
-  .review-card { display: flex; flex-direction: column; gap: 8px; padding: 16px; border-radius: 16px; background: #FFFFFF; border: 1px solid #E7EBEF; box-shadow: 0 3px 12px rgba(11,31,53,0.06); flex: 0 0 100%; max-width: none; }
+  .review-card { display: flex; flex-direction: column; gap: 8px; padding: 16px; border-radius: 16px; background: #FFFFFF; border: 1px solid #E7EBEF; box-shadow: 0 8px 24px rgba(7,26,51,0.08); flex: 0 0 100%; max-width: none; }
   .review-card p { font-size: 15.5px; line-height: 1.55; }
   .carousel-viewport { width: 100%; overflow: hidden; padding: 2px 2px 4px; touch-action: pan-y; cursor: grab; }
   .carousel-viewport:active { cursor: grabbing; }
   .carousel-scroller { display: flex; gap: 12px; will-change: transform; }
   .carousel-dots { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 12px; }
   .carousel-dot { width: 7px; height: 7px; border-radius: 50%; background: #D7DEE5; transition: background 0.2s ease; flex-shrink: 0; }
-  .carousel-dot.active { background: #0B3B60; }
+  .carousel-dot.active { background: #071A33; }
 
   .hero-image-wrap { width: 100%; max-width: 400px; margin: 0 auto; border-radius: 18px; overflow: hidden; box-shadow: 0 12px 26px rgba(0,0,0,0.25); }
   .hero-image-wrap img { width: 100%; height: 172px; object-fit: cover; object-position: center 38%; display: block; }
@@ -210,14 +210,14 @@
   <!-- ============================================================
        HEADER
   ============================================================= -->
-  <header class="site-header" style="width: 100%; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #E7EBEF; box-shadow: 0 1px 3px rgba(11,31,53,0.04); position: sticky; top: 0; z-index: 50; background: #FFFFFF;">
+  <header class="site-header" style="width: 100%; padding: 8px 16px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #E7EBEF; box-shadow: 0 1px 3px rgba(7,26,51,0.05); position: sticky; top: 0; z-index: 50; background: #FFFFFF;">
     <a href="#top" style="display: flex; align-items: center; min-width: 0;" aria-label="BV Desentupidora — início">
-      <img src="./assets/faa457ff9193e9b302136320bb079742.webp" alt="BV Desentupidora" style="height: 52px; width: auto; object-fit: contain; flex-shrink: 0;">
+      <img src="./assets/faa457ff9193e9b302136320bb079742.webp" alt="BV Desentupidora" style="width: 118px; height: auto; max-height: 84px; object-fit: contain; flex-shrink: 0;">
     </a>
     <div style="display: flex; align-items: center; gap: 12px; flex-shrink: 0;">
-      <a href="tel:+5562996051575" onclick="trackCall()" aria-label="Ligar para a BV Desentupidora" style="display: flex; align-items: center; gap: 6px; color: #14202B; font-weight: 700; font-size: 14px;">
+      <a href="tel:+5562996051575" onclick="trackCall()" aria-label="Ligar para a BV Desentupidora" style="display: flex; align-items: center; gap: 6px; color: #071A33; font-weight: 700; font-size: 14px;">
         <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z" stroke="#0B3B60" stroke-width="1.6" stroke-linejoin="round"></path>
+          <path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z" stroke="#071A33" stroke-width="1.6" stroke-linejoin="round"></path>
         </svg>
         <span class="call-text" style="display: none;">(62) 99605-1575</span>
       </a>
@@ -233,7 +233,7 @@
   <!-- ============================================================
        1. HERO
   ============================================================= -->
-  <section class="hero-section" style="width: 100%; padding: 20px 18px 22px; background: #0B3B60; display: flex; flex-direction: column; gap: 16px; text-align: center;">
+  <section class="hero-section" style="width: 100%; padding: 20px 18px 22px; background: #071A33; display: flex; flex-direction: column; gap: 16px; text-align: center;">
     <div class="hero-content" style="display: flex; flex-direction: column; gap: 16px; align-items: center; width: 100%;">
       <div class="hero-copy" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
         <span class="hero-hook">
@@ -282,97 +282,98 @@
   <!-- ============================================================
        2. SINAIS DE ESGOTO ENTUPIDO
   ============================================================= -->
-  <section class="section reveal" style="background: #FFFFFF; display: flex; flex-direction: column;">
+  <section class="section reveal" style="background: #EAF4FA; display: flex; flex-direction: column;">
     <div class="section-head">
-      <h2 style="color: #14202B;">Esgoto entupido? Veja os sinais de que sua rede precisa de atenção</h2>
+      <h2 style="color: #071A33;">Esgoto entupido? Veja os sinais de que sua rede precisa de atenção</h2>
     </div>
     <div class="grid-3">
       <div class="info-card">
-        <div class="info-icon tone-red"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21c-4 0-6-2.5-6-6 0-4 6-10 6-10s6 6 6 10c0 3.5-2 6-6 6Z" stroke="#DC2626" stroke-width="1.6" stroke-linejoin="round"></path><path d="M8 15c0 2 1.5 3.5 4 3.5" stroke="#DC2626" stroke-width="1.6" stroke-linecap="round"></path></svg></div>
+        <div class="info-icon tone-red"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21c-4 0-6-2.5-6-6 0-4 6-10 6-10s6 6 6 10c0 3.5-2 6-6 6Z" stroke="#E53935" stroke-width="1.6" stroke-linejoin="round"></path><path d="M8 15c0 2 1.5 3.5 4 3.5" stroke="#E53935" stroke-width="1.6" stroke-linecap="round"></path></svg></div>
         <h3>Esgoto retornando</h3>
         <p>Água ou dejetos voltando pelo ralo ou vaso.</p>
       </div>
       <div class="info-card">
-        <div class="info-icon tone-red"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#DC2626" stroke-width="1.6"></circle><path d="M12 7v5l3.5 2" stroke="#DC2626" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+        <div class="info-icon tone-red"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#E53935" stroke-width="1.6"></circle><path d="M12 7v5l3.5 2" stroke="#E53935" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
         <h3>Água demorando a escoar</h3>
         <p>Escoamento lento pode indicar obstrução na rede.</p>
       </div>
       <div class="info-card">
-        <div class="info-icon tone-red"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h16" stroke="#DC2626" stroke-width="1.6" stroke-linecap="round"></path><rect x="9" y="8" width="6" height="8" rx="1" stroke="#DC2626" stroke-width="1.6"></rect></svg></div>
+        <div class="info-icon tone-red"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h16" stroke="#E53935" stroke-width="1.6" stroke-linecap="round"></path><rect x="9" y="8" width="6" height="8" rx="1" stroke="#E53935" stroke-width="1.6"></rect></svg></div>
         <h3>Tubulação obstruída</h3>
         <p>Entupimento completo ou parcial da tubulação.</p>
       </div>
       <div class="info-card">
-        <div class="info-icon tone-red"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 16h16" stroke="#DC2626" stroke-width="1.6" stroke-linecap="round"></path><path d="M6 16c0-4 2-7 6-7s6 3 6 7" stroke="#DC2626" stroke-width="1.6"></path><path d="M4 19h16" stroke="#DC2626" stroke-width="1.6" stroke-linecap="round"></path></svg></div>
+        <div class="info-icon tone-red"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 16h16" stroke="#E53935" stroke-width="1.6" stroke-linecap="round"></path><path d="M6 16c0-4 2-7 6-7s6 3 6 7" stroke="#E53935" stroke-width="1.6"></path><path d="M4 19h16" stroke="#E53935" stroke-width="1.6" stroke-linecap="round"></path></svg></div>
         <h3>Mau cheiro na rede</h3>
         <p>Cheiro forte de esgoto pode indicar problema na rede.</p>
       </div>
       <div class="info-card">
-        <div class="info-icon tone-red"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12a8 8 0 0 1 13.6-5.7M20 12a8 8 0 0 1-13.6 5.7" stroke="#DC2626" stroke-width="1.6" stroke-linecap="round"></path><path d="M17 4v3h-3M7 20v-3h3" stroke="#DC2626" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+        <div class="info-icon tone-red"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12a8 8 0 0 1 13.6-5.7M20 12a8 8 0 0 1-13.6 5.7" stroke="#E53935" stroke-width="1.6" stroke-linecap="round"></path><path d="M17 4v3h-3M7 20v-3h3" stroke="#E53935" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
         <h3>Esgoto transbordando</h3>
         <p>Vazamento ou transbordo em pontos da rede.</p>
       </div>
       <div class="info-card">
-        <div class="info-icon tone-red"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 18c4-1 6-4 6-8 4 1 6 3 6 6M16 8l4-4M16 12l3-1M13 5l1-3" stroke="#DC2626" stroke-width="1.6" stroke-linecap="round"></path></svg></div>
+        <div class="info-icon tone-red"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 18c4-1 6-4 6-8 4 1 6 3 6 6M16 8l4-4M16 12l3-1M13 5l1-3" stroke="#E53935" stroke-width="1.6" stroke-linecap="round"></path></svg></div>
         <h3>Entupimento recorrente</h3>
         <p>O problema volta mesmo após uma desobstrução.</p>
       </div>
     </div>
-    <div style="display: flex; justify-content: center; margin-top: 22px;">
-      <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20preciso%20de%20desentupimento%20de%20rede%20de%20esgoto." onclick="trackWhatsApp()" class="btn btn-whatsapp wa-pulse-soft">SOLICITAR ATENDIMENTO</a>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 22px;">
+      <span style="font-size: 15px; font-weight: 800; color: #071A33;">Precisa resolver agora?</span>
+      <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20preciso%20de%20desentupimento%20de%20rede%20de%20esgoto." onclick="trackWhatsApp()" class="btn btn-whatsapp wa-pulse-soft">PRECISO DE ATENDIMENTO</a>
     </div>
   </section>
 
   <!-- ============================================================
        3. SEU ESGOTO ENTUPIU? ESTAMOS PRONTOS PARA RESOLVER
   ============================================================= -->
-  <section class="section reveal" style="padding-top: 36px; padding-bottom: 36px; background: linear-gradient(155deg, #0F4C81 0%, #0B3B60 100%); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px;">
+  <section class="section reveal" style="padding-top: 36px; padding-bottom: 36px; background: linear-gradient(155deg, #0A3D62 0%, #071A33 100%); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px;">
     <h2 style="margin: 0; font-size: 22px; font-weight: 800; color: #FFFFFF; max-width: 440px; line-height: 1.25;">Seu esgoto entupiu? Estamos prontos para resolver.</h2>
     <p style="margin: 0; max-width: 460px; font-size: 15px; line-height: 1.5; color: #D7E2EC;">Nossa equipe utiliza equipamentos profissionais para identificar e desobstruir o problema com rapidez e segurança.</p>
-    <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20preciso%20de%20desentupimento%20de%20rede%20de%20esgoto." onclick="trackWhatsApp()" class="btn btn-whatsapp wa-pulse-soft" style="margin-top: 4px;">SOLICITAR ATENDIMENTO</a>
+    <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20preciso%20de%20desentupimento%20de%20rede%20de%20esgoto." onclick="trackWhatsApp()" class="btn btn-whatsapp wa-pulse-soft" style="margin-top: 4px;">FALAR COM A EQUIPE</a>
   </section>
 
   <!-- ============================================================
        4. SERVIÇOS
   ============================================================= -->
-  <section id="servicos" class="section reveal" style="background: #EAF2F9; display: flex; flex-direction: column;">
+  <section id="servicos" class="section reveal" style="background: #FFFFFF; display: flex; flex-direction: column;">
     <div class="section-head">
-      <h2 style="color: #14202B;">Serviços de desentupimento em Goiânia e região</h2>
+      <h2 style="color: #071A33;">Serviços de desentupimento em Goiânia e região</h2>
       <p style="color: #4A5A66;">Atendimento para residências, comércios, condomínios e empresas em Goiânia e região.</p>
     </div>
     <div class="grid-3">
       <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20preciso%20de%20desentupimento%20de%20vaso%20sanit%C3%A1rio." onclick="trackWhatsApp()" class="info-card">
-        <div class="info-icon tone-red"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 10h10v3a5 5 0 0 1-5 5 5 5 0 0 1-5-5v-3Z" stroke="#DC2626" stroke-width="1.6" stroke-linejoin="round"></path><path d="M7 10V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3" stroke="#DC2626" stroke-width="1.6"></path><path d="M9 21h6" stroke="#DC2626" stroke-width="1.6" stroke-linecap="round"></path></svg></div>
+        <div class="info-icon tone-red"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 10h10v3a5 5 0 0 1-5 5 5 5 0 0 1-5-5v-3Z" stroke="#E53935" stroke-width="1.6" stroke-linejoin="round"></path><path d="M7 10V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3" stroke="#E53935" stroke-width="1.6"></path><path d="M9 21h6" stroke="#E53935" stroke-width="1.6" stroke-linecap="round"></path></svg></div>
         <h3>Vaso Sanitário</h3>
         <p>Desentupimento de vasos sanitários com atendimento profissional.</p>
         <span class="card-cta">Saiba mais →</span>
       </a>
       <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20preciso%20de%20desentupimento%20de%20pia." onclick="trackWhatsApp()" class="info-card">
-        <div class="info-icon tone-red"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 11h16" stroke="#DC2626" stroke-width="1.6" stroke-linecap="round"></path><path d="M4 11a8 3.2 0 0 0 16 0" stroke="#DC2626" stroke-width="1.6"></path><path d="M12 11v4a2 2 0 0 0 2 2h1" stroke="#DC2626" stroke-width="1.6" stroke-linecap="round"></path><path d="M9 6v2M9 3.5v.1" stroke="#DC2626" stroke-width="1.6" stroke-linecap="round"></path></svg></div>
+        <div class="info-icon tone-red"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 11h16" stroke="#E53935" stroke-width="1.6" stroke-linecap="round"></path><path d="M4 11a8 3.2 0 0 0 16 0" stroke="#E53935" stroke-width="1.6"></path><path d="M12 11v4a2 2 0 0 0 2 2h1" stroke="#E53935" stroke-width="1.6" stroke-linecap="round"></path><path d="M9 6v2M9 3.5v.1" stroke="#E53935" stroke-width="1.6" stroke-linecap="round"></path></svg></div>
         <h3>Pia</h3>
         <p>Desentupimento de pias de cozinha e banheiro.</p>
         <span class="card-cta">Saiba mais →</span>
       </a>
       <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20preciso%20de%20desentupimento%20de%20ralo." onclick="trackWhatsApp()" class="info-card">
-        <div class="info-icon tone-red"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8" stroke="#DC2626" stroke-width="1.6"></circle><path d="M8 9l8 6M16 9l-8 6" stroke="#DC2626" stroke-width="1.6" stroke-linecap="round"></path></svg></div>
+        <div class="info-icon tone-red"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8" stroke="#E53935" stroke-width="1.6"></circle><path d="M8 9l8 6M16 9l-8 6" stroke="#E53935" stroke-width="1.6" stroke-linecap="round"></path></svg></div>
         <h3>Ralos</h3>
         <p>Identificação e desobstrução de ralos entupidos.</p>
         <span class="card-cta">Saiba mais →</span>
       </a>
       <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20preciso%20de%20limpeza%20de%20caixa%20de%20gordura." onclick="trackWhatsApp()" class="info-card">
-        <div class="info-icon tone-red"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="8" width="16" height="11" rx="1.5" stroke="#DC2626" stroke-width="1.6"></rect><path d="M4 8l3-3h10l3 3" stroke="#DC2626" stroke-width="1.6" stroke-linejoin="round"></path></svg></div>
+        <div class="info-icon tone-red"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="8" width="16" height="11" rx="1.5" stroke="#E53935" stroke-width="1.6"></rect><path d="M4 8l3-3h10l3 3" stroke="#E53935" stroke-width="1.6" stroke-linejoin="round"></path></svg></div>
         <h3>Caixa de Gordura</h3>
         <p>Desobstrução e atendimento para problemas em caixas de gordura.</p>
         <span class="card-cta">Saiba mais →</span>
       </a>
       <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20preciso%20de%20desentupimento%20de%20rede%20pluvial." onclick="trackWhatsApp()" class="info-card">
-        <div class="info-icon tone-red"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 15c0-5 3-9 8-9s8 4 8 9" stroke="#DC2626" stroke-width="1.6" stroke-linecap="round"></path><path d="M4 15h16v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3Z" stroke="#DC2626" stroke-width="1.6" stroke-linejoin="round"></path></svg></div>
+        <div class="info-icon tone-red"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 15c0-5 3-9 8-9s8 4 8 9" stroke="#E53935" stroke-width="1.6" stroke-linecap="round"></path><path d="M4 15h16v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3Z" stroke="#E53935" stroke-width="1.6" stroke-linejoin="round"></path></svg></div>
         <h3>Rede Pluvial</h3>
         <p>Desobstrução de redes para escoamento de água da chuva.</p>
         <span class="card-cta">Saiba mais →</span>
       </a>
       <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20preciso%20de%20hidrojateamento." onclick="trackWhatsApp()" class="info-card">
-        <div class="info-icon tone-red"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 18c4-1 6-4 6-8 4 1 6 3 6 6M16 8l4-4M16 12l3-1M13 5l1-3" stroke="#DC2626" stroke-width="1.6" stroke-linecap="round"></path></svg></div>
+        <div class="info-icon tone-red"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 18c4-1 6-4 6-8 4 1 6 3 6 6M16 8l4-4M16 12l3-1M13 5l1-3" stroke="#E53935" stroke-width="1.6" stroke-linecap="round"></path></svg></div>
         <h3>Hidro&shy;jateamento</h3>
         <p>Equipamento de alta pressão para casos que exigem limpeza mais profunda.</p>
         <span class="card-cta">Saiba mais →</span>
@@ -383,28 +384,28 @@
   <!-- ============================================================
        5. TIPOS DE IMÓVEIS
   ============================================================= -->
-  <section class="section reveal" style="background: #EAF2F9; display: flex; flex-direction: column;">
+  <section class="section reveal" style="background: #EAF4FA; display: flex; flex-direction: column;">
     <div class="section-head">
-      <h2 style="color: #14202B;">Atendimento para diferentes tipos de imóveis</h2>
+      <h2 style="color: #071A33;">Atendimento para diferentes tipos de imóveis</h2>
     </div>
     <div class="grid-4" style="max-width: 760px; margin: 0 auto; width: 100%;">
       <div class="info-card">
-        <div class="info-icon tone-navy"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 11l8-7 8 7" stroke="#0B3B60" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6 10v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-9" stroke="#0B3B60" stroke-width="1.7" stroke-linejoin="round"></path></svg></div>
+        <div class="info-icon tone-navy"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 11l8-7 8 7" stroke="#071A33" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6 10v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-9" stroke="#071A33" stroke-width="1.7" stroke-linejoin="round"></path></svg></div>
         <h3>Residências</h3>
         <p>Atendimento para casas e apartamentos.</p>
       </div>
       <div class="info-card">
-        <div class="info-icon tone-navy"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1" stroke="#0B3B60" stroke-width="1.7"></rect><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2" stroke="#0B3B60" stroke-width="1.7" stroke-linecap="round"></path></svg></div>
+        <div class="info-icon tone-navy"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1" stroke="#071A33" stroke-width="1.7"></rect><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2" stroke="#071A33" stroke-width="1.7" stroke-linecap="round"></path></svg></div>
         <h3>Condomínios</h3>
         <p>Soluções para áreas comuns e redes de esgoto.</p>
       </div>
       <div class="info-card">
-        <div class="info-icon tone-navy"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21V11l5-3v3l5-3v3l5-3v13H3Z" stroke="#0B3B60" stroke-width="1.7" stroke-linejoin="round"></path><path d="M7 21v-4h4v4" stroke="#0B3B60" stroke-width="1.7" stroke-linejoin="round"></path></svg></div>
+        <div class="info-icon tone-navy"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21V11l5-3v3l5-3v3l5-3v13H3Z" stroke="#071A33" stroke-width="1.7" stroke-linejoin="round"></path><path d="M7 21v-4h4v4" stroke="#071A33" stroke-width="1.7" stroke-linejoin="round"></path></svg></div>
         <h3>Comércios</h3>
         <p>Atendimento para lojas, restaurantes e outros estabelecimentos.</p>
       </div>
       <div class="info-card">
-        <div class="info-icon tone-navy"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 21V9l8-5 8 5v12" stroke="#0B3B60" stroke-width="1.7" stroke-linejoin="round"></path><path d="M9 21v-6h6v6" stroke="#0B3B60" stroke-width="1.7" stroke-linejoin="round"></path></svg></div>
+        <div class="info-icon tone-navy"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 21V9l8-5 8 5v12" stroke="#071A33" stroke-width="1.7" stroke-linejoin="round"></path><path d="M9 21v-6h6v6" stroke="#071A33" stroke-width="1.7" stroke-linejoin="round"></path></svg></div>
         <h3>Empresas</h3>
         <p>Serviços conforme a necessidade da operação.</p>
       </div>
@@ -414,40 +415,30 @@
   <!-- ============================================================
        6. POR QUE ESCOLHER A BV
   ============================================================= -->
-  <section class="section reveal" style="background: #FFFFFF; display: flex; flex-direction: column;">
+  <section class="section reveal" style="background: #071A33; display: flex; flex-direction: column;">
     <div class="section-head">
-      <h2 style="color: #14202B;">Por que escolher a BV Desentupidora?</h2>
+      <h2 style="color: #FFFFFF;">Por que escolher a BV Desentupidora?</h2>
     </div>
-    <div class="grid-3" style="max-width: 940px; margin: 0 auto; width: 100%;">
+    <div class="grid-4" style="max-width: 760px; margin: 0 auto; width: 100%;">
       <div class="info-card">
-        <div class="info-icon tone-navy"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 18c4-1 6-4 6-8 4 1 6 3 6 6M16 8l4-4M16 12l3-1M13 5l1-3" stroke="#0B3B60" stroke-width="1.7" stroke-linecap="round"></path></svg></div>
+        <div class="info-icon tone-navy"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 18c4-1 6-4 6-8 4 1 6 3 6 6M16 8l4-4M16 12l3-1M13 5l1-3" stroke="#0A3D62" stroke-width="1.7" stroke-linecap="round"></path></svg></div>
         <h3>Equipamentos profissionais</h3>
         <p>Equipamentos adequados para diferentes tipos de entupimento.</p>
       </div>
       <div class="info-card">
-        <div class="info-icon tone-navy"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 7v5l3.5 2" stroke="#0B3B60" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12" cy="12" r="9" stroke="#0B3B60" stroke-width="1.7"></circle></svg></div>
+        <div class="info-icon tone-navy"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 7v5l3.5 2" stroke="#0A3D62" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12" cy="12" r="9" stroke="#0A3D62" stroke-width="1.7"></circle></svg></div>
         <h3>Atendimento rápido</h3>
         <p>Chegamos em até 30 minutos.</p>
       </div>
       <div class="info-card">
-        <div class="info-icon tone-navy"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#0B3B60" stroke-width="1.7"></circle><path d="M8.5 12.5l2.3 2.3 4.7-5" stroke="#0B3B60" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+        <div class="info-icon tone-navy"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#0A3D62" stroke-width="1.7"></circle><path d="M8.5 12.5l2.3 2.3 4.7-5" stroke="#0A3D62" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
         <h3>Garantia nos serviços realizados</h3>
         <p>Mais segurança após o atendimento.</p>
       </div>
       <div class="info-card">
-        <div class="info-icon tone-navy"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 3h10a1 1 0 0 1 1 1v16l-3-2-3 2-3-2-3 2V4a1 1 0 0 1 1-1Z" stroke="#0B3B60" stroke-width="1.7" stroke-linejoin="round"></path><path d="M9 8h6M9 12h6" stroke="#0B3B60" stroke-width="1.7" stroke-linecap="round"></path></svg></div>
+        <div class="info-icon tone-navy"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 3h10a1 1 0 0 1 1 1v16l-3-2-3 2-3-2-3 2V4a1 1 0 0 1 1-1Z" stroke="#0A3D62" stroke-width="1.7" stroke-linejoin="round"></path><path d="M9 8h6M9 12h6" stroke="#0A3D62" stroke-width="1.7" stroke-linecap="round"></path></svg></div>
         <h3>Nota fiscal</h3>
         <p>Documentação para clientes residenciais e empresariais.</p>
-      </div>
-      <div class="info-card">
-        <div class="info-icon tone-navy"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21c-4 0-6-2.5-6-6 0-4 6-10 6-10s6 6 6 10c0 3.5-2 6-6 6Z" stroke="#0B3B60" stroke-width="1.7" stroke-linejoin="round"></path><circle cx="12" cy="11" r="2" stroke="#0B3B60" stroke-width="1.7"></circle></svg></div>
-        <h3>Atendimento em Goiânia e região</h3>
-        <p>Equipe preparada para atender diferentes locais.</p>
-      </div>
-      <div class="info-card">
-        <div class="info-icon tone-navy"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 3h10a1 1 0 0 1 1 1v5a5 5 0 0 1-5 5 5 5 0 0 1-5-5V4a1 1 0 0 1 1-1Z" stroke="#0B3B60" stroke-width="1.7" stroke-linejoin="round"></path><path d="M9 21h6M12 14v7" stroke="#0B3B60" stroke-width="1.7" stroke-linecap="round"></path></svg></div>
-        <h3>Orçamento conforme o serviço</h3>
-        <p>O valor depende do tipo de problema, complexidade e equipamento necessário.</p>
       </div>
     </div>
   </section>
@@ -455,9 +446,9 @@
   <!-- ============================================================
        7. COMO FUNCIONA
   ============================================================= -->
-  <section class="section reveal" style="background: #EEF2F6; display: flex; flex-direction: column;">
+  <section class="section reveal" style="background: #FFFFFF; display: flex; flex-direction: column;">
     <div class="section-head">
-      <h2 style="color: #14202B;">Como funciona o atendimento?</h2>
+      <h2 style="color: #071A33;">Como funciona o atendimento?</h2>
     </div>
     <div class="grid-3" style="max-width: 940px; margin: 0 auto; width: 100%;">
       <div class="step-card">
@@ -485,17 +476,17 @@
   <!-- ============================================================
        8. AVALIAÇÕES — dados reais, carrossel
   ============================================================= -->
-  <section class="section reveal" style="background: #EAF2F9; display: flex; flex-direction: column;">
+  <section class="section reveal" style="background: #EAF4FA; display: flex; flex-direction: column;">
     <div class="section-head">
       <span style="display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 800; letter-spacing: 0.03em; text-transform: uppercase; color: #4A5A66;">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21.8 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.5a4.7 4.7 0 0 1-2 3.1v2.6h3.3c1.9-1.8 3-4.4 3-7.6Z" fill="#4285F4"></path><path d="M12 22c2.7 0 5-.9 6.7-2.4l-3.3-2.5c-.9.6-2 1-3.4 1a5.9 5.9 0 0 1-5.6-4.1H3v2.6A10 10 0 0 0 12 22Z" fill="#34A853"></path><path d="M6.4 14a6 6 0 0 1 0-3.9V7.4H3a10 10 0 0 0 0 9.1l3.4-2.6Z" fill="#FBBC05"></path><path d="M12 6a5.4 5.4 0 0 1 3.8 1.5l2.9-2.9A9.6 9.6 0 0 0 12 2a10 10 0 0 0-9 5.4l3.4 2.6A5.9 5.9 0 0 1 12 6Z" fill="#EA4335"></path></svg>
         Avaliações reais no Google
       </span>
-      <h2 style="color: #14202B;">O que nossos clientes dizem</h2>
+      <h2 style="color: #071A33;">O que nossos clientes dizem</h2>
       <p style="color: #4A5A66;">Avaliações reais de clientes da BV Desentupidora no Google.</p>
       <div style="display: flex; align-items: center; justify-content: center; gap: 6px; margin: 2px 0;">
         <span style="font-size: 15px; color: #F2994A; letter-spacing: 1px;">★★★★★</span>
-        <span style="font-size: 13.5px; font-weight: 800; color: #14202B;">4,9 no Google</span>
+        <span style="font-size: 13.5px; font-weight: 800; color: #071A33;">4,9 no Google</span>
         <span style="font-size: 12.5px; font-weight: 700; color: #9BAAB6;">· 11 avaliações</span>
       </div>
     </div>
@@ -503,17 +494,17 @@
       <div class="carousel-scroller" id="reviews-scroller">
         <div class="review-card">
           <div style="display: flex; gap: 3px;"><span style="font-size: 15px; color: #F2994A;">★</span><span style="font-size: 15px; color: #F2994A;">★</span><span style="font-size: 15px; color: #F2994A;">★</span><span style="font-size: 15px; color: #F2994A;">★</span><span style="font-size: 15px; color: #F2994A;">★</span></div>
-          <p style="margin: 0; color: #14202B; font-weight: 500;">"A Desentupidora resolveu meu problema com rapidez e eficiência! Chegaram no mesmo dia, identificaram o entupimento na pia da cozinha e desentupiram tudo de forma limpa, sem bagunça e sem danificar nada. O atendimento foi super profissional, os técnicos foram educados e explicaram tudo que estavam fazendo. O preço foi justo e o serviço ficou perfeito. Recomendo de olhos fechados."</p>
+          <p style="margin: 0; color: #071A33; font-weight: 500;">"A Desentupidora resolveu meu problema com rapidez e eficiência! Chegaram no mesmo dia, identificaram o entupimento na pia da cozinha e desentupiram tudo de forma limpa, sem bagunça e sem danificar nada. O atendimento foi super profissional, os técnicos foram educados e explicaram tudo que estavam fazendo. O preço foi justo e o serviço ficou perfeito. Recomendo de olhos fechados."</p>
           <span style="font-size: 13px; font-weight: 700; color: #4A5A66;">Renato Augusto · Google</span>
         </div>
         <div class="review-card">
           <div style="display: flex; gap: 3px;"><span style="font-size: 15px; color: #F2994A;">★</span><span style="font-size: 15px; color: #F2994A;">★</span><span style="font-size: 15px; color: #F2994A;">★</span><span style="font-size: 15px; color: #F2994A;">★</span><span style="font-size: 15px; color: #F2994A;">★</span></div>
-          <p style="margin: 0; color: #14202B; font-weight: 500;">"Melhor empresa do Estado, foram rápidos e resolveram meu problema com eficácia, recomendo mil vezes."</p>
+          <p style="margin: 0; color: #071A33; font-weight: 500;">"Melhor empresa do Estado, foram rápidos e resolveram meu problema com eficácia, recomendo mil vezes."</p>
           <span style="font-size: 13px; font-weight: 700; color: #4A5A66;">Fabinho Oficial · Google</span>
         </div>
         <div class="review-card">
           <div style="display: flex; gap: 3px;"><span style="font-size: 15px; color: #F2994A;">★</span><span style="font-size: 15px; color: #F2994A;">★</span><span style="font-size: 15px; color: #F2994A;">★</span><span style="font-size: 15px; color: #F2994A;">★</span><span style="font-size: 15px; color: #F2994A;">★</span></div>
-          <p style="margin: 0; color: #14202B; font-weight: 500;">"Bom atendimento, e resolveu o problema na hora."</p>
+          <p style="margin: 0; color: #071A33; font-weight: 500;">"Bom atendimento, e resolveu o problema na hora."</p>
           <span style="font-size: 13px; font-weight: 700; color: #4A5A66;">Antonio de Sousa Miguel · Google</span>
         </div>
       </div>
@@ -526,7 +517,7 @@
   <!-- ============================================================
        9. DESENTUPIDORA EM GOIÂNIA E REGIÃO (GEO)
   ============================================================= -->
-  <section id="atendimento" class="section reveal" style="padding-top: 44px; padding-bottom: 44px; background: #0B3B60; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 11px;">
+  <section id="atendimento" class="section reveal" style="padding-top: 44px; padding-bottom: 44px; background: #071A33; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 11px;">
     <div style="width: 42px; height: 42px; border-radius: 50%; background: rgba(255,255,255,0.13); border: 1px solid rgba(255,255,255,0.28); display: flex; align-items: center; justify-content: center;">
       <svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21c-4 0-6-2.5-6-6 0-4 6-10 6-10s6 6 6 10c0 3.5-2 6-6 6Z" stroke="#FFFFFF" stroke-width="1.7" stroke-linejoin="round"></path><circle cx="12" cy="11" r="2" stroke="#FFFFFF" stroke-width="1.7"></circle></svg>
     </div>
@@ -540,62 +531,62 @@
   ============================================================= -->
   <section class="section reveal" style="background: #FFFFFF; display: flex; flex-direction: column;">
     <div class="section-head">
-      <h2 style="color: #14202B;">Perguntas frequentes</h2>
+      <h2 style="color: #071A33;">Perguntas frequentes</h2>
     </div>
     <div style="display: flex; flex-direction: column; gap: 8px; max-width: 720px; width: 100%; margin: 0 auto;">
-      <div class="faq-item faq-open" style="border: 1px solid #E7EBEF; border-radius: 14px; overflow: hidden; background: #F5F7FA;">
+      <div class="faq-item faq-open" style="border: 1px solid #E7EBEF; border-radius: 14px; overflow: hidden; background: #EAF4FA;">
         <button class="faq-btn" aria-expanded="true" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px; background: transparent; border: none; cursor: pointer; text-align: left; font-family: inherit; min-height: 48px;">
-          <span style="font-size: 15.5px; font-weight: 700; color: #14202B;">Quanto custa um desentupimento?</span>
-          <span class="faq-chevron" style="flex-shrink: 0; display: flex; transition: transform 0.15s ease;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#0B3B60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+          <span style="font-size: 15.5px; font-weight: 700; color: #071A33;">Quanto custa um desentupimento?</span>
+          <span class="faq-chevron" style="flex-shrink: 0; display: flex; transition: transform 0.15s ease;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#071A33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
         </button>
         <div class="faq-answer" style="padding: 0 16px 18px; font-size: 15.5px; line-height: 1.55; color: #4A5A66;">O valor depende do tipo de entupimento, local, complexidade e equipamento necessário. Após entender o serviço, nossa equipe pode orientar sobre o atendimento.</div>
       </div>
-      <div class="faq-item" style="border: 1px solid #E7EBEF; border-radius: 14px; overflow: hidden; background: #F5F7FA;">
+      <div class="faq-item" style="border: 1px solid #E7EBEF; border-radius: 14px; overflow: hidden; background: #EAF4FA;">
         <button class="faq-btn" aria-expanded="false" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px; background: transparent; border: none; cursor: pointer; text-align: left; font-family: inherit; min-height: 48px;">
-          <span style="font-size: 15.5px; font-weight: 700; color: #14202B;">Vocês atendem 24 horas?</span>
-          <span class="faq-chevron" style="flex-shrink: 0; display: flex; transition: transform 0.15s ease;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#0B3B60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+          <span style="font-size: 15.5px; font-weight: 700; color: #071A33;">Vocês atendem 24 horas?</span>
+          <span class="faq-chevron" style="flex-shrink: 0; display: flex; transition: transform 0.15s ease;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#071A33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
         </button>
         <div class="faq-answer" style="padding: 0 16px 18px; font-size: 15.5px; line-height: 1.55; color: #4A5A66;">Sim. A BV Desentupidora trabalha com atendimento 24 horas.</div>
       </div>
-      <div class="faq-item" style="border: 1px solid #E7EBEF; border-radius: 14px; overflow: hidden; background: #F5F7FA;">
+      <div class="faq-item" style="border: 1px solid #E7EBEF; border-radius: 14px; overflow: hidden; background: #EAF4FA;">
         <button class="faq-btn" aria-expanded="false" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px; background: transparent; border: none; cursor: pointer; text-align: left; font-family: inherit; min-height: 48px;">
-          <span style="font-size: 15.5px; font-weight: 700; color: #14202B;">Vocês fazem desentupimento de rede de esgoto?</span>
-          <span class="faq-chevron" style="flex-shrink: 0; display: flex; transition: transform 0.15s ease;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#0B3B60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+          <span style="font-size: 15.5px; font-weight: 700; color: #071A33;">Vocês fazem desentupimento de rede de esgoto?</span>
+          <span class="faq-chevron" style="flex-shrink: 0; display: flex; transition: transform 0.15s ease;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#071A33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
         </button>
         <div class="faq-answer" style="padding: 0 16px 18px; font-size: 15.5px; line-height: 1.55; color: #4A5A66;">Sim. Realizamos desentupimento de redes de esgoto e outros pontos de obstrução.</div>
       </div>
-      <div class="faq-item" style="border: 1px solid #E7EBEF; border-radius: 14px; overflow: hidden; background: #F5F7FA;">
+      <div class="faq-item" style="border: 1px solid #E7EBEF; border-radius: 14px; overflow: hidden; background: #EAF4FA;">
         <button class="faq-btn" aria-expanded="false" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px; background: transparent; border: none; cursor: pointer; text-align: left; font-family: inherit; min-height: 48px;">
-          <span style="font-size: 15.5px; font-weight: 700; color: #14202B;">Vocês fazem hidrojateamento?</span>
-          <span class="faq-chevron" style="flex-shrink: 0; display: flex; transition: transform 0.15s ease;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#0B3B60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+          <span style="font-size: 15.5px; font-weight: 700; color: #071A33;">Vocês fazem hidrojateamento?</span>
+          <span class="faq-chevron" style="flex-shrink: 0; display: flex; transition: transform 0.15s ease;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#071A33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
         </button>
         <div class="faq-answer" style="padding: 0 16px 18px; font-size: 15.5px; line-height: 1.55; color: #4A5A66;">Sim. Trabalhamos com hidrojateamento para situações que exigem limpeza e desobstrução com alta pressão.</div>
       </div>
-      <div class="faq-item" style="border: 1px solid #E7EBEF; border-radius: 14px; overflow: hidden; background: #F5F7FA;">
+      <div class="faq-item" style="border: 1px solid #E7EBEF; border-radius: 14px; overflow: hidden; background: #EAF4FA;">
         <button class="faq-btn" aria-expanded="false" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px; background: transparent; border: none; cursor: pointer; text-align: left; font-family: inherit; min-height: 48px;">
-          <span style="font-size: 15.5px; font-weight: 700; color: #14202B;">Vocês atendem empresas e condomínios?</span>
-          <span class="faq-chevron" style="flex-shrink: 0; display: flex; transition: transform 0.15s ease;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#0B3B60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+          <span style="font-size: 15.5px; font-weight: 700; color: #071A33;">Vocês atendem empresas e condomínios?</span>
+          <span class="faq-chevron" style="flex-shrink: 0; display: flex; transition: transform 0.15s ease;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#071A33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
         </button>
         <div class="faq-answer" style="padding: 0 16px 18px; font-size: 15.5px; line-height: 1.55; color: #4A5A66;">Sim. Atendemos residências, condomínios, comércios e empresas.</div>
       </div>
-      <div class="faq-item" style="border: 1px solid #E7EBEF; border-radius: 14px; overflow: hidden; background: #F5F7FA;">
+      <div class="faq-item" style="border: 1px solid #E7EBEF; border-radius: 14px; overflow: hidden; background: #EAF4FA;">
         <button class="faq-btn" aria-expanded="false" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px; background: transparent; border: none; cursor: pointer; text-align: left; font-family: inherit; min-height: 48px;">
-          <span style="font-size: 15.5px; font-weight: 700; color: #14202B;">Como solicitar atendimento?</span>
-          <span class="faq-chevron" style="flex-shrink: 0; display: flex; transition: transform 0.15s ease;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#0B3B60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+          <span style="font-size: 15.5px; font-weight: 700; color: #071A33;">Como solicitar atendimento?</span>
+          <span class="faq-chevron" style="flex-shrink: 0; display: flex; transition: transform 0.15s ease;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#071A33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
         </button>
         <div class="faq-answer" style="padding: 0 16px 18px; font-size: 15.5px; line-height: 1.55; color: #4A5A66;">Entre em contato pelo WhatsApp ou telefone e informe sua localização e o problema encontrado.</div>
       </div>
-      <div class="faq-item" style="border: 1px solid #E7EBEF; border-radius: 14px; overflow: hidden; background: #F5F7FA;">
+      <div class="faq-item" style="border: 1px solid #E7EBEF; border-radius: 14px; overflow: hidden; background: #EAF4FA;">
         <button class="faq-btn" aria-expanded="false" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px; background: transparent; border: none; cursor: pointer; text-align: left; font-family: inherit; min-height: 48px;">
-          <span style="font-size: 15.5px; font-weight: 700; color: #14202B;">Existe garantia no serviço?</span>
-          <span class="faq-chevron" style="flex-shrink: 0; display: flex; transition: transform 0.15s ease;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#0B3B60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+          <span style="font-size: 15.5px; font-weight: 700; color: #071A33;">Existe garantia no serviço?</span>
+          <span class="faq-chevron" style="flex-shrink: 0; display: flex; transition: transform 0.15s ease;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#071A33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
         </button>
         <div class="faq-answer" style="padding: 0 16px 18px; font-size: 15.5px; line-height: 1.55; color: #4A5A66;">A garantia varia conforme o serviço e as condições informadas no atendimento.</div>
       </div>
-      <div class="faq-item" style="border: 1px solid #E7EBEF; border-radius: 14px; overflow: hidden; background: #F5F7FA;">
+      <div class="faq-item" style="border: 1px solid #E7EBEF; border-radius: 14px; overflow: hidden; background: #EAF4FA;">
         <button class="faq-btn" aria-expanded="false" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px; background: transparent; border: none; cursor: pointer; text-align: left; font-family: inherit; min-height: 48px;">
-          <span style="font-size: 15.5px; font-weight: 700; color: #14202B;">Vocês atendem Goiânia e região?</span>
-          <span class="faq-chevron" style="flex-shrink: 0; display: flex; transition: transform 0.15s ease;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#0B3B60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+          <span style="font-size: 15.5px; font-weight: 700; color: #071A33;">Vocês atendem Goiânia e região?</span>
+          <span class="faq-chevron" style="flex-shrink: 0; display: flex; transition: transform 0.15s ease;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#071A33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
         </button>
         <div class="faq-answer" style="padding: 0 16px 18px; font-size: 15.5px; line-height: 1.55; color: #4A5A66;">Sim. A BV Desentupidora atende Goiânia e região.</div>
       </div>
@@ -605,11 +596,11 @@
   <!-- ============================================================
        11. CTA FINAL
   ============================================================= -->
-  <section class="section reveal" style="padding-top: 50px; padding-bottom: 50px; background: #0B3B60; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center;">
+  <section class="section reveal" style="padding-top: 50px; padding-bottom: 50px; background: #071A33; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center;">
     <h2 style="margin: 0; font-size: 24px; font-weight: 800; color: #FFFFFF; max-width: 400px; line-height: 1.25;">Esgoto entupido? Não espere o problema piorar.</h2>
     <p style="margin: 0; font-size: 15px; color: #D7E2EC;">Fale com a BV Desentupidora e solicite atendimento pelo WhatsApp.</p>
     <div class="final-actions" style="display: flex; flex-direction: column; align-items: center; gap: 9px; width: 100%; margin-top: 4px;">
-      <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20preciso%20de%20um%20atendimento%20urgente%20para%20desentupimento." onclick="trackWhatsApp()" class="btn btn-whatsapp btn-hero-whatsapp wa-pulse-strong">SOLICITAR ATENDIMENTO NO WHATSAPP</a>
+      <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20preciso%20de%20um%20atendimento%20urgente%20para%20desentupimento." onclick="trackWhatsApp()" class="btn btn-whatsapp btn-hero-whatsapp wa-pulse-strong">CHAMAR NO WHATSAPP</a>
       <a href="tel:+5562996051575" onclick="trackCall()" class="btn btn-ligar btn-hero-ligar">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z" stroke="#FFFFFF" stroke-width="1.7" stroke-linejoin="round"></path></svg>
         LIGAR AGORA
