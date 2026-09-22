@@ -93,13 +93,44 @@
   .wa-float {
     position: fixed; right: 16px; bottom: 84px; z-index: 999;
     width: 60px; height: 60px; border-radius: 50%; background: #25D366;
-    display: flex; align-items: center; justify-content: center;
+    display: none; align-items: center; justify-content: center;
     animation: float-pulse 1.9s ease-in-out infinite;
   }
   .wa-header-btn {
     width: 40px; height: 40px; border-radius: 50%; background: #25D366;
     display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;
     animation: wa-pulse 1.9s ease-in-out infinite;
+  }
+
+  /* ===================== HERO — hierarquia tipográfica (gancho > H1 > subtexto > CTAs > benefícios > imagem) ===================== */
+  .hero-hook {
+    display: inline-flex; align-items: center; width: fit-content;
+    background: rgba(255,184,77,0.16); border: 1px solid rgba(255,184,77,0.45);
+    border-radius: 999px; padding: 6px 14px;
+    color: #FFC876; font-size: 12.5px; font-weight: 800; letter-spacing: 0.01em;
+    line-height: 1.3; margin: 0 0 10px;
+  }
+  .hero-h1 {
+    margin: 0 0 10px; color: #FFFFFF; font-weight: 900;
+    font-size: 29px; line-height: 1.15; letter-spacing: -0.02em;
+    max-width: 260px;
+  }
+  .hero-sub {
+    margin: 0 0 18px; color: #FFFFFF; font-weight: 700;
+    font-size: 16px; line-height: 1.42; max-width: 340px;
+  }
+  .btn-hero-whatsapp {
+    width: 100%; max-width: 360px; min-height: 54px; padding: 14px 18px;
+    font-size: 14.5px; font-weight: 800; letter-spacing: 0.01em; border-radius: 14px;
+    white-space: normal; text-align: center;
+  }
+  .btn-hero-ligar {
+    width: 100%; max-width: 300px; min-height: 46px; padding: 11px 20px;
+    font-size: 14px; font-weight: 700; border-radius: 13px; opacity: 0.94;
+  }
+  @media (hover: hover) {
+    .btn-whatsapp:hover { filter: brightness(1.05); box-shadow: 0 10px 24px rgba(6,33,15,0.32); }
+    .btn-ligar:hover { filter: brightness(1.06); box-shadow: 0 10px 22px rgba(220,38,38,0.4); }
   }
 
   /* ===================== LAYOUT — BASE = CELULAR ===================== */
@@ -148,7 +179,9 @@
     .hero-section { flex-direction: row !important; padding: 56px 64px !important; gap: 44px !important; text-align: left !important; align-items: center !important; }
     .hero-content { flex: 1 1 0; align-items: flex-start !important; }
     .hero-section .hero-copy { align-items: flex-start !important; text-align: left !important; }
-    .hero-section h1 { font-size: 40px !important; }
+    .hero-hook { font-size: 13.5px !important; }
+    .hero-h1 { font-size: 44px !important; line-height: 1.08 !important; max-width: 560px !important; }
+    .hero-sub { font-size: 17px !important; max-width: 480px !important; }
     .hero-actions { align-items: flex-start !important; justify-content: flex-start !important; }
     .trust-badges { justify-content: flex-start !important; margin: 0 !important; }
     .hero-image-wrap { order: 0 !important; flex: 0 0 400px !important; width: 400px !important; margin: 0 !important; }
@@ -159,13 +192,13 @@
     .gallery-item { flex: 0 0 31.5% !important; }
     .sticky-bar { display: none !important; }
     body { padding-bottom: 0 !important; }
-    .wa-float { bottom: 24px !important; }
+    .wa-float { display: flex !important; bottom: 24px !important; }
     .problem-card:hover { transform: translateY(-4px); box-shadow: 0 14px 28px rgba(4,14,26,0.4); }
     .service-card:hover { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(11,59,96,0.16); }
   }
 
   /* ===================== CELULAR — reforços finais ===================== */
-  body { padding-bottom: 74px; }
+  body { padding-bottom: calc(70px + env(safe-area-inset-bottom)); }
   .sticky-bar { display: flex; }
   .sticky-bar .btn-ligar, .sticky-bar .btn-whatsapp { animation: none; }
   .sticky-bar .btn-whatsapp::after { display: none; }
@@ -216,50 +249,44 @@
   ============================================================= -->
   <section class="hero-section" style="width: 100%; padding: 18px 18px 20px; background: #0B3B60; display: flex; flex-direction: column; gap: 14px; text-align: center;">
     <div class="hero-content" style="display: flex; flex-direction: column; gap: 14px; align-items: center; width: 100%;">
-      <div class="hero-copy" style="display: flex; flex-direction: column; gap: 7px; align-items: center; text-align: center;">
-        <span style="display: inline-flex; width: fit-content; max-width: 340px; background: rgba(255,255,255,0.14); border-radius: 999px; padding: 4px 12px; color: #FFE7D3; font-size: 11px; font-weight: 800; letter-spacing: 0.02em; text-transform: uppercase; line-height: 1.3;">Resolvemos seu problema de entupimento agora</span>
-        <h1 style="margin: 0; font-size: 24px; line-height: 1.18; font-weight: 800; letter-spacing: -0.01em; color: #FFFFFF; max-width: 420px;">
-          Desentupimento de Rede de Esgoto em Goiânia e Região
-        </h1>
-        <p style="margin: 0; max-width: 370px; font-size: 15px; line-height: 1.45; color: #FFFFFF; font-weight: 700;">
-          Equipe equipada para desobstrução de redes de esgoto, tubulações e pontos de entupimento.
-        </p>
+      <div class="hero-copy" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <span class="hero-hook">🚨 ESGOTO ENTUPIDO? A GENTE RESOLVE.</span>
+        <h1 class="hero-h1">Desentupidora em Goiânia e Região 24 Horas</h1>
+        <p class="hero-sub">Problema de esgoto não pode esperar. Conte com quem resolve.</p>
       </div>
 
-      <div class="hero-actions" style="display: flex; flex-direction: column; align-items: center; gap: 8px; width: 100%;">
-        <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20servi%C3%A7os%20de%20desentupimento.%20BV%20Desentupidora%20%E2%80%93%20Desentupidora%20em%20Goi%C3%A2nia" onclick="trackWhatsApp()" class="btn btn-whatsapp" style="background: #25D366; color: #06210F;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <div class="hero-actions" style="display: flex; flex-direction: column; align-items: center; gap: 9px; width: 100%;">
+        <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20servi%C3%A7os%20de%20desentupimento.%20BV%20Desentupidora%20%E2%80%93%20Desentupidora%20em%20Goi%C3%A2nia" onclick="trackWhatsApp()" class="btn btn-whatsapp btn-hero-whatsapp" style="background: #25D366; color: #06210F;">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="flex-shrink: 0;">
             <path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Z" stroke="#06210F" stroke-width="1.6" stroke-linejoin="round"></path>
             <path d="M8.5 8.7c.2-.6.6-.6 1-.6h.5c.3 0 .5.1.6.4l.7 1.7c.1.2 0 .5-.1.6l-.6.6c.4 1 1.3 1.9 2.3 2.3l.6-.6c.2-.2.4-.2.6-.1l1.7.7c.3.1.4.3.4.6v.5c0 .4 0 .8-.6 1-1.4.5-3.5-.2-5.3-2s-2.5-3.9-2-5.3Z" fill="#06210F"></path>
           </svg>
-          Chamar no WhatsApp
+          SOLICITAR ATENDIMENTO PELO WHATSAPP
         </a>
-        <a href="tel:+5562996051575" onclick="trackCall()" class="btn btn-ligar" style="background: #DC2626; color: #FFFFFF; border: none; box-shadow: 0 8px 20px rgba(220,38,38,0.35);">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z" stroke="#FFFFFF" stroke-width="1.7" stroke-linejoin="round"></path>
-          </svg>
-          Ligar agora
+        <a href="tel:+5562996051575" onclick="trackCall()" class="btn btn-ligar btn-hero-ligar" style="background: #DC2626; color: #FFFFFF; border: none; box-shadow: 0 6px 16px rgba(220,38,38,0.3);">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z" stroke="#FFFFFF" stroke-width="1.7" stroke-linejoin="round"></path></svg>
+          LIGAR AGORA
         </a>
       </div>
 
-      <div class="trust-badges" style="display: flex; flex-wrap: wrap; gap: 6px; align-items: center; justify-content: center; width: 100%; max-width: 380px; margin: 0 auto;">
-        <span style="display: inline-flex; align-items: center; gap: 4px; font-size: 11.5px; font-weight: 700; color: #FFFFFF; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.3); border-radius: 999px; padding: 5px 10px;">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-          Chegamos em até 30 min*
+      <div class="trust-badges" style="display: flex; flex-wrap: wrap; gap: 5px; align-items: center; justify-content: center; width: 100%; max-width: 380px; margin: 16px auto 0;">
+        <span style="display: inline-flex; align-items: center; gap: 4px; font-size: 10.5px; font-weight: 700; color: #FFFFFF; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.3); border-radius: 999px; padding: 4px 9px;">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          Chegamos em até 30 minutos
         </span>
-        <span style="display: inline-flex; align-items: center; gap: 4px; font-size: 11.5px; font-weight: 700; color: #FFFFFF; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.3); border-radius: 999px; padding: 5px 10px;">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-          Garantia em todos os serviços
+        <span style="display: inline-flex; align-items: center; gap: 4px; font-size: 10.5px; font-weight: 700; color: #FFFFFF; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.3); border-radius: 999px; padding: 4px 9px;">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          Garantia nos serviços realizados
         </span>
-        <span style="display: inline-flex; align-items: center; gap: 4px; font-size: 11.5px; font-weight: 700; color: #FFFFFF; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.3); border-radius: 999px; padding: 5px 10px;">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-          Atendimento profissional
+        <span style="display: inline-flex; align-items: center; gap: 4px; font-size: 10.5px; font-weight: 700; color: #FFFFFF; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.3); border-radius: 999px; padding: 4px 9px;">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          Equipamentos profissionais
         </span>
       </div>
     </div>
 
-    <div class="hero-image-wrap" style="width: 100%; max-width: 420px; border-radius: 14px; overflow: hidden; box-shadow: 0 10px 24px rgba(0,0,0,0.22); margin: 0 auto;">
-      <img src="./assets/4f666d0ca2f396858c8dc2d5559f2a0e.webp" alt="Equipe da BV Desentupidora realizando desentupimento de rede de esgoto em Goiânia" style="width: 100%; height: 140px; object-fit: cover; display: block;" fetchpriority="high" decoding="async">
+    <div class="hero-image-wrap" style="width: 100%; max-width: 420px; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 24px rgba(0,0,0,0.22); margin: 0 auto;">
+      <img src="./assets/4f666d0ca2f396858c8dc2d5559f2a0e.webp" alt="Equipe da BV Desentupidora realizando desentupimento de rede de esgoto em Goiânia" style="width: 100%; height: 178px; object-fit: cover; object-position: center 42%; display: block;" fetchpriority="high" decoding="async">
     </div>
   </section>
 
@@ -795,12 +822,12 @@
   <!-- ============================================================
        BARRA FIXA INFERIOR
   ============================================================= -->
-  <div class="sticky-bar" style="position: fixed; left: 0; right: 0; bottom: 0; z-index: 998; max-width: 100vw; overflow: hidden; background: #FFFFFF; border-top: 1px solid #E7EBEF; padding: 8px 10px; box-shadow: 0 -6px 20px rgba(0,0,0,0.08); gap: 8px;">
-    <a href="tel:+5562996051575" onclick="trackCall()" class="btn btn-ligar" style="flex: 1; width: 100%; max-width: none; background: #DC2626; color: #FFFFFF; border: none; padding: 11px 8px; font-size: 13.5px; min-height: 46px; gap: 6px; margin: 0; box-shadow: 0 6px 16px rgba(220,38,38,0.35);">
+  <div class="sticky-bar" style="position: fixed; left: 0; right: 0; bottom: 0; z-index: 998; max-width: 100vw; overflow: hidden; background: #FFFFFF; border-top: 1px solid #E7EBEF; padding: 8px 12px calc(8px + env(safe-area-inset-bottom)); box-shadow: 0 -6px 18px rgba(0,0,0,0.07); gap: 8px;">
+    <a href="tel:+5562996051575" onclick="trackCall()" class="btn btn-ligar" style="flex: 1; width: 100%; max-width: none; background: #DC2626; color: #FFFFFF; border: none; padding: 11px 8px; font-size: 14px; min-height: 46px; gap: 6px; margin: 0; box-shadow: 0 6px 16px rgba(220,38,38,0.3);">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z" stroke="#FFFFFF" stroke-width="1.7" stroke-linejoin="round"></path></svg>
       Ligar
     </a>
-    <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20servi%C3%A7os%20de%20desentupimento.%20BV%20Desentupidora%20%E2%80%93%20Desentupidora%20em%20Goi%C3%A2nia" onclick="trackWhatsApp()" class="btn btn-whatsapp" style="flex: 1.5; width: 100%; max-width: none; background: #25D366; color: #06210F; padding: 11px 8px; font-size: 13.5px; min-height: 46px; gap: 6px; margin: 0;">
+    <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20servi%C3%A7os%20de%20desentupimento.%20BV%20Desentupidora%20%E2%80%93%20Desentupidora%20em%20Goi%C3%A2nia" onclick="trackWhatsApp()" class="btn btn-whatsapp" style="flex: 1.5; width: 100%; max-width: none; background: #25D366; color: #06210F; padding: 11px 8px; font-size: 14px; min-height: 46px; gap: 6px; margin: 0;">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Z" stroke="#06210F" stroke-width="1.6" stroke-linejoin="round"></path><path d="M8.5 8.7c.2-.6.6-.6 1-.6h.5c.3 0 .5.1.6.4l.7 1.7c.1.2 0 .5-.1.6l-.6.6c.4 1 1.3 1.9 2.3 2.3l.6-.6c.2-.2.4-.2.6-.1l1.7.7c.3.1.4.3.4.6v.5c0 .4 0 .8-.6 1-1.4.5-3.5-.2-5.3-2s-2.5-3.9-2-5.3Z" fill="#06210F"></path></svg>
       WhatsApp
     </a>
