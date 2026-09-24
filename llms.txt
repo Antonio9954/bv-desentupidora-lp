@@ -25,9 +25,9 @@ Goiânia, Aparecida de Goiânia, Anápolis e região metropolitana de Goiânia, 
 ## Contato
 
 - WhatsApp e telefone: +55 62 99605-1575
-- Site: https://{{DOMINIO}}/
+- Site: https://antonio9954.github.io/bv-desentupidora-lp/
 
 ## Páginas
 
-- [Página inicial](https://{{DOMINIO}}/): serviços, como funciona o atendimento, fotos reais de antes e depois de serviços, área de atendimento, avaliações reais de clientes no Google e perguntas frequentes.
-- [Política de Privacidade](https://{{DOMINIO}}/privacidade/)
+- [Página inicial](https://antonio9954.github.io/bv-desentupidora-lp/): serviços, como funciona o atendimento, fotos reais de antes e depois de serviços, área de atendimento, avaliações reais de clientes no Google e perguntas frequentes.
+- [Política de Privacidade](https://antonio9954.github.io/bv-desentupidora-lp/privacidade/)
