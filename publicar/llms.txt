@@ -29,5 +29,5 @@ Goiânia, Aparecida de Goiânia, Anápolis e região metropolitana de Goiânia, 
 
 ## Páginas
 
-- [Página inicial](https://{{DOMINIO}}/): serviços, área de atendimento, avaliações reais de clientes no Google e perguntas frequentes.
+- [Página inicial](https://{{DOMINIO}}/): serviços, como funciona o atendimento, fotos reais de antes e depois de serviços, área de atendimento, avaliações reais de clientes no Google e perguntas frequentes.
 - [Política de Privacidade](https://{{DOMINIO}}/privacidade/)

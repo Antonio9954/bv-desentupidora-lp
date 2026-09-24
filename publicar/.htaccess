@@ -2,6 +2,13 @@
 # Todo bloco usa <IfModule> para não quebrar caso o módulo não exista no servidor.
 
 # ---------------------------------------------------------------------------
+# Tipo correto para imagens WebP
+# ---------------------------------------------------------------------------
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+</IfModule>
+
+# ---------------------------------------------------------------------------
 # Página de erro 404
 # ---------------------------------------------------------------------------
 ErrorDocument 404 /404.html

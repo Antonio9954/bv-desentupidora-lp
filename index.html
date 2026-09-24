@@ -5,6 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Desentupidora em Goiânia e Região 24 Horas | BV Desentupidora</title>
 <meta name="description" content="Desentupidora em Goiânia e região 24 horas. Desentupimento de esgoto, pia, vaso, ralos, caixa de gordura, rede pluvial e hidrojateamento. Solicite atendimento.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#071A33">
+<script>
+  /* GOOGLE TAG MANAGER — para ativar, coloque o ID do contêiner entre as aspas
+     (ex.: 'GTM-ABC1234'). Vazio = nada é carregado. O GA4, o Google Ads e o
+     Meta Pixel devem ser configurados DENTRO do GTM, não aqui. */
+  window.BV_GTM_ID = '';
+  window.dataLayer = window.dataLayer || [];
+  (function (w, d, id) {
+    if (!/^GTM-[A-Z0-9]+$/.test(id)) return;
+    w.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+    var j = d.createElement('script'); j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + id;
+    d.head.appendChild(j);
+  })(window, document, window.BV_GTM_ID);
+</script>
 <link rel="canonical" href="https://{{DOMINIO}}/">
 <link rel="icon" href="./assets/faa457ff9193e9b302136320bb079742.webp" type="image/webp">
 <meta property="og:type" content="website">
@@ -18,7 +33,15 @@
 {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "Plumber"],
+  "@id": "https://{{DOMINIO}}/#empresa",
   "name": "BV Desentupidora",
+  "description": "Desentupidora com atendimento 24 horas em Goiânia, Aparecida de Goiânia, Anápolis e região. Desentupimento de esgoto, pia, vaso sanitário, ralos, caixa de gordura, rede pluvial e hidrojateamento.",
+  "logo": "https://{{DOMINIO}}/assets/logo-bv-desentupidora.webp",
+  "image": [
+    "https://{{DOMINIO}}/assets/4f666d0ca2f396858c8dc2d5559f2a0e.webp",
+    "https://{{DOMINIO}}/assets/desentupimento-ralo-antes-depois-goiania.webp",
+    "https://{{DOMINIO}}/assets/desentupimento-caixa-esgoto-antes-depois-goiania.webp"
+  ],
   "legalName": "{{RAZAO_SOCIAL}}",
   "taxID": "{{CNPJ}}",
   "telephone": "+5562996051575",
@@ -32,6 +55,7 @@
   "priceRange": "$$",
   "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "00:00", "closes": "23:59" },
   "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desentupimento de esgoto" } },
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desentupimento de vaso sanitário" } },
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desentupimento de pia" } },
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desentupimento de ralos" } },
@@ -44,16 +68,28 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://{{DOMINIO}}/#site",
+  "name": "BV Desentupidora",
+  "url": "https://{{DOMINIO}}/",
+  "inLanguage": "pt-BR",
+  "publisher": { "@id": "https://{{DOMINIO}}/#empresa" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     { "@type": "Question", "name": "Quanto custa um desentupimento?", "acceptedAnswer": { "@type": "Answer", "text": "O valor depende do tipo de entupimento, local, complexidade e equipamento necessário. Após entender o serviço, nossa equipe pode orientar sobre o atendimento." } },
     { "@type": "Question", "name": "Vocês atendem 24 horas?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. A BV Desentupidora trabalha com atendimento 24 horas." } },
     { "@type": "Question", "name": "Vocês fazem desentupimento de rede de esgoto?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Realizamos desentupimento de redes de esgoto e outros pontos de obstrução." } },
+    { "@type": "Question", "name": "O que fazer quando o esgoto volta pelo ralo?", "acceptedAnswer": { "@type": "Answer", "text": "Evite usar pias, chuveiro, máquina de lavar e descarga até a rede ser avaliada, porque isso aumenta o retorno. Esgoto voltando pelo ralo normalmente indica obstrução na rede de esgoto, na caixa de gordura ou na caixa de inspeção. Chame a BV Desentupidora pelo WhatsApp para avaliar e desobstruir." } },
     { "@type": "Question", "name": "Vocês fazem hidrojateamento?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Trabalhamos com hidrojateamento para situações que exigem limpeza e desobstrução com alta pressão." } },
     { "@type": "Question", "name": "Vocês atendem empresas e condomínios?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Atendemos residências, condomínios, comércios e empresas." } },
     { "@type": "Question", "name": "Como solicitar atendimento?", "acceptedAnswer": { "@type": "Answer", "text": "Entre em contato pelo WhatsApp ou telefone e informe sua localização e o problema encontrado." } },
     { "@type": "Question", "name": "Existe garantia no serviço?", "acceptedAnswer": { "@type": "Answer", "text": "A garantia varia conforme o serviço e as condições informadas no atendimento." } },
-    { "@type": "Question", "name": "Vocês atendem Goiânia e região?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. A BV Desentupidora atende Goiânia e região." } }
+    { "@type": "Question", "name": "Vocês atendem Goiânia e região?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. A BV Desentupidora atende Goiânia, Aparecida de Goiânia, Anápolis e região." } }
   ]
 }
 </script>
@@ -110,8 +146,8 @@
   .btn-hero-ligar { width: 100%; max-width: 280px; min-height: 52px; padding: 13px 18px; font-size: 14px; font-weight: 700; border-radius: 12px; box-shadow: none; opacity: 0.94; }
 
   /* ===================== LAYOUT — BASE = CELULAR ===================== */
-  .section { width: 100%; padding: 58px 21px; }
-  .section-head { display: flex; flex-direction: column; gap: 9px; text-align: center; align-items: center; margin-bottom: 24px; }
+  .section { width: 100%; padding: 46px 21px; }
+  .section-head { display: flex; flex-direction: column; gap: 9px; text-align: center; align-items: center; margin-bottom: 22px; }
   .section-head h2 { margin: 0; font-size: 26px; font-weight: 800; letter-spacing: -0.01em; line-height: 1.22; }
   .section-head p { margin: 0; max-width: 560px; font-size: 15.5px; line-height: 1.55; }
   .grid-3 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
@@ -130,6 +166,7 @@
   .step-card { display: flex; align-items: flex-start; gap: 11px; text-align: left; background: #FFFFFF; border: 1px solid #E7EBEF; border-radius: 16px; padding: 14px 15px; height: 100%; transition: transform 0.18s ease, box-shadow 0.18s ease; box-shadow: 0 8px 24px rgba(7,26,51,0.08); }
   .step-card h3 { margin: 0 0 2px; font-size: 15px; font-weight: 700; color: #071A33; line-height: 1.25; }
   .step-card p { margin: 0; font-size: 13px; font-weight: 500; line-height: 1.48; color: #4A5A66; }
+  .steps-grid { grid-template-columns: minmax(0,1fr); gap: 10px; }
   .step-num { width: 30px; height: 30px; border-radius: 50%; background: #071A33; color: #FFFFFF; font-weight: 800; font-size: 13.5px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 
   .review-card { display: flex; flex-direction: column; gap: 8px; padding: 16px; border-radius: 16px; background: #FFFFFF; border: 1px solid #E7EBEF; box-shadow: 0 8px 24px rgba(7,26,51,0.08); flex: 0 0 100%; max-width: none; }
@@ -143,6 +180,20 @@
 
   .hero-image-wrap { width: 100%; max-width: 400px; margin: 0 auto; border-radius: 18px; overflow: hidden; box-shadow: 0 12px 26px rgba(0,0,0,0.25); }
   .hero-image-wrap img { width: 100%; height: 172px; object-fit: cover; object-position: center 38%; display: block; }
+
+
+  /* ===================== ANTES E DEPOIS ===================== */
+  .ba-eyebrow { display: inline-flex; font-size: 11.5px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #FFC876; }
+  .ba-track { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; margin: 0 -21px; padding: 2px 21px 4px; scroll-padding: 0 21px; outline: none; }
+  .ba-track::-webkit-scrollbar { display: none; }
+  .ba-card { flex: 0 0 86%; margin: 0; scroll-snap-align: start; background: #0B2542; border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; overflow: hidden; box-shadow: 0 10px 26px rgba(0,0,0,0.28); }
+  .ba-card img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; background: #0B1620; }
+  .ba-card figcaption { display: flex; flex-direction: column; gap: 3px; padding: 11px 14px 13px; text-align: left; }
+  .ba-card figcaption strong { font-size: 15px; font-weight: 800; color: #FFFFFF; }
+  .ba-card figcaption span { font-size: 13px; line-height: 1.45; color: #C9D6E2; }
+  .ba-dots .carousel-dot { background: rgba(255,255,255,0.28); }
+  .ba-dots .carousel-dot.active { background: #FFFFFF; }
+  .ba-hint { margin: 8px 0 0; text-align: center; font-size: 12px; font-weight: 600; color: #9BAAB6; }
 
   /* ===================== ANIMAÇÃO DE ENTRADA DE SEÇÃO ===================== */
   .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.4s ease, transform 0.4s ease; }
@@ -164,16 +215,21 @@
     .section { padding: 72px 40px; }
     .section-head h2 { font-size: 30px; }
     .grid-3 { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
+    .steps-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
     .review-card { flex: 0 0 47%; max-width: none; }
     .hero-actions, .final-actions { flex-direction: row !important; }
     .hero-actions .btn, .final-actions .btn { width: auto !important; min-width: 210px; max-width: none; }
     .footer-row { flex-direction: row !important; justify-content: space-between; }
     .site-header .call-text { display: inline !important; }
+    .ba-track { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; overflow: visible; margin: 0 auto; padding: 0; width: 100%; max-width: 920px; }
+    .ba-card { flex: none; }
+    .ba-dots, .ba-hint { display: none !important; }
   }
 
   /* ===================== DESKTOP (min 1025px) ===================== */
   @media (min-width: 1025px) {
-    .site-header { padding: 14px 56px !important; }
+    .site-header { padding: 8px 56px !important; }
+    .header-logo { height: 76px !important; }
     .hero-section { flex-direction: row !important; padding: 60px 56px !important; gap: 48px !important; text-align: left !important; align-items: center !important; }
     .hero-content { flex: 1 1 0; align-items: flex-start !important; }
     .hero-section .hero-copy { align-items: flex-start !important; text-align: left !important; }
@@ -210,23 +266,23 @@
 </style>
 </head>
 <body>
-<div style="width: 100%; min-height: 100%; display: flex; flex-direction: column; background: #FFFFFF;">
+<div id="top" style="width: 100%; min-height: 100%; display: flex; flex-direction: column; background: #FFFFFF;">
 
   <!-- ============================================================
        HEADER
   ============================================================= -->
-  <header class="site-header" style="width: 100%; padding: 8px 16px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #E7EBEF; box-shadow: 0 1px 3px rgba(7,26,51,0.05); position: sticky; top: 0; z-index: 50; background: #FFFFFF;">
+  <header class="site-header" data-section="cabecalho" style="width: 100%; padding: 4px 14px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #E7EBEF; box-shadow: 0 1px 3px rgba(7,26,51,0.05); position: sticky; top: 0; z-index: 50; background: #FFFFFF;">
     <a href="#top" style="display: flex; align-items: center; min-width: 0;" aria-label="BV Desentupidora — início">
-      <img src="./assets/faa457ff9193e9b302136320bb079742.webp" alt="BV Desentupidora" style="width: 118px; height: auto; max-height: 84px; object-fit: contain; flex-shrink: 0;">
+      <img class="header-logo" src="./assets/logo-bv-desentupidora.webp" alt="BV Desentupidora" width="62" height="66" style="width: auto; height: 66px; object-fit: contain; flex-shrink: 0; display: block;">
     </a>
     <div style="display: flex; align-items: center; gap: 12px; flex-shrink: 0;">
-      <a href="tel:+5562996051575" onclick="trackCall()" aria-label="Ligar para a BV Desentupidora" style="display: flex; align-items: center; gap: 6px; color: #071A33; font-weight: 700; font-size: 14px;">
+      <a href="tel:+5562996051575" aria-label="Ligar para a BV Desentupidora" style="display: flex; align-items: center; gap: 6px; color: #071A33; font-weight: 700; font-size: 14px;">
         <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z" stroke="#071A33" stroke-width="1.6" stroke-linejoin="round"></path>
         </svg>
         <span class="call-text" style="display: none;">(62) 99605-1575</span>
       </a>
-      <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20servi%C3%A7os%20de%20desentupimento.%20BV%20Desentupidora%20%E2%80%93%20Desentupidora%20em%20Goi%C3%A2nia" onclick="trackWhatsApp()" class="wa-header-btn" aria-label="Chamar no WhatsApp">
+      <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20servi%C3%A7os%20de%20desentupimento.%20BV%20Desentupidora%20%E2%80%93%20Desentupidora%20em%20Goi%C3%A2nia" class="wa-header-btn" aria-label="Chamar no WhatsApp">
         <svg width="23" height="23" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Z" stroke="#06210F" stroke-width="1.6" stroke-linejoin="round"></path>
           <path d="M8.5 8.7c.2-.6.6-.6 1-.6h.5c.3 0 .5.1.6.4l.7 1.7c.1.2 0 .5-.1.6l-.6.6c.4 1 1.3 1.9 2.3 2.3l.6-.6c.2-.2.4-.2.6-.1l1.7.7c.3.1.4.3.4.6v.5c0 .4 0 .8-.6 1-1.4.5-3.5-.2-5.3-2s-2.5-3.9-2-5.3Z" fill="#06210F"></path>
@@ -238,7 +294,7 @@
   <!-- ============================================================
        1. HERO
   ============================================================= -->
-  <section class="hero-section" style="width: 100%; padding: 20px 18px 22px; background: #071A33; display: flex; flex-direction: column; gap: 16px; text-align: center;">
+  <section class="hero-section" data-section="hero" style="width: 100%; padding: 20px 18px 22px; background: #071A33; display: flex; flex-direction: column; gap: 16px; text-align: center;">
     <div class="hero-content" style="display: flex; flex-direction: column; gap: 16px; align-items: center; width: 100%;">
       <div class="hero-copy" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
         <span class="hero-hook">
@@ -250,14 +306,14 @@
       </div>
 
       <div class="hero-actions" style="display: flex; flex-direction: column; align-items: center; gap: 9px; width: 100%;">
-        <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20servi%C3%A7os%20de%20desentupimento.%20BV%20Desentupidora%20%E2%80%93%20Desentupidora%20em%20Goi%C3%A2nia" onclick="trackWhatsApp()" class="btn btn-whatsapp btn-hero-whatsapp wa-pulse-strong">
+        <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20servi%C3%A7os%20de%20desentupimento.%20BV%20Desentupidora%20%E2%80%93%20Desentupidora%20em%20Goi%C3%A2nia" class="btn btn-whatsapp btn-hero-whatsapp wa-pulse-strong">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="flex-shrink: 0;">
             <path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Z" stroke="#06210F" stroke-width="1.6" stroke-linejoin="round"></path>
             <path d="M8.5 8.7c.2-.6.6-.6 1-.6h.5c.3 0 .5.1.6.4l.7 1.7c.1.2 0 .5-.1.6l-.6.6c.4 1 1.3 1.9 2.3 2.3l.6-.6c.2-.2.4-.2.6-.1l1.7.7c.3.1.4.3.4.6v.5c0 .4 0 .8-.6 1-1.4.5-3.5-.2-5.3-2s-2.5-3.9-2-5.3Z" fill="#06210F"></path>
           </svg>
           SOLICITAR ATENDIMENTO NO WHATSAPP
         </a>
-        <a href="tel:+5562996051575" onclick="trackCall()" class="btn btn-ligar btn-hero-ligar">
+        <a href="tel:+5562996051575" class="btn btn-ligar btn-hero-ligar">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z" stroke="#FFFFFF" stroke-width="1.7" stroke-linejoin="round"></path></svg>
           LIGAR AGORA
         </a>
@@ -280,14 +336,14 @@
     </div>
 
     <div class="hero-image-wrap">
-      <img src="./assets/4f666d0ca2f396858c8dc2d5559f2a0e.webp" alt="Equipe da BV Desentupidora realizando desentupimento em Goiânia" fetchpriority="high" decoding="async">
+      <img src="./assets/4f666d0ca2f396858c8dc2d5559f2a0e.webp" alt="Equipe da BV Desentupidora realizando desentupimento em Goiânia" width="444" height="295" fetchpriority="high" decoding="async">
     </div>
   </section>
 
   <!-- ============================================================
        2. SINAIS DE ESGOTO ENTUPIDO
   ============================================================= -->
-  <section class="section reveal" style="background: #EAF4FA; display: flex; flex-direction: column;">
+  <section data-section="sinais" class="section reveal" style="background: #EAF4FA; display: flex; flex-direction: column;">
     <div class="section-head">
       <h2 style="color: #071A33;">Esgoto entupido? Veja os sinais de que sua rede precisa de atenção</h2>
     </div>
@@ -325,59 +381,59 @@
     </div>
     <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 22px;">
       <span style="font-size: 15px; font-weight: 800; color: #071A33;">Precisa resolver agora?</span>
-      <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20preciso%20de%20desentupimento%20de%20rede%20de%20esgoto." onclick="trackWhatsApp()" class="btn btn-whatsapp wa-pulse-soft">PRECISO DE ATENDIMENTO</a>
+      <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20preciso%20de%20desentupimento%20de%20rede%20de%20esgoto." class="btn btn-whatsapp wa-pulse-soft">PRECISO DE ATENDIMENTO</a>
     </div>
   </section>
 
   <!-- ============================================================
        3. SEU ESGOTO ENTUPIU? ESTAMOS PRONTOS PARA RESOLVER
   ============================================================= -->
-  <section class="section reveal" style="padding-top: 36px; padding-bottom: 36px; background: linear-gradient(155deg, #0A3D62 0%, #071A33 100%); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px;">
+  <section data-section="esgoto_entupiu" class="section reveal" style="padding-top: 36px; padding-bottom: 36px; background: linear-gradient(155deg, #0A3D62 0%, #071A33 100%); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px;">
     <h2 style="margin: 0; font-size: 22px; font-weight: 800; color: #FFFFFF; max-width: 440px; line-height: 1.25;">Seu esgoto entupiu? Estamos prontos para resolver.</h2>
     <p style="margin: 0; max-width: 460px; font-size: 15px; line-height: 1.5; color: #D7E2EC;">Nossa equipe utiliza equipamentos profissionais para identificar e desobstruir o problema com rapidez e segurança.</p>
-    <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20preciso%20de%20desentupimento%20de%20rede%20de%20esgoto." onclick="trackWhatsApp()" class="btn btn-whatsapp wa-pulse-soft" style="margin-top: 4px;">FALAR COM A EQUIPE</a>
+    <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20preciso%20de%20desentupimento%20de%20rede%20de%20esgoto." class="btn btn-whatsapp wa-pulse-soft" style="margin-top: 4px;">SOLICITAR EQUIPE 24 HORAS</a>
   </section>
 
   <!-- ============================================================
        4. SERVIÇOS
   ============================================================= -->
-  <section id="servicos" class="section reveal" style="background: #FFFFFF; display: flex; flex-direction: column;">
+  <section data-section="servicos" id="servicos" class="section reveal" style="background: #FFFFFF; display: flex; flex-direction: column;">
     <div class="section-head">
       <h2 style="color: #071A33;">Serviços de desentupimento em Goiânia e região</h2>
       <p style="color: #4A5A66;">Atendimento para residências, comércios, condomínios e empresas em Goiânia e região.</p>
     </div>
     <div class="grid-3">
-      <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20preciso%20de%20desentupimento%20de%20vaso%20sanit%C3%A1rio." onclick="trackWhatsApp()" class="info-card">
+      <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20preciso%20de%20desentupimento%20de%20vaso%20sanit%C3%A1rio." class="info-card">
         <div class="info-icon tone-red"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 10h10v3a5 5 0 0 1-5 5 5 5 0 0 1-5-5v-3Z" stroke="#E53935" stroke-width="1.6" stroke-linejoin="round"></path><path d="M7 10V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3" stroke="#E53935" stroke-width="1.6"></path><path d="M9 21h6" stroke="#E53935" stroke-width="1.6" stroke-linecap="round"></path></svg></div>
         <h3>Vaso Sanitário</h3>
         <p>Desentupimento de vasos sanitários com atendimento profissional.</p>
         <span class="card-cta">Saiba mais →</span>
       </a>
-      <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20preciso%20de%20desentupimento%20de%20pia." onclick="trackWhatsApp()" class="info-card">
+      <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20preciso%20de%20desentupimento%20de%20pia." class="info-card">
         <div class="info-icon tone-red"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 11h16" stroke="#E53935" stroke-width="1.6" stroke-linecap="round"></path><path d="M4 11a8 3.2 0 0 0 16 0" stroke="#E53935" stroke-width="1.6"></path><path d="M12 11v4a2 2 0 0 0 2 2h1" stroke="#E53935" stroke-width="1.6" stroke-linecap="round"></path><path d="M9 6v2M9 3.5v.1" stroke="#E53935" stroke-width="1.6" stroke-linecap="round"></path></svg></div>
         <h3>Pia</h3>
         <p>Desentupimento de pias de cozinha e banheiro.</p>
         <span class="card-cta">Saiba mais →</span>
       </a>
-      <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20preciso%20de%20desentupimento%20de%20ralo." onclick="trackWhatsApp()" class="info-card">
+      <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20preciso%20de%20desentupimento%20de%20ralo." class="info-card">
         <div class="info-icon tone-red"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8" stroke="#E53935" stroke-width="1.6"></circle><path d="M8 9l8 6M16 9l-8 6" stroke="#E53935" stroke-width="1.6" stroke-linecap="round"></path></svg></div>
         <h3>Ralos</h3>
         <p>Identificação e desobstrução de ralos entupidos.</p>
         <span class="card-cta">Saiba mais →</span>
       </a>
-      <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20preciso%20de%20limpeza%20de%20caixa%20de%20gordura." onclick="trackWhatsApp()" class="info-card">
+      <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20preciso%20de%20limpeza%20de%20caixa%20de%20gordura." class="info-card">
         <div class="info-icon tone-red"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="8" width="16" height="11" rx="1.5" stroke="#E53935" stroke-width="1.6"></rect><path d="M4 8l3-3h10l3 3" stroke="#E53935" stroke-width="1.6" stroke-linejoin="round"></path></svg></div>
         <h3>Caixa de Gordura</h3>
         <p>Desobstrução e atendimento para problemas em caixas de gordura.</p>
         <span class="card-cta">Saiba mais →</span>
       </a>
-      <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20preciso%20de%20desentupimento%20de%20rede%20pluvial." onclick="trackWhatsApp()" class="info-card">
+      <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20preciso%20de%20desentupimento%20de%20rede%20pluvial." class="info-card">
         <div class="info-icon tone-red"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 15c0-5 3-9 8-9s8 4 8 9" stroke="#E53935" stroke-width="1.6" stroke-linecap="round"></path><path d="M4 15h16v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3Z" stroke="#E53935" stroke-width="1.6" stroke-linejoin="round"></path></svg></div>
         <h3>Rede Pluvial</h3>
         <p>Desobstrução de redes para escoamento de água da chuva.</p>
         <span class="card-cta">Saiba mais →</span>
       </a>
-      <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20preciso%20de%20hidrojateamento." onclick="trackWhatsApp()" class="info-card">
+      <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20preciso%20de%20hidrojateamento." class="info-card">
         <div class="info-icon tone-red"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 18c4-1 6-4 6-8 4 1 6 3 6 6M16 8l4-4M16 12l3-1M13 5l1-3" stroke="#E53935" stroke-width="1.6" stroke-linecap="round"></path></svg></div>
         <h3>Hidro&shy;jateamento</h3>
         <p>Equipamento de alta pressão para casos que exigem limpeza mais profunda.</p>
@@ -389,7 +445,7 @@
   <!-- ============================================================
        5. TIPOS DE IMÓVEIS
   ============================================================= -->
-  <section class="section reveal" style="background: #EAF4FA; display: flex; flex-direction: column;">
+  <section data-section="tipos_imoveis" class="section reveal" style="background: #EAF4FA; display: flex; flex-direction: column;">
     <div class="section-head">
       <h2 style="color: #071A33;">Atendimento para diferentes tipos de imóveis</h2>
     </div>
@@ -420,7 +476,7 @@
   <!-- ============================================================
        6. POR QUE ESCOLHER A BV
   ============================================================= -->
-  <section class="section reveal" style="background: #071A33; display: flex; flex-direction: column;">
+  <section data-section="por_que_bv" class="section reveal" style="background: #071A33; display: flex; flex-direction: column;">
     <div class="section-head">
       <h2 style="color: #FFFFFF;">Por que escolher a BV Desentupidora?</h2>
     </div>
@@ -451,11 +507,11 @@
   <!-- ============================================================
        7. COMO FUNCIONA
   ============================================================= -->
-  <section class="section reveal" style="background: #FFFFFF; display: flex; flex-direction: column;">
+  <section data-section="como_funciona" class="section reveal" style="background: #FFFFFF; display: flex; flex-direction: column;">
     <div class="section-head">
       <h2 style="color: #071A33;">Como funciona o atendimento?</h2>
     </div>
-    <div class="grid-3" style="max-width: 940px; margin: 0 auto; width: 100%;">
+    <div class="grid-3 steps-grid" style="max-width: 940px; margin: 0 auto; width: 100%;">
       <div class="step-card">
         <div class="step-num">1</div>
         <div><h3>Chame no WhatsApp</h3><p>Envie sua localização e explique o problema.</p></div>
@@ -474,14 +530,45 @@
       </div>
     </div>
     <div style="display: flex; justify-content: center; margin-top: 22px;">
-      <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20servi%C3%A7os%20de%20desentupimento.%20BV%20Desentupidora%20%E2%80%93%20Desentupidora%20em%20Goi%C3%A2nia" onclick="trackWhatsApp()" class="btn btn-whatsapp wa-pulse-soft">FALAR COM A EQUIPE</a>
+      <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20servi%C3%A7os%20de%20desentupimento.%20BV%20Desentupidora%20%E2%80%93%20Desentupidora%20em%20Goi%C3%A2nia" class="btn btn-whatsapp wa-pulse-soft">SOLICITAR ATENDIMENTO</a>
     </div>
+  </section>
+
+  <!-- ============================================================
+       7B. ANTES E DEPOIS — fotos reais de serviços da BV
+  ============================================================= -->
+  <section id="antes-e-depois" data-section="antes_depois" class="section reveal" style="background: #071A33; display: flex; flex-direction: column;">
+    <div class="section-head">
+      <span class="ba-eyebrow">Provas reais do nosso trabalho</span>
+      <h2 style="color: #FFFFFF;">Antes e depois: serviços reais</h2>
+      <p style="color: #D7E2EC;">Fotos de atendimentos feitos pela equipe da BV Desentupidora.</p>
+    </div>
+    <div class="ba-track" id="ba-track" role="region" aria-label="Fotos de antes e depois" tabindex="0">
+        <figure class="ba-card">
+          <img src="./assets/desentupimento-caixa-esgoto-antes-depois-goiania-mobile.webp" srcset="./assets/desentupimento-caixa-esgoto-antes-depois-goiania-mobile.webp 768w, ./assets/desentupimento-caixa-esgoto-antes-depois-goiania.webp 1200w" sizes="(min-width: 1025px) 500px, (min-width: 641px) 45vw, 86vw" width="768" height="512" loading="lazy" decoding="async" alt="Antes e depois de desentupimento de caixa de esgoto em Goiânia – BV Desentupidora">
+          <figcaption><strong>Caixa de esgoto</strong><span>Resíduos removidos e escoamento liberado.</span></figcaption>
+        </figure>
+        <figure class="ba-card">
+          <img src="./assets/desentupimento-ralo-antes-depois-goiania-mobile.webp" srcset="./assets/desentupimento-ralo-antes-depois-goiania-mobile.webp 768w, ./assets/desentupimento-ralo-antes-depois-goiania.webp 1200w" sizes="(min-width: 1025px) 500px, (min-width: 641px) 45vw, 86vw" width="768" height="512" loading="lazy" decoding="async" alt="Antes e depois de desentupimento de ralo em Goiânia – BV Desentupidora">
+          <figcaption><strong>Ralo entupido</strong><span>Desobstrução com máquina de mola e água voltando a escoar.</span></figcaption>
+        </figure>
+        <figure class="ba-card">
+          <img src="./assets/limpeza-caixa-gordura-antes-depois-goiania-mobile.webp" srcset="./assets/limpeza-caixa-gordura-antes-depois-goiania-mobile.webp 768w, ./assets/limpeza-caixa-gordura-antes-depois-goiania.webp 1200w" sizes="(min-width: 1025px) 500px, (min-width: 641px) 45vw, 86vw" width="768" height="512" loading="lazy" decoding="async" alt="Antes e depois de limpeza de caixa de gordura em Goiânia – BV Desentupidora">
+          <figcaption><strong>Caixa de gordura</strong><span>Gordura e resíduos retirados, caixa limpa e funcionando.</span></figcaption>
+        </figure>
+        <figure class="ba-card">
+          <img src="./assets/desentupimento-caixa-gordura-antes-depois-goiania-mobile.webp" srcset="./assets/desentupimento-caixa-gordura-antes-depois-goiania-mobile.webp 768w, ./assets/desentupimento-caixa-gordura-antes-depois-goiania.webp 1200w" sizes="(min-width: 1025px) 500px, (min-width: 641px) 45vw, 86vw" width="768" height="512" loading="lazy" decoding="async" alt="Antes e depois de desentupimento de caixa de gordura em Goiânia – BV Desentupidora">
+          <figcaption><strong>Caixa de gordura da lavanderia</strong><span>Água parada eliminada e escoamento normalizado.</span></figcaption>
+        </figure>
+    </div>
+    <div class="carousel-dots ba-dots" id="ba-dots" aria-hidden="true"><span class="carousel-dot active"></span><span class="carousel-dot"></span><span class="carousel-dot"></span><span class="carousel-dot"></span></div>
+    <p class="ba-hint" aria-hidden="true">Arraste para o lado para ver mais fotos →</p>
   </section>
 
   <!-- ============================================================
        8. AVALIAÇÕES — dados reais, carrossel
   ============================================================= -->
-  <section class="section reveal" style="background: #EAF4FA; display: flex; flex-direction: column;">
+  <section data-section="avaliacoes" class="section reveal" style="background: #EAF4FA; display: flex; flex-direction: column;">
     <div class="section-head">
       <span style="display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 800; letter-spacing: 0.03em; text-transform: uppercase; color: #4A5A66;">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21.8 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.5a4.7 4.7 0 0 1-2 3.1v2.6h3.3c1.9-1.8 3-4.4 3-7.6Z" fill="#4285F4"></path><path d="M12 22c2.7 0 5-.9 6.7-2.4l-3.3-2.5c-.9.6-2 1-3.4 1a5.9 5.9 0 0 1-5.6-4.1H3v2.6A10 10 0 0 0 12 22Z" fill="#34A853"></path><path d="M6.4 14a6 6 0 0 1 0-3.9V7.4H3a10 10 0 0 0 0 9.1l3.4-2.6Z" fill="#FBBC05"></path><path d="M12 6a5.4 5.4 0 0 1 3.8 1.5l2.9-2.9A9.6 9.6 0 0 0 12 2a10 10 0 0 0-9 5.4l3.4 2.6A5.9 5.9 0 0 1 12 6Z" fill="#EA4335"></path></svg>
@@ -522,19 +609,19 @@
   <!-- ============================================================
        9. DESENTUPIDORA EM GOIÂNIA E REGIÃO (GEO)
   ============================================================= -->
-  <section id="atendimento" class="section reveal" style="padding-top: 44px; padding-bottom: 44px; background: #071A33; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 11px;">
+  <section data-section="goiania_regiao" id="atendimento" class="section reveal" style="padding-top: 44px; padding-bottom: 44px; background: #071A33; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 11px;">
     <div style="width: 42px; height: 42px; border-radius: 50%; background: rgba(255,255,255,0.13); border: 1px solid rgba(255,255,255,0.28); display: flex; align-items: center; justify-content: center;">
       <svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21c-4 0-6-2.5-6-6 0-4 6-10 6-10s6 6 6 10c0 3.5-2 6-6 6Z" stroke="#FFFFFF" stroke-width="1.7" stroke-linejoin="round"></path><circle cx="12" cy="11" r="2" stroke="#FFFFFF" stroke-width="1.7"></circle></svg>
     </div>
     <h2 style="margin: 0; font-size: 22px; font-weight: 800; color: #FFFFFF;">Desentupidora em Goiânia e região</h2>
-    <p style="margin: 0; max-width: 480px; font-size: 15px; line-height: 1.55; color: #D7E2EC;">Atendimento para desentupimento de esgoto, pia, vaso sanitário, ralos, caixa de gordura, rede pluvial e hidrojateamento em Goiânia e região.</p>
-    <a href="https://wa.me/5562996051575?text=Ol%C3%A1!%20Preciso%20de%20um%20desentupimento.%20Vou%20enviar%20minha%20localiza%C3%A7%C3%A3o%20para%20voc%C3%AAs." onclick="trackWhatsApp()" class="btn btn-whatsapp wa-pulse-soft" style="margin-top: 4px;">FALAR COM A EQUIPE</a>
+    <p style="margin: 0; max-width: 480px; font-size: 15px; line-height: 1.55; color: #D7E2EC;">Atendimento 24 horas para desentupimento de esgoto, pia, vaso sanitário, ralos, caixa de gordura, rede pluvial e hidrojateamento em <strong style="color: #FFFFFF;">Goiânia, Aparecida de Goiânia, Anápolis</strong> e região.</p>
+    <a href="https://wa.me/5562996051575?text=Ol%C3%A1!%20Preciso%20de%20um%20desentupimento.%20Vou%20enviar%20minha%20localiza%C3%A7%C3%A3o%20para%20voc%C3%AAs." class="btn btn-whatsapp wa-pulse-soft" style="margin-top: 4px;">FALAR COM A EQUIPE</a>
   </section>
 
   <!-- ============================================================
        10. FAQ
   ============================================================= -->
-  <section class="section reveal" style="background: #FFFFFF; display: flex; flex-direction: column;">
+  <section data-section="faq" class="section reveal" style="background: #FFFFFF; display: flex; flex-direction: column;">
     <div class="section-head">
       <h2 style="color: #071A33;">Perguntas frequentes</h2>
     </div>
@@ -559,6 +646,13 @@
           <span class="faq-chevron" style="flex-shrink: 0; display: flex; transition: transform 0.15s ease;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#071A33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
         </button>
         <div class="faq-answer" style="padding: 0 16px 18px; font-size: 15.5px; line-height: 1.55; color: #4A5A66;">Sim. Realizamos desentupimento de redes de esgoto e outros pontos de obstrução.</div>
+      </div>
+      <div class="faq-item" style="border: 1px solid #E7EBEF; border-radius: 14px; overflow: hidden; background: #EAF4FA;">
+        <button class="faq-btn" aria-expanded="false" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px; background: transparent; border: none; cursor: pointer; text-align: left; font-family: inherit; min-height: 48px;">
+          <span style="font-size: 15.5px; font-weight: 700; color: #071A33;">O que fazer quando o esgoto volta pelo ralo?</span>
+          <span class="faq-chevron" style="flex-shrink: 0; display: flex; transition: transform 0.15s ease;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#071A33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        </button>
+        <div class="faq-answer" style="padding: 0 16px 18px; font-size: 15.5px; line-height: 1.55; color: #4A5A66;">Evite usar pias, chuveiro, máquina de lavar e descarga até a rede ser avaliada, porque isso aumenta o retorno. Esgoto voltando pelo ralo normalmente indica obstrução na rede de esgoto, na caixa de gordura ou na caixa de inspeção. Chame a BV Desentupidora pelo WhatsApp para avaliar e desobstruir.</div>
       </div>
       <div class="faq-item" style="border: 1px solid #E7EBEF; border-radius: 14px; overflow: hidden; background: #EAF4FA;">
         <button class="faq-btn" aria-expanded="false" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px; background: transparent; border: none; cursor: pointer; text-align: left; font-family: inherit; min-height: 48px;">
@@ -593,7 +687,7 @@
           <span style="font-size: 15.5px; font-weight: 700; color: #071A33;">Vocês atendem Goiânia e região?</span>
           <span class="faq-chevron" style="flex-shrink: 0; display: flex; transition: transform 0.15s ease;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="#071A33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
         </button>
-        <div class="faq-answer" style="padding: 0 16px 18px; font-size: 15.5px; line-height: 1.55; color: #4A5A66;">Sim. A BV Desentupidora atende Goiânia e região.</div>
+        <div class="faq-answer" style="padding: 0 16px 18px; font-size: 15.5px; line-height: 1.55; color: #4A5A66;">Sim. A BV Desentupidora atende Goiânia, Aparecida de Goiânia, Anápolis e região.</div>
       </div>
     </div>
   </section>
@@ -601,12 +695,12 @@
   <!-- ============================================================
        11. CTA FINAL
   ============================================================= -->
-  <section class="section reveal" style="padding-top: 50px; padding-bottom: 50px; background: #071A33; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center;">
+  <section data-section="cta_final" class="section reveal" style="padding-top: 50px; padding-bottom: 50px; background: #071A33; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center;">
     <h2 style="margin: 0; font-size: 24px; font-weight: 800; color: #FFFFFF; max-width: 400px; line-height: 1.25;">Esgoto entupido? Não espere o problema piorar.</h2>
     <p style="margin: 0; font-size: 15px; color: #D7E2EC;">Fale com a BV Desentupidora e solicite atendimento pelo WhatsApp.</p>
     <div class="final-actions" style="display: flex; flex-direction: column; align-items: center; gap: 9px; width: 100%; margin-top: 4px;">
-      <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20preciso%20de%20um%20atendimento%20urgente%20para%20desentupimento." onclick="trackWhatsApp()" class="btn btn-whatsapp btn-hero-whatsapp wa-pulse-strong">CHAMAR NO WHATSAPP</a>
-      <a href="tel:+5562996051575" onclick="trackCall()" class="btn btn-ligar btn-hero-ligar">
+      <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20preciso%20de%20um%20atendimento%20urgente%20para%20desentupimento." class="btn btn-whatsapp btn-hero-whatsapp wa-pulse-strong">CHAMAR NO WHATSAPP</a>
+      <a href="tel:+5562996051575" class="btn btn-ligar btn-hero-ligar">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z" stroke="#FFFFFF" stroke-width="1.7" stroke-linejoin="round"></path></svg>
         LIGAR AGORA
       </a>
@@ -616,19 +710,19 @@
   <!-- ============================================================
        12. RODAPÉ
   ============================================================= -->
-  <footer class="site-footer" style="width: 100%; padding: 24px 18px; background: #0B1620; display: flex; flex-direction: column; gap: 14px;">
+  <footer class="site-footer" data-section="rodape" style="width: 100%; padding: 24px 18px; background: #0B1620; display: flex; flex-direction: column; gap: 14px;">
     <div class="footer-row" style="display: flex; flex-direction: column; gap: 16px;">
       <div style="display: flex; flex-direction: column; gap: 8px; max-width: 300px;">
         <div style="display: flex; align-items: center; gap: 10px;">
-          <img src="./assets/faa457ff9193e9b302136320bb079742.webp" alt="Logo BV Desentupidora" width="28" height="28" style="width: 28px; height: 28px; object-fit: contain;">
+          <img src="./assets/logo-bv-desentupidora.webp" alt="Logo BV Desentupidora" width="30" height="32" loading="lazy" style="width: 30px; height: 32px; object-fit: contain;">
           <span style="font-size: 15px; font-weight: 800; color: #FFFFFF;">BV Desentupidora</span>
         </div>
         <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #9BAAB6;">Desentupimento de esgoto, pia, vaso, ralos, caixa de gordura, rede pluvial e hidrojateamento.</p>
       </div>
       <div style="display: flex; flex-direction: column; gap: 8px;">
         <span style="font-size: 13px; font-weight: 700; color: #FFFFFF;">Contato</span>
-        <a href="tel:+5562996051575" onclick="trackCall()" style="font-size: 13px; color: #9BAAB6;">(62) 99605-1575</a>
-        <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20servi%C3%A7os%20de%20desentupimento.%20BV%20Desentupidora%20%E2%80%93%20Desentupidora%20em%20Goi%C3%A2nia" onclick="trackWhatsApp()" style="font-size: 13px; color: #9BAAB6;">WhatsApp</a>
+        <a href="tel:+5562996051575" style="font-size: 13px; color: #9BAAB6;">(62) 99605-1575</a>
+        <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20servi%C3%A7os%20de%20desentupimento.%20BV%20Desentupidora%20%E2%80%93%20Desentupidora%20em%20Goi%C3%A2nia" style="font-size: 13px; color: #9BAAB6;">WhatsApp</a>
         <span style="font-size: 13px; color: #9BAAB6;">Goiânia e região · Atendimento 24 horas</span>
       </div>
       <div style="display: flex; flex-direction: column; gap: 8px;">
@@ -636,7 +730,7 @@
         <a href="#top" style="font-size: 13px; color: #9BAAB6;">Início</a>
         <a href="#servicos" style="font-size: 13px; color: #9BAAB6;">Serviços</a>
         <a href="#atendimento" style="font-size: 13px; color: #9BAAB6;">Atendimento</a>
-        <a href="/privacidade/" style="font-size: 13px; color: #9BAAB6;">Privacidade</a>
+        <a href="./privacidade/" style="font-size: 13px; color: #9BAAB6;">Privacidade</a>
       </div>
     </div>
     <div style="border-top: 1px solid #1D2A35; padding-top: 12px; font-size: 12px; color: #6B7B87;">
@@ -649,7 +743,7 @@
        BOTÃO FLUTUANTE WHATSAPP (somente desktop — no mobile já existe
        WhatsApp no header e na barra fixa)
   ============================================================= -->
-  <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20servi%C3%A7os%20de%20desentupimento.%20BV%20Desentupidora%20%E2%80%93%20Desentupidora%20em%20Goi%C3%A2nia" onclick="trackWhatsApp()" class="wa-float" aria-label="Chamar no WhatsApp">
+  <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20servi%C3%A7os%20de%20desentupimento.%20BV%20Desentupidora%20%E2%80%93%20Desentupidora%20em%20Goi%C3%A2nia" data-section="botao_flutuante" class="wa-float" aria-label="Chamar no WhatsApp">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Z" stroke="#06210F" stroke-width="1.6" stroke-linejoin="round"></path>
       <path d="M8.5 8.7c.2-.6.6-.6 1-.6h.5c.3 0 .5.1.6.4l.7 1.7c.1.2 0 .5-.1.6l-.6.6c.4 1 1.3 1.9 2.3 2.3l.6-.6c.2-.2.4-.2.6-.1l1.7.7c.3.1.4.3.4.6v.5c0 .4 0 .8-.6 1-1.4.5-3.5-.2-5.3-2s-2.5-3.9-2-5.3Z" fill="#06210F"></path>
@@ -659,12 +753,12 @@
   <!-- ============================================================
        BARRA FIXA INFERIOR (mobile) — Ligar 45% / WhatsApp 55%
   ============================================================= -->
-  <div class="sticky-bar" style="position: fixed; left: 0; right: 0; bottom: 0; z-index: 998; max-width: 100vw; overflow: hidden; background: #FFFFFF; border-top: 1px solid #E7EBEF; padding: 8px 12px calc(8px + env(safe-area-inset-bottom)); box-shadow: 0 -6px 18px rgba(0,0,0,0.07); gap: 8px;">
-    <a href="tel:+5562996051575" onclick="trackCall()" class="btn btn-ligar" style="flex: 0.45; width: 100%; max-width: none; padding: 11px 8px; font-size: 13.5px; min-height: 46px; gap: 6px; margin: 0; box-shadow: none;">
+  <div class="sticky-bar" data-section="barra_fixa" style="position: fixed; left: 0; right: 0; bottom: 0; z-index: 998; max-width: 100vw; overflow: hidden; background: #FFFFFF; border-top: 1px solid #E7EBEF; padding: 8px 12px calc(8px + env(safe-area-inset-bottom)); box-shadow: 0 -6px 18px rgba(0,0,0,0.07); gap: 8px;">
+    <a href="tel:+5562996051575" class="btn btn-ligar" style="flex: 0.45; width: 100%; max-width: none; padding: 11px 8px; font-size: 13.5px; min-height: 46px; gap: 6px; margin: 0; box-shadow: none;">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z" stroke="#FFFFFF" stroke-width="1.7" stroke-linejoin="round"></path></svg>
       Ligar
     </a>
-    <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20servi%C3%A7os%20de%20desentupimento.%20BV%20Desentupidora%20%E2%80%93%20Desentupidora%20em%20Goi%C3%A2nia" onclick="trackWhatsApp()" class="btn btn-whatsapp wa-pulse-soft" style="flex: 0.55; width: 100%; max-width: none; padding: 11px 8px; font-size: 14.5px; font-weight: 800; min-height: 46px; gap: 6px; margin: 0;">
+    <a href="https://wa.me/5562996051575?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20servi%C3%A7os%20de%20desentupimento.%20BV%20Desentupidora%20%E2%80%93%20Desentupidora%20em%20Goi%C3%A2nia" class="btn btn-whatsapp wa-pulse-soft" style="flex: 0.55; width: 100%; max-width: none; padding: 11px 8px; font-size: 14.5px; font-weight: 800; min-height: 46px; gap: 6px; margin: 0;">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Z" stroke="#06210F" stroke-width="1.6" stroke-linejoin="round"></path><path d="M8.5 8.7c.2-.6.6-.6 1-.6h.5c.3 0 .5.1.6.4l.7 1.7c.1.2 0 .5-.1.6l-.6.6c.4 1 1.3 1.9 2.3 2.3l.6-.6c.2-.2.4-.2.6-.1l1.7.7c.3.1.4.3.4.6v.5c0 .4 0 .8-.6 1-1.4.5-3.5-.2-5.3-2s-2.5-3.9-2-5.3Z" fill="#06210F"></path></svg>
       WhatsApp
     </a>
@@ -673,7 +767,7 @@
   <!-- ============================================================
        POPUP DE OFERTA — 20% de desconto, só se ainda não converteu
   ============================================================= -->
-  <div class="popup-backdrop" id="offer-popup" onclick="if(event.target===this) closePopup()" style="display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(8,16,24,0.68); align-items: center; justify-content: center; padding: 14px;">
+  <div class="popup-backdrop" id="offer-popup" data-section="popup" onclick="if(event.target===this) closePopup()" style="display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(8,16,24,0.68); align-items: center; justify-content: center; padding: 14px;">
     <div class="popup-card" style="position: relative; width: 88%; max-width: 340px; max-height: calc(100vh - 28px); overflow-y: auto; background: linear-gradient(165deg, #0F4C81 0%, #071B2E 100%); border-radius: 22px; overflow-x: hidden; box-shadow: 0 24px 60px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.08); display: flex; flex-direction: column; align-items: center; text-align: center;">
       <button onclick="closePopup()" aria-label="Fechar" style="position: absolute; top: 10px; right: 10px; width: 28px; height: 28px; border-radius: 50%; border: none; background: rgba(255,255,255,0.16); cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 2;">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path></svg>
@@ -715,7 +809,7 @@
 
       <p style="margin: 12px 18px 0; font-size: 12.5px; font-weight: 800; color: #FFFFFF; text-align: center; line-height: 1.3;">Seu problema de entupimento não precisa esperar.</p>
 
-      <a href="https://wa.me/5562996051575?text=Ol%C3%A1!%20Vi%20a%20oferta%20de%2020%25%20de%20desconto%20no%20site%20e%20gostaria%20de%20solicitar%20um%20atendimento." onclick="trackPopupWhatsApp()" class="btn btn-whatsapp wa-pulse-strong" style="width: calc(100% - 36px); max-width: none; margin: 10px 18px 18px; font-size: 15px; font-weight: 800; min-height: 50px; box-shadow: 0 8px 20px rgba(6,33,15,0.35);">
+      <a href="https://wa.me/5562996051575?text=Ol%C3%A1!%20Vi%20a%20oferta%20de%2020%25%20de%20desconto%20no%20site%20e%20gostaria%20de%20solicitar%20um%20atendimento." class="btn btn-whatsapp wa-pulse-strong" style="width: calc(100% - 36px); max-width: none; margin: 10px 18px 18px; font-size: 15px; font-weight: 800; min-height: 50px; box-shadow: 0 8px 20px rgba(6,33,15,0.35);">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Z" stroke="#06210F" stroke-width="1.6" stroke-linejoin="round"></path><path d="M8.5 8.7c.2-.6.6-.6 1-.6h.5c.3 0 .5.1.6.4l.7 1.7c.1.2 0 .5-.1.6l-.6.6c.4 1 1.3 1.9 2.3 2.3l.6-.6c.2-.2.4-.2.6-.1l1.7.7c.3.1.4.3.4.6v.5c0 .4 0 .8-.6 1-1.4.5-3.5-.2-5.3-2s-2.5-3.9-2-5.3Z" fill="#06210F"></path></svg>
         Quero meu desconto
       </a>
@@ -727,25 +821,56 @@
 <script>
 /* =========================================================================
    BV DESENTUPIDORA — LANDING PAGE (MOBILE-FIRST) — JS nativo, sem framework.
-   trackEvent(): stub pronto pra GTM/GA4/Meta Pixel — eventos: whatsapp_click,
-   phone_click, cta_click, popup_open, popup_whatsapp_click. Um evento por
-   clique, sem duplicar.
+   trackEvent(): envia para dataLayer (GTM/GA4) e Meta Pixel — eventos:
+   whatsapp_click, phone_click, popup_open, popup_whatsapp_click.
    ========================================================================= */
 (function () {
   'use strict';
 
-  function trackEvent(name) {
-    try { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: name }); } catch (e) {}
-    try { if (typeof window.fbq === 'function') window.fbq('trackCustom', name); } catch (e) {}
+  /* Envia o evento para o dataLayer (GTM/GA4/Google Ads) e para o Meta Pixel,
+     se estiverem instalados. Sem GTM/Pixel, não faz nada (não quebra o site). */
+  function trackEvent(name, params) {
+    var data = { event: name };
+    if (params) { for (var k in params) { if (Object.prototype.hasOwnProperty.call(params, k)) data[k] = params[k]; } }
+    try { window.dataLayer = window.dataLayer || []; window.dataLayer.push(data); } catch (e) {}
+    try { if (typeof window.fbq === 'function') window.fbq('trackCustom', name, params || {}); } catch (e) {}
   }
 
   function markConverted() {
     try { sessionStorage.setItem('bv_converted', '1'); } catch (e) {}
     hidePopup();
   }
-  window.trackWhatsApp = function () { trackEvent('whatsapp_click'); trackEvent('cta_click'); markConverted(); };
-  window.trackCall = function () { trackEvent('phone_click'); trackEvent('cta_click'); markConverted(); };
-  window.trackPopupWhatsApp = function () { trackEvent('popup_whatsapp_click'); trackEvent('whatsapp_click'); markConverted(); };
+
+  function buttonText(a) {
+    var t = a.getAttribute('data-cta') || a.textContent || a.getAttribute('aria-label') || '';
+    return t.replace(/\s+/g, ' ').trim().slice(0, 80);
+  }
+  function buttonLocation(a) {
+    var box = a.closest('[data-section]');
+    return box ? box.getAttribute('data-section') : 'pagina';
+  }
+
+  /* Um único ouvinte para todos os links de WhatsApp e telefone.
+     Eventos: whatsapp_click, phone_click e (no pop-up) popup_whatsapp_click.
+     Parâmetros: button_text (ex.: "SOLICITAR EQUIPE 24 HORAS"),
+     button_location (seção da página) e link_url. */
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    var isWhatsApp = href.indexOf('wa.me/') !== -1;
+    var isPhone = href.indexOf('tel:') === 0;
+    if (!isWhatsApp && !isPhone) return;
+    var params = { button_text: buttonText(a), button_location: buttonLocation(a), link_url: href.split('?')[0] };
+    if (isWhatsApp && a.closest('#offer-popup')) trackEvent('popup_whatsapp_click', params);
+    trackEvent(isWhatsApp ? 'whatsapp_click' : 'phone_click', params);
+    markConverted();
+  }, true);
+
+  /* Mantidas por compatibilidade (não são mais chamadas no HTML). */
+  window.trackWhatsApp = function () {};
+  window.trackCall = function () {};
+  window.trackPopupWhatsApp = function () {};
 
   /* =====================  POPUP + CONTADOR  =====================
      Aparece ~20s depois de carregar, só se ainda não converteu nem fechou.
@@ -945,6 +1070,26 @@
   }
 
   bvStartCarousel('reviews-track', 'reviews-scroller', 'reviews-dots', 3);
+
+  /* =====================  ANTES E DEPOIS — bolinhas do carrossel (celular)  ===================== */
+  (function () {
+    var track = document.getElementById('ba-track');
+    var dotsWrap = document.getElementById('ba-dots');
+    if (!track || !dotsWrap) return;
+    var dots = Array.prototype.slice.call(dotsWrap.children);
+    var frame = 0;
+    track.addEventListener('scroll', function () {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(function () {
+        var cards = track.children, base = track.getBoundingClientRect().left, best = 0, bestDist = Infinity;
+        for (var i = 0; i < cards.length; i++) {
+          var d = Math.abs(cards[i].getBoundingClientRect().left - base - 21);
+          if (d < bestDist) { bestDist = d; best = i; }
+        }
+        dots.forEach(function (dot, i) { dot.classList.toggle('active', i === best); });
+      });
+    }, { passive: true });
+  })();
 })();
 </script>
 </body>
