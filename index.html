@@ -873,7 +873,7 @@
   window.trackPopupWhatsApp = function () {};
 
   /* =====================  POPUP + CONTADOR  =====================
-     Aparece ~20s depois de carregar, só se ainda não converteu nem fechou.
+     Aparece ~14s depois de carregar, só se ainda não converteu nem fechou.
      Prazo (20min) salvo em sessionStorage — atualizar a página não reinicia
      o contador, pra não parecer uma contagem falsa. */
   var popupEl = document.getElementById('offer-popup');
@@ -899,7 +899,7 @@
       if (converted || dismissed || !popupEl) return;
       popupEl.style.display = 'flex';
       trackEvent('popup_open');
-    }, 20000);
+    }, 14000);
   }
 
   var TOTAL_MS = 20 * 60 * 1000;
