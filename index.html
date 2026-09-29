@@ -7,6 +7,7 @@
 <meta name="description" content="Desentupidora em Goiânia e região 24 horas. Desentupimento de esgoto, pia, vaso, ralos, caixa de gordura, rede pluvial e hidrojateamento. Solicite atendimento.">
 <meta name="robots" content="noindex, follow">
 <meta name="theme-color" content="#071A33">
+<link rel="preload" href="./assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <script>
   /* GOOGLE TAG MANAGER — para ativar, coloque o ID do contêiner entre as aspas
      (ex.: 'GTM-ABC1234'). Vazio = nada é carregado. O GA4, o Google Ads e o
@@ -21,7 +22,7 @@
   })(window, document, window.BV_GTM_ID);
 </script>
 <link rel="canonical" href="https://bvdesentupidora.com.br/">
-<link rel="icon" href="./assets/faa457ff9193e9b302136320bb079742.webp" type="image/webp">
+<link rel="icon" href="./assets/favicon-48.png" type="image/png" sizes="48x48">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="BV Desentupidora">
@@ -91,23 +92,28 @@
   ]
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 <style>
   /* =========================================================================
      MOBILE-FIRST. Base (fora de media query) = celular. 641px = tablet,
      1025px = desktop, apenas ampliam por cima da base mobile.
      ========================================================================= */
+
+  /* Fonte Inter hospedada no próprio site (antes vinha do Google Fonts, que
+     travava a primeira pintura). Um arquivo variável, subconjunto latino,
+     pesos 400–800. "Inter Fallback" = Arial com as medidas da Inter, para o
+     texto não pular quando a fonte termina de carregar. */
+  @font-face { font-family: 'Inter'; font-style: normal; font-weight: 400 800; font-display: swap; src: url(./assets/fonts/inter-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+  @font-face { font-family: 'Inter Fallback'; src: local('Arial'); size-adjust: 107.1%; ascent-override: 90.4%; descent-override: 22.5%; line-gap-override: 0%; }
+
   * { box-sizing: border-box; }
-  body { margin: 0; font-family: 'Inter', system-ui, sans-serif; background: #FFFFFF; color: #071A33; -webkit-tap-highlight-color: transparent; }
+  body { margin: 0; font-family: 'Inter', 'Inter Fallback', system-ui, sans-serif; background: #FFFFFF; color: #071A33; -webkit-tap-highlight-color: transparent; }
   a { text-decoration: none; color: inherit; }
   h1, h2, h3 { font-family: inherit; }
   button { font-family: inherit; }
   img { max-width: 100%; }
 
   /* ===================== BOTÕES ===================== */
-  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 12px; padding: 13px 22px; font-weight: 700; font-size: 15px; border: none; cursor: pointer; width: auto; min-height: 48px; max-width: 300px; margin: 0 auto; transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease; }
+  .btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 12px; padding: 13px 22px; font-weight: 700; font-size: 15px; border: none; cursor: pointer; width: auto; min-height: 48px; max-width: 300px; margin: 0 auto; transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease; }
   .btn:focus-visible { outline: 3px solid #071A33; outline-offset: 2px; }
   .btn:active { transform: scale(0.98); }
   .btn-whatsapp { background: #25D366; color: #06210F; }
@@ -119,19 +125,30 @@
   }
 
   /* Pulso profissional do WhatsApp — escala sutil + glow, sem brilho passando pela superfície.
-     2 níveis de intensidade: forte (hero + CTA final) e suave (CTAs intermediários). */
+     2 níveis de intensidade: forte (hero + CTA final) e suave (CTAs intermediários).
+     O glow é um anel (::after) da cor do botão que cresce e some. Anima só
+     transform/opacity, que a GPU faz sozinha — antes era box-shadow, que
+     obrigava o celular a repintar a tela a cada quadro, a visita inteira.
+     Anel forte ≈ 8px em volta do botão, suave ≈ 6px (mesmo do box-shadow antigo). */
   @keyframes wa-pulse-strong {
-    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102,0.40); filter: brightness(1); }
-    50% { transform: scale(1.02); box-shadow: 0 0 0 8px rgba(37,211,102,0); filter: brightness(1.04); }
+    0%, 100% { transform: scale(1); filter: brightness(1); }
+    50% { transform: scale(1.02); filter: brightness(1.04); }
   }
   @keyframes wa-pulse-soft {
-    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102,0.32); filter: brightness(1); }
-    50% { transform: scale(1.015); box-shadow: 0 0 0 6px rgba(37,211,102,0); filter: brightness(1.03); }
+    0%, 100% { transform: scale(1); filter: brightness(1); }
+    50% { transform: scale(1.015); filter: brightness(1.03); }
   }
-  .wa-pulse-strong { animation: wa-pulse-strong 3.2s ease-in-out infinite; }
-  .wa-pulse-soft { animation: wa-pulse-soft 3.4s ease-in-out infinite; }
+  @keyframes wa-ring-strong { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.05, 1.3); opacity: 0; } }
+  @keyframes wa-ring-soft { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.045, 1.25); opacity: 0; } }
+  @keyframes wa-ring-round { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.25); opacity: 0; } }
+  .wa-pulse-strong { animation: wa-pulse-strong 3.2s ease-in-out infinite; isolation: isolate; }
+  .wa-pulse-soft { animation: wa-pulse-soft 3.4s ease-in-out infinite; isolation: isolate; }
+  .wa-pulse-strong::after, .wa-pulse-soft::after { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; pointer-events: none; opacity: 0; }
+  .wa-pulse-strong::after { background: rgba(37,211,102,0.40); animation: wa-ring-strong 3.2s ease-in-out infinite; }
+  .wa-pulse-soft::after { background: rgba(37,211,102,0.32); animation: wa-ring-soft 3.4s ease-in-out infinite; }
+  .wa-header-btn.wa-pulse-soft::after, .wa-float.wa-pulse-soft::after { animation-name: wa-ring-round; }
 
-  .wa-header-btn { width: 44px; height: 44px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: filter 0.15s ease; }
+  .wa-header-btn { position: relative; width: 44px; height: 44px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: filter 0.15s ease; }
   .wa-float { position: fixed; right: 16px; bottom: 24px; z-index: 999; width: 56px; height: 56px; border-radius: 50%; background: #25D366; display: none; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(6,33,15,0.3); transition: transform 0.15s ease; }
   @media (hover: hover) { .wa-header-btn:hover, .wa-float:hover { filter: brightness(1.05); transform: translateY(-1px); } }
 
@@ -193,9 +210,15 @@
   .ba-dots .carousel-dot.active { background: #FFFFFF; }
   .ba-hint { margin: 8px 0 0; text-align: center; font-size: 12px; font-weight: 600; color: #9BAAB6; }
 
-  /* ===================== ANIMAÇÃO DE ENTRADA DE SEÇÃO ===================== */
-  .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.4s ease, transform 0.4s ease; }
-  .reveal-in { opacity: 1; transform: translateY(0); }
+  /* ===================== ANIMAÇÃO DE ENTRADA DE SEÇÃO =====================
+     Só as seções que começam fora da tela ficam escondidas (o JS marca com
+     .reveal-pending). O que já aparece na primeira tela nunca fica em branco. */
+  .reveal { transition: opacity 0.4s ease, transform 0.4s ease; }
+  .reveal-pending { opacity: 0; transform: translateY(14px); }
+
+  /* Links internos e sitelinks do Google Ads (#como-funciona etc.): a seção
+     para logo abaixo do cabeçalho fixo, sem o título ficar escondido atrás dele. */
+  section[id] { scroll-margin-top: 57px; }
 
   /* ===================== POPUP — 20% OFF ===================== */
   @keyframes popup-in { from { opacity: 0; transform: scale(0.98) translateY(10px); } to { opacity: 1; transform: scale(1) translateY(0); } }
@@ -240,6 +263,7 @@
     .hero-image-wrap { order: 0 !important; flex: 0 0 400px !important; width: 400px !important; margin: 0 !important; }
     .hero-image-wrap img { height: 400px !important; }
     .section { padding: 88px 64px; max-width: 1140px; margin: 0 auto; }
+    section[id] { scroll-margin-top: 93px; }
     .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)) !important; gap: 20px !important; }
     .grid-4 { grid-template-columns: repeat(4, minmax(0,1fr)) !important; gap: 20px !important; }
     .review-card { flex: 0 0 31.5% !important; }
@@ -257,8 +281,8 @@
 
   /* ===================== ACESSIBILIDADE ===================== */
   @media (prefers-reduced-motion: reduce) {
-    .wa-pulse-strong, .wa-pulse-soft, .reveal, .popup-card, .popup-backdrop, .countdown-block { animation: none !important; transition: none !important; }
-    .reveal { opacity: 1 !important; transform: none !important; }
+    .wa-pulse-strong, .wa-pulse-soft, .wa-pulse-strong::after, .wa-pulse-soft::after, .reveal, .popup-card, .popup-backdrop, .countdown-block { animation: none !important; transition: none !important; }
+    .reveal, .reveal-pending { opacity: 1 !important; transform: none !important; }
     .carousel-scroller { transition: none !important; }
   }
 </style>
@@ -274,7 +298,7 @@
   ============================================================= -->
   <header class="site-header" data-section="cabecalho" style="width: 100%; padding: 1px 14px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #E7EBEF; box-shadow: 0 1px 3px rgba(7,26,51,0.05); position: sticky; top: 0; z-index: 50; background: #FFFFFF;">
     <a href="#top" style="display: flex; align-items: center; min-width: 0;" aria-label="BV Desentupidora — início">
-      <img class="header-logo" src="./assets/logo-bv-desentupidora.webp" alt="BV Desentupidora" width="51" height="54" style="width: auto; height: 54px; object-fit: contain; flex-shrink: 0; display: block;">
+      <img class="header-logo" src="./assets/logo-bv-desentupidora-sm.webp" alt="BV Desentupidora" width="51" height="54" style="width: auto; height: 54px; object-fit: contain; flex-shrink: 0; display: block;">
     </a>
     <div style="display: flex; align-items: center; gap: 12px; flex-shrink: 0;">
       <a href="tel:+5562996051575" aria-label="Ligar para a BV Desentupidora" style="display: flex; align-items: center; gap: 6px; color: #071A33; font-weight: 700; font-size: 14px;">
@@ -715,7 +739,7 @@
     <div class="footer-row" style="display: flex; flex-direction: column; gap: 16px;">
       <div style="display: flex; flex-direction: column; gap: 8px; max-width: 300px;">
         <div style="display: flex; align-items: center; gap: 10px;">
-          <img src="./assets/logo-bv-desentupidora.webp" alt="Logo BV Desentupidora" width="30" height="32" loading="lazy" style="width: 30px; height: 32px; object-fit: contain;">
+          <img src="./assets/logo-bv-desentupidora-sm.webp" alt="Logo BV Desentupidora" width="30" height="32" loading="lazy" style="width: 30px; height: 32px; object-fit: contain;">
           <span style="font-size: 15px; font-weight: 800; color: #FFFFFF;">BV Desentupidora</span>
         </div>
         <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #9BAAB6;">Desentupimento de esgoto, pia, vaso, ralos, caixa de gordura, rede pluvial e hidrojateamento.</p>
@@ -946,28 +970,36 @@
     });
   });
 
-  /* =====================  ENTRADA SUAVE DAS SEÇÕES  ===================== */
+  /* =====================  ENTRADA SUAVE DAS SEÇÕES  =====================
+     Só esconde (para animar depois) as seções que começam abaixo da tela.
+     As que já aparecem ao abrir a página ficam visíveis desde o início — antes
+     a seção logo abaixo do hero ficava invisível e deixava uma faixa em branco. */
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var revealEls = document.querySelectorAll('.reveal');
+  var revealEls = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
   if (!reduceMotion && 'IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          entry.target.classList.add('reveal-in');
+          entry.target.classList.remove('reveal-pending');
           io.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    revealEls.forEach(function (el) { io.observe(el); });
-  } else {
-    revealEls.forEach(function (el) { el.classList.add('reveal-in'); });
+    }, { rootMargin: '0px 0px -40px 0px' });
+    var viewH = window.innerHeight || document.documentElement.clientHeight;
+    var tops = revealEls.map(function (el) { return el.getBoundingClientRect().top; });
+    revealEls.forEach(function (el, i) {
+      if (tops[i] < viewH) return;
+      el.classList.add('reveal-pending');
+      io.observe(el);
+    });
   }
 
   /* =====================  CARROSSEL DE AVALIAÇÕES  =====================
      Transform + transição CSS. Loop infinito: clona os primeiros itens e
      anexa no fim; ao terminar a transição de chegar num clone (idêntico ao
      item real), a posição volta pro item real sem transição. Arrastável
-     (Pointer Events); pausa o autoplay por um tempo após interação. */
+     (Pointer Events); pausa o autoplay por um tempo após interação e fica
+     parado enquanto está fora da tela. */
   function bvStartCarousel(viewportId, scrollerId, dotsId, itemCount) {
     if (!itemCount) return;
     var viewport = document.getElementById(viewportId);
@@ -997,11 +1029,25 @@
       return w + gapPx;
     }
 
-    function realMaxScroll() {
-      var last = originals[itemCount - 1];
-      if (!last) return 0;
-      var contentRightEdge = (last.getBoundingClientRect().right - viewport.getBoundingClientRect().left);
-      return Math.max(0, Math.round(contentRightEdge - viewport.clientWidth));
+    /* Os cards passam da largura visível? (se cabem todos, não há autoplay).
+       offsetLeft/offsetWidth ignoram o transform do trilho, então a resposta
+       não depende de qual card está na tela — antes a conta usava a posição
+       já deslocada e o autoplay desligava de vez ao chegar no último card. */
+    var canScroll = false;
+    var lastWidth = 0;
+    function measureOverflow() {
+      var first = originals[0], last = originals[itemCount - 1];
+      lastWidth = viewport.clientWidth;
+      canScroll = (last.offsetLeft + last.offsetWidth - first.offsetLeft) > lastWidth + 1;
+    }
+    measureOverflow();
+
+    var onScreen = true;
+    if ('IntersectionObserver' in window) {
+      onScreen = false;
+      new IntersectionObserver(function (entries) {
+        onScreen = entries[entries.length - 1].isIntersecting;
+      }).observe(viewport);
     }
 
     var index = 0;
@@ -1054,16 +1100,37 @@
       goTo(next, true);
       updateDot(((next % itemCount) + itemCount) % itemCount);
     };
+    /* pointercancel = o navegador assumiu o gesto (rolagem vertical começando
+       em cima do carrossel): volta pro card atual em vez de avançar. */
+    var onPointerCancel = function () {
+      if (!dragging) return;
+      dragging = false;
+      goTo(index, true);
+    };
     viewport.addEventListener('pointerdown', onPointerDown);
     viewport.addEventListener('pointermove', onPointerMove);
     viewport.addEventListener('pointerup', onPointerUp);
-    viewport.addEventListener('pointercancel', onPointerUp);
+    viewport.addEventListener('pointercancel', onPointerCancel);
+
+    /* Girou a tela / mudou a largura: remede e realinha o card atual. */
+    var resizeTimer = 0;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () {
+        if (viewport.clientWidth === lastWidth) return;
+        measureOverflow();
+        if (!canScroll) index = 0;
+        setTransform(-index * stepSize(), false);
+        updateDot(((index % itemCount) + itemCount) % itemCount);
+      }, 150);
+    });
 
     if (reduceMotion) return;
 
     setInterval(function () {
-      if (dragging || Date.now() < pauseUntil) return;
-      if (realMaxScroll() <= 1) return;
+      if (dragging || !canScroll || !onScreen || document.hidden || Date.now() < pauseUntil) return;
+      /* Se ficou parado num clone (transição interrompida), volta pro item real antes de seguir. */
+      if (index >= itemCount) { index -= itemCount; setTransform(-index * stepSize(), false); }
       goTo(index + 1, true);
       updateDot(((index % itemCount) + itemCount) % itemCount);
     }, 3200);
