@@ -973,25 +973,26 @@
   /* =====================  ENTRADA SUAVE DAS SEÇÕES  =====================
      Só esconde (para animar depois) as seções que começam abaixo da tela.
      As que já aparecem ao abrir a página ficam visíveis desde o início — antes
-     a seção logo abaixo do hero ficava invisível e deixava uma faixa em branco. */
+     a seção logo abaixo do hero ficava invisível e deixava uma faixa em branco.
+     A posição vem do IntersectionObserver (calculada pelo navegador depois do
+     layout): medir aqui com getBoundingClientRect forçava o layout da página
+     inteira antes da primeira pintura e atrasava a foto do hero. */
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var revealEls = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+  var revealEls = document.querySelectorAll('.reveal');
   if (!reduceMotion && 'IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
+        var el = entry.target;
         if (entry.isIntersecting) {
-          entry.target.classList.remove('reveal-pending');
-          io.unobserve(entry.target);
+          el.classList.remove('reveal-pending');
+          io.unobserve(el);
+        } else if (!el.bvRevealChecked) {
+          el.classList.add('reveal-pending');
         }
+        el.bvRevealChecked = true;
       });
-    }, { rootMargin: '0px 0px -40px 0px' });
-    var viewH = window.innerHeight || document.documentElement.clientHeight;
-    var tops = revealEls.map(function (el) { return el.getBoundingClientRect().top; });
-    revealEls.forEach(function (el, i) {
-      if (tops[i] < viewH) return;
-      el.classList.add('reveal-pending');
-      io.observe(el);
     });
+    revealEls.forEach(function (el) { io.observe(el); });
   }
 
   /* =====================  CARROSSEL DE AVALIAÇÕES  =====================
@@ -1035,19 +1036,25 @@
        já deslocada e o autoplay desligava de vez ao chegar no último card. */
     var canScroll = false;
     var lastWidth = 0;
+    var measured = false;
     function measureOverflow() {
       var first = originals[0], last = originals[itemCount - 1];
       lastWidth = viewport.clientWidth;
       canScroll = (last.offsetLeft + last.offsetWidth - first.offsetLeft) > lastWidth + 1;
+      measured = true;
     }
-    measureOverflow();
 
+    /* Mede só quando o carrossel aparece (layout já pronto, sem custo no
+       carregamento da primeira tela). */
     var onScreen = true;
     if ('IntersectionObserver' in window) {
       onScreen = false;
       new IntersectionObserver(function (entries) {
         onScreen = entries[entries.length - 1].isIntersecting;
+        if (onScreen && !measured) measureOverflow();
       }).observe(viewport);
+    } else {
+      window.addEventListener('load', measureOverflow);
     }
 
     var index = 0;
