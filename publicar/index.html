@@ -14,11 +14,25 @@
      Meta Pixel devem ser configurados DENTRO do GTM, não aqui. */
   window.BV_GTM_ID = 'GTM-KB5H87LR';
   window.dataLayer = window.dataLayer || [];
+  /* O GTM (e o GA4 que ele puxa, ~310 KB de JS) só começa a baixar quando a
+     primeira tela terminou de carregar (evento load) — ou no primeiro toque,
+     tecla ou rolagem, o que vier antes. Assim ele não disputa a conexão com a
+     foto do hero nem ocupa o celular enquanto a página aparece. Eventos
+     enviados antes disso ficam na fila do dataLayer e o GTM processa ao chegar. */
   (function (w, d, id) {
     if (!/^GTM-[A-Z0-9]+$/.test(id)) return;
     w.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-    var j = d.createElement('script'); j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + id;
-    d.head.appendChild(j);
+    var started = false;
+    var firstInput = ['pointerdown', 'keydown', 'scroll', 'touchstart'];
+    function start() {
+      if (started) return;
+      started = true;
+      firstInput.forEach(function (e) { w.removeEventListener(e, start, true); });
+      var j = d.createElement('script'); j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + id;
+      d.head.appendChild(j);
+    }
+    firstInput.forEach(function (e) { w.addEventListener(e, start, { capture: true, passive: true }); });
+    if (d.readyState === 'complete') start(); else w.addEventListener('load', start);
   })(window, document, window.BV_GTM_ID);
 </script>
 <link rel="canonical" href="https://bvdesentupidora.com.br/">
@@ -202,6 +216,7 @@
   .ba-track { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; margin: 0 -21px; padding: 2px 21px 4px; scroll-padding: 0 21px; outline: none; }
   .ba-track::-webkit-scrollbar { display: none; }
   .ba-card { flex: 0 0 86%; margin: 0; scroll-snap-align: start; background: #0B2542; border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; overflow: hidden; box-shadow: 0 10px 26px rgba(0,0,0,0.28); }
+  .ba-card picture { display: block; }
   .ba-card img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; background: #0B1620; }
   .ba-card figcaption { display: flex; flex-direction: column; gap: 3px; padding: 11px 14px 13px; text-align: left; }
   .ba-card figcaption strong { font-size: 15px; font-weight: 800; color: #FFFFFF; }
@@ -223,13 +238,15 @@
   /* ===================== POPUP — 20% OFF ===================== */
   @keyframes popup-in { from { opacity: 0; transform: scale(0.98) translateY(10px); } to { opacity: 1; transform: scale(1) translateY(0); } }
   @keyframes backdrop-in { from { opacity: 0; } to { opacity: 1; } }
-  @keyframes countdown-glow {
-    0%, 100% { box-shadow: inset 0 2px 5px rgba(0,0,0,0.4), 0 2px 6px rgba(0,0,0,0.25), 0 0 0 0 rgba(220,38,38,0.25); }
-    50% { box-shadow: inset 0 2px 5px rgba(0,0,0,0.4), 0 2px 6px rgba(0,0,0,0.25), 0 0 0 4px rgba(220,38,38,0.1); }
-  }
+  /* Brilho vermelho em volta dos números do contador: anel fixo que só acende
+     e apaga (opacity, feito pela GPU) — antes animava box-shadow e repintava. */
+  @keyframes countdown-glow { 0%, 100% { opacity: 0; } 50% { opacity: 1; } }
   .popup-backdrop { animation: backdrop-in 0.25s ease-out; }
   .popup-card { animation: popup-in 0.28s ease-out; }
-  .countdown-block { animation: countdown-glow 2.4s ease-in-out infinite; }
+  .countdown-block { position: relative; }
+  .countdown-block::after { content: ""; position: absolute; inset: 0; border-radius: inherit; box-shadow: 0 0 0 4px rgba(220,38,38,0.1); pointer-events: none; opacity: 0; animation: countdown-glow 2.4s ease-in-out infinite; }
+  /* X do pop-up: o círculo visível continua 28px, a área de toque vai a 44px. */
+  .popup-close::before { content: ""; position: absolute; inset: -8px; }
 
   /* ===================== TABLET (min 641px) ===================== */
   @media (min-width: 641px) {
@@ -281,7 +298,7 @@
 
   /* ===================== ACESSIBILIDADE ===================== */
   @media (prefers-reduced-motion: reduce) {
-    .wa-pulse-strong, .wa-pulse-soft, .wa-pulse-strong::after, .wa-pulse-soft::after, .reveal, .popup-card, .popup-backdrop, .countdown-block { animation: none !important; transition: none !important; }
+    .wa-pulse-strong, .wa-pulse-soft, .wa-pulse-strong::after, .wa-pulse-soft::after, .reveal, .popup-card, .popup-backdrop, .countdown-block::after { animation: none !important; transition: none !important; }
     .reveal, .reveal-pending { opacity: 1 !important; transform: none !important; }
     .carousel-scroller { transition: none !important; }
   }
@@ -301,7 +318,7 @@
       <img class="header-logo" src="./assets/logo-bv-desentupidora-sm.webp" alt="BV Desentupidora" width="51" height="54" style="width: auto; height: 54px; object-fit: contain; flex-shrink: 0; display: block;">
     </a>
     <div style="display: flex; align-items: center; gap: 12px; flex-shrink: 0;">
-      <a href="tel:+5562996051575" aria-label="Ligar para a BV Desentupidora" style="display: flex; align-items: center; gap: 6px; color: #071A33; font-weight: 700; font-size: 14px;">
+      <a href="tel:+5562996051575" aria-label="Ligar para a BV Desentupidora" style="display: flex; align-items: center; gap: 6px; color: #071A33; font-weight: 700; font-size: 14px; padding: 12px; margin: -12px;">
         <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z" stroke="#071A33" stroke-width="1.6" stroke-linejoin="round"></path>
         </svg>
@@ -570,19 +587,19 @@
     </div>
     <div class="ba-track" id="ba-track" role="region" aria-label="Fotos de antes e depois" tabindex="0">
         <figure class="ba-card">
-          <img src="./assets/desentupimento-caixa-esgoto-antes-depois-goiania-mobile.webp" srcset="./assets/desentupimento-caixa-esgoto-antes-depois-goiania-mobile.webp 768w, ./assets/desentupimento-caixa-esgoto-antes-depois-goiania.webp 1200w" sizes="(min-width: 1025px) 500px, (min-width: 641px) 45vw, 86vw" width="768" height="512" loading="lazy" decoding="async" alt="Antes e depois de desentupimento de caixa de esgoto em Goiânia – BV Desentupidora">
+          <picture><source media="(max-width: 640px)" srcset="./assets/desentupimento-caixa-esgoto-antes-depois-goiania-mobile.webp"><img src="./assets/desentupimento-caixa-esgoto-antes-depois-goiania-mobile.webp" srcset="./assets/desentupimento-caixa-esgoto-antes-depois-goiania-mobile.webp 768w, ./assets/desentupimento-caixa-esgoto-antes-depois-goiania.webp 1200w" sizes="(min-width: 1025px) 500px, 45vw" width="768" height="512" loading="lazy" decoding="async" alt="Antes e depois de desentupimento de caixa de esgoto em Goiânia – BV Desentupidora"></picture>
           <figcaption><strong>Caixa de esgoto</strong><span>Resíduos removidos e escoamento liberado.</span></figcaption>
         </figure>
         <figure class="ba-card">
-          <img src="./assets/desentupimento-ralo-antes-depois-goiania-mobile.webp" srcset="./assets/desentupimento-ralo-antes-depois-goiania-mobile.webp 768w, ./assets/desentupimento-ralo-antes-depois-goiania.webp 1200w" sizes="(min-width: 1025px) 500px, (min-width: 641px) 45vw, 86vw" width="768" height="512" loading="lazy" decoding="async" alt="Antes e depois de desentupimento de ralo em Goiânia – BV Desentupidora">
+          <picture><source media="(max-width: 640px)" srcset="./assets/desentupimento-ralo-antes-depois-goiania-mobile.webp"><img src="./assets/desentupimento-ralo-antes-depois-goiania-mobile.webp" srcset="./assets/desentupimento-ralo-antes-depois-goiania-mobile.webp 768w, ./assets/desentupimento-ralo-antes-depois-goiania.webp 1200w" sizes="(min-width: 1025px) 500px, 45vw" width="768" height="512" loading="lazy" decoding="async" alt="Antes e depois de desentupimento de ralo em Goiânia – BV Desentupidora"></picture>
           <figcaption><strong>Ralo entupido</strong><span>Desobstrução com máquina de mola e água voltando a escoar.</span></figcaption>
         </figure>
         <figure class="ba-card">
-          <img src="./assets/limpeza-caixa-gordura-antes-depois-goiania-mobile.webp" srcset="./assets/limpeza-caixa-gordura-antes-depois-goiania-mobile.webp 768w, ./assets/limpeza-caixa-gordura-antes-depois-goiania.webp 1200w" sizes="(min-width: 1025px) 500px, (min-width: 641px) 45vw, 86vw" width="768" height="512" loading="lazy" decoding="async" alt="Antes e depois de limpeza de caixa de gordura em Goiânia – BV Desentupidora">
+          <picture><source media="(max-width: 640px)" srcset="./assets/limpeza-caixa-gordura-antes-depois-goiania-mobile.webp"><img src="./assets/limpeza-caixa-gordura-antes-depois-goiania-mobile.webp" srcset="./assets/limpeza-caixa-gordura-antes-depois-goiania-mobile.webp 768w, ./assets/limpeza-caixa-gordura-antes-depois-goiania.webp 1200w" sizes="(min-width: 1025px) 500px, 45vw" width="768" height="512" loading="lazy" decoding="async" alt="Antes e depois de limpeza de caixa de gordura em Goiânia – BV Desentupidora"></picture>
           <figcaption><strong>Caixa de gordura</strong><span>Gordura e resíduos retirados, caixa limpa e funcionando.</span></figcaption>
         </figure>
         <figure class="ba-card">
-          <img src="./assets/desentupimento-caixa-gordura-antes-depois-goiania-mobile.webp" srcset="./assets/desentupimento-caixa-gordura-antes-depois-goiania-mobile.webp 768w, ./assets/desentupimento-caixa-gordura-antes-depois-goiania.webp 1200w" sizes="(min-width: 1025px) 500px, (min-width: 641px) 45vw, 86vw" width="768" height="512" loading="lazy" decoding="async" alt="Antes e depois de desentupimento de caixa de gordura em Goiânia – BV Desentupidora">
+          <picture><source media="(max-width: 640px)" srcset="./assets/desentupimento-caixa-gordura-antes-depois-goiania-mobile.webp"><img src="./assets/desentupimento-caixa-gordura-antes-depois-goiania-mobile.webp" srcset="./assets/desentupimento-caixa-gordura-antes-depois-goiania-mobile.webp 768w, ./assets/desentupimento-caixa-gordura-antes-depois-goiania.webp 1200w" sizes="(min-width: 1025px) 500px, 45vw" width="768" height="512" loading="lazy" decoding="async" alt="Antes e depois de desentupimento de caixa de gordura em Goiânia – BV Desentupidora"></picture>
           <figcaption><strong>Caixa de gordura da lavanderia</strong><span>Água parada eliminada e escoamento normalizado.</span></figcaption>
         </figure>
     </div>
@@ -793,7 +810,7 @@
   ============================================================= -->
   <div class="popup-backdrop" id="offer-popup" data-section="popup" onclick="if(event.target===this) closePopup()" style="display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(8,16,24,0.68); align-items: center; justify-content: center; padding: 14px;">
     <div class="popup-card" style="position: relative; width: 88%; max-width: 340px; max-height: calc(100vh - 28px); overflow-y: auto; background: linear-gradient(165deg, #0F4C81 0%, #071B2E 100%); border-radius: 22px; overflow-x: hidden; box-shadow: 0 24px 60px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.08); display: flex; flex-direction: column; align-items: center; text-align: center;">
-      <button onclick="closePopup()" aria-label="Fechar" style="position: absolute; top: 10px; right: 10px; width: 28px; height: 28px; border-radius: 50%; border: none; background: rgba(255,255,255,0.16); cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 2;">
+      <button class="popup-close" onclick="closePopup()" aria-label="Fechar" style="position: absolute; top: 10px; right: 10px; width: 28px; height: 28px; border-radius: 50%; border: none; background: rgba(255,255,255,0.16); cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 2;">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path></svg>
       </button>
 
@@ -827,7 +844,7 @@
           </div>
         </div>
         <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.12); border-radius: 999px; overflow: hidden;">
-          <div id="cd-progress" style="height: 100%; width: 100%; background: linear-gradient(90deg, #F2994A, #FFD27A); border-radius: 999px; transition: width 1s linear;"></div>
+          <div id="cd-progress" style="height: 100%; width: 100%; background: linear-gradient(90deg, #F2994A, #FFD27A); border-radius: 999px; transform-origin: left center; transition: transform 1s linear;"></div>
         </div>
       </div>
 
@@ -861,12 +878,14 @@
   }
 
   function markConverted() {
+    converted = true;
     try { sessionStorage.setItem('bv_converted', '1'); } catch (e) {}
     hidePopup();
   }
 
   function buttonText(a) {
-    var t = a.getAttribute('data-cta') || a.textContent || a.getAttribute('aria-label') || '';
+    /* Botões só com ícone (ex.: WhatsApp do cabeçalho) não têm texto: usa o aria-label. */
+    var t = a.getAttribute('data-cta') || a.textContent.replace(/\s+/g, ' ').trim() || a.getAttribute('aria-label') || '';
     return t.replace(/\s+/g, ' ').trim().slice(0, 80);
   }
   function buttonLocation(a) {
@@ -908,8 +927,10 @@
     converted = sessionStorage.getItem('bv_converted') === '1';
   } catch (e) {}
 
+  var countdownTimer = 0;
   function hidePopup() {
     if (popupEl) popupEl.style.display = 'none';
+    clearInterval(countdownTimer);
   }
   window.closePopup = function () {
     dismissed = true;
@@ -919,9 +940,12 @@
 
   if (!dismissed && !converted) {
     setTimeout(function () {
-      try { converted = sessionStorage.getItem('bv_converted') === '1'; } catch (e) {}
+      try { converted = converted || sessionStorage.getItem('bv_converted') === '1'; } catch (e) {}
       if (converted || dismissed || !popupEl) return;
       popupEl.style.display = 'flex';
+      /* O contador só roda enquanto o pop-up está aberto. */
+      tickCountdown();
+      countdownTimer = setInterval(tickCountdown, 1000);
       trackEvent('popup_open');
     }, 10000);
   }
@@ -949,10 +973,9 @@
     var ss = String(totalSeconds % 60).padStart(2, '0');
     if (minEl) minEl.textContent = mm;
     if (secEl) secEl.textContent = ss;
-    if (progressEl) progressEl.style.width = Math.max(0, Math.min(100, (remaining / TOTAL_MS) * 100)).toFixed(1) + '%';
+    /* scaleX (GPU) em vez de width: a barrinha anda sem recalcular o layout. */
+    if (progressEl) progressEl.style.transform = 'scaleX(' + Math.max(0, Math.min(1, remaining / TOTAL_MS)).toFixed(3) + ')';
   }
-  tickCountdown();
-  setInterval(tickCountdown, 1000);
 
   /* =====================  FAQ — acordeão  ===================== */
   document.querySelectorAll('.faq-item').forEach(function (item) {
