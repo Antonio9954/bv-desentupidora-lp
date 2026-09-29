@@ -66,10 +66,19 @@ Quando o Antonio disser **"mudar o site"**, o entendimento é: pegar o que já e
    - Correção feita depois da 1ª publicação (commit `6d0d2aa`): o script de entrada das seções media a posição com getBoundingClientRect ao carregar → "reflow forçado" de 239 ms que atrasava a foto do hero. Agora usa só IntersectionObserver; carrossel mede ao aparecer.
    - PageSpeed mobile no site ao vivo depois (23:01–23:13): 82, 78 (antes da correção do reflow), 83 e 60 (esta com o servidor do PageSpeed sobrecarregado: gtag levou 3.364 ms). **FCP ≈ 1,0 s em todas** (antes 2,7–2,8 s). LCP de laboratório 4,4–4,5 s nesse horário — o GitHub Pages com o MESMO código deu 97/100 (LCP 1,5 s) às 22:51 e 78 (LCP 4,6 s) às 23:04, então é oscilação do PageSpeed; quando a foto demora a ser pintada lá, o simulador passa a contar o GTM (121 KB) disputando banda com ela. Aprovados agora: sem recurso bloqueante, sem reflow forçado, sem animação não composta. Sem dados de campo (CrUX) ainda.
 
+4. **Pacote "site liso"** (Antonio pediu "o que você recomenda para ficar totalmente liso, faça"; testes SÓ no site ao vivo, nunca no GitHub Pages). Publicado na Hostinger ~23:30, commits `4144c3a` + `6e458f2`:
+   - GTM/GA4 só baixa no evento `load` ou no 1º toque/tecla/rolagem (antes: no início do `<head>`). TBT caiu para 70 ms na 1ª medição ao vivo
+   - Antes/depois com `<picture>`: até 640px sempre a versão 768px
+   - Pop-up: brilho do contador em `::after` (opacity), barra com `scaleX`, contador só roda com o pop-up aberto
+   - Área de toque 44px no telefone do cabeçalho (padding 12 + margin −12, visual igual) e no X do pop-up (`.popup-close::before`)
+   - button_text do WhatsApp do cabeçalho = aria-label; clique em CTA marca `converted` também em memória
+   - Removido o `<link rel="preload">` da fonte (hipótese de que segurava a 1ª pintura) — **hipótese NÃO confirmada**: sem ele a espera continuou (~1,1 s). Mantido sem preload (texto aparece na hora com font-display: swap)
+   - **Em aberto:** no PageSpeed ao vivo os 3 primeiros quadros ficam brancos e a página inteira (com a foto) aparece junto ~1–1,4 s (observado) com CPU ociosa (site 105 ms de CPU) → LCP simulado 4,4–4,5 s, nota 78–84. O mesmo código deu 97/100 no início da noite. Causa não identificada; suspeita de ambiente do PageSpeed. Depois de ~23:35 o PageSpeed parou de concluir análises (inclusive da 404.html). Refazer a medição em outro horário; ideal medir usuários reais (Core Web Vitals no GA4/Search Console)
+
    **Pendente (achados da auditoria, não autorizados ainda):**
-   - (3) Fotos de antes/depois: em telas 3x (iPhone) o navegador baixa a versão 1200px (~710KB as 4) — usar `<picture>` para celular sempre pegar a versão 768px
+   - (3) Fotos de antes/depois no iPhone — FEITO no item 4 (<picture>)
    - (4) Todas as fotos .webp têm metadado C2PA "Claude forneceu este arquivo e pode ter criado ou modificado" (5,7KB cada) — reexportar das fotos ORIGINAIS sem metadados (precisa das originais do Antonio). Ruim principalmente nas fotos de antes/depois
-   - (8) GTM + GA4 = 311KB (~71% do carregamento) e 100% do TBT. Container só tem GA4 (tag Google + eventos whatsapp_click/phone_click); sem tag de conversão do Ads. Testado: GTM NÃO atrasa o clique no WhatsApp. Recomendação: manter; alternativa gtag direto (−121KB). Não atrasar GTM (perde conversão de quem clica rápido)
+   - (8) GTM + GA4 = 311KB e 100% do TBT — FEITO no item 4 (carrega depois do load). Container só tem GA4 (tag Google + eventos whatsapp_click/phone_click); sem tag de conversão do Ads
    - (10) Ícone de telefone do cabeçalho com área de toque 19×19px; X do pop-up 28×28px; clique no WhatsApp do cabeçalho vai pro GA4 com button_text vazio; contraste do "Ligar Agora"/"Ligar"/© rodapé; falta `<main>`; contador do pop-up roda a cada 1s mesmo sem pop-up
    - Contador "Oferta termina em 20:00" reinicia a cada nova visita — pergunta em aberto pro Antonio (CDC)
    - Hostinger CDN responde 403 "Checking your browser" para clientes sem navegador após poucas requisições (curl etc.); navegador real e PageSpeed passam. Conferir prévia do link no WhatsApp e status da página de destino no Ads
