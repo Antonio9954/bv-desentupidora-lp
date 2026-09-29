@@ -15,7 +15,7 @@ Leia este arquivo inteiro antes de fazer qualquer alteração.
 - **Repositório**: antonio9954/bv-desentupidora-lp (GitHub)
   - branch `pages-preview` = branch principal de trabalho, publicada também no GitHub Pages como pré-visualização (`noindex`)
   - `index.html` na raiz = versão de pré-visualização (GitHub Pages)
-  - `publicar/index.html` = deveria espelhar o que está no ar na Hostinger, **mas está desatualizado** (ver auditoria abaixo — não usar como fonte de verdade até ser sincronizado)
+  - `publicar/index.html` = versão de produção para a Hostinger: igual ao `index.html` da raiz, só troca `<meta name="robots">` de `noindex, follow` para `index, follow, max-image-preview:large`. Sincronizado em 28/09/2026 (commit do pacote de velocidade); ao mudar a raiz, regenerar com esse mesmo sed
 - **Site de produção real**: Hostinger, pasta `public_html`, editado hoje via Gerenciador de Arquivos (File Browser) direto no servidor
 - **A fonte de verdade real hoje é o `index.html` da raiz do repo** (branch `pages-preview`), não o `publicar/`
 
@@ -53,26 +53,20 @@ Quando o Antonio disser **"mudar o site"**, o entendimento é: pegar o que já e
    - Banner Goiânia → "Desentupidora em Goiânia 24h"
    - CTA final → "Esgoto entupido? Peça um Orçamento Grátis agora"
    - Essas mudanças já estão commitadas **e já estão no ar** (aplicadas direto no Hostinger via editor do File Manager)
-2. Fez uma **auditoria técnica completa** do site ao vivo (Lighthouse/PageSpeed real, mobile, 4G lento) — **auditoria só, nada foi corrigido ainda, aguardando autorização do Antonio**. Resultado:
-   - Nota Desempenho: 74/100 · Acessibilidade 94 · Boas práticas 100 · SEO 100
-   - LCP 3,3s · TBT 530ms (alto) · CLS 0,01 (ótimo) · FCP 2,8s
+2. Primeira auditoria técnica (PageSpeed mobile: 74, LCP 3,3s, TBT 530ms). Foi **refeita do zero na mesma noite** — ver item 3; algumas conclusões dela estavam erradas (ex.: o pulso NÃO causava o TBT).
+3. **Auditoria refeita + pacote de velocidade aplicado** (commit `0f34dd5` no `pages-preview`, autorizado pelo Antonio: itens 1, 2, 5, 6, 7, 9).
+   - Medição antes (site ao vivo, PageSpeed mobile, 2 rodadas): nota 71 e 91 · FCP 2,8/2,7s · LCP 5,2/2,7s · TBT 230/80ms. A nota oscila muito por carga do servidor do Google; o constante era a fonte travando a 1ª pintura.
+   - Medição depois (GitHub Pages, 2 rodadas): **nota 97 e 100 · FCP 1,0/0,9s · LCP 1,5s · TBT 200/90ms · CLS 0,005/0** · zero recurso bloqueante · zero animação não composta.
+   - Feito: (1) Inter hospedada no site (`assets/fonts/inter-latin.woff2` + preload + @font-face inline, sem Google Fonts); (2) carrossel de avaliações travava para sempre na 3ª avaliação ~6s após abrir — corrigido, pausa fora da tela, pointercancel não avança card, realinha ao girar; (5) pulso do WhatsApp agora é anel em `::after` com transform/opacity (mesmo visual); (6) logo `logo-bv-desentupidora-sm.webp` 152×162 10,6KB (antes 26KB) e favicon `favicon-48.png` 4,5KB (antes 34–40KB); (7) `scroll-margin-top` nas seções com id (título não fica sob o cabeçalho nos sitelinks); (9) seção logo abaixo do hero não fica mais invisível na 1ª dobra (só seções abaixo da tela animam).
+   - `publicar/index.html` agora = versão de produção (igual à raiz, mas com `robots` index). Pacote para subir: `hostinger-atualizacao-velocidade.zip` (index.html + 3 arquivos novos em assets/). **Publicar na Hostinger depende do Antonio** (upload de arquivos no File Manager).
 
-   **🔴 Crítico (pendente de autorização):**
-   - Fonte do Google Fonts bloqueia renderização inicial (~1.640ms perdidos) — precisa carregar assíncrono
-   - 3 sitelinks do Google Ads (`#como-funciona`, `#avaliacoes`, `#perguntas-frequentes`) apontam pra âncoras que **não existem mais no HTML ao vivo** — os `id` sumiram das seções, sitelinks quebrados
-   - Botão vermelho "Ligar Agora" (`.btn-ligar`, `#E53935`) reprovado no teste de contraste de acessibilidade do Lighthouse
-
-   **🟠 Importante (pendente de autorização):**
-   - Logo do cabeçalho (`logo-bv-desentupidora.webp`, 240×255px/25,5KB) ~24KB maior do que precisa pro tamanho exibido (54-76px)
-   - Foto do hero pode perder ~17KB só com melhor compressão WebP
-   - Animação de pulso do WhatsApp (`wa-pulse-strong`/`wa-pulse-soft`) usa `box-shadow`+`filter` em 10 botões da página — não é "composto" pela GPU, contribui pro TBT alto. Reescrever usando só `transform`/`opacity` mantendo o mesmo efeito visual
-   - `publicar/index.html` está desatualizado em relação ao `index.html` da raiz (que é o que está realmente no ar) — precisa sincronizar pra não causar regressão na próxima publicação
-
-   **🟢 Opcional:**
-   - Selos do Hero repetem quase literalmente na seção "Por que escolher" (conteúdo, não é bug técnico)
-   - Falta tag `<main>` no HTML (acessibilidade)
-
-   Análise de conversão (hipóteses, sem dado de comportamento real): 10 elementos pulsando ao mesmo tempo pode diluir a sensação de urgência; pop-up de desconto por tempo fixo (10-20s) pode interromper alguém já convertendo.
+   **Pendente (achados da auditoria, não autorizados ainda):**
+   - (3) Fotos de antes/depois: em telas 3x (iPhone) o navegador baixa a versão 1200px (~710KB as 4) — usar `<picture>` para celular sempre pegar a versão 768px
+   - (4) Todas as fotos .webp têm metadado C2PA "Claude forneceu este arquivo e pode ter criado ou modificado" (5,7KB cada) — reexportar das fotos ORIGINAIS sem metadados (precisa das originais do Antonio). Ruim principalmente nas fotos de antes/depois
+   - (8) GTM + GA4 = 311KB (~71% do carregamento) e 100% do TBT. Container só tem GA4 (tag Google + eventos whatsapp_click/phone_click); sem tag de conversão do Ads. Testado: GTM NÃO atrasa o clique no WhatsApp. Recomendação: manter; alternativa gtag direto (−121KB). Não atrasar GTM (perde conversão de quem clica rápido)
+   - (10) Ícone de telefone do cabeçalho com área de toque 19×19px; X do pop-up 28×28px; clique no WhatsApp do cabeçalho vai pro GA4 com button_text vazio; contraste do "Ligar Agora"/"Ligar"/© rodapé; falta `<main>`; contador do pop-up roda a cada 1s mesmo sem pop-up
+   - Contador "Oferta termina em 20:00" reinicia a cada nova visita — pergunta em aberto pro Antonio (CDC)
+   - Hostinger CDN responde 403 "Checking your browser" para clientes sem navegador após poucas requisições (curl etc.); navegador real e PageSpeed passam. Conferir prévia do link no WhatsApp e status da página de destino no Ads
 
 ## Regras que o Antonio já deixou explícitas (seguir sempre)
 
