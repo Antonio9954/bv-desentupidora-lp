@@ -15,7 +15,7 @@ Leia este arquivo inteiro antes de fazer qualquer alteração.
 - **Repositório**: antonio9954/bv-desentupidora-lp (GitHub)
   - branch `pages-preview` = branch principal de trabalho, publicada também no GitHub Pages como pré-visualização (`noindex`)
   - `index.html` na raiz = versão de pré-visualização (GitHub Pages)
-  - `publicar/index.html` = versão de produção para a Hostinger: igual ao `index.html` da raiz, só troca `<meta name="robots">` de `noindex, follow` para `index, follow, max-image-preview:large`. Sincronizado em 28/09/2026 (commit do pacote de velocidade); ao mudar a raiz, regenerar com esse mesmo sed
+  - `publicar/index.html` = versão de produção para a Hostinger: igual ao `index.html` da raiz, só troca `<meta name="robots">` de `noindex, follow` para `index, follow, max-image-preview:large`. Sincronizado em 21/10/2026 (commit `2fa4b36`, copy nova); ao mudar a raiz, regenerar com esse mesmo sed
 - **Site de produção real**: Hostinger, pasta `public_html`, editado hoje via Gerenciador de Arquivos (File Browser) direto no servidor
 - **A fonte de verdade real hoje é o `index.html` da raiz do repo** (branch `pages-preview`), não o `publicar/`
 
@@ -82,6 +82,19 @@ Quando o Antonio disser **"mudar o site"**, o entendimento é: pegar o que já e
    - (10) Ícone de telefone do cabeçalho com área de toque 19×19px; X do pop-up 28×28px; clique no WhatsApp do cabeçalho vai pro GA4 com button_text vazio; contraste do "Ligar Agora"/"Ligar"/© rodapé; falta `<main>`; contador do pop-up roda a cada 1s mesmo sem pop-up
    - Contador "Oferta termina em 20:00" reinicia a cada nova visita — pergunta em aberto pro Antonio (CDC)
    - Hostinger CDN responde 403 "Checking your browser" para clientes sem navegador após poucas requisições (curl etc.); navegador real e PageSpeed passam. Conferir prévia do link no WhatsApp e status da página de destino no Ads
+
+## Sessão 21/10/2026 — copy nova (pedido do Antonio, 7 itens)
+
+Commit `2fa4b36`, **publicado na Hostinger em 21/10/2026 ~14:05** (só o `index.html`; nenhum asset novo).
+- **Backup do que estava no ar antes:** tag git `backup-site-antes-2026-10-21` (= commit `e36c4ad`) e arquivo `backup-site-antes-2026-10-21.html` (fora do git). Conferido: SHA-256 do `public_html/index.html` antes da troca = backup (`a10e1ab2…`). Para voltar: subir esse arquivo no lugar do `index.html` e `git checkout backup-site-antes-2026-10-21 -- index.html publicar/index.html`
+- H1 "Desentupidora de Esgoto 24 Horas em Goiânia"; subtítulo "Equipes especializadas em condomínios, casas e empresas. Sem quebrar e sem sujar, com nota fiscal e relatório técnico. Atendimento 24h em Goiânia e região." ("casas e empresas" foi acréscimo do Claude: a busca do Ads é majoritariamente residencial)
+- Seção "sinais" (data-section continua `sinais`) virou "Veja os problemas que nossa desentupidora resolve rápido", com parágrafo de dor e cards na linguagem do cliente; botão = "SOLICITAR ORÇAMENTO GRATUITO" (msg de WhatsApp de orçamento gratuito). No GA4, o button_text desse botão mudou
+- Selo "Orçamento grátis" no hero; card "Nota fiscal e relatório técnico"; card Condomínios "Equipe especializada…"
+- **Ordem nova:** hero > problemas > avaliações (fundo branco) > antes/depois > serviços > faixa "Precisa de uma desentupidora de esgoto agora?" > tipos > por que > como funciona > Goiânia > FAQ > CTA. Antes/depois fica DEPOIS das avaliações de propósito: logo após os problemas, as 4 fotos (~350 KB) ficariam a ~1060 px da 1ª tela, dentro do pré-carregamento do loading="lazy" do Chrome (1250 px no 4G). O navegador interno do Claude Desktop ignora esse limite (baixa as fotos até na versão antiga) — não serve para medir isso
+- Palavras-chave nos H2 (desentupidora / desentupidora em Goiânia / desentupidora de esgoto); H3 dos cards ficaram sem, para não soar robótico
+- **PageSpeed mobile ao vivo depois (14:08 e 14:09): nota 97 e 97 · FCP 1,0/1,0 s · LCP 1,2/1,3 s · TBT 200/190 ms · CLS 0,003 · SI 1,5/1,2 s**; Acessibilidade 94, Práticas 100, SEO 100. Print final do relatório mostra o H1 novo. A medição "antes" não foi possível (API do PageSpeed sem cota diária anônima; pagespeed.web.dev ficou travado em "Executando análise" numa aba em segundo plano — funcionou com a aba na frente)
+- Conferido ao vivo: GTM carrega, GA4 `G-VZ9G7BWF7R` recebe page_view, tag do Google Ads `AW-18241603593` dispara (o container agora tem tag do Ads), zero erro no console
+- A sessão da Hostinger tinha expirado; o Antonio fez login de novo. Fluxo do item 5 de "Como publicar" funcionou igual
 
 ## Regras que o Antonio já deixou explícitas (seguir sempre)
 
