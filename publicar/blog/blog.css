@@ -47,6 +47,7 @@ th{background:var(--fundo-2);color:var(--azul-escuro)}
 
 figure{margin:20px 0}
 figcaption{font-size:14px;color:var(--suave);margin-top:6px}
+.foto-vertical img,.foto-vertical figcaption{max-width:min(100%,360px);margin-left:auto;margin-right:auto}
 .foto-pendente{border:2px dashed var(--borda);border-radius:10px;padding:28px 16px;text-align:center;color:var(--suave);font-size:14px;background:var(--fundo-2)}
 
 .nao{list-style:none;padding-left:0}

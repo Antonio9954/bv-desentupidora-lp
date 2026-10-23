@@ -41,7 +41,7 @@ Arquivos: o modelo de artigo fica em `blog-modelo/index.html` (fora de `publicar
 - URL curta, sem acento e sem data: `/blog/palavra-chave/`
 - `<title>` com até 60 caracteres; meta description com até 155.
 - Schema JSON-LD: `BlogPosting` + `Person` (autor) + `Organization` + `FAQPage` + `BreadcrumbList`.
-- Imagens em WebP, com `alt` descritivo e `width`/`height`.
+- Imagens em WebP, com `alt` descritivo e `width`/`height`. Foto de celular em pé: `<figure class="foto-vertical">` (fica com no máximo 360 px de largura no computador).
 - 2 a 4 links internos: sempre para o pilar (`/blog/niveis-de-entupimento/`) e para a página de serviço relacionada.
 - Ao publicar: adicionar o artigo em `/blog/index.html`, no `llms.txt` e no `sitemap.xml`, e pedir indexação no Search Console.
 
