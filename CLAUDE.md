@@ -96,6 +96,15 @@ Commit `2fa4b36`, **publicado na Hostinger em 21/10/2026 ~14:05** (só o `index.
 - Conferido ao vivo: GTM carrega, GA4 `G-VZ9G7BWF7R` recebe page_view, tag do Google Ads `AW-18241603593` dispara (o container agora tem tag do Ads), zero erro no console
 - A sessão da Hostinger tinha expirado; o Antonio fez login de novo. Fluxo do item 5 de "Como publicar" funcionou igual
 
+## Blog (23/10/2026)
+
+- Veio do `bv-blog.zip` do Antonio. **Todo artigo novo segue o `PADRAO-BLOG.md`** (raiz do repo): autor Lucas Nonato, sem CTA/WhatsApp, foco em autoridade
+- Site: `publicar/blog/` (índice, `blog.css`, `niveis-de-entupimento/` = artigo pilar). Modelo de artigo: `blog-modelo/index.html` (não vai para o site). Conversor de fotos: `tools/converter-webp.py` (precisa de Pillow; rodar com `python`, não `python -I`, porque o Pillow está no site-packages do usuário). Testado: gira, reduz a 1200 px e não grava EXIF/GPS/XMP/C2PA
+- Topo/rodapé refeitos no visual do site (logo, fundo branco, rodapé #0B1620), sem WhatsApp; telefone só como texto no rodapé. Caminhos internos relativos para funcionar também na prévia (`/publicar/blog/` no GitHub Pages)
+- GTM no blog carrega no `<head>` (como veio no zip), diferente da landing, que carrega depois do `load`
+- `publicar/llms.txt` foi substituído pela versão do zip (que não cita "24 horas" nem a página de privacidade); `publicar/sitemap.xml` ganhou `/blog/` e `/blog/niveis-de-entupimento/` com `{{DOMINIO}}`, igual às outras linhas — trocar pelo domínio real ao subir
+- **Pendente:** fotos reais do artigo (3 quadros `foto-pendente`, capa `niveis-de-entupimento-capa.webp` do og:image, foto do autor `lucas-nonato.webp`); landing page ainda sem link para o blog; nada do blog publicado na Hostinger ainda
+
 ## Regras que o Antonio já deixou explícitas (seguir sempre)
 
 - **Nunca "limpar"/embelezar artificialmente fotos de antes/depois** — só fotos reais, sem alterar o resultado do serviço (questão de propaganda enganosa/CDC)
