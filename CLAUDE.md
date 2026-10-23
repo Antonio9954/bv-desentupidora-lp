@@ -103,8 +103,8 @@ Commit `2fa4b36`, **publicado na Hostinger em 21/10/2026 ~14:05** (só o `index.
 - Topo/rodapé refeitos no visual do site (logo, fundo branco, rodapé #0B1620), sem WhatsApp; telefone só como texto no rodapé. Caminhos internos relativos para funcionar também na prévia (`/publicar/blog/` no GitHub Pages)
 - GTM no blog carrega no `<head>` (como veio no zip), diferente da landing, que carrega depois do `load`
 - `publicar/llms.txt` foi substituído pela versão do zip (que não cita "24 horas" nem a página de privacidade); `publicar/sitemap.xml` ganhou `/blog/` e `/blog/niveis-de-entupimento/` com `{{DOMINIO}}`, igual às outras linhas — trocar pelo domínio real ao subir
-- Foto do bloco de gordura no ar no artigo (`blog/img/nivel-4-cano-de-gordura.webp`, 634×1378, `foto-vertical`)
-- **Pendente:** fotos reais do artigo (2 quadros `foto-pendente`: vaso+ralo da casa de eventos e rede pluvial de Heitoraí; capa `niveis-de-entupimento-capa.webp` do og:image, foto do autor `lucas-nonato.webp`); landing page ainda sem link para o blog; nada do blog publicado na Hostinger ainda
+- Já no artigo: foto do bloco de gordura (`blog/img/nivel-4-cano-de-gordura.webp`, 634×1378, `foto-vertical`) e vídeo horizontal de Heitoraí (YouTube `rIHn8FNLqQM`, classe `video video-h` = 16:9; Shorts usam só `video` = 9:16)
+- **Pendente:** foto real do vaso+ralo da casa de eventos (1 quadro `foto-pendente`, nível 3); capa `niveis-de-entupimento-capa.webp` do og:image, foto do autor `lucas-nonato.webp`); landing page ainda sem link para o blog; nada do blog publicado na Hostinger ainda
 
 ## Regras que o Antonio já deixou explícitas (seguir sempre)
 
