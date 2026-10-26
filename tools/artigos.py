@@ -1,5 +1,40 @@
 # Conteúdo dos artigos. Executado por gerar_artigos.py (usa video(), FOTO_GORDURA, gerar()).
 
+# Publicação: 1 por semana. Para publicar o próximo, mova o primeiro slug de FILA para PUB,
+# coloque a data em DATAS e rode `python tools/gerar_artigos.py publicar/blog`.
+PUB = ["niveis-de-entupimento", "rede-pluvial-entupida"]
+DATAS = {"niveis-de-entupimento": "2026-10-26", "rede-pluvial-entupida": "2026-10-26"}
+FILA = ["vaso-sanitario-entupido", "precisa-quebrar-piso-para-desentupir", "desentupir-pia-com-gordura",
+        "limpeza-caixa-de-gordura", "como-funciona-hidrojateamento", "pode-jogar-oleo-na-pia"]
+
+# slug: (título na lista, frase do índice do blog, frase do llms.txt)
+LISTA = {
+    "niveis-de-entupimento": ("Como saber se o entupimento é grave: os 4 níveis e o que fazer em cada um",
+                              "Um guia para identificar o nível do entupimento, o que dá para resolver em casa e quando chamar um profissional.",
+                              "como identificar se o entupimento é simples ou está na rede, o que resolver em casa, o que não fazer e quando chamar um profissional."),
+    "rede-pluvial-entupida": ("Rede pluvial entupida: sinais, causas e prevenção antes das chuvas",
+                              "Como saber se a rede pluvial está entupida, o que mais entope e o que fazer antes das chuvas.",
+                              "sinais de rede pluvial entupida, o que mais entope (caso real em Heitoraí, GO, com vídeo) e como prevenir antes das chuvas."),
+    "vaso-sanitario-entupido": ("Vaso sanitário entupido: o que fazer passo a passo",
+                                "Como usar a ventosa certa, o que nunca jogar no vaso e o sinal de que o problema está na rede.",
+                                "passo a passo com ventosa, o que não jogar no vaso e por que vaso e ralo entopem juntos (caso real em casa de eventos)."),
+    "precisa-quebrar-piso-para-desentupir": ("Precisa quebrar o piso para desentupir?",
+                                             "Por onde o profissional entra na tubulação sem quebrar e quando a quebra é inevitável.",
+                                             "na maioria dos casos não: acessos usados, sonda rotativa x hidrojato e quando a quebra é inevitável (caso real em Itaberaí, GO)."),
+    "desentupir-pia-com-gordura": ("Como desentupir pia com gordura: o que funciona de verdade",
+                                   "Sifão, ventosa, o limite da água quente e quando a gordura já virou placa no cano.",
+                                   "como a gordura vira placa no cano, passo a passo com sifão e ventosa e o que não fazer (caso real em Inhumas, GO)."),
+    "limpeza-caixa-de-gordura": ("Caixa de gordura: de quanto em quanto tempo limpar",
+                                 "Frequência de limpeza em casa e em restaurante, sinais de caixa cheia e o descarte da gordura.",
+                                 "frequência de limpeza (3 a 6 meses em casa; mensal ou quinzenal em restaurante), sinais de caixa cheia e como limpar."),
+    "como-funciona-hidrojateamento": ("Como funciona o hidrojateamento",
+                                      "O que é, por que resolve entupimento de gordura que volta e por que a técnica importa.",
+                                      "o que é (1.500 a 4.000 PSI), quando usar, riscos para o cano e segurança em fossas (caso real em restaurante de Goiânia)."),
+    "pode-jogar-oleo-na-pia": ("Pode jogar óleo na pia? E o que não usar para desentupir",
+                               "Por que o óleo entope, como descartar e o que nunca usar para desentupir.",
+                               "por que óleo na pia entope, como descartar e o que não usar para desentupir: misturas de produtos, soda, água fervendo e arame."),
+}
+
 LI = "https://www.linkedin.com/pulse/"
 
 # ---------------------------------------------------------------------------
@@ -668,3 +703,5 @@ OLEO = dict(
 
 for a in (REDE, VASO, PISO, PIA, CAIXA, HIDRO, OLEO):
     gerar(a)
+
+atualizar_listas()

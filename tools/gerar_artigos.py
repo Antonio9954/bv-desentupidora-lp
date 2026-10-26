@@ -104,11 +104,13 @@ def esc(s):
 
 def gerar(a):
     url = f"{SITE}/blog/{a['slug']}/"
+    data = DATAS.get(a["slug"], DATA)
+    data_br = "/".join(reversed(data.split("-")))
     texto = re.sub(r"<[^>]+>", " ", a["corpo"])
     minutos = max(3, round(len(texto.split()) / 200))
     citacoes = [FONTES[f][1] for f in a["fontes"] if FONTES[f][1]] + [a["linkedin"]]
     post = {"@type": "BlogPosting", "@id": url + "#artigo", "headline": a["h1"], "description": a["desc"], "inLanguage": "pt-BR",
-            "datePublished": DATA, "dateModified": DATA, "author": {"@id": f"{SITE}/#lucas-nonato"},
+            "datePublished": data, "dateModified": data, "author": {"@id": f"{SITE}/#lucas-nonato"},
             "publisher": {"@id": f"{SITE}/#empresa"}, "mainEntityOfPage": url, "image": a["imagem"], "keywords": a["keywords"],
             "about": [{"@type": "Thing", "name": t} for t in a["sobre"]],
             "isBasedOn": {"@type": "CreativeWork", "url": a["linkedin"], "author": {"@id": f"{SITE}/#lucas-nonato"}},
@@ -137,7 +139,7 @@ def gerar(a):
     faq = "\n".join(f"    <details>\n      <summary>{q}</summary>\n      <p>{r}</p>\n    </details>" for q, r in a["faq"])
     fontes = "\n".join(f"        <li>{FONTES[f][0]}</li>" for f in a["fontes"])
     fontes += f'\n        <li>Lucas Nonato. <a href="{a["linkedin"]}" rel="noopener" target="_blank">Relato original deste atendimento no LinkedIn</a>.</li>'
-    leia = "\n".join(f'        <li><a href="../{s}/">{ARTIGOS[s]}</a></li>' for s in a["leia"])
+    leia = "\n".join(f'        <li><a href="../{s}/">{ARTIGOS[s]}</a></li>' for s in leia_publicados(a["slug"], a["leia"]))
 
     html = f'''<!doctype html>
 <html lang="pt-BR">
@@ -160,8 +162,8 @@ def gerar(a):
 <meta property="og:description" content="{esc(a["desc"])}">
 <meta property="og:url" content="{url}">
 <meta property="og:image" content="{a["imagem"]}">
-<meta property="article:published_time" content="{DATA}">
-<meta property="article:modified_time" content="{DATA}">
+<meta property="article:published_time" content="{data}">
+<meta property="article:modified_time" content="{data}">
 <meta property="article:author" content="{LINKEDIN}">
 
 <link rel="icon" href="../../assets/favicon-48.png" type="image/png" sizes="48x48">
@@ -186,7 +188,7 @@ def gerar(a):
       <img src="../img/lucas-nonato.webp" alt="Lucas Nonato, fundador da BV Desentupidora" width="48" height="48">
       <div>
         Por <strong>Lucas Nonato</strong>, técnico em desentupimento e hidrojateamento há 10 anos em Goiânia e região<br>
-        Publicado em <time datetime="{DATA}">{DATA_BR}</time> · Atualizado em <time datetime="{DATA}">{DATA_BR}</time> · {minutos} min de leitura
+        Publicado em <time datetime="{data}">{data_br}</time> · Atualizado em <time datetime="{data}">{data_br}</time> · {minutos} min de leitura
       </div>
     </div>
 
@@ -223,10 +225,53 @@ def gerar(a):
 </body>
 </html>
 '''
+    html = sem_links_pendentes(html)
     destino = BLOG / a["slug"] / "index.html"
     destino.parent.mkdir(parents=True, exist_ok=True)
     destino.write_text(html, encoding="utf-8", newline="\n")
     print(f"{a['slug']}: title {len(a['title'])}c, desc {len(a['desc'])}c, {minutos} min, bv={texto.count('BV')}")
+
+
+def sem_links_pendentes(html):
+    """Link para artigo ainda não publicado vira texto comum (evita link quebrado no site)."""
+    return re.sub(r'<a href="\.\./([a-z0-9-]+)/">(.*?)</a>',
+                  lambda m: m.group(0) if m.group(1) not in ARTIGOS or m.group(1) in PUB else m.group(2), html)
+
+
+def leia_publicados(slug, preferidos, n=3):
+    lista = [s for s in preferidos if s in PUB and s != slug]
+    lista += [s for s in reversed(PUB) if s not in lista and s != slug]
+    return lista[:n]
+
+
+def atualizar_listas():
+    """Pilar (Leia também), índice do blog, llms.txt e sitemap só com os artigos publicados."""
+    p = BLOG / "niveis-de-entupimento" / "index.html"
+    h = p.read_text(encoding="utf-8")
+    ul = "      <ul>\n" + "\n".join(f'        <li><a href="../{s}/">{ARTIGOS[s]}</a></li>'
+                                  for s in leia_publicados("niveis-de-entupimento", [], 4)) + "\n      </ul>"
+    h = re.sub(r'(<nav class="leia-tambem"[^>]*>\s*<h2>Leia também</h2>\n)\s*<ul>.*?</ul>', lambda m: m.group(1) + ul, h, flags=re.S)
+    p.write_text(sem_links_pendentes(h), encoding="utf-8", newline="\n")
+
+    p = BLOG / "index.html"
+    h = p.read_text(encoding="utf-8")
+    itens = "".join(f'    <li>\n      <a href="./{s}/">{LISTA[s][0]}</a>\n      <p>{LISTA[s][1]}</p>\n    </li>\n' for s in reversed(PUB))
+    h = re.sub(r'(<ul class="lista-artigos">\n).*?(  </ul>)', lambda m: m.group(1) + itens + m.group(2), h, flags=re.S)
+    p.write_text(h, encoding="utf-8", newline="\n")
+
+    p = BLOG.parent / "llms.txt"
+    h = p.read_text(encoding="utf-8")
+    linhas = "".join(f"- [{LISTA[s][0]}]({SITE}/blog/{s}/): {LISTA[s][2]}\n" for s in PUB)
+    h = re.sub(r"(## Artigos\n\n).*?(\n## )", lambda m: m.group(1) + linhas + m.group(2), h, flags=re.S)
+    p.write_text(h, encoding="utf-8", newline="\n")
+
+    p = BLOG.parent / "sitemap.xml"
+    h = p.read_text(encoding="utf-8")
+    h = re.sub(r"  <url>\n    <loc>https://\{\{DOMINIO\}\}/blog/[a-z0-9-]+/</loc>.*?</url>\n", "", h, flags=re.S)
+    urls = "".join(f"  <url>\n    <loc>https://{{{{DOMINIO}}}}/blog/{s}/</loc>\n    <lastmod>{DATAS[s]}</lastmod>\n"
+                   f"    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>\n" for s in PUB)
+    p.write_text(h.replace("</urlset>", urls + "</urlset>"), encoding="utf-8", newline="\n")
+    print("publicados:", ", ".join(PUB))
 
 
 exec(Path(__file__).with_name("artigos.py").read_text(encoding="utf-8"))
