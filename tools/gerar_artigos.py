@@ -167,7 +167,7 @@ def gerar(a):
 <meta property="article:author" content="{LINKEDIN}">
 
 <link rel="icon" href="../../assets/favicon-48.png" type="image/png" sizes="48x48">
-<link rel="stylesheet" href="../blog.css">
+<link rel="stylesheet" href="../blog.css?v=20261027">
 
 <script type="application/ld+json">
 {ld}
