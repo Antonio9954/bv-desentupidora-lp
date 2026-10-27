@@ -1,10 +1,11 @@
 # Conteúdo dos artigos. Executado por gerar_artigos.py (usa video(), FOTO_GORDURA, gerar()).
 
-# Publicação: 1 por semana. Para publicar o próximo, mova o primeiro slug de FILA para PUB,
+# Publicação: 2 por semana. Para publicar o próximo, mova o primeiro slug de FILA para PUB,
 # coloque a data em DATAS e rode `python tools/gerar_artigos.py publicar/blog`.
-PUB = ["niveis-de-entupimento", "rede-pluvial-entupida"]
-DATAS = {"niveis-de-entupimento": "2026-10-26", "rede-pluvial-entupida": "2026-10-26"}
-FILA = ["vaso-sanitario-entupido", "precisa-quebrar-piso-para-desentupir", "desentupir-pia-com-gordura",
+PUB = ["niveis-de-entupimento", "rede-pluvial-entupida", "vaso-sanitario-entupido"]
+DATAS = {"niveis-de-entupimento": "2026-10-26", "rede-pluvial-entupida": "2026-10-26",
+         "vaso-sanitario-entupido": "2026-10-27"}
+FILA = ["precisa-quebrar-piso-para-desentupir", "desentupir-pia-com-gordura",
         "limpeza-caixa-de-gordura", "como-funciona-hidrojateamento", "pode-jogar-oleo-na-pia"]
 
 # slug: (título na lista, frase do índice do blog, frase do llms.txt)
