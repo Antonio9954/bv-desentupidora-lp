@@ -125,7 +125,7 @@ Commit `2fa4b36`, **publicado na Hostinger em 21/10/2026 ~14:05** (só o `index.
 - Vídeos do YouTube ainda não usados em artigo (levantados em 27/10): `8h-dHP99h1k` ramal de esgoto à noite em Goiânia (27/10, já cita o artigo do vaso na descrição), `47Ux-hA8U7Y` teste final da pia, `nN5UoNyNWWo` caixa de gordura com mau cheiro, `N0aqeIHKdJk` chinela, cabelo, lápis e papel no encanamento, `gB0qAmWEDRc` placas de gordura na pia (caseiro x profissional), `CgWsUyxpqrA` pia entupida com prevenção, `9FxF87hCiys` pia entupiu no domingo com visita. LinkedIn ainda não revisado
 - Artigo 11 (empresas / peças agrícolas) aguardando: o vídeo só existe no LinkedIn, não no YouTube
 - Fontes do Lucas descartadas por parecerem sites gerados/duvidosos: `ai.glendaleheights.summersphc.com`
-- **Pendente:** capa deitada; artigo 11; o Antonio vai mandar mais casos reais para novos artigos; landing page sem link para o blog (mexe na página principal: pedir autorização); descrição do vídeo de Heitoraí no YouTube ainda sem "lata de cerveja"
+- **Pendente:** capa deitada; artigo 11; os artigos novos o próprio Antonio cria e passa para o Claude (decisão de 27/10/2026: não montar pautas por conta própria; o Claude formata no PADRAO-BLOG, gera e publica); landing page sem link para o blog (mexe na página principal: pedir autorização); descrição do vídeo de Heitoraí no YouTube ainda sem "lata de cerveja"
 
 ## Regras que o Antonio já deixou explícitas (seguir sempre)
 
