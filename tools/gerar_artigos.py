@@ -185,7 +185,7 @@ def gerar(a):
     <h1>{a["h1"]}</h1>
 
     <div class="autor-linha">
-      <img src="../img/lucas-nonato.webp" alt="Lucas Nonato, fundador da BV Desentupidora" width="48" height="48">
+      <img src="../img/lucas-nonato.webp" alt="Lucas Nonato, fundador da BV Desentupidora em Goiânia" width="48" height="48">
       <div>
         Por <strong>Lucas Nonato</strong>, técnico em desentupimento e hidrojateamento há 10 anos em Goiânia e região<br>
         Publicado em <time datetime="{data}">{data_br}</time> · Atualizado em <time datetime="{data}">{data_br}</time> · {minutos} min de leitura

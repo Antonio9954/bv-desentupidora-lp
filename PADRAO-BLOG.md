@@ -51,7 +51,7 @@ Arquivos: o modelo de artigo fica em `blog-modelo/index.html` (fora de `publicar
 - Site: https://bvdesentupidora.com.br
 - WhatsApp: (62) 99605-1575
 - YouTube: https://www.youtube.com/channel/UCSlKam77878n5A2bwDVLX7g
-- Fundador/autor: Lucas Nonato (LinkedIn: https://www.linkedin.com/in/bvdesentupidora/)
+- Fundador da BV: Benedito Nonato Vieira Filho (Itaberaí, 2017). Fundador da BV Goiânia e autor: Lucas Nonato (LinkedIn: https://www.linkedin.com/in/bvdesentupidora/)
 - Área atendida: Goiânia, Aparecida de Goiânia, Anápolis, Itaberaí, Inhumas e região
 - Atenção: existem empresas com nome parecido em Santa Catarina. Sempre usar "BV Desentupidora — Goiânia/GO" nos perfis e textos institucionais.
 
