@@ -37,6 +37,18 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://{{DOMINIO}}/blog/precisa-quebrar-piso-para-desentupir/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://{{DOMINIO}}/blog/desentupir-pia-com-gordura/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://{{DOMINIO}}/blog/historia-bv-desentupidora/</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>

@@ -2,11 +2,12 @@
 
 # Publicação: 2 por semana. Para publicar o próximo, mova o primeiro slug de FILA para PUB,
 # coloque a data em DATAS e rode `python tools/gerar_artigos.py publicar/blog`.
-PUB = ["niveis-de-entupimento", "rede-pluvial-entupida", "vaso-sanitario-entupido"]
+PUB = ["niveis-de-entupimento", "rede-pluvial-entupida", "vaso-sanitario-entupido",
+       "precisa-quebrar-piso-para-desentupir", "desentupir-pia-com-gordura"]
 DATAS = {"niveis-de-entupimento": "2026-10-26", "rede-pluvial-entupida": "2026-10-26",
-         "vaso-sanitario-entupido": "2026-10-27", "historia-bv-desentupidora": "2026-11-02"}
-FILA = ["precisa-quebrar-piso-para-desentupir", "desentupir-pia-com-gordura",
-        "limpeza-caixa-de-gordura", "como-funciona-hidrojateamento", "pode-jogar-oleo-na-pia"]
+         "vaso-sanitario-entupido": "2026-10-27", "historia-bv-desentupidora": "2026-11-02",
+         "precisa-quebrar-piso-para-desentupir": "2026-11-02", "desentupir-pia-com-gordura": "2026-11-02"}
+FILA = ["limpeza-caixa-de-gordura", "como-funciona-hidrojateamento", "pode-jogar-oleo-na-pia"]
 # Artigos escritos à mão (não gerados aqui): entram no índice, llms.txt e sitemap, mas não no "Leia também".
 EXTRAS = ["historia-bv-desentupidora"]
 
@@ -421,7 +422,7 @@ PIA = dict(
         ("Detergente impede a gordura de grudar no cano?", "Não garante. O detergente ajuda a tirar gordura da louça, mas a gordura pode se separar da água no caminho e grudar mais adiante na tubulação."),
     ],
     fontes=["he2011", "saneago_oleo", "nbr8160", "campo"],
-    leia=["limpeza-caixa-de-gordura", "pode-jogar-oleo-na-pia", "como-funciona-hidrojateamento"],
+    leia=["limpeza-caixa-de-gordura", "pode-jogar-oleo-na-pia", "como-funciona-hidrojateamento", "niveis-de-entupimento"],
 )
 
 # ---------------------------------------------------------------------------
