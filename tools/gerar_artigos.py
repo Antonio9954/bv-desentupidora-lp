@@ -255,13 +255,14 @@ def atualizar_listas():
 
     p = BLOG / "index.html"
     h = p.read_text(encoding="utf-8")
-    itens = "".join(f'    <li>\n      <a href="./{s}/">{LISTA[s][0]}</a>\n      <p>{LISTA[s][1]}</p>\n    </li>\n' for s in reversed(PUB))
+    itens = "".join(f'    <li>\n      <a href="./{s}/">{LISTA[s][0]}</a>\n      <p>{LISTA[s][1]}</p>\n    </li>\n'
+                    for s in sorted(reversed(PUB + EXTRAS), key=DATAS.get, reverse=True))
     h = re.sub(r'(<ul class="lista-artigos">\n).*?(  </ul>)', lambda m: m.group(1) + itens + m.group(2), h, flags=re.S)
     p.write_text(h, encoding="utf-8", newline="\n")
 
     p = BLOG.parent / "llms.txt"
     h = p.read_text(encoding="utf-8")
-    linhas = "".join(f"- [{LISTA[s][0]}]({SITE}/blog/{s}/): {LISTA[s][2]}\n" for s in PUB)
+    linhas = "".join(f"- [{LISTA[s][0]}]({SITE}/blog/{s}/): {LISTA[s][2]}\n" for s in PUB + EXTRAS)
     h = re.sub(r"(## Artigos\n\n).*?(\n## )", lambda m: m.group(1) + linhas + m.group(2), h, flags=re.S)
     p.write_text(h, encoding="utf-8", newline="\n")
 
@@ -269,7 +270,7 @@ def atualizar_listas():
     h = p.read_text(encoding="utf-8")
     h = re.sub(r"  <url>\n    <loc>https://\{\{DOMINIO\}\}/blog/[a-z0-9-]+/</loc>.*?</url>\n", "", h, flags=re.S)
     urls = "".join(f"  <url>\n    <loc>https://{{{{DOMINIO}}}}/blog/{s}/</loc>\n    <lastmod>{DATAS[s]}</lastmod>\n"
-                   f"    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>\n" for s in PUB)
+                   f"    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>\n" for s in PUB + EXTRAS)
     p.write_text(h.replace("</urlset>", urls + "</urlset>"), encoding="utf-8", newline="\n")
     print("publicados:", ", ".join(PUB))
 
