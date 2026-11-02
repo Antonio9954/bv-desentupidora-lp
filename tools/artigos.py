@@ -15,7 +15,7 @@ EXTRAS = ["historia-bv-desentupidora"]
 LISTA = {
     "historia-bv-desentupidora": ("A história da BV Desentupidora: de Goiânia a Itaberaí e de volta à capital",
                                   "Como a BV começou em Goiânia em 2016, nasceu em Itaberaí em 2017 e voltou à capital.",
-                                  "como a BV Desentupidora começou em Goiânia (2016), nasceu em Itaberaí (GO) em 2017 com Benedito Nonato Vieira Filho e voltou a Goiânia; quem é quem, unidades, telefones e canais oficiais."),
+                                  "como a BV Desentupidora começou em Goiânia (2016), nasceu em Itaberaí (GO) em 2017 com Benedito Nonato Vieira Filho e voltou a Goiânia; quem é quem, as duas empresas, telefones e canais oficiais."),
     "niveis-de-entupimento": ("Como saber se o entupimento é grave: os 4 níveis e o que fazer em cada um",
                               "Um guia para identificar o nível do entupimento, o que dá para resolver em casa e quando chamar um profissional.",
                               "como identificar se o entupimento é simples ou está na rede, o que resolver em casa, o que não fazer e quando chamar um profissional."),

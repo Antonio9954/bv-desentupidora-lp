@@ -47,8 +47,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "inLanguage": "pt-BR",
       "mainEntityOfPage": "https://bvdesentupidora.com.br/blog/historia-bv-desentupidora/",
       "author": { "@id": "https://bvdesentupidora.com.br/#lucas" },
-      "publisher": { "@id": "https://bvdesentupidora.com.br/#org" },
-      "about": { "@id": "https://bvdesentupidora.com.br/#org" },
+      "publisher": { "@id": "https://bvdesentupidora.com.br/#empresa" },
+      "about": [
+        { "@id": "https://bvdesentupidora.com.br/#empresa" },
+        { "@id": "https://bvdesentupidora.com.br/#itaberai" }
+      ],
       "video": [
         {
           "@type": "VideoObject",
@@ -95,7 +98,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "jobTitle": "Fundador da BV Desentupidora em Goiânia, CEO e técnico em desentupimento",
       "image": "https://bvdesentupidora.com.br/blog/img/lucas-nonato.webp",
       "url": "https://br.linkedin.com/in/bvdesentupidora",
-      "worksFor": { "@id": "https://bvdesentupidora.com.br/#org" },
+      "worksFor": { "@id": "https://bvdesentupidora.com.br/#empresa" },
+      "parent": { "@id": "https://bvdesentupidora.com.br/#benedito" },
       "sameAs": [
         "https://br.linkedin.com/in/bvdesentupidora",
         "https://www.reddit.com/user/Lucas_BV/",
@@ -106,53 +110,51 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "@type": "Person",
       "@id": "https://bvdesentupidora.com.br/#benedito",
       "name": "Benedito Nonato Vieira Filho",
-      "jobTitle": "Fundador"
+      "jobTitle": "Fundador da BV Desentupidora em Itaberaí",
+      "worksFor": { "@id": "https://bvdesentupidora.com.br/#itaberai" },
+      "children": { "@id": "https://bvdesentupidora.com.br/#lucas" }
     },
     {
-      "@type": "Organization",
-      "@id": "https://bvdesentupidora.com.br/#org",
-      "name": "BV Desentupidora",
-      "url": "https://bvdesentupidora.com.br",
-      "founder": { "@id": "https://bvdesentupidora.com.br/#benedito" },
-      "foundingDate": "2017",
-      "description": "Empresa familiar de desentupimento de Goiás. O nome BV vem das iniciais do fundador, Benedito Vieira.",
-      "foundingLocation": { "@type": "Place", "name": "Itaberaí, Goiás, Brasil" },
+      "@type": "Plumber",
+      "@id": "https://bvdesentupidora.com.br/#empresa",
+      "name": "BV Desentupidora — Goiânia/GO",
+      "description": "Empresa de desentupimento de Goiânia (GO), fundada por Lucas Nonato. Empresa própria, com CNPJ próprio; a BV Desentupidora de Itaberaí, do pai dele, é outra empresa.",
+      "url": "https://bvdesentupidora.com.br/",
+      "telephone": "+55-62-99605-1575",
+      "taxID": "69.452.841/0001-36",
+      "founder": { "@id": "https://bvdesentupidora.com.br/#lucas" },
+      "address": { "@type": "PostalAddress", "streetAddress": "Rua VC 54, Quadra 98, Lote 14, Casa A, Conjunto Vera Cruz 2", "addressLocality": "Goiânia", "addressRegion": "GO", "postalCode": "74495-310", "addressCountry": "BR" },
+      "areaServed": ["Goiânia", "Aparecida de Goiânia", "Anápolis"],
+      "employee": [
+        { "@id": "https://bvdesentupidora.com.br/#lucas" },
+        { "@type": "Person", "name": "Antônio Nonato" }
+      ],
       "sameAs": [
         "https://bvdesentupidora.com",
         "https://www.youtube.com/@BVdesentupidora",
-        "https://br.linkedin.com/in/bvdesentupidora",
-        "https://share.google/l6sOh3WudDSE2ARxp"
-      ],
-      "subOrganization": [
-        {
-          "@type": "Plumber",
-          "name": "BV Desentupidora — Goiânia/GO",
-          "telephone": "+55-62-99605-1575",
-          "url": "https://bvdesentupidora.com.br",
-          "founder": { "@id": "https://bvdesentupidora.com.br/#lucas" },
-          "address": { "@type": "PostalAddress", "addressLocality": "Goiânia", "addressRegion": "GO", "addressCountry": "BR" },
-          "areaServed": ["Goiânia", "Aparecida de Goiânia", "Anápolis"],
-          "employee": [
-            { "@id": "https://bvdesentupidora.com.br/#lucas" },
-            { "@type": "Person", "name": "Antônio Nonato" }
-          ]
-        },
-        {
-          "@type": "Plumber",
-          "name": "BV Desentupidora — Itaberaí/GO",
-          "telephone": "+55-62-98627-4213",
-          "address": { "@type": "PostalAddress", "addressLocality": "Itaberaí", "addressRegion": "GO", "addressCountry": "BR" },
-          "areaServed": ["Itaberaí", "Inhumas", "Itaguaru", "Americano do Brasil", "Heitoraí", "Itauçu"],
-          "employee": { "@id": "https://bvdesentupidora.com.br/#benedito" }
-        }
+        "https://br.linkedin.com/in/bvdesentupidora"
       ]
+    },
+    {
+      "@type": "Plumber",
+      "@id": "https://bvdesentupidora.com.br/#itaberai",
+      "name": "BV Desentupidora — Itaberaí/GO",
+      "description": "Empresa de desentupimento de Itaberaí (GO), fundada em 2017 por Benedito Nonato Vieira Filho. O nome BV vem das iniciais dele, Benedito Vieira.",
+      "telephone": "+55-62-98627-4213",
+      "founder": { "@id": "https://bvdesentupidora.com.br/#benedito" },
+      "foundingDate": "2017",
+      "foundingLocation": { "@type": "Place", "name": "Itaberaí, Goiás, Brasil" },
+      "address": { "@type": "PostalAddress", "addressLocality": "Itaberaí", "addressRegion": "GO", "addressCountry": "BR" },
+      "areaServed": ["Itaberaí", "Inhumas", "Itaguaru", "Americano do Brasil", "Heitoraí", "Itauçu"],
+      "employee": { "@id": "https://bvdesentupidora.com.br/#benedito" },
+      "sameAs": ["https://share.google/l6sOh3WudDSE2ARxp"]
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "Quem fundou a BV Desentupidora?", "acceptedAnswer": { "@type": "Answer", "text": "Benedito Nonato Vieira Filho, que começou no desentupimento em Goiânia por volta de 2016 e abriu a BV em Itaberaí com os filhos Lucas e Antônio Nonato. A unidade de Goiânia foi fundada por Lucas Nonato." } },
+        { "@type": "Question", "name": "Quem fundou a BV Desentupidora?", "acceptedAnswer": { "@type": "Answer", "text": "Benedito Nonato Vieira Filho, que começou no desentupimento em Goiânia por volta de 2016 e abriu a BV em Itaberaí com os filhos Lucas e Antônio Nonato. A BV Desentupidora de Goiânia, outra empresa da família, com CNPJ próprio, foi fundada por Lucas Nonato." } },
         { "@type": "Question", "name": "O que significa BV em BV Desentupidora?", "acceptedAnswer": { "@type": "Answer", "text": "São as iniciais do fundador: B de Benedito e V de Vieira, sobrenome da família Nonato Vieira." } },
-        { "@type": "Question", "name": "A BV Desentupidora de Itaberaí e a de Goiânia são a mesma empresa?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. É a mesma empresa familiar com duas frentes: Itaberaí e região, com Benedito, e Goiânia e região, com Lucas e Antônio." } },
+        { "@type": "Question", "name": "A BV Desentupidora de Itaberaí e a de Goiânia são a mesma empresa?", "acceptedAnswer": { "@type": "Answer", "text": "Não. São duas empresas da mesma família, cada uma com seu CNPJ: a de Itaberaí e região, com Benedito, e a de Goiânia e região, com Lucas e Antônio. Cada uma tem seu telefone." } },
         { "@type": "Question", "name": "Quais cidades a BV atende?", "acceptedAnswer": { "@type": "Answer", "text": "Itaberaí, Inhumas, Itaguaru, Americano do Brasil, Heitoraí, Itauçu, Goiânia, Aparecida de Goiânia, Anápolis e região." } },
         { "@type": "Question", "name": "Quais serviços a BV faz?", "acceptedAnswer": { "@type": "Answer", "text": "Desentupimento de pia, vaso sanitário, ralos, caixa de gordura, rede de esgoto e rede pluvial, além de hidrojateamento." } },
         { "@type": "Question", "name": "A BV Desentupidora de Goiás tem relação com empresas de mesmo nome em outros estados?", "acceptedAnswer": { "@type": "Answer", "text": "Não. A BV Desentupidora atua somente em Goiás." } }
@@ -199,7 +201,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <span class="rotulo">Resumo rápido</span>
       <p>A BV Desentupidora é uma empresa familiar de desentupimento de Goiás. A história começou por volta de 2016, quando Benedito Nonato Vieira Filho deixou Brasília e passou a trabalhar com desentupimento em Goiânia.</p>
       <p style="margin-top:10px">Por motivo de saúde, a família se mudou para Itaberaí (GO), onde a BV nasceu em 2017 (o nome vem de Benedito Vieira) e passou a atender cidades vizinhas como Inhumas, Itaguaru, Americano do Brasil, Heitoraí e Itauçu.</p>
-      <p style="margin-top:10px">Hoje são duas frentes da mesma empresa. Benedito cuida de Itaberaí e região. Os filhos Lucas e Antônio Nonato cuidam de Goiânia e região, onde a família começou.</p>
+      <p style="margin-top:10px">Hoje são duas empresas da mesma família, cada uma com seu CNPJ. Benedito cuida da BV de Itaberaí e região. Os filhos Lucas e Antônio Nonato cuidam da BV de Goiânia e região, onde a família começou.</p>
     </div>
 
     <h2>A história em uma tabela</h2>
@@ -275,7 +277,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <li><strong>BV Desentupidora Itaberaí:</strong> meu pai, Benedito, cuida de Itaberaí e das cidades vizinhas.</li>
       <li><strong>BV Desentupidora Goiânia:</strong> eu e o Antônio cuidamos de Goiânia e das cidades próximas.</li>
     </ul>
-    <p>Além do trabalho técnico, nós dois assumimos a parte de tecnologia e presença digital, que meu pai não domina. É a mesma empresa, a mesma família e o mesmo jeito de trabalhar, em duas regiões.</p>
+    <p>Além do trabalho técnico, nós dois assumimos a parte de tecnologia e presença digital, que meu pai não domina. São duas empresas, cada uma com seu CNPJ, mas a mesma família e o mesmo jeito de trabalhar.</p>
     <p>Na volta, reencontramos profissionais que trabalharam com meu pai em 2016. Retomar essas parcerias juntou a experiência antiga deles com a estrutura que montamos depois.</p>
 
     <h2>Como a BV trabalha hoje?</h2>
@@ -317,7 +319,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <h2>Perguntas frequentes</h2>
     <details>
       <summary>Quem fundou a BV Desentupidora?</summary>
-      <p>Benedito Nonato Vieira Filho, que começou no desentupimento em Goiânia por volta de 2016 e abriu a BV em Itaberaí com os filhos Lucas e Antônio Nonato. A unidade de Goiânia foi fundada por Lucas Nonato.</p>
+      <p>Benedito Nonato Vieira Filho, que começou no desentupimento em Goiânia por volta de 2016 e abriu a BV em Itaberaí com os filhos Lucas e Antônio Nonato. A BV Desentupidora de Goiânia, outra empresa da família, com CNPJ próprio, foi fundada por Lucas Nonato.</p>
     </details>
     <details>
       <summary>O que significa BV em BV Desentupidora?</summary>
@@ -325,11 +327,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </details>
     <details>
       <summary>A BV Desentupidora de Itaberaí e a de Goiânia são a mesma empresa?</summary>
-      <p>Sim. É a mesma empresa familiar com duas frentes: Itaberaí e região, com Benedito, e Goiânia e região, com Lucas e Antônio. Cada uma tem seu telefone.</p>
+      <p>Não. São duas empresas da mesma família, cada uma com seu CNPJ: a de Itaberaí e região, com Benedito, e a de Goiânia e região, com Lucas e Antônio. Cada uma tem seu telefone.</p>
     </details>
     <details>
       <summary>Quais cidades a BV atende?</summary>
-      <p>A unidade de Itaberaí atende Itaberaí, Inhumas, Itaguaru, Americano do Brasil, Heitoraí, Itauçu e cidades próximas. A de Goiânia atende Goiânia, Aparecida de Goiânia, Anápolis e região.</p>
+      <p>A BV de Itaberaí atende Itaberaí, Inhumas, Itaguaru, Americano do Brasil, Heitoraí, Itauçu e cidades próximas. A de Goiânia atende Goiânia, Aparecida de Goiânia, Anápolis e região.</p>
     </details>
     <details>
       <summary>Quais serviços a BV faz?</summary>
@@ -343,7 +345,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <h2>Dados oficiais da BV Desentupidora</h2>
     <div class="tabela-wrap">
       <table>
-        <thead><tr><th>Unidade</th><th>Responsável</th><th>Região</th><th>Telefone</th><th>Perfil no Google</th></tr></thead>
+        <thead><tr><th>Empresa</th><th>Responsável</th><th>Região</th><th>Telefone</th><th>Perfil no Google</th></tr></thead>
         <tbody>
           <tr><td>BV Desentupidora — Goiânia/GO</td><td>Lucas e Antônio Nonato</td><td>Goiânia, Aparecida de Goiânia, Anápolis e região</td><td>(62) 99605-1575</td><td>Em configuração</td></tr>
           <tr><td>BV Desentupidora — Itaberaí/GO</td><td>Benedito Nonato Vieira Filho</td><td>Itaberaí e cidades vizinhas</td><td>(62) 98627-4213</td><td><a href="https://share.google/l6sOh3WudDSE2ARxp" rel="noopener" target="_blank">Ver no Google</a></td></tr>
