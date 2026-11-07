@@ -3,10 +3,11 @@
 # Publicação: 2 por semana. Para publicar o próximo, mova o primeiro slug de FILA para PUB,
 # coloque a data em DATAS e rode `python tools/gerar_artigos.py publicar/blog`.
 PUB = ["niveis-de-entupimento", "rede-pluvial-entupida", "vaso-sanitario-entupido",
-       "precisa-quebrar-piso-para-desentupir", "desentupir-pia-com-gordura"]
+       "precisa-quebrar-piso-para-desentupir", "desentupir-pia-com-gordura", "raizes-na-rede-pluvial"]
 DATAS = {"niveis-de-entupimento": "2026-10-26", "rede-pluvial-entupida": "2026-10-26",
          "vaso-sanitario-entupido": "2026-10-27", "historia-bv-desentupidora": "2026-11-02",
-         "precisa-quebrar-piso-para-desentupir": "2026-11-02", "desentupir-pia-com-gordura": "2026-11-02"}
+         "precisa-quebrar-piso-para-desentupir": "2026-11-02", "desentupir-pia-com-gordura": "2026-11-02",
+         "raizes-na-rede-pluvial": "2026-11-07"}
 FILA = ["limpeza-caixa-de-gordura", "como-funciona-hidrojateamento", "pode-jogar-oleo-na-pia"]
 # Artigos escritos à mão (não gerados aqui): entram no índice, llms.txt e sitemap, mas não no "Leia também".
 EXTRAS = ["historia-bv-desentupidora"]
@@ -31,6 +32,9 @@ LISTA = {
     "desentupir-pia-com-gordura": ("Como desentupir pia com gordura: o que funciona de verdade",
                                    "Sifão, ventosa, o limite da água quente e quando a gordura já virou placa no cano.",
                                    "como a gordura vira placa no cano, passo a passo com sifão e ventosa e o que não fazer (caso real em Inhumas, GO)."),
+    "raizes-na-rede-pluvial": ("Raízes na rede pluvial: o alerta que canteiros perto da tubulação escondem",
+                               "Como a raiz entra no cano, os sinais, a distância segura do canteiro e se é preciso quebrar o piso.",
+                               "como a raiz de um canteiro entra na rede pluvial, sinais, distância segura, cimento no cano e caso real com 2 metros de raiz retirados sem quebrar o piso."),
     "limpeza-caixa-de-gordura": ("Caixa de gordura: de quanto em quanto tempo limpar",
                                  "Frequência de limpeza em casa e em restaurante, sinais de caixa cheia e o descarte da gordura.",
                                  "frequência de limpeza (3 a 6 meses em casa; mensal ou quinzenal em restaurante), sinais de caixa cheia e como limpar."),
@@ -708,7 +712,166 @@ OLEO = dict(
     leia=["desentupir-pia-com-gordura", "limpeza-caixa-de-gordura", "como-funciona-hidrojateamento"],
 )
 
-for a in (REDE, VASO, PISO, PIA, CAIXA, HIDRO, OLEO):
+# ---------------------------------------------------------------------------
+# Raízes na rede pluvial (texto do Antonio, 07/11/2026)
+# ---------------------------------------------------------------------------
+RAIZES = dict(
+    slug="raizes-na-rede-pluvial",
+    title="Raízes na rede pluvial: o risco dos canteiros perto do cano",
+    h1="Raízes na rede pluvial: o alerta que canteiros perto da tubulação escondem",
+    desc="Raízes de um canteiro entraram na rede pluvial e causaram 2 anos de alagamento. Veja os sinais, a distância segura e se é preciso quebrar o piso.",
+    migalha="Raízes na rede pluvial",
+    keywords="raízes na rede pluvial, raiz dentro do cano, canteiro perto da tubulação, quintal alagando quando chove, precisa quebrar para tirar raiz do cano",
+    sobre=["Rede pluvial", "Raízes em tubulações", "Hidrojateamento"],
+    imagem=f"{SITE}/blog/img/raiz-2-metros-capa.webp",
+    videos=["MWbG7DCMUyo", "hQdNCBS5Q6M"],
+    resumo="Raízes de plantas procuram umidade e entram na rede pluvial por juntas mal vedadas, trincas ou caixas sem tampa. Dentro do cano, elas crescem, prendem terra, folhas e objetos, e a água da chuva para de escoar. Em um atendimento recente, retiramos cerca de 2 metros de raiz de dentro de uma tubulação pluvial que alagava a casa havia 2 anos. Na maioria dos casos dá para desobstruir sem quebrar o piso, mas o canteiro precisa ser tratado, ou a raiz volta.",
+    corpo='''    <h2>Resumo: raízes na rede pluvial em 6 respostas</h2>
+    <div class="tabela-wrap">
+      <table>
+        <thead><tr><th>Pergunta</th><th>Resposta curta</th></tr></thead>
+        <tbody>
+          <tr><td>Por que a raiz entra no cano?</td><td>Busca água e encontra juntas, trincas ou caixas abertas</td></tr>
+          <tr><td>Qual o sinal mais comum?</td><td>Quintal ou garagem que alaga a cada chuva forte</td></tr>
+          <tr><td>Produto químico resolve?</td><td>Não. Raiz é material vivo e fibroso</td></tr>
+          <tr><td>Precisa quebrar e trocar os canos?</td><td>Quase sempre não; avalie a desobstrução antes</td></tr>
+          <tr><td>Como evitar que volte?</td><td>Afastar o canteiro, vedar juntas e revisar antes das chuvas</td></tr>
+          <tr><td>Melhor época para revisar em Goiás</td><td>Setembro e início de outubro, antes do período chuvoso</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Como a raiz de um canteiro entra na rede pluvial?</h2>
+    <p>A raiz não fura um cano inteiro. Ela entra por onde já existe uma abertura: junta de PVC mal colada, trinca causada por recalque do solo, tubo de concreto antigo ou caixa de passagem sem tampa e coberta de terra.</p>
+    <p>A rede pluvial é um alvo fácil por três motivos:</p>
+    <ul>
+      <li>Fica úmida por dias depois de cada chuva, e a raiz cresce na direção da água.</li>
+      <li>Costuma ser rasa e passar rente a muros, jardins e canteiros.</li>
+      <li>Carrega terra e matéria orgânica, que alimentam a raiz dentro do tubo.</li>
+    </ul>
+    <p>Uma vez dentro, a raiz engrossa e se ramifica no sentido do fluxo. Ela vira uma peneira: segura folhas, areia e objetos, e o cano fecha aos poucos. Por isso o problema costuma piorar ano a ano, e não de uma vez.</p>
+
+    <h2>Caso real: 2 anos de alagamento e 2 metros de raiz dentro do cano</h2>
+    <p>Este atendimento mostra, na prática, o que explico no guia sobre <a href="../rede-pluvial-entupida/">rede pluvial entupida</a>.</p>
+    <div class="caso">
+      <p>Fomos chamados para desentupir a rede de esgoto de uma residência. Durante o serviço, encontramos a rede pluvial do imóvel com as caixas cobertas de terra. Alertamos a cliente sobre o risco de alagamento com as chuvas de fim de ano.</p>
+      <p>A resposta dela mostrou o tamanho do problema: a casa já alagava havia 2 anos. Ela tentou desobstruir por conta própria várias vezes, sem resultado, e estava desistindo. Um pedreiro tinha recomendado quebrar o piso e trocar toda a tubulação.</p>
+      <p>Propusemos tentar a desobstrução antes de qualquer quebra. Dentro da rede, encontramos:</p>
+      <ul>
+        <li>Bolas de tênis e bolinhas de cachorro</li>
+        <li>Tampas de garrafa</li>
+        <li>Terra compactada e restos de cimento endurecidos na parede do cano</li>
+        <li>Raízes do canteiro ao lado, com cerca de 2 metros de comprimento</li>
+      </ul>
+      <p>Os objetos explicam parte do entupimento. Bolinhas rolam pelo quintal e entram por ralos sem grelha ou caixas abertas. Mas foram as raízes que transformaram a rede em uma barreira: elas prenderam cada objeto e cada punhado de terra que passava.</p>
+      <p>Usamos <a href="../como-funciona-hidrojateamento/">hidrojateamento</a>: o jato de alta pressão cortou as raízes, soltou o cimento e arrastou os objetos até a caixa, onde foram retirados. Depois, testamos o escoamento com água e a rede voltou a funcionar sem quebrar o piso. A cliente foi orientada sobre o canteiro, porque a raiz que ficou no solo continua procurando água.</p>
+    </div>
+
+    <figure class="foto-vertical">
+      <img src="../img/raiz-2-metros-retirada-rede-pluvial.webp" alt="Técnico da BV Desentupidora segura raiz de cerca de 2 metros retirada de rede pluvial residencial" width="873" height="1200" loading="lazy">
+      <figcaption>Raiz de cerca de 2 metros retirada de dentro da rede pluvial.</figcaption>
+    </figure>
+
+    <figure class="foto-vertical">
+      <img src="../img/raiz-saindo-caixa-pluvial-canteiro.webp" alt="Raiz do canteiro retirada da caixa de passagem da rede pluvial, ao lado das plantas" width="931" height="1200" loading="lazy">
+      <figcaption>A raiz saindo da caixa de passagem, rente ao canteiro de onde veio.</figcaption>
+    </figure>
+
+    ''' + video("MWbG7DCMUyo", "raiz de 2 metros dentro da rede pluvial", "Técnico segura a raiz de cerca de 2 metros retirada da rede pluvial, no quintal da casa",
+                "Vídeo (caso real, 1 min): a rede pluvial que alagava a casa havia 2 anos, resolvida com desobstrução, sem quebrar o piso.") + '''
+
+    <h2>Cimento na rede pluvial: o perigo de lavar ferramentas no ralo durante obra ou reforma</h2>
+    <p>No mesmo desentupimento, encontramos cimento endurecido dentro da tubulação. Ele vem de um hábito comum em obra e reforma: lavar baldes, colher de pedreiro, betoneira e desempenadeira no ralo do quintal.</p>
+    <p>O cimento não se dissolve na água. Ele assenta no fundo do cano, endurece e fica preso à parede. Com isso:</p>
+    <ul>
+      <li>O diâmetro útil do cano diminui a cada lavagem</li>
+      <li>A superfície fica áspera e passa a segurar terra, folhas e raízes</li>
+      <li>Na próxima chuva forte, a água não tem por onde passar</li>
+    </ul>
+    <p>No vídeo deste caso, mostro como o cimento fica dentro da tubulação e comparo dois trechos da mesma rede: um já desobstruído e limpo e outro ainda sujo, antes da passagem do hidrojato.</p>
+
+    ''' + video("hQdNCBS5Q6M", "cimento na rede pluvial, antes e depois", "Vídeo comparando dois trechos da mesma rede pluvial, um limpo e outro ainda sujo",
+                "Vídeo (caso real, 47 s): à esquerda, a tubulação já limpa; à direita, a que ainda estava suja.") + '''
+
+    <p>Como evitar durante uma obra ou reforma:</p>
+    <ul>
+      <li>Lave ferramentas dentro de um balde ou tambor, nunca no ralo</li>
+      <li>Deixe a água descansar até o material assentar no fundo</li>
+      <li>Descarte o resíduo sólido junto com o entulho da obra</li>
+      <li>Tampe ralos e caixas de passagem enquanto a obra durar</li>
+      <li>Combine essa regra com o pedreiro antes do início do serviço</li>
+    </ul>
+
+    <h2>Quais sinais indicam raiz dentro da rede pluvial?</h2>
+    <ul>
+      <li>Quintal, garagem ou área externa que alaga em toda chuva forte, mesmo com ralos limpos</li>
+      <li>Água que escoa devagar e volta pelo ralo durante a chuva</li>
+      <li>Caixa de passagem com terra, lodo ou raízes finas aparecendo</li>
+      <li>Entupimento que volta pouco tempo depois de uma limpeza</li>
+      <li>Canteiro, árvore ou arbusto a menos de 1 ou 2 metros da linha do cano</li>
+      <li>Piso cedendo ou trincando em cima do trajeto da tubulação</li>
+    </ul>
+    <p>Quando dois ou mais desses sinais aparecem juntos e há plantas perto, a raiz deve ser a primeira suspeita.</p>
+
+    <h2>Qual a distância segura entre canteiro e rede pluvial?</h2>
+    <p>Não existe uma medida única, porque depende da planta. A regra prática citada por paisagistas é manter a planta a uma distância equivalente, no mínimo, à metade da largura da copa adulta. Para árvores de raiz agressiva, como o fícus, a recomendação vai de 10 a 15 metros de qualquer construção ou tubulação.</p>
+    <p>Na minha experiência com canteiros residenciais, o que mais causa problema é:</p>
+    <ul>
+      <li>Canteiro plantado em cima ou rente à linha do cano</li>
+      <li>Arbustos e árvores de raiz superficial perto de caixas de passagem</li>
+      <li>Canteiro sem fundo, sobre solo raso, que força a raiz a correr para os lados</li>
+    </ul>
+    <p>Antes de plantar, descubra por onde passa a rede pluvial. Prefira espécies de raiz profunda ou de pequeno porte perto de tubulações, como ipê ou pitangueira, e mantenha as caixas de inspeção livres e com tampa.</p>
+
+    <h2>Dicas caseiras que ajudam (e as que não funcionam)</h2>
+    <p>O que você pode fazer em casa, com segurança:</p>
+    <ul>
+      <li><strong>Teste da mangueira:</strong> jogue água em cada ralo externo em dia seco e veja se ela some rápido. Água parada indica obstrução.</li>
+      <li>Abra as caixas de passagem e retire terra e folhas acumuladas na superfície.</li>
+      <li>Coloque grelha em ralos externos. Bolinhas de cachorro e bolas de tênis entram por ralos abertos.</li>
+      <li>Recolha brinquedos e objetos do quintal antes das chuvas.</li>
+      <li>Pode as raízes visíveis do canteiro no lado da tubulação, sem cavar perto do cano.</li>
+    </ul>
+    <p>Dicas que circulam em fóruns e redes sociais, mas que não recomendo:</p>
+    <ul class="nao">
+      <li><strong>Soda cáustica ou ácido:</strong> não dissolvem raiz grossa e podem danificar o PVC e a vedação das juntas.</li>
+      <li><strong>"Matador de raiz" em pó:</strong> é feito para esgoto e não deve ir para rede que despeja em solo, jardim ou galeria pública.</li>
+      <li><strong>Arame ou vergalhão empurrado na marra:</strong> pode furar o cano ou empurrar a raiz e os objetos ainda mais para dentro.</li>
+      <li><strong>Despejar água em alta pressão sem saber onde está a obstrução:</strong> alivia por dias e não tira a raiz.</li>
+    </ul>
+    <p>Em fóruns americanos de manutenção e na central de dúvidas da Roto-Rooter, os técnicos repetem o mesmo ponto: a raiz que já está no cano precisa ser cortada, e o produto, quando usado, só ajuda a atrasar o crescimento. O tipo de cano define a ferramenta. Cano fino ou corrugado pode ser rompido por máquina inadequada.</p>
+
+    <h2>Precisa quebrar o piso e trocar os canos?</h2>
+    <p>Na maioria dos casos, não. No caso deste artigo, o primeiro orçamento era quebrar tudo. A desobstrução resolveu sem quebra.</p>
+    <p>A quebra só se justifica quando:</p>
+    <ul>
+      <li>O cano está rompido, amassado ou deslocado</li>
+      <li>A raiz entra sempre pelo mesmo ponto, e ele não tem como ser vedado</li>
+      <li>A rede não tem caixas de inspeção e não há acesso por nenhum ponto</li>
+    </ul>
+    <p>Quem decide isso deve ser quem viu a rede por dentro. Trocar canos antes de desobstruir é pagar por uma obra que, muitas vezes, não era necessária. Veja também <a href="../precisa-quebrar-piso-para-desentupir/">quando é preciso quebrar o piso para desentupir</a>.</p>
+
+    <h2>Quando chamar um profissional?</h2>
+    <ul>
+      <li>O quintal já alagou mais de uma vez</li>
+      <li>A limpeza caseira não resolveu ou o entupimento volta</li>
+      <li>Há raízes visíveis na caixa de passagem</li>
+      <li>Alguém recomendou quebrar o piso e você quer uma segunda avaliação</li>
+      <li>O período de chuvas está chegando. Em Goiânia, ele vai de outubro a abril, e revisar a rede antes é mais barato que limpar depois do alagamento.</li>
+    </ul>
+    <p>Para avaliar a gravidade do problema, veja <a href="../niveis-de-entupimento/">os 4 níveis de entupimento</a>.</p>''',
+    faq=[
+        ("Raiz de canteiro pequeno consegue entupir a rede pluvial?", "Sim. No caso deste artigo, as raízes vinham de um canteiro, não de uma árvore grande, e chegaram a cerca de 2 metros dentro do cano."),
+        ("Depois de tirar a raiz, ela volta?", "Pode voltar, porque a planta continua viva e a abertura no cano continua lá. Afastar o canteiro, vedar o ponto de entrada e revisar a rede antes das chuvas reduzem muito o risco."),
+        ("De quanto em quanto tempo revisar a rede pluvial?", "Pelo menos uma vez por ano, antes do período chuvoso. Imóveis com canteiros ou árvores perto da tubulação merecem atenção maior."),
+        ("Como saber por onde passa a rede pluvial do meu terreno?", "Siga o caminho entre os ralos externos, as caixas de passagem e a saída para a rua. Se o imóvel tiver projeto hidráulico, ele mostra o trajeto."),
+        ("Posso lavar ferramentas de obra no ralo do quintal?", "Não. Cimento e argamassa endurecem dentro do cano e não saem com água. Lave em um balde, deixe assentar e descarte o resíduo com o entulho."),
+    ],
+    fontes=["target10844", "trf6", "rotorooter", "uai_distancia", "uai_ficus", "em_arvores", "ueg_chuvas", "maisgoias", "campo"],
+    leia=["rede-pluvial-entupida", "niveis-de-entupimento", "precisa-quebrar-piso-para-desentupir"],
+)
+
+for a in (REDE, VASO, PISO, PIA, CAIXA, HIDRO, OLEO, RAIZES):
     gerar(a)
 
 atualizar_listas()

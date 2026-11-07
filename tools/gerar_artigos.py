@@ -43,6 +43,12 @@ VIDEOS = {
                         desc="Restaurante em Goiânia com a rede de esgoto totalmente parada e sem nenhuma caixa de inspeção. Lucas Nonato, da BV Desentupidora, abriu a fossa e entrou com o hidrojato pelo cano que chega até ela."),
     "cjH3O35wWQI": dict(name="Olha o tanto de gordura no final", up="2026-09-28T07:15:20-07:00", dur="PT1M9S", short=True,
                         desc="Lucas Nonato, da BV Desentupidora, mostra na prática como a gordura se acumula nas paredes internas da tubulação e por que esse acúmulo diminui a passagem da água até provocar o entupimento."),
+    # capa = foto real no lugar da miniatura do YouTube (a miniatura tem selos de propaganda, que o PADRAO-BLOG não aceita)
+    "MWbG7DCMUyo": dict(name="Raiz de 2 metros dentro da rede pluvial: 2 anos de obstrução resolvido sem quebrar", up="2026-11-07T05:07:08-08:00", dur="PT1M3S", short=False,
+                        capa=("raiz-2-metros-capa.webp", 873, 491),
+                        desc="Rede pluvial entupida por raízes de um canteiro: a casa alagava havia 2 anos e a recomendação era quebrar o piso e trocar os canos. O problema foi resolvido com desobstrução, sem quebra."),
+    "hQdNCBS5Q6M": dict(name="Rede pluvial com cimento e raízes de 2 metros: antes e depois", up="2026-11-07T05:30:09-08:00", dur="PT47S", short=True,
+                        desc="Dois trechos da mesma rede pluvial lado a lado: à esquerda, a tubulação já limpa; à direita, a que ainda estava suja, antes da passagem do hidrojato."),
 }
 
 # (texto, url para o "citation" do JSON-LD ou None)
@@ -66,6 +72,18 @@ FONTES = {
     "bf_mitos": ('Benjamin Franklin Plumbing (Redmond). <a href="https://www.benjaminfranklinplumbing.com/redmond/blog/2026/january/debunking-common-drain-cleaning-myths-what-options-really-work/" rel="nofollow noopener" target="_blank">Debunking Common Drain Cleaning Myths</a> (2026).',
                  "https://www.benjaminfranklinplumbing.com/redmond/blog/2026/january/debunking-common-drain-cleaning-myths-what-options-really-work/"),
     "wikem": ('WikEM. <a href="https://wikem.org/wiki/Hydrogen_sulfide_toxicity/pt" rel="nofollow noopener" target="_blank">Toxicidade do sulfeto de hidrogênio</a>. Em concentração alta, o gás pode causar perda de consciência em poucas respirações.', "https://wikem.org/wiki/Hydrogen_sulfide_toxicity/pt"),
+    "target10844": ('Target Normas. <a href="https://www.target.com.br/produtos/normas-tecnicas/27559/nbr10844-instalacoes-prediais-de-aguas-pluviais-procedimento" rel="nofollow noopener" target="_blank">ABNT NBR 10844: Instalações prediais de águas pluviais</a> (resumo da norma).',
+                    "https://www.target.com.br/produtos/normas-tecnicas/27559/nbr10844-instalacoes-prediais-de-aguas-pluviais-procedimento"),
+    "trf6": ('TRF6. <a href="https://portal.trf6.jus.br/wp-content/uploads/2023/10/Edital-Tomada-de-Precos-01-2023-parte-2.pdf" rel="nofollow noopener" target="_blank">Caderno de práticas de projeto: drenagem de águas pluviais</a>.',
+             "https://portal.trf6.jus.br/wp-content/uploads/2023/10/Edital-Tomada-de-Precos-01-2023-parte-2.pdf"),
+    "rotorooter": ('Roto-Rooter. <a href="https://www.rotorooter.com/frequently-asked-questions/drains/roots/" rel="nofollow noopener" target="_blank">Perguntas frequentes sobre raízes em tubulações</a>.',
+                   "https://www.rotorooter.com/frequently-asked-questions/drains/roots/"),
+    "uai_distancia": ('UAI. <a href="https://www.uai.com.br/?p=174849" rel="nofollow noopener" target="_blank">Distância segura entre árvores, muros e encanamentos</a>.', "https://www.uai.com.br/?p=174849"),
+    "uai_ficus": ('UAI. <a href="https://www.uai.com.br/?p=156217" rel="nofollow noopener" target="_blank">Raízes de fícus e distância de construções</a>.', "https://www.uai.com.br/?p=156217"),
+    "em_arvores": ('Estado de Minas. <a href="https://www.em.com.br/emfoco/?p=123015" rel="nofollow noopener" target="_blank">Espécies de árvores e riscos a tubulações</a>.', "https://www.em.com.br/emfoco/?p=123015"),
+    "ueg_chuvas": ('UEG. <a href="https://www.anais.ueg.br/index.php/cepe/article/view/13042/9601" rel="nofollow noopener" target="_blank">Estações seca e chuvosa em Goiânia</a>.', "https://www.anais.ueg.br/index.php/cepe/article/view/13042/9601"),
+    "maisgoias": ('Mais Goiás / Inmet. <a href="https://www.maisgoias.com.br/cidades/goiania-passa-dos-120-dias-sem-chuva-e-tempo-seco-deve-durar-ate-outubro/" rel="nofollow noopener" target="_blank">Retorno das chuvas em Goiânia</a>.',
+                  "https://www.maisgoias.com.br/cidades/goiania-passa-dos-120-dias-sem-chuva-e-tempo-seco-deve-durar-ate-outubro/"),
     "campo": ("Experiência de campo da equipe BV Desentupidora (atendimentos em Goiânia, Itaberaí, Inhumas, Heitoraí e região).", None),
 }
 
@@ -78,14 +96,17 @@ ARTIGOS = {
     "limpeza-caixa-de-gordura": "Caixa de gordura: de quanto em quanto tempo limpar",
     "como-funciona-hidrojateamento": "Como funciona o hidrojateamento",
     "pode-jogar-oleo-na-pia": "Pode jogar óleo na pia? E o que não usar para desentupir",
+    "raizes-na-rede-pluvial": "Raízes na rede pluvial: o alerta que canteiros perto da tubulação escondem",
 }
 
 
 def video(vid, label, alt, legenda):
     cls = "video" if VIDEOS[vid]["short"] else "video video-h"
+    capa = VIDEOS[vid].get("capa")
+    src, w, h = (f"../img/{capa[0]}", capa[1], capa[2]) if capa else (f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg", 480, 360)
     return f'''<figure class="{cls}">
       <button class="video-facade" type="button" data-id="{vid}" aria-label="Assistir ao vídeo: {label}">
-        <img src="https://i.ytimg.com/vi/{vid}/hqdefault.jpg" alt="{alt}" width="480" height="360" loading="lazy">
+        <img src="{src}" alt="{alt}" width="{w}" height="{h}" loading="lazy">
         <span class="play" aria-hidden="true"></span>
       </button>
       <figcaption>{legenda}</figcaption>
@@ -108,13 +129,14 @@ def gerar(a):
     data_br = "/".join(reversed(data.split("-")))
     texto = re.sub(r"<[^>]+>", " ", a["corpo"])
     minutos = max(3, round(len(texto.split()) / 200))
-    citacoes = [FONTES[f][1] for f in a["fontes"] if FONTES[f][1]] + [a["linkedin"]]
+    citacoes = [FONTES[f][1] for f in a["fontes"] if FONTES[f][1]] + ([a["linkedin"]] if a.get("linkedin") else [])
     post = {"@type": "BlogPosting", "@id": url + "#artigo", "headline": a["h1"], "description": a["desc"], "inLanguage": "pt-BR",
             "datePublished": data, "dateModified": data, "author": {"@id": f"{SITE}/#lucas-nonato"},
             "publisher": {"@id": f"{SITE}/#empresa"}, "mainEntityOfPage": url, "image": a["imagem"], "keywords": a["keywords"],
-            "about": [{"@type": "Thing", "name": t} for t in a["sobre"]],
-            "isBasedOn": {"@type": "CreativeWork", "url": a["linkedin"], "author": {"@id": f"{SITE}/#lucas-nonato"}},
-            "citation": citacoes}
+            "about": [{"@type": "Thing", "name": t} for t in a["sobre"]]}
+    if a.get("linkedin"):
+        post["isBasedOn"] = {"@type": "CreativeWork", "url": a["linkedin"], "author": {"@id": f"{SITE}/#lucas-nonato"}}
+    post["citation"] = citacoes
     if a.get("videos"):
         post["video"] = [{"@id": f"{url}#video-{v}"} for v in a["videos"]]
     grafo = list(EMPRESA) + [post,
@@ -125,7 +147,7 @@ def gerar(a):
     for vid in a.get("videos", []):
         v = VIDEOS[vid]
         o = {"@type": "VideoObject", "@id": f"{url}#video-{vid}", "name": v["name"], "description": v["desc"],
-             "thumbnailUrl": f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg", "uploadDate": v["up"]}
+             "thumbnailUrl": f"{SITE}/blog/img/{v['capa'][0]}" if v.get("capa") else f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg", "uploadDate": v["up"]}
         if v["dur"]:
             o["duration"] = v["dur"]
         o.update({"contentUrl": f"https://www.youtube.com/shorts/{vid}" if v["short"] else f"https://www.youtube.com/watch?v={vid}",
@@ -138,7 +160,8 @@ def gerar(a):
 
     faq = "\n".join(f"    <details>\n      <summary>{q}</summary>\n      <p>{r}</p>\n    </details>" for q, r in a["faq"])
     fontes = "\n".join(f"        <li>{FONTES[f][0]}</li>" for f in a["fontes"])
-    fontes += f'\n        <li>Lucas Nonato. <a href="{a["linkedin"]}" rel="noopener" target="_blank">Relato original deste atendimento no LinkedIn</a>.</li>'
+    if a.get("linkedin"):
+        fontes += f'\n        <li>Lucas Nonato. <a href="{a["linkedin"]}" rel="noopener" target="_blank">Relato original deste atendimento no LinkedIn</a>.</li>'
     leia = "\n".join(f'        <li><a href="../{s}/">{ARTIGOS[s]}</a></li>' for s in leia_publicados(a["slug"], a["leia"]))
 
     html = f'''<!doctype html>
