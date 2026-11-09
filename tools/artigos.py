@@ -3,12 +3,14 @@
 # Publicação: 2 por semana. Para publicar o próximo, mova o primeiro slug de FILA para PUB,
 # coloque a data em DATAS e rode `python tools/gerar_artigos.py publicar/blog`.
 PUB = ["niveis-de-entupimento", "rede-pluvial-entupida", "vaso-sanitario-entupido",
-       "precisa-quebrar-piso-para-desentupir", "desentupir-pia-com-gordura", "raizes-na-rede-pluvial"]
+       "precisa-quebrar-piso-para-desentupir", "desentupir-pia-com-gordura", "raizes-na-rede-pluvial",
+       "limpeza-caixa-de-gordura", "como-funciona-hidrojateamento"]
 DATAS = {"niveis-de-entupimento": "2026-10-26", "rede-pluvial-entupida": "2026-10-26",
          "vaso-sanitario-entupido": "2026-10-27", "historia-bv-desentupidora": "2026-11-02",
          "precisa-quebrar-piso-para-desentupir": "2026-11-02", "desentupir-pia-com-gordura": "2026-11-02",
-         "raizes-na-rede-pluvial": "2026-11-07"}
-FILA = ["limpeza-caixa-de-gordura", "como-funciona-hidrojateamento", "pode-jogar-oleo-na-pia"]
+         "raizes-na-rede-pluvial": "2026-11-07",
+         "limpeza-caixa-de-gordura": "2026-11-09", "como-funciona-hidrojateamento": "2026-11-09"}
+FILA = ["pode-jogar-oleo-na-pia"]
 # Artigos escritos à mão (não gerados aqui): entram no índice, llms.txt e sitemap, mas não no "Leia também".
 EXTRAS = ["historia-bv-desentupidora"]
 
