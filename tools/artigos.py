@@ -4,12 +4,13 @@
 # coloque a data em DATAS e rode `python tools/gerar_artigos.py publicar/blog`.
 PUB = ["niveis-de-entupimento", "rede-pluvial-entupida", "vaso-sanitario-entupido",
        "precisa-quebrar-piso-para-desentupir", "desentupir-pia-com-gordura", "raizes-na-rede-pluvial",
-       "limpeza-caixa-de-gordura", "como-funciona-hidrojateamento"]
+       "limpeza-caixa-de-gordura", "como-funciona-hidrojateamento", "cimento-no-encanamento"]
 DATAS = {"niveis-de-entupimento": "2026-10-26", "rede-pluvial-entupida": "2026-10-26",
          "vaso-sanitario-entupido": "2026-10-27", "historia-bv-desentupidora": "2026-11-02",
          "precisa-quebrar-piso-para-desentupir": "2026-11-02", "desentupir-pia-com-gordura": "2026-11-02",
          "raizes-na-rede-pluvial": "2026-11-07",
-         "limpeza-caixa-de-gordura": "2026-11-09", "como-funciona-hidrojateamento": "2026-11-09"}
+         "limpeza-caixa-de-gordura": "2026-11-09", "como-funciona-hidrojateamento": "2026-11-09",
+         "cimento-no-encanamento": "2026-11-10"}
 FILA = ["pode-jogar-oleo-na-pia"]
 # Artigos escritos à mão (não gerados aqui): entram no índice, llms.txt e sitemap, mas não no "Leia também".
 EXTRAS = ["historia-bv-desentupidora"]
@@ -43,6 +44,9 @@ LISTA = {
     "como-funciona-hidrojateamento": ("Como funciona o hidrojateamento",
                                       "O que é, por que resolve entupimento de gordura que volta e por que a técnica importa.",
                                       "o que é (1.500 a 4.000 PSI), quando usar, riscos para o cano e segurança em fossas (caso real em restaurante de Goiânia)."),
+    "cimento-no-encanamento": ("Cimento no encanamento: por que vira pedra dentro do cano e o que fazer se cair no ralo",
+                               "Por que lavar ferramenta de obra no ralo entope, onde lavar e o que fazer nas primeiras horas.",
+                               "por que o cimento endurece mesmo dentro do cano cheio d'água, onde lavar ferramentas de obra, o que fazer se cair cimento no ralo (hidrojato no mesmo dia) e mitos e verdades; caso real em Goiânia com vídeo comparando trecho limpo e trecho sujo."),
     "pode-jogar-oleo-na-pia": ("Pode jogar óleo na pia? E o que não usar para desentupir",
                                "Por que o óleo entope, como descartar e o que nunca usar para desentupir.",
                                "por que óleo na pia entope, como descartar e o que não usar para desentupir: misturas de produtos, soda, água fervendo e arame."),
@@ -790,7 +794,7 @@ RAIZES = dict(
       <li>A superfície fica áspera e passa a segurar terra, folhas e raízes</li>
       <li>Na próxima chuva forte, a água não tem por onde passar</li>
     </ul>
-    <p>No vídeo deste caso, mostro como o cimento fica dentro da tubulação e comparo dois trechos da mesma rede: um já desobstruído e limpo e outro ainda sujo, antes da passagem do hidrojato.</p>
+    <p>No vídeo deste caso, mostro como o cimento fica dentro da tubulação e comparo dois trechos da mesma rede: um já desobstruído e limpo e outro ainda sujo, antes da passagem do hidrojato. Explico o assunto em detalhe no artigo sobre <a href="../cimento-no-encanamento/">cimento no encanamento</a>.</p>
 
     ''' + video("hQdNCBS5Q6M", "cimento na rede pluvial, antes e depois", "Vídeo comparando dois trechos da mesma rede pluvial, um limpo e outro ainda sujo",
                 "Vídeo (caso real, 47 s): à esquerda, a tubulação já limpa; à direita, a que ainda estava suja.") + '''
@@ -873,7 +877,128 @@ RAIZES = dict(
     leia=["rede-pluvial-entupida", "niveis-de-entupimento", "precisa-quebrar-piso-para-desentupir"],
 )
 
-for a in (REDE, VASO, PISO, PIA, CAIXA, HIDRO, OLEO, RAIZES):
+# ---------------------------------------------------------------------------
+# Cimento no encanamento (10/11/2026; vídeo sIpndvlOzd8 e relato no LinkedIn)
+# ---------------------------------------------------------------------------
+CIMENTO = dict(
+    slug="cimento-no-encanamento",
+    title="Cimento no encanamento: por que vira pedra e o que fazer",
+    h1="Cimento no encanamento: por que vira pedra dentro do cano e o que fazer se cair no ralo",
+    desc="Lavar ferramenta de obra no ralo deixa cimento endurecido no cano. Veja por que a água não resolve, onde lavar e o que fazer se cair cimento na rede.",
+    migalha="Cimento no encanamento",
+    keywords="cimento no encanamento, cimento entupiu o cano, lavar ferramenta de obra no ralo, cimento no ralo o que fazer, como tirar cimento do cano, argamassa na tubulação",
+    sobre=["Cimento Portland", "Entupimento de tubulação", "Hidrojateamento", "Obra e reforma"],
+    imagem="https://i.ytimg.com/vi/sIpndvlOzd8/hqdefault.jpg",
+    linkedin=LI + "cimento-na-tubula%C3%A7%C3%A3o-caso-real-goiania-go-lucas-nonato-vieira-u8uuf/",
+    videos=["sIpndvlOzd8"],
+    resumo="Lavar colher de pedreiro, balde, desempenadeira ou betoneira na pia, no tanque ou no ralo do quintal leva cimento para dentro da tubulação. O cimento endurece por reação química com a água, inclusive debaixo d'água, então jogar mais água não dissolve nada. Quando o fluxo para, os grãos assentam nas curvas, emendas e caixas e viram uma crosta de pedra presa à parede do cano, que segura terra, gordura e resíduos até travar a passagem. Lave as ferramentas em um balde, longe dos ralos. Se cair cimento no cano por acidente, o hidrojato deve entrar no mesmo dia, enquanto o material ainda está mole.",
+    corpo='''    <h2>Resumo: cimento no cano em 3 situações</h2>
+    <div class="tabela-wrap">
+      <table>
+        <thead><tr><th>Situação</th><th>O que acontece no cano</th><th>O que fazer</th></tr></thead>
+        <tbody>
+          <tr><td>Ferramenta lavada na pia, no tanque ou no ralo</td><td>Os grãos assentam nas curvas e endurecem ali</td><td>Lavar em balde, fora da rede</td></tr>
+          <tr><td>Cimento caiu no ralo e ainda está mole</td><td>Ainda sai sem quebrar nada</td><td>Hidrojato no mesmo dia</td></tr>
+          <tr><td>Cimento já endureceu no cano</td><td>Vira uma crosta de pedra grudada no tubo</td><td>Avaliar com hidrojato ou trocar o trecho</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Por que o cimento entope o cano, se a água deveria levar tudo embora?</h2>
+    <p>Essa é a dúvida que mais escuto em obra. A lógica parece boa: abre a torneira, a água corre, o cimento vai embora. O problema é que o cimento não depende do ar para endurecer. Ele é um aglomerante hidráulico: endurece por uma reação química com a própria água, a hidratação, e continua firme mesmo submerso. Por isso dá para concretar pilar de ponte dentro de rio.</p>
+    <p>Dentro do encanamento, o que acontece é isto:</p>
+    <ul>
+      <li>Enquanto a torneira está aberta, a água arrasta os grãos de cimento e areia.</li>
+      <li>Quando o fluxo para, a água perde velocidade e os grãos assentam onde ela fica mais lenta: joelhos, emendas, caixas sifonadas e trechos com pouca queda.</li>
+      <li>Ali eles endurecem e formam uma lombada áspera, grudada na parede do cano.</li>
+      <li>Essa lombada passa a segurar terra, cabelo, papel e gordura. Cada nova lavagem deixa outra camada.</li>
+    </ul>
+    <p>O entupimento por cimento quase nunca aparece no dia. Ele cresce por camadas, e por isso costuma ser confundido com um entupimento comum até alguém olhar o cano por dentro.</p>
+    <p>Não é um problema só do Brasil. A Thames Water, que cuida do esgoto de Londres, gasta cerca de 1,6 milhão de libras por ano retirando concreto endurecido das redes, quase sempre jogado por obras. A técnica usada lá é a mesma que usamos aqui: jato de água de alta pressão para quebrar a crosta em pedaços e retirá-los sem danificar o tubo.</p>
+
+    <h2>Caso real: a diferença entre o trecho que recebeu hidrojato e o que ainda não recebeu</h2>
+    <div class="caso">
+      <p>Em um atendimento de rede pluvial em Goiânia, encontramos cimento endurecido dentro da tubulação, junto com terra e raízes. Era resíduo de obra: durante anos, baldes e ferramentas foram lavados no ralo do quintal.</p>
+      <p>Com um trecho da tubulação exposto, deu para comparar os dois lados da mesma rede:</p>
+      <ul>
+        <li><strong>Lado onde o hidrojato já passou:</strong> parede lisa, diâmetro livre, a água correndo sem barreira.</li>
+        <li><strong>Lado onde o hidrojato ainda não tinha passado:</strong> parede coberta por uma crosta de cimento e terra, tão dura que nem raspando com uma chave ela soltava com facilidade. É essa crosta que reduz o espaço da água e segura tudo o que vem depois.</li>
+      </ul>
+      <p>Depois da passagem do hidrojato no trecho sujo, a crosta saiu em pedaços e a rede voltou a escoar. O mesmo serviço está descrito no artigo sobre <a href="../raizes-na-rede-pluvial/">raízes na rede pluvial</a>, porque cimento e raiz estavam juntos no mesmo cano.</p>
+    </div>
+
+    ''' + video("sIpndvlOzd8", "cimento dentro da tubulação, trecho limpo e trecho sujo", "Trecho exposto de rede pluvial com crosta de cimento e terra na parede do cano",
+                "Vídeo (caso real, 47 s): o mesmo cano com um lado já limpo pelo hidrojato e o outro ainda com crosta de cimento.") + '''
+
+    <h2>Onde e como lavar as ferramentas de obra?</h2>
+    <p>A regra é simples: a água com cimento não pode ir para nenhum ralo, nem de esgoto nem de água da chuva. O jeito de lavar que recomendamos:</p>
+    <ul>
+      <li><strong>Raspe antes de molhar.</strong> Tire o grosso da massa com a própria colher ou uma espátula. Quanto menos sobra, menos resíduo vai para a água.</li>
+      <li><strong>Use dois baldes.</strong> Um para tirar a massa mais pesada, outro para o enxágue final.</li>
+      <li><strong>Deixe a água descansar.</strong> Em algumas horas o cimento assenta no fundo. A água clara de cima pode ir para uma área de terra ou brita da própria obra, longe de ralos e bocas de lobo.</li>
+      <li><strong>Descarte a borra como entulho.</strong> Espere endurecer no fundo do balde e jogue junto com o restante do entulho.</li>
+      <li><strong>Em obra maior, monte uma área de lavagem.</strong> Uma caixa de madeira forrada com lona já resolve. É o mesmo princípio que a agência ambiental dos EUA (EPA) recomenda para canteiros de obra, com a área afastada de ralos e da drenagem.</li>
+    </ul>
+    <p>Dicas que pedreiros e encanadores trocam em fóruns como o Reddit, e que funcionam:</p>
+    <ul>
+      <li>Deixe um balde com água ao lado durante o serviço e mergulhe a ferramenta logo depois de usar, antes da massa secar nela.</li>
+      <li>Passe um pouco de óleo na colher e na desempenadeira antes de começar. A massa gruda menos e sai fácil.</li>
+      <li>Esfregue com escova de aço ou esponja dura dentro do balde, nunca debaixo da torneira.</li>
+      <li>Betoneira se lava no fim do dia com água e brita girando dentro dela, e essa água vai para o balde ou para a área de lavagem.</li>
+    </ul>
+
+    <h2>Como proteger o encanamento durante a obra ou reforma?</h2>
+    <ul>
+      <li>Tampe ralos, caixas sifonadas e pontos de esgoto abertos com tampão, plástico e fita antes de começar.</li>
+      <li>Combine com o pedreiro, antes do primeiro dia, onde as ferramentas serão lavadas.</li>
+      <li>Não deixe preparar massa em cima de grelha de ralo ou ao lado de caixa de passagem.</li>
+      <li>Cuide da área externa também: massa que escorre para a calha ou para a boca de lobo endurece do mesmo jeito.</li>
+      <li>Depois da obra, observe as primeiras semanas. Ralo lento ou gorgolejando é sinal de alerta, não espere piorar.</li>
+    </ul>
+
+    <h2>Caiu cimento no ralo por acidente: o que fazer?</h2>
+    <p>Aqui o relógio manda. Cimento ainda fluido ou recém-assentado sai com o jato de água. Depois de endurecido, vira pedra grudada no tubo, e a remoção fica mais demorada, mais cara e às vezes exige trocar o trecho.</p>
+    <ol>
+      <li><strong>Pare de usar aquele ponto.</strong> Nada de despejar mais massa ou água suja de obra ali.</li>
+      <li><strong>Retire o que estiver ao alcance</strong>, de luva: o que ficou na grelha, no ralo ou na caixa sifonada.</li>
+      <li><strong>Chame o hidrojateamento no mesmo dia.</strong> O jato de alta pressão empurra e quebra o material enquanto ele ainda está mole. Veja <a href="../como-funciona-hidrojateamento/">como funciona o hidrojateamento</a>.</li>
+      <li><strong>Se foi pouca quantidade e ainda está líquida</strong>, deixe água corrente enquanto o técnico não chega, para os grãos não assentarem. Com volume grande isso não funciona: você só empurra o problema para mais longe.</li>
+      <li><strong>Depois da limpeza, confirme o resultado</strong> com teste de escoamento ou inspeção com câmera, para ter certeza de que não sobrou crosta.</li>
+    </ol>
+
+    <h2>Mitos e verdades sobre cimento no cano</h2>
+    <ul class="nao">
+      <li><strong>"Jogando bastante água, o cimento vai embora."</strong> Mito. A água leva uma parte, e o resto assenta no primeiro ponto onde ela fica mais lenta.</li>
+      <li><strong>"Cimento só endurece quando seca."</strong> Mito. Ele endurece por reação com a água, por isso endurece dentro do cano cheio.</li>
+      <li><strong>"Soda cáustica dissolve cimento."</strong> Mito. A soda age em gordura e matéria orgânica, não em cimento endurecido.</li>
+      <li><strong>"Ácido muriático resolve."</strong> Mito perigoso. Solta gases tóxicos em ambiente fechado, pode atacar tubos metálicos e vedações e não alcança uma crosta que está metros para dentro.</li>
+      <li><strong>"Um pouquinho de massa não faz mal."</strong> Mito. O entupimento por cimento é cumulativo: cada lavagem deixa uma camada nova.</li>
+    </ul>
+    <ul>
+      <li><strong>"Quanto antes chamar, mais simples a solução."</strong> Verdade. Cimento mole sai com hidrojato; cimento duro pode exigir a troca do trecho.</li>
+      <li><strong>"Cimento na rede pluvial também entope."</strong> Verdade. E o problema aparece justamente na primeira chuva forte, quando a água não tem por onde passar. Veja os sinais em <a href="../rede-pluvial-entupida/">rede pluvial entupida</a>.</li>
+    </ul>
+
+    <h2>Quando chamar um profissional?</h2>
+    <ul>
+      <li>Cimento ou argamassa caiu no ralo, mesmo que pareça pouco: quanto mais cedo, mais fácil.</li>
+      <li>Depois de uma obra ou reforma, o ralo ficou lento ou o entupimento volta.</li>
+      <li>Você já sabe que ferramentas foram lavadas na pia, no tanque ou no ralo do quintal.</li>
+      <li>Alguém recomendou quebrar o piso e você quer uma avaliação antes. Na maioria dos casos isso não é necessário: veja <a href="../precisa-quebrar-piso-para-desentupir/">quando é preciso quebrar o piso</a>.</li>
+    </ul>
+    <p>Para entender a gravidade do que está acontecendo na sua casa, veja <a href="../niveis-de-entupimento/">os 4 níveis de entupimento</a>.</p>''',
+    faq=[
+        ("Cimento entope cano de PVC?", "Sim. Ele não reage com o PVC, mas gruda nas paredes e conexões e diminui o espaço da água até travar o fluxo."),
+        ("Dá para tirar cimento endurecido do cano?", "Em muitos casos sim, com hidrojateamento de alta pressão e bicos próprios. Quando a crosta é grande e o trecho é curto e acessível, às vezes é mais seguro trocar o pedaço do cano."),
+        ("Quanto tempo o cimento leva para endurecer dentro do cano?", "A pega começa em poucas horas, conforme o tipo de cimento e a temperatura. Por isso a orientação é agir no mesmo dia."),
+        ("Posso lavar a ferramenta no tanque se passar bastante água depois?", "Não. A água extra não dissolve o cimento, só leva o problema para um ponto mais distante e mais difícil de alcançar."),
+        ("Onde jogo a água de lavar ferramenta de obra?", "Deixe descansar no balde até o cimento assentar. A água clara vai para uma área de terra ou brita da obra, longe de ralos, e a borra do fundo vai com o entulho."),
+    ],
+    fontes=["dlubal", "thames", "epa_washout", "mpca", "nbr8160", "nbr10844", "campo"],
+    leia=["raizes-na-rede-pluvial", "como-funciona-hidrojateamento", "rede-pluvial-entupida"],
+)
+
+for a in (REDE, VASO, PISO, PIA, CAIXA, HIDRO, OLEO, RAIZES, CIMENTO):
     gerar(a)
 
 atualizar_listas()

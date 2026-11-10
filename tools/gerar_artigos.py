@@ -49,6 +49,8 @@ VIDEOS = {
                         desc="Rede pluvial entupida por raízes de um canteiro: a casa alagava havia 2 anos e a recomendação era quebrar o piso e trocar os canos. O problema foi resolvido com desobstrução, sem quebra."),
     "hQdNCBS5Q6M": dict(name="Rede pluvial com cimento e raízes de 2 metros: antes e depois", up="2026-11-07T05:30:09-08:00", dur="PT47S", short=True,
                         desc="Dois trechos da mesma rede pluvial lado a lado: à esquerda, a tubulação já limpa; à direita, a que ainda estava suja, antes da passagem do hidrojato."),
+    "sIpndvlOzd8": dict(name="Cimento na tubulação: Goiânia GO - BV Desentupidora", up="2026-11-10T06:26:14-08:00", dur="PT47S", short=True,
+                        desc="Cimento endurecido dentro de uma rede pluvial em Goiânia: o mesmo cano com um lado já limpo pelo hidrojato e o outro ainda com crosta de cimento e terra, resíduo de ferramentas de obra lavadas no ralo."),
 }
 
 # (texto, url para o "citation" do JSON-LD ou None)
@@ -84,6 +86,14 @@ FONTES = {
     "ueg_chuvas": ('UEG. <a href="https://www.anais.ueg.br/index.php/cepe/article/view/13042/9601" rel="nofollow noopener" target="_blank">Estações seca e chuvosa em Goiânia</a>.', "https://www.anais.ueg.br/index.php/cepe/article/view/13042/9601"),
     "maisgoias": ('Mais Goiás / Inmet. <a href="https://www.maisgoias.com.br/cidades/goiania-passa-dos-120-dias-sem-chuva-e-tempo-seco-deve-durar-ate-outubro/" rel="nofollow noopener" target="_blank">Retorno das chuvas em Goiânia</a>.',
                   "https://www.maisgoias.com.br/cidades/goiania-passa-dos-120-dias-sem-chuva-e-tempo-seco-deve-durar-ate-outubro/"),
+    "dlubal": ('Dlubal. <a href="https://www.dlubal.com/pt/solucoes/servicos-online/wiki-de-calculo-estrutural/000143" rel="nofollow noopener" target="_blank">Cimento (wiki de cálculo estrutural)</a>. A pasta de cimento endurece ao ar e debaixo d\'água, por hidratação.',
+               "https://www.dlubal.com/pt/solucoes/servicos-online/wiki-de-calculo-estrutural/000143"),
+    "thames": ('Water Magazine (jul/2026). <a href="https://www.watermagazine.co.uk/2026/07/02/from-building-site-to-blockage-illegal-concrete-disposal-is-choking-our-sewers/" rel="nofollow noopener" target="_blank">From building site to blockage: illegal concrete disposal is choking our sewers</a>. Thames Water gasta cerca de £1,6 milhão por ano removendo concreto endurecido das redes, com jatos de água de alta pressão.',
+               "https://www.watermagazine.co.uk/2026/07/02/from-building-site-to-blockage-illegal-concrete-disposal-is-choking-our-sewers/"),
+    "epa_washout": ('EPA (Agência de Proteção Ambiental dos EUA). <a href="https://19january2021snapshot.epa.gov/sites/static/files/2015-11/documents/concretewashout.pdf" rel="nofollow noopener" target="_blank">Stormwater Best Management Practice: Concrete Washout</a> (EPA 833-F-11-006). Áreas de lavagem de concreto em canteiros de obra.',
+                    "https://19january2021snapshot.epa.gov/sites/static/files/2015-11/documents/concretewashout.pdf"),
+    "mpca": ('Minnesota Pollution Control Agency. <a href="https://stormwater.pca.state.mn.us/construction_stormwater_best_management_practice_concrete_paint_stucco_and_other_washout_guidance" rel="nofollow noopener" target="_blank">Concrete, paint, stucco and other washout guidance</a>. Resíduos sólidos de lavagem descartados errado entopem a drenagem e causam alagamentos.',
+             "https://stormwater.pca.state.mn.us/construction_stormwater_best_management_practice_concrete_paint_stucco_and_other_washout_guidance"),
     "campo": ("Experiência de campo da equipe BV Desentupidora (atendimentos em Goiânia, Itaberaí, Inhumas, Heitoraí e região).", None),
 }
 
@@ -97,6 +107,7 @@ ARTIGOS = {
     "como-funciona-hidrojateamento": "Como funciona o hidrojateamento",
     "pode-jogar-oleo-na-pia": "Pode jogar óleo na pia? E o que não usar para desentupir",
     "raizes-na-rede-pluvial": "Raízes na rede pluvial: o alerta que canteiros perto da tubulação escondem",
+    "cimento-no-encanamento": "Cimento no encanamento: por que vira pedra dentro do cano e o que fazer",
 }
 
 
