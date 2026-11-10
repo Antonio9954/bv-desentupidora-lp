@@ -4,14 +4,15 @@
 # coloque a data em DATAS e rode `python tools/gerar_artigos.py publicar/blog`.
 PUB = ["niveis-de-entupimento", "rede-pluvial-entupida", "vaso-sanitario-entupido",
        "precisa-quebrar-piso-para-desentupir", "desentupir-pia-com-gordura", "raizes-na-rede-pluvial",
-       "limpeza-caixa-de-gordura", "como-funciona-hidrojateamento", "cimento-no-encanamento"]
+       "limpeza-caixa-de-gordura", "como-funciona-hidrojateamento", "cimento-no-encanamento",
+       "pode-jogar-oleo-na-pia"]
 DATAS = {"niveis-de-entupimento": "2026-10-26", "rede-pluvial-entupida": "2026-10-26",
          "vaso-sanitario-entupido": "2026-10-27", "historia-bv-desentupidora": "2026-11-02",
          "precisa-quebrar-piso-para-desentupir": "2026-11-02", "desentupir-pia-com-gordura": "2026-11-02",
          "raizes-na-rede-pluvial": "2026-11-07",
          "limpeza-caixa-de-gordura": "2026-11-09", "como-funciona-hidrojateamento": "2026-11-09",
-         "cimento-no-encanamento": "2026-11-10"}
-FILA = ["pode-jogar-oleo-na-pia"]
+         "cimento-no-encanamento": "2026-11-10", "pode-jogar-oleo-na-pia": "2026-11-10"}
+FILA = []
 # Artigos escritos à mão (não gerados aqui): entram no índice, llms.txt e sitemap, mas não no "Leia também".
 EXTRAS = ["historia-bv-desentupidora"]
 
@@ -663,12 +664,17 @@ OLEO = dict(
     ''' + FOTO_GORDURA + '''
 
     <h2>Como descartar o óleo de cozinha usado?</h2>
+    <p>O óleo usado não vai para a pia, o vaso, o ralo, o bueiro nem o quintal. O bueiro é rede pluvial: o que entra nele vai direto para córregos e rios, sem tratamento. O caminho certo é simples:</p>
     <ol>
-      <li>Espere o óleo esfriar.</li>
-      <li>Coloque em garrafa PET limpa, com tampa.</li>
-      <li>Leve a um ponto de coleta ou programa de reciclagem. Em Goiás, a Saneago tem o programa Olho no Óleo, que dá desconto na conta de água para quem entrega o óleo usado.</li>
+      <li><strong>Espere esfriar.</strong> Óleo quente queima e amolece a garrafa PET.</li>
+      <li><strong>Coe os restos de comida</strong> com uma peneira ou um pano fino.</li>
+      <li><strong>Guarde em garrafa PET limpa e seca, com tampa de rosca.</strong> Um funil evita que escorra. Dá para juntar o óleo de várias frituras na mesma garrafa até encher; mantenha bem fechada, longe do sol e do fogão.</li>
+      <li><strong>Leve a um ponto de coleta.</strong> Em Goiás, a Saneago recebe o óleo pelo programa Olho no Óleo em postos de coleta como as unidades do Vapt Vupt, em Goiânia, Anápolis e outras cidades, e transforma cada litro entregue em crédito na conta de água (em 2023, R$ 0,50 por litro). Bares, restaurantes, supermercados e condomínios podem se cadastrar para a Saneago buscar o óleo no local. Alguns supermercados e cooperativas de reciclagem também recebem; pergunte antes de levar.</li>
     </ol>
-    <p>O óleo recolhido vira sabão, biodiesel e outros produtos. Nunca descarte na pia, no vaso, no quintal ou no solo.</p>
+
+    <h3>E a gordura que fica na panela e no prato?</h3>
+    <p>É ela que vai para a pia todo dia sem ninguém perceber. Antes de lavar, passe papel-toalha na panela, na frigideira e nos pratos e jogue o papel no lixo comum. Gordura que endureceu na assadeira, como a de carne ou bacon, sai melhor raspada com uma espátula, direto para o lixo. Só depois leve a louça para a pia, com água e detergente.</p>
+    <p>O óleo recolhido vira biodiesel, sabão e outros produtos. Jogado na pia, ele vira o bloco de gordura da foto acima.</p>
 
     <h2>O que não usar para desentupir (do mais grave ao mais leve)</h2>
 
@@ -710,7 +716,7 @@ OLEO = dict(
     faq=[
         ("Pode jogar óleo de cozinha na pia?", "Não. O óleo esfria dentro do cano, gruda na parede e, com restos de comida, fecha a passagem com o tempo. Em Goiás, a Saneago aponta o óleo como causa de 25% dos extravasamentos de esgoto."),
         ("Pouco óleo na pia também entope?", "Sim. Mesmo pequenas quantidades formam camadas quando o descarte se repete todo dia. O entupimento costuma ser resultado desse acúmulo."),
-        ("Como descartar óleo de cozinha usado?", "Espere esfriar, coloque em garrafa PET com tampa e leve a um ponto de coleta. Em Goiás, o programa Olho no Óleo, da Saneago, dá desconto na conta de água para quem entrega o óleo."),
+        ("Como descartar óleo de cozinha usado?", "Espere esfriar, coe os restos de comida, guarde em garrafa PET com tampa de rosca e leve a um ponto de coleta. Em Goiás, o programa Olho no Óleo, da Saneago, recebe o óleo em postos como o Vapt Vupt e dá crédito na conta de água por litro entregue."),
         ("Pode misturar água sanitária e vinagre para desentupir?", "Não. Água sanitária com vinagre ou qualquer ácido pode liberar gás cloro, que é tóxico. A Anvisa orienta usar cada produto sozinho ou diluído só em água."),
         ("Soda cáustica desentope gordura?", "Não é recomendado. A soda causa queimaduras graves e, com a gordura, pode formar uma massa ainda mais dura dentro do cano."),
     ],
