@@ -51,6 +51,10 @@ VIDEOS = {
                         desc="Dois trechos da mesma rede pluvial lado a lado: à esquerda, a tubulação já limpa; à direita, a que ainda estava suja, antes da passagem do hidrojato."),
     "sIpndvlOzd8": dict(name="Cimento na tubulação: Goiânia GO - BV Desentupidora", up="2026-11-10T06:26:14-08:00", dur="PT47S", short=True,
                         desc="Cimento endurecido dentro de uma rede pluvial em Goiânia: o mesmo cano com um lado já limpo pelo hidrojato e o outro ainda com crosta de cimento e terra, resíduo de ferramentas de obra lavadas no ralo."),
+    "fvLFIs4SRYg": dict(name="Serviço real: caixa cega aberta e limpa (parte 1)", up="2026-11-14T05:16:54-08:00", dur="PT16S", short=True,
+                        desc="Caixa cega de esgoto em uma jantinha no interior de Goiás, já aberta depois de localizada debaixo do piso: água parada e os resíduos retirados de dentro dela (tampas de garrafa, latas, palitos de espetinho e plásticos)."),
+    "L69sYPQ8uSc": dict(name="Caixa cega: desentupimento parte 2", up="2026-11-14T05:30:08-08:00", dur="PT12S", short=True,
+                        desc="A mesma caixa cega depois do serviço: fechada com tampa de acesso no lugar do piso, para que a próxima limpeza seja só abrir a tampa."),
 }
 
 # (texto, url para o "citation" do JSON-LD ou None)
@@ -94,6 +98,10 @@ FONTES = {
                     "https://19january2021snapshot.epa.gov/sites/static/files/2015-11/documents/concretewashout.pdf"),
     "mpca": ('Minnesota Pollution Control Agency. <a href="https://stormwater.pca.state.mn.us/construction_stormwater_best_management_practice_concrete_paint_stucco_and_other_washout_guidance" rel="nofollow noopener" target="_blank">Concrete, paint, stucco and other washout guidance</a>. Resíduos sólidos de lavagem descartados errado entopem a drenagem e causam alagamentos.',
              "https://stormwater.pca.state.mn.us/construction_stormwater_best_management_practice_concrete_paint_stucco_and_other_washout_guidance"),
+    "projetista8160": ('Projetista Pleno. <a href="https://projetistapleno.com/caixas-de-inspecao-de-esgoto/" rel="nofollow noopener" target="_blank">Caixa de inspeção de esgoto: medidas e regras da NBR 8160</a>. No máximo 25 m entre dispositivos de inspeção, 15 m até a ligação com a rede pública, 10 m dos ramais de vaso, caixa de gordura e caixa sifonada; tampa de fácil remoção e com vedação.',
+                       "https://projetistapleno.com/caixas-de-inspecao-de-esgoto/"),
+    "tigre_cx": ('Tigre / AECweb. <a href="https://www.aecweb.com.br/produto/caixa-de-inspecao-tigre/12995" rel="nofollow noopener" target="_blank">Caixa de Inspeção Tigre: ficha técnica</a>. A caixa de inspeção é destinada a permitir inspeção, limpeza e desobstrução; a tampa quadrada recebe o acabamento do piso.',
+                 "https://www.aecweb.com.br/produto/caixa-de-inspecao-tigre/12995"),
     "campo": ("Experiência de campo da equipe BV Desentupidora (atendimentos em Goiânia, Itaberaí, Inhumas, Heitoraí e região).", None),
 }
 
@@ -108,6 +116,7 @@ ARTIGOS = {
     "pode-jogar-oleo-na-pia": "Pode jogar óleo na pia? E o que não usar para desentupir",
     "raizes-na-rede-pluvial": "Raízes na rede pluvial: o alerta que canteiros perto da tubulação escondem",
     "cimento-no-encanamento": "Cimento no encanamento: por que vira pedra dentro do cano e o que fazer",
+    "caixa-cega-esgoto": "Caixa cega no esgoto: o que é e por que encarece o desentupimento",
 }
 
 

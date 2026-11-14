@@ -5,13 +5,14 @@
 PUB = ["niveis-de-entupimento", "rede-pluvial-entupida", "vaso-sanitario-entupido",
        "precisa-quebrar-piso-para-desentupir", "desentupir-pia-com-gordura", "raizes-na-rede-pluvial",
        "limpeza-caixa-de-gordura", "como-funciona-hidrojateamento", "cimento-no-encanamento",
-       "pode-jogar-oleo-na-pia"]
+       "pode-jogar-oleo-na-pia", "caixa-cega-esgoto"]
 DATAS = {"niveis-de-entupimento": "2026-10-26", "rede-pluvial-entupida": "2026-10-26",
          "vaso-sanitario-entupido": "2026-10-27", "historia-bv-desentupidora": "2026-11-02",
          "precisa-quebrar-piso-para-desentupir": "2026-11-02", "desentupir-pia-com-gordura": "2026-11-02",
          "raizes-na-rede-pluvial": "2026-11-07",
          "limpeza-caixa-de-gordura": "2026-11-09", "como-funciona-hidrojateamento": "2026-11-09",
-         "cimento-no-encanamento": "2026-11-10", "pode-jogar-oleo-na-pia": "2026-11-10"}
+         "cimento-no-encanamento": "2026-11-10", "pode-jogar-oleo-na-pia": "2026-11-10",
+         "caixa-cega-esgoto": "2026-11-14"}
 FILA = []
 # Artigos escritos à mão (não gerados aqui): entram no índice, llms.txt e sitemap, mas não no "Leia também".
 EXTRAS = ["historia-bv-desentupidora"]
@@ -51,6 +52,9 @@ LISTA = {
     "pode-jogar-oleo-na-pia": ("Pode jogar óleo na pia? E o que não usar para desentupir",
                                "Por que o óleo entope, como descartar e o que nunca usar para desentupir.",
                                "por que óleo na pia entope, como descartar e o que não usar para desentupir: misturas de produtos, soda, água fervendo e arame."),
+    "caixa-cega-esgoto": ("Caixa cega no esgoto: o que é e por que encarece o desentupimento",
+                          "A caixa de passagem lacrada debaixo do piso: por que o serviço fica mais caro, o mau cheiro e como evitar.",
+                          "o que é caixa cega (caixa de passagem lacrada com contrapiso e piso), por que encarece o desentupimento, mau cheiro e infiltração, como se localiza a caixa (inclusive pelo som, com martelo de borracha) e caso real em uma jantinha no interior de Goiás, resolvido em 4 horas, com vídeos."),
 }
 
 LI = "https://www.linkedin.com/pulse/"
@@ -322,7 +326,7 @@ PISO = dict(
       <li>Quebrar o piso por conta própria "para achar o entupimento".</li>
       <li>Usar soda cáustica ou misturar produtos. Além do risco de queimadura, o produto fica parado no cano.</li>
       <li>Empurrar arame ou cabo de vassoura. Pode furar o cano ou soltar conexões.</li>
-      <li>Cobrir caixas de inspeção com piso na reforma. É isso que, mais tarde, obriga a quebrar.</li>
+      <li>Cobrir caixas de inspeção com piso na reforma. É isso que, mais tarde, obriga a quebrar: veja o que é uma <a href="../caixa-cega-esgoto/">caixa cega</a>.</li>
     </ul>
 
     <h2>Quando chamar um profissional?</h2>
@@ -1004,7 +1008,141 @@ CIMENTO = dict(
     leia=["raizes-na-rede-pluvial", "como-funciona-hidrojateamento", "rede-pluvial-entupida"],
 )
 
-for a in (REDE, VASO, PISO, PIA, CAIXA, HIDRO, OLEO, RAIZES, CIMENTO):
+# ---------------------------------------------------------------------------
+# Caixa cega (caso real: jantinha no interior de Goiás; a cidade NÃO vai no texto, decisão do Antonio)
+# ---------------------------------------------------------------------------
+CAIXA_CEGA = dict(
+    slug="caixa-cega-esgoto",
+    title="Caixa cega no esgoto: o que é e por que encarece o serviço",
+    h1="Caixa cega no esgoto: o que é e por que encarece o desentupimento",
+    desc="Caixa cega é a caixa de esgoto lacrada debaixo do piso. Veja por que ela encarece o desentupimento, causa mau cheiro e como evitar.",
+    migalha="Caixa cega no esgoto",
+    keywords="caixa cega, caixa cega esgoto, caixa de passagem lacrada, caixa de inspeção debaixo do piso, caixa de esgoto escondida, como achar caixa de esgoto",
+    sobre=["Caixa de inspeção", "Caixa de passagem", "Desentupimento", "Esgoto sanitário"],
+    imagem="https://i.ytimg.com/vi/fvLFIs4SRYg/hqdefault.jpg",
+    videos=["fvLFIs4SRYg", "L69sYPQ8uSc"],
+    resumo="Caixa cega é uma caixa de passagem ou de inspeção do esgoto que ficou sem acesso: alguém fechou a tampa com contrapiso e piso, normalmente numa reforma. Ela continua recebendo o esgoto, mas ninguém sabe onde está e ninguém consegue limpá-la. Quando entope, o desentupimento vira três serviços: achar a caixa, quebrar o piso para abrir e só então desobstruir. Por isso fica mais demorado e mais caro. E, como passa anos sem limpeza, a caixa enche de resíduos e pode causar mau cheiro e umidade no piso. A solução é simples: toda caixa precisa de uma tampa que abra.",
+    corpo='''    <p>No nosso dia a dia, "caixa cega" é o nome que damos para a caixa de esgoto que existe, funciona, mas desapareceu do piso. Não é um defeito raro: em reforma de quintal, garagem ou salão comercial, é comum o pedreiro passar o contrapiso por cima da tampa para o piso ficar "bonito". O problema só aparece anos depois, quando o esgoto entope justamente ali.</p>
+
+    <h2>Resumo: caixa com tampa x caixa cega</h2>
+    <div class="tabela-wrap">
+      <table>
+        <thead><tr><th></th><th>Caixa com tampa</th><th>Caixa cega</th></tr></thead>
+        <tbody>
+          <tr><td>Achar a caixa</td><td>Está à vista</td><td>Precisa localizar debaixo do piso</td></tr>
+          <tr><td>Abrir</td><td>Basta tirar a tampa</td><td>Precisa quebrar piso e contrapiso</td></tr>
+          <tr><td>Limpeza preventiva</td><td>Possível a qualquer hora</td><td>Na prática, nunca acontece</td></tr>
+          <tr><td>Tempo do desentupimento</td><td>Menor</td><td>Maior: achar, quebrar, desentupir e fechar</td></tr>
+          <tr><td>Custo</td><td>Só o desentupimento</td><td>Desentupimento + localização + quebra + recomposição do piso</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>O que é uma caixa cega e por que ela existe?</h2>
+    <p>A rede de esgoto de uma casa ou de um comércio tem caixas no caminho: caixa de inspeção, caixa de passagem, caixa de gordura. Elas ficam nas mudanças de direção e nas emendas da tubulação e existem para uma coisa: dar acesso ao cano. O próprio fabricante descreve a caixa de inspeção como o ponto que permite inspeção, limpeza e desobstrução da rede.</p>
+    <p>A caixa vira "cega" quando perde a tampa visível. Os motivos mais comuns que encontramos:</p>
+    <ul>
+      <li><strong>Reforma:</strong> o piso novo foi assentado por cima da tampa antiga.</li>
+      <li><strong>Estética:</strong> o dono não queria uma tampa no meio do quintal ou do salão.</li>
+      <li><strong>Obra sem projeto:</strong> a caixa foi feita, fechada com laje ou cimento e ninguém marcou onde ficou.</li>
+      <li><strong>Troca de dono:</strong> quem construiu sabia onde estava a caixa; quem comprou o imóvel não sabe.</li>
+    </ul>
+
+    <h2>Por que a caixa cega deixa o desentupimento mais caro?</h2>
+    <p>Com a caixa aberta, desentupir é colocar a máquina ou o hidrojato direto no ponto certo. Com a caixa cega, antes disso vêm etapas que levam tempo e mão de obra:</p>
+    <ol>
+      <li><strong>Perceber que existe uma caixa no caminho.</strong> Normalmente o sinal é a mola da máquina, o cabo de aço em espiral, que para sempre no mesmo ponto e começa a enrolar dentro do cano.</li>
+      <li><strong>Localizar a caixa debaixo do piso.</strong> Muitas vezes com sonda localizadora, um pequeno transmissor que entra no cano e é seguido por um aparelho na superfície.</li>
+      <li><strong>Quebrar o piso e o contrapiso</strong> exatamente em cima da caixa.</li>
+      <li><strong>Desentupir e limpar a caixa</strong>, que geralmente está cheia.</li>
+      <li><strong>Fechar de novo</strong>, de preferência com tampa de acesso, e recompor o piso em volta.</li>
+    </ol>
+    <p>Cada etapa a mais é tempo de equipe, equipamento e material. É por isso que o mesmo entupimento custa mais quando a caixa está escondida. Quando não se consegue achar a caixa, o risco é pior: quebrar em vários pontos "procurando" ou, como quase aconteceu no caso abaixo, alguém sugerir refazer a rede inteira.</p>
+
+    <h2>Caixa cega causa mau cheiro e infiltração?</h2>
+    <p>Pode causar, e o motivo é a falta de limpeza. Uma caixa que ninguém abre há anos vai acumulando tudo o que desce pelo esgoto: gordura, lodo, areia e, em comércio, até objetos. Na nossa experiência, os sinais que aparecem são:</p>
+    <ul>
+      <li><strong>Mau cheiro</strong> em um ponto do piso onde "não tem nada", principalmente em dia quente ou depois de chuva. A caixa cheia e mal vedada solta gás pelas juntas do piso.</li>
+      <li><strong>Umidade ou mancha no piso</strong> em volta de um ponto fixo. Com a caixa cheia, o esgoto fica parado mais alto do que deveria e passa a forçar as paredes e emendas da caixa, que em geral são de alvenaria.</li>
+      <li><strong>Entupimento que sempre volta</strong> no mesmo trecho, mesmo depois de desentupido pelos ralos.</li>
+      <li><strong>Esgoto lento em vários pontos ao mesmo tempo</strong>, porque a caixa fica antes de vários ramais.</li>
+    </ul>
+
+    <h2>Caso real: a caixa cega da jantinha, achada pelo som</h2>
+    <div class="caso">
+      <p>Fomos chamados para desentupir o esgoto de uma jantinha no interior de Goiás. Ao passar a máquina, percebi que a mola estava enrolando dentro da tubulação: ela batia sempre no mesmo lugar e não avançava. Esse comportamento indica que a mola está parando dentro de uma caixa de passagem, e não havia nenhuma tampa à vista. Era uma caixa cega, coberta por piso e contrapiso.</p>
+      <p>O caminho normal seria passar a sonda localizadora para descobrir onde estava a caixa. Fizemos de outro jeito, com a experiência de muitos anos de desentupimento:</p>
+      <ul>
+        <li>Medimos quanto da mola entrava até parar na caixa.</li>
+        <li>Seguimos a direção da tubulação a partir do ponto de entrada.</li>
+        <li>Na área indicada pela medida, fui batendo no piso com um martelinho de borracha. Em cima da caixa, o som muda: fica oco, com eco, porque embaixo há um vazio e não terra compactada.</li>
+      </ul>
+      <p>Quebramos só naquele ponto. Dentro da caixa havia tampas de garrafa, latas de cerveja, palitos de espetinho, plásticos e muito mais, resíduos de anos sem nenhuma limpeza. Limpamos a caixa, desentupimos a rede e fechamos deixando uma tampa de acesso, para que o próximo cuidado seja só abrir e limpar.</p>
+      <p>O dono já estava pensando em quebrar e refazer toda a tubulação, o que obrigaria a fechar o estabelecimento por 4 a 6 dias. O serviço completo levou 4 horas, e a jantinha não precisou fechar.</p>
+    </div>
+
+    ''' + video("fvLFIs4SRYg", "caixa cega aberta e limpa", "Caixa cega de esgoto aberta no piso, com água escura e resíduos sendo retirados para um balde",
+                "Vídeo 1 (caso real, 16 s): a caixa cega já aberta, com o esgoto parado e os resíduos sendo retirados.") + '''
+
+    ''' + video("L69sYPQ8uSc", "caixa cega fechada com tampa de acesso", "Tampa redonda de concreto encaixada no piso no lugar onde estava a caixa cega",
+                "Vídeo 2 (caso real, 12 s): a mesma caixa depois do serviço, agora com tampa de acesso.") + '''
+
+    <h2>Como se acha uma caixa escondida debaixo do piso?</h2>
+    <ul>
+      <li><strong>Pela mola da máquina:</strong> a distância que a mola entra até parar indica a que distância do ponto de entrada está a caixa.</li>
+      <li><strong>Pela sonda localizadora:</strong> o transmissor vai dentro do cano e o aparelho na superfície mostra o trajeto e o ponto onde ele para. Profundidade grande e ferragem no concreto podem atrapalhar a leitura.</li>
+      <li><strong>Pela câmera de inspeção:</strong> mostra o cano por dentro, a caixa e o que está entupindo, mas precisa de um ponto de entrada.</li>
+      <li><strong>Pelo som:</strong> o método do martelo de borracha do caso acima. Funciona bem nas mãos de quem já fez isso muitas vezes, porque é preciso distinguir o som de uma caixa do som de um piso mal assentado.</li>
+      <li><strong>Pela lógica da rede:</strong> caixas costumam ficar onde a tubulação muda de direção e perto da saída para a rua.</li>
+    </ul>
+
+    <h2>O que a norma diz sobre as caixas de inspeção?</h2>
+    <p>A norma brasileira de esgoto predial (ABNT NBR 8160) trata as caixas de inspeção como parte obrigatória da rede, justamente para permitir manutenção. Entre os pontos principais:</p>
+    <ul>
+      <li>No máximo <strong>25 m</strong> entre dois dispositivos de inspeção, medidos pelo caminho do cano.</li>
+      <li>No máximo <strong>15 m</strong> entre a ligação com a rede pública e o dispositivo de inspeção mais próximo.</li>
+      <li>No máximo <strong>10 m</strong> entre o vaso, a caixa de gordura ou a caixa sifonada e um dispositivo de inspeção.</li>
+      <li>Tampa de <strong>fácil remoção e com vedação</strong>: ela segura o cheiro, mas precisa abrir.</li>
+    </ul>
+    <p>Uma caixa cimentada por baixo do piso continua existindo, mas deixa de cumprir a função para a qual a norma pede que ela exista.</p>
+
+    <h2>Como evitar ter uma caixa cega em casa ou no comércio?</h2>
+    <ul>
+      <li><strong>Antes de qualquer reforma,</strong> marque onde ficam as caixas de inspeção, de passagem e de gordura. Tire foto com uma trena aparecendo e guarde.</li>
+      <li><strong>Se o piso vai passar por cima,</strong> use tampa com porta-tampa que recebe o mesmo revestimento. A tampa some no visual, mas continua abrindo. Os próprios fabricantes vendem caixas com tampa preparada para receber piso cerâmico ou cimentado.</li>
+      <li><strong>Combine com o pedreiro</strong> que nenhuma tampa será fechada com cimento.</li>
+      <li><strong>Ao comprar ou alugar um imóvel,</strong> pergunte onde ficam as caixas. Se ninguém souber e não houver nenhuma tampa à vista, é provável que exista caixa cega.</li>
+      <li><strong>Limpe as caixas periodicamente</strong>, principalmente em restaurante, bar e lanchonete. Veja <a href="../limpeza-caixa-de-gordura/">de quanto em quanto tempo limpar a caixa de gordura</a>.</li>
+    </ul>
+
+    <h2>O que não fazer</h2>
+    <ul class="nao">
+      <li>Quebrar o piso por conta própria "procurando a caixa". Sem saber a direção e a distância, o mais comum é quebrar no lugar errado.</li>
+      <li>Fechar de novo a caixa com cimento depois do desentupimento. O problema volta, e da próxima vez vai ser preciso quebrar outra vez.</li>
+      <li>Jogar soda cáustica ou outros produtos para "dissolver" o entupimento. Eles não dissolvem plástico, lata nem tampa de garrafa, e ficam parados na caixa.</li>
+      <li>Aceitar a ideia de refazer toda a rede antes de alguém localizar e abrir a caixa. Na maioria das vezes, o problema está nela.</li>
+    </ul>
+
+    <h2>Quando chamar um profissional?</h2>
+    <ul>
+      <li>O esgoto entope sempre no mesmo trecho e não há nenhuma tampa de caixa à vista.</li>
+      <li>Há mau cheiro ou umidade em um ponto fixo do piso.</li>
+      <li>Você vai reformar e quer descobrir onde estão as caixas antes de fechar o piso.</li>
+      <li>Alguém recomendou quebrar o piso inteiro ou refazer a rede e você quer uma segunda avaliação. Veja <a href="../precisa-quebrar-piso-para-desentupir/">quando é preciso quebrar o piso</a>.</li>
+    </ul>
+    <p>Para entender a gravidade do que está acontecendo, veja <a href="../niveis-de-entupimento/">os 4 níveis de entupimento</a>.</p>''',
+    faq=[
+        ("O que é caixa cega no esgoto?", "É uma caixa de passagem ou de inspeção da rede de esgoto que ficou sem acesso, normalmente porque foi coberta com contrapiso e piso. Ela continua recebendo o esgoto, mas não dá para abrir nem limpar."),
+        ("Como saber se a minha casa tem caixa cega?", "Os sinais são: nenhuma tampa de caixa à vista no quintal, na garagem ou no salão; entupimento que volta sempre no mesmo trecho; e mau cheiro ou umidade em um ponto fixo do piso."),
+        ("Por que o desentupimento fica mais caro com caixa cega?", "Porque antes de desentupir é preciso localizar a caixa debaixo do piso, quebrar o piso e o contrapiso para abrir e, no final, fechar e recompor. São etapas a mais de tempo, equipe e material."),
+        ("Pode colocar piso em cima da caixa de inspeção?", "Pode, desde que a caixa tenha tampa com porta-tampa que recebe o revestimento. O piso disfarça a tampa, mas ela continua abrindo. O que não pode é fechar a caixa com cimento."),
+        ("Precisa refazer toda a rede quando há caixa cega?", "Normalmente não. Na maioria dos casos basta localizar a caixa, abrir só naquele ponto, limpar, desentupir e deixar uma tampa de acesso."),
+    ],
+    fontes=["nbr8160", "projetista8160", "tigre_cx", "campo"],
+    leia=["precisa-quebrar-piso-para-desentupir", "limpeza-caixa-de-gordura", "como-funciona-hidrojateamento"],
+)
+
+for a in (REDE, VASO, PISO, PIA, CAIXA, HIDRO, OLEO, RAIZES, CIMENTO, CAIXA_CEGA):
     gerar(a)
 
 atualizar_listas()
