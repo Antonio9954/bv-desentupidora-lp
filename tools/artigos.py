@@ -1019,7 +1019,7 @@ CAIXA_CEGA = dict(
     migalha="Caixa cega no esgoto",
     keywords="caixa cega, caixa cega esgoto, caixa de passagem lacrada, caixa de inspeção debaixo do piso, caixa de esgoto escondida, como achar caixa de esgoto",
     sobre=["Caixa de inspeção", "Caixa de passagem", "Desentupimento", "Esgoto sanitário"],
-    imagem="https://i.ytimg.com/vi/fvLFIs4SRYg/hqdefault.jpg",
+    imagem="https://bvdesentupidora.com.br/blog/img/residuos-retirados-caixa-cega.webp",
     videos=["fvLFIs4SRYg", "L69sYPQ8uSc"],
     resumo="Caixa cega é uma caixa de passagem ou de inspeção do esgoto que ficou sem acesso: alguém fechou a tampa com contrapiso e piso, normalmente numa reforma. Ela continua recebendo o esgoto, mas ninguém sabe onde está e ninguém consegue limpá-la. Quando entope, o desentupimento vira três serviços: achar a caixa, quebrar o piso para abrir e só então desobstruir. Por isso fica mais demorado e mais caro. E, como passa anos sem limpeza, a caixa enche de resíduos e pode transbordar sem ninguém ver, com o esgoto infiltrando por dentro do piso e causando mau cheiro. A solução é simples: toda caixa precisa de uma tampa que abra.",
     corpo='''    <p>No nosso dia a dia, "caixa cega" é o nome que damos para a caixa de esgoto que existe, funciona, mas desapareceu do piso. Não é um defeito raro: em reforma de quintal, garagem ou salão comercial, é comum o pedreiro passar o contrapiso por cima da tampa para o piso ficar "bonito". O problema só aparece anos depois, quando o esgoto entope justamente ali.</p>
@@ -1077,9 +1077,14 @@ CAIXA_CEGA = dict(
         <li>Seguimos a direção da tubulação a partir do ponto de entrada.</li>
         <li>Na área indicada pela medida, fui batendo no piso com um martelinho de borracha. Em cima da caixa, o som muda: fica oco, com eco, porque embaixo há um vazio e não terra compactada.</li>
       </ul>
-      <p>Quebramos só naquele ponto. Dentro da caixa havia tampas de garrafa, latas de cerveja, palitos de espetinho, plásticos e muito mais, resíduos de anos sem nenhuma limpeza. Limpamos a caixa, desentupimos a rede e fechamos deixando uma tampa de acesso, para que o próximo cuidado seja só abrir e limpar.</p>
+      <p>Quebramos só naquele ponto. Dentro da caixa havia tampas de garrafa, latas de cerveja, palitos de espetinho, plásticos e muito mais: resíduos que estavam ali havia quase 7 anos, sem nenhuma limpeza. Deu para encher dois baldes e uma bacia. Limpamos a caixa, desentupimos a rede e fechamos deixando uma tampa de acesso, para que o próximo cuidado seja só abrir e limpar.</p>
       <p>O dono já estava pensando em quebrar e refazer toda a tubulação, o que obrigaria a fechar o estabelecimento por 4 a 6 dias. O serviço completo levou 4 horas, e a jantinha não precisou fechar.</p>
     </div>
+
+    <figure class="foto-vertical">
+      <img src="../img/residuos-retirados-caixa-cega.webp" alt="Dois baldes e uma bacia cheios de resíduos de esgoto retirados da caixa cega, ao lado da abertura feita no piso" width="634" height="1122" loading="lazy">
+      <figcaption>Dois baldes e uma bacia de resíduos retirados da caixa cega, acumulados por quase 7 anos. À esquerda, a abertura feita no piso.</figcaption>
+    </figure>
 
     ''' + video("fvLFIs4SRYg", "caixa cega aberta e limpa", "Caixa cega de esgoto aberta no piso, com água escura e resíduos sendo retirados para um balde",
                 "Vídeo 1 (caso real, 16 s): a caixa cega já aberta, com o esgoto parado e os resíduos sendo retirados.") + '''
