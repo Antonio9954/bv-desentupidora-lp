@@ -1021,7 +1021,7 @@ CAIXA_CEGA = dict(
     sobre=["Caixa de inspeção", "Caixa de passagem", "Desentupimento", "Esgoto sanitário"],
     imagem="https://i.ytimg.com/vi/fvLFIs4SRYg/hqdefault.jpg",
     videos=["fvLFIs4SRYg", "L69sYPQ8uSc"],
-    resumo="Caixa cega é uma caixa de passagem ou de inspeção do esgoto que ficou sem acesso: alguém fechou a tampa com contrapiso e piso, normalmente numa reforma. Ela continua recebendo o esgoto, mas ninguém sabe onde está e ninguém consegue limpá-la. Quando entope, o desentupimento vira três serviços: achar a caixa, quebrar o piso para abrir e só então desobstruir. Por isso fica mais demorado e mais caro. E, como passa anos sem limpeza, a caixa enche de resíduos e pode causar mau cheiro e umidade no piso. A solução é simples: toda caixa precisa de uma tampa que abra.",
+    resumo="Caixa cega é uma caixa de passagem ou de inspeção do esgoto que ficou sem acesso: alguém fechou a tampa com contrapiso e piso, normalmente numa reforma. Ela continua recebendo o esgoto, mas ninguém sabe onde está e ninguém consegue limpá-la. Quando entope, o desentupimento vira três serviços: achar a caixa, quebrar o piso para abrir e só então desobstruir. Por isso fica mais demorado e mais caro. E, como passa anos sem limpeza, a caixa enche de resíduos e pode transbordar sem ninguém ver, com o esgoto infiltrando por dentro do piso e causando mau cheiro. A solução é simples: toda caixa precisa de uma tampa que abra.",
     corpo='''    <p>No nosso dia a dia, "caixa cega" é o nome que damos para a caixa de esgoto que existe, funciona, mas desapareceu do piso. Não é um defeito raro: em reforma de quintal, garagem ou salão comercial, é comum o pedreiro passar o contrapiso por cima da tampa para o piso ficar "bonito". O problema só aparece anos depois, quando o esgoto entope justamente ali.</p>
 
     <h2>Resumo: caixa com tampa x caixa cega</h2>
@@ -1063,7 +1063,7 @@ CAIXA_CEGA = dict(
     <p>Pode causar, e o motivo é a falta de limpeza. Uma caixa que ninguém abre há anos vai acumulando tudo o que desce pelo esgoto: gordura, lodo, areia e, em comércio, até objetos. Na nossa experiência, os sinais que aparecem são:</p>
     <ul>
       <li><strong>Mau cheiro</strong> em um ponto do piso onde "não tem nada", principalmente em dia quente ou depois de chuva. A caixa cheia e mal vedada solta gás pelas juntas do piso.</li>
-      <li><strong>Umidade ou mancha no piso</strong> em volta de um ponto fixo. Com a caixa cheia, o esgoto fica parado mais alto do que deveria e passa a forçar as paredes e emendas da caixa, que em geral são de alvenaria.</li>
+      <li><strong>Transbordamento que ninguém vê.</strong> Numa caixa com tampa, quando ela enche, o esgoto aparece na tampa e alguém percebe. Na caixa cega, a tampa está debaixo do piso: o esgoto que transborda não tem por onde aparecer e infiltra por dentro do piso, espalhando-se pelo contrapiso e pela base embaixo dele. Pode passar meses assim, sem ninguém ver, até surgir como mancha de umidade, cheiro forte ou piso cedendo.</li>
       <li><strong>Entupimento que sempre volta</strong> no mesmo trecho, mesmo depois de desentupido pelos ralos.</li>
       <li><strong>Esgoto lento em vários pontos ao mesmo tempo</strong>, porque a caixa fica antes de vários ramais.</li>
     </ul>
