@@ -55,6 +55,8 @@ VIDEOS = {
                         desc="Caixa cega de esgoto em uma jantinha no interior de Goiás, já aberta depois de localizada debaixo do piso: água parada e os resíduos retirados de dentro dela (tampas de garrafa, latas, palitos de espetinho e plásticos)."),
     "L69sYPQ8uSc": dict(name="Caixa cega: desentupimento parte 2", up="2026-11-14T05:30:08-08:00", dur="PT12S", short=True,
                         desc="A mesma caixa cega depois do serviço: fechada com tampa de acesso no lugar do piso, para que a próxima limpeza seja só abrir a tampa."),
+    "lk54797N6pM": dict(name="Desentupimento real Itaberaí/Goiânia: sonda rotativa em rede pluvial achatada", up="2026-11-16T04:12:15-08:00", dur="PT41S", short=True,
+                        desc="Desentupimento de rede pluvial em um sobradinho em Itaberaí (GO), feito pelas equipes da BV Desentupidora de Itaberaí e de Goiânia: o encanamento estava achatado e cheio de terra, o hidrojato não passava e a passagem foi aberta com sonda rotativa, até a água voltar a escorrer."),
 }
 
 # (texto, url para o "citation" do JSON-LD ou None)
@@ -102,6 +104,8 @@ FONTES = {
                        "https://projetistapleno.com/caixas-de-inspecao-de-esgoto/"),
     "tigre_cx": ('Tigre / AECweb. <a href="https://www.aecweb.com.br/produto/caixa-de-inspecao-tigre/12995" rel="nofollow noopener" target="_blank">Caixa de Inspeção Tigre: ficha técnica</a>. A caixa de inspeção é destinada a permitir inspeção, limpeza e desobstrução; a tampa quadrada recebe o acabamento do piso.',
                  "https://www.aecweb.com.br/produto/caixa-de-inspecao-tigre/12995"),
+    "li_sonda": ('Lucas Nonato (LinkedIn, nov/2026). <a href="https://www.linkedin.com/pulse/o-hidrojato-n%C3%A3o-passou-sonda-rotativa-caso-da-rede-pluvial-vieira-hce4f" rel="noopener" target="_blank">O hidrojato não passou. A sonda rotativa passou: o caso da rede pluvial achatada em Itaberaí-GO</a>.',
+                 "https://www.linkedin.com/pulse/o-hidrojato-n%C3%A3o-passou-sonda-rotativa-caso-da-rede-pluvial-vieira-hce4f"),
     "campo": ("Experiência de campo da equipe BV Desentupidora (atendimentos em Goiânia, Itaberaí, Inhumas, Heitoraí e região).", None),
 }
 

@@ -71,7 +71,7 @@ REDE = dict(
     keywords="rede pluvial entupida, ralo do quintal entupido, calha transbordando, água da chuva não escoa, desentupimento de rede pluvial",
     sobre=["Rede pluvial", "Drenagem de águas pluviais", "Desentupimento"],
     imagem="https://i.ytimg.com/vi/rIHn8FNLqQM/maxresdefault.jpg",
-    videos=["rIHn8FNLqQM"],
+    videos=["rIHn8FNLqQM", "lk54797N6pM"],
     linkedin=LI + "o-que-encontramos-dentro-de-uma-rede-pluvial-em-heitora%C3%AD-vieira-ujdif/",
     resumo="A rede pluvial é a tubulação que leva a água da chuva das calhas, ralos do quintal e grelhas até a rua. Ela está entupida quando, na chuva, a água empoça no quintal ou na garagem, a calha transborda ou o ralo externo devolve água. Na maioria dos casos a causa é terra, folhas e pequenos objetos arrastados para dentro do cano ao longo de meses. Limpar calhas e ralos antes da época de chuvas evita boa parte dos problemas; quando a água já não escoa, a rede precisa ser desobstruída com equipamento, quase sempre sem quebrar piso.",
     corpo='''    <p>Todo ano, quando as chuvas voltam a Goiás, recebemos chamados com a mesma história: o quintal virou piscina, a água da garagem entrou em casa ou a calha transbordou pela parede. Quase sempre a rede pluvial já estava parcialmente fechada havia meses, e ninguém percebeu porque não chovia. Neste guia explico como reconhecer o problema cedo e o que dá para fazer antes de precisar de equipamento.</p>
@@ -110,6 +110,16 @@ REDE = dict(
 
     ''' + video("rIHn8FNLqQM", "o que saiu da rede pluvial em Heitoraí", "Vídeo do desentupimento da rede pluvial de uma casa em Heitoraí (GO)",
                 "Vídeo (caso real, 7 min): Lucas Nonato mostra a desobstrução da rede pluvial em Heitoraí (GO) e os objetos que saíram de dentro do cano, junto com a terra acumulada.") + '''
+
+    <h2>E quando o cano está achatado e cheio de terra?</h2>
+    <p>Nem toda rede pluvial entupida se resolve do mesmo jeito. Quando um trecho do cano está achatado, o espaço interno fica menor, a água perde força ali e a terra assenta justamente nesse ponto. Com o tempo, a terra compactada fecha o que sobrou da passagem.</p>
+    <div class="caso">
+      <p><span class="rotulo">Caso real (Itaberaí, GO, novembro de 2026):</span> a rede pluvial de um sobradinho estava obstruída havia meses. O cano tinha um trecho achatado e estava tomado por terra. O hidrojato, que costuma ser a primeira escolha em rede pluvial, não tinha passagem: o bico não avançava e a água voltava. Insistir com mais pressão num cano já deformado seria arriscar romper o tubo. Trocamos para a sonda rotativa e fomos devagar, avançando, recuando para tirar a terra solta e avançando de novo, sem forçar o trecho achatado. Foram muitas horas de serviço, com as equipes da BV de Itaberaí e de Goiânia, e muita terra retirada até a água voltar a correr.</p>
+      <p>Desentupir devolve a passagem, mas não desamassa o cano. Esse trecho continua sendo o primeiro lugar onde a terra volta a acumular; se a rede fechar de novo, vale avaliar a troca só daquele pedaço.</p>
+    </div>
+
+    ''' + video("lk54797N6pM", "sonda rotativa em rede pluvial com cano achatado", "Sonda rotativa trabalhando na rede pluvial de um sobradinho em Itaberaí (GO)",
+                "Vídeo (caso real, 41 s): a sonda rotativa abrindo a passagem no cano achatado e a água voltando a escorrer depois de meses de rede parada.") + '''
 
     <h2>O que dá para fazer em casa?</h2>
     <ul>
@@ -151,7 +161,7 @@ REDE = dict(
         ("Produto químico desentope rede pluvial?", "Não. O que entope a rede pluvial costuma ser terra, folhas e objetos, que não se dissolvem com produto. É preciso retirar a sujeira ou desobstruir o cano com equipamento."),
         ("É possível desentupir a rede pluvial sem quebrar o piso?", "Na maioria dos casos, sim. Com sonda rotativa ou hidrojateamento, a obstrução é removida pelos próprios ralos e caixas da rede."),
     ],
-    fontes=["nbr10844", "epa", "fabricantes", "campo"],
+    fontes=["nbr10844", "epa", "fabricantes", "li_sonda", "campo"],
     leia=["niveis-de-entupimento", "precisa-quebrar-piso-para-desentupir", "como-funciona-hidrojateamento"],
 )
 
