@@ -106,6 +106,16 @@ FONTES = {
                  "https://www.aecweb.com.br/produto/caixa-de-inspecao-tigre/12995"),
     "li_sonda": ('Lucas Nonato (LinkedIn, nov/2026). <a href="https://www.linkedin.com/pulse/o-hidrojato-n%C3%A3o-passou-sonda-rotativa-caso-da-rede-pluvial-vieira-hce4f" rel="noopener" target="_blank">O hidrojato não passou. A sonda rotativa passou: o caso da rede pluvial achatada em Itaberaí-GO</a>.',
                  "https://www.linkedin.com/pulse/o-hidrojato-n%C3%A3o-passou-sonda-rotativa-caso-da-rede-pluvial-vieira-hce4f"),
+    "kizny": ('Kizny Gordon, A. E. et al. (2017). <a href="https://pubmed.ncbi.nlm.nih.gov/28200000/" rel="nofollow noopener" target="_blank">The Hospital Water Environment as a Reservoir for Carbapenem-Resistant Organisms Causing Hospital-Acquired Infections: A Systematic Review of the Literature</a>. <em>Clinical Infectious Diseases</em>, 64(10), 1435-1444. 32 relatos em 20 anos; ralos, pias e torneiras foram os pontos mais colonizados e <em>Pseudomonas aeruginosa</em> a bactéria predominante.',
+              "https://pubmed.ncbi.nlm.nih.gov/28200000/"),
+    "sheba": ('Healio (out/2018). <a href="https://www.healio.com/news/infectious-disease/20181012/sink-traps-in-icu-harbor-antibioticresistant-bacteria" rel="nofollow noopener" target="_blank">Sink traps in ICU harbor antibiotic-resistant bacteria</a>. Resume o estudo de Regev-Yochay et al. (<em>Infection Control &amp; Hospital Epidemiology</em>, 2018) sobre o surto na UTI do Sheba Medical Center, em Israel: 32 casos entre jan/2016 e mai/2017, 3 mortes, bactéria encontrada em 2 saídas de pia e 16 sifões.',
+              "https://www.healio.com/news/infectious-disease/20181012/sink-traps-in-icu-harbor-antibioticresistant-bacteria"),
+    "degeyter": ('De Geyter, D. et al. (2017). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5314675/" rel="nofollow noopener" target="_blank">The sink as a potential source of transmission of carbapenemase-producing Enterobacteriaceae in the intensive care unit</a>. <em>Antimicrobial Resistance &amp; Infection Control</em>, 6, 24. Hospital Universitário de Bruxelas: 7 de 8 pias dos quartos de isolamento da UTI contaminadas; cita que o ralo sob a pia de hospital tem de 10<sup>6</sup> a 10<sup>10</sup> bactérias por mL.',
+                 "https://pmc.ncbi.nlm.nih.gov/articles/PMC5314675/"),
+    "uva": ('Healio (abr/2023). <a href="https://www.healio.com/news/infectious-disease/20230426/hospital-surprised-by-outbreak-after-replacing-sink-drains-in-icu" rel="nofollow noopener" target="_blank">Hospital surprised by outbreak after replacing sink drains in ICU</a>. Trabalho de Lehman et al. apresentado na conferência da SHEA (2023) sobre o Hospital da Universidade da Virgínia (EUA).',
+            "https://www.healio.com/news/infectious-disease/20230426/hospital-surprised-by-outbreak-after-replacing-sink-drains-in-icu"),
+    "anvisa_saude": ("Anvisa. RDC nº 50/2002 (projeto físico de estabelecimentos assistenciais de saúde), RDC nº 63/2011 (boas práticas de funcionamento dos serviços de saúde) e RDC nº 222/2018 (gerenciamento de resíduos de serviços de saúde).", None),
+    "nbr5674": ("ABNT. <em>NBR 5674 — Manutenção de edificações: requisitos para o sistema de gestão de manutenção</em>.", None),
     "campo": ("Experiência de campo da equipe BV Desentupidora (atendimentos em Goiânia, Itaberaí, Inhumas, Heitoraí e região).", None),
 }
 
@@ -121,6 +131,7 @@ ARTIGOS = {
     "raizes-na-rede-pluvial": "Raízes na rede pluvial: o alerta que canteiros perto da tubulação escondem",
     "cimento-no-encanamento": "Cimento no encanamento: por que vira pedra dentro do cano e o que fazer",
     "caixa-cega-esgoto": "Caixa cega no esgoto: o que é e por que encarece o desentupimento",
+    "desentupimento-hospitais-e-clinicas": "Desentupimento especializado em hospitais e clínicas",
 }
 
 

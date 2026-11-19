@@ -5,14 +5,14 @@
 PUB = ["niveis-de-entupimento", "rede-pluvial-entupida", "vaso-sanitario-entupido",
        "precisa-quebrar-piso-para-desentupir", "desentupir-pia-com-gordura", "raizes-na-rede-pluvial",
        "limpeza-caixa-de-gordura", "como-funciona-hidrojateamento", "cimento-no-encanamento",
-       "pode-jogar-oleo-na-pia", "caixa-cega-esgoto"]
+       "pode-jogar-oleo-na-pia", "caixa-cega-esgoto", "desentupimento-hospitais-e-clinicas"]
 DATAS = {"niveis-de-entupimento": "2026-10-26", "rede-pluvial-entupida": "2026-10-26",
          "vaso-sanitario-entupido": "2026-10-27", "historia-bv-desentupidora": "2026-11-02",
          "precisa-quebrar-piso-para-desentupir": "2026-11-02", "desentupir-pia-com-gordura": "2026-11-02",
          "raizes-na-rede-pluvial": "2026-11-07",
          "limpeza-caixa-de-gordura": "2026-11-09", "como-funciona-hidrojateamento": "2026-11-09",
          "cimento-no-encanamento": "2026-11-10", "pode-jogar-oleo-na-pia": "2026-11-10",
-         "caixa-cega-esgoto": "2026-11-14"}
+         "caixa-cega-esgoto": "2026-11-14", "desentupimento-hospitais-e-clinicas": "2026-11-19"}
 FILA = []
 # Artigos escritos à mão (não gerados aqui): entram no índice, llms.txt e sitemap, mas não no "Leia também".
 EXTRAS = ["historia-bv-desentupidora"]
@@ -55,6 +55,9 @@ LISTA = {
     "caixa-cega-esgoto": ("Caixa cega no esgoto: o que é e por que encarece o desentupimento",
                           "A caixa de passagem lacrada debaixo do piso: por que o serviço fica mais caro, o mau cheiro e como evitar.",
                           "o que é caixa cega (caixa de passagem lacrada com contrapiso e piso), por que encarece o desentupimento, mau cheiro e infiltração, como se localiza a caixa (inclusive pelo som, com martelo de borracha) e caso real em uma jantinha no interior de Goiás, resolvido em 4 horas, com vídeos."),
+    "desentupimento-hospitais-e-clinicas": ("Desentupimento especializado em hospitais e clínicas: riscos e como fazer a manutenção certa",
+                                            "Por que ralo entupido ou com cheiro é risco para pacientes, as áreas críticas e como a manutenção deve ser feita.",
+                                            "por que ralos, pias e sifões entupidos ou com mau cheiro são risco em hospitais e clínicas (estudos de surtos em UTI), pacientes e áreas que exigem cuidado, frequência de manutenção preventiva e como executar o serviço com autorização da CCIH, isolamento, EPI e registro."),
 }
 
 LI = "https://www.linkedin.com/pulse/"
@@ -1157,7 +1160,183 @@ CAIXA_CEGA = dict(
     leia=["precisa-quebrar-piso-para-desentupir", "limpeza-caixa-de-gordura", "como-funciona-hidrojateamento"],
 )
 
-for a in (REDE, VASO, PISO, PIA, CAIXA, HIDRO, OLEO, RAIZES, CIMENTO, CAIXA_CEGA):
+COMMONS = "https://commons.wikimedia.org/wiki/File:"
+CCBYSA = '<a href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt-br" rel="nofollow noopener" target="_blank">CC BY-SA 4.0</a>'
+
+# Sem atendimento em hospital para mostrar: as fotos de hospitais de Goiânia são ilustrativas (Wikimedia Commons,
+# CC BY-SA 4.0, com crédito) e a legenda diz que eles não têm relação com os casos citados (pedido do Antonio, 19/11/2026).
+HOSPITAL = dict(
+    slug="desentupimento-hospitais-e-clinicas",
+    title="Desentupimento em hospitais e clínicas: riscos e cuidados",
+    h1="Desentupimento especializado em hospitais e clínicas: riscos e como fazer a manutenção certa",
+    desc="Por que ralo entupido ou com cheiro é risco em hospitais e clínicas, quais áreas exigem cuidado e como fazer a manutenção sem expor pacientes.",
+    migalha="Desentupimento em hospitais e clínicas",
+    keywords="desentupimento em hospitais, desentupimento em clínicas, entupimento em hospital, mau cheiro em ralo de hospital, sifão de pia hospitalar, manutenção preventiva hidrossanitária hospitalar, controle de infecção e esgoto",
+    sobre=["Controle de infecção hospitalar", "Manutenção predial", "Esgoto sanitário", "Desentupimento"],
+    imagem="https://bvdesentupidora.com.br/blog/img/hospital-das-clinicas-ufg-goiania.webp",
+    videos=["D4aA6c9-8lc"],
+    resumo="Em hospitais e clínicas, ralo entupido ou com cheiro de esgoto não é só desconforto: pias, ralos e sifões já foram a origem de surtos de bactérias resistentes a antibióticos em UTIs, com mortes. O mau cheiro indica que a barreira entre o esgoto e o ambiente falhou (sifão seco, vedação rompida ou resíduo parado). Os mais vulneráveis são pacientes de UTI, prematuros, imunossuprimidos, transplantados, queimados e em hemodiálise. A manutenção precisa ser preventiva e programada, com intervalo menor nas áreas críticas, e todo serviço deve ter autorização da CCIH, isolamento da área, EPI e registro. Trocar peças ou jogar produto químico, sozinhos, não resolvem.",
+    corpo='''    <p>Quando foi a última vez que alguém olhou o sifão da pia da UTI, da sala de procedimentos ou do expurgo? Se ninguém sabe responder, este texto é para você. Ele mostra por que o ponto mais contaminado de um quarto de hospital pode estar debaixo da pia, e como o desentupimento e a manutenção devem ser feitos num lugar onde há pacientes graves.</p>
+
+    <figure>
+      <img src="../img/hospital-das-clinicas-ufg-goiania.webp" alt="Fachada do Hospital das Clínicas da UFG, em Goiânia, prédio alto de cor bege com árvores e carros estacionados na rua" width="960" height="720" fetchpriority="high">
+      <figcaption>Hospital das Clínicas da UFG, em Goiânia. Foto ilustrativa: o hospital não tem relação com os casos e estudos citados neste artigo. Foto: Fronteira / <a href="''' + COMMONS + '''Hospital_das_Cl%C3%ADnicas_da_UFG,_Goi%C3%A2nia,_dezembro_de_2022_(3).jpg" rel="nofollow noopener" target="_blank">Wikimedia Commons</a>, licença ''' + CCBYSA + ''' (imagem reduzida).</figcaption>
+    </figure>
+
+    <h2>Resumo: áreas, riscos e manutenção</h2>
+    <div class="tabela-wrap">
+      <table>
+        <thead><tr><th>Área</th><th>Principal risco</th><th>Ponto de partida para a manutenção*</th></tr></thead>
+        <tbody>
+          <tr><td>UTI, centro cirúrgico, hemodiálise, CME</td><td>Bactérias resistentes nos sifões; gotículas perto do paciente</td><td>Inspeção mensal; limpeza técnica trimestral</td></tr>
+          <tr><td>Cozinha, lactário, banco de leite</td><td>Gordura na rede; contaminação de alimentos</td><td>Caixa de gordura mensal (quinzenal com alto volume)</td></tr>
+          <tr><td>Internação, ambulatório e consultórios</td><td>Sifão seco, refluxo, mau cheiro</td><td>Inspeção trimestral; limpeza semestral</td></tr>
+          <tr><td>Rede geral de esgoto e caixas de inspeção</td><td>Entupimento e transbordamento</td><td>Semestral, com vídeo-inspeção anual</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>*Não é norma: é um ponto de partida. A rotina de cada hospital ou clínica é definida pela CCIH (Comissão de Controle de Infecção Hospitalar) junto com a engenharia de manutenção.</p>
+
+    <h2>Por que um ralo entupido ou com cheiro é um risco sério num hospital?</h2>
+    <p>Em 10 anos trabalhando com desentupimento e hidrojateamento, aprendi que cheiro de esgoto quase nunca é "só cheiro". Na maioria das vezes ele aparece porque a água que fica parada no sifão secou, a vedação do vaso se rompeu ou há resíduo acumulado na tubulação. Essa água parada no sifão é o que separa o ambiente do esgoto. Quando ela falha, o ar da rede entra no ambiente.</p>
+    <p>Em uma casa, isso incomoda. Em um hospital ou numa clínica, o problema é outro: as pessoas ali estão com a imunidade baixa, com cortes cirúrgicos, cateteres e sondas. Um entupimento que causa refluxo ou transbordamento pode contaminar o piso e interditar um leito ou até uma sala cirúrgica.</p>
+    <p>Os gases do esgoto, como o sulfeto de hidrogênio (o cheiro de ovo podre), também irritam as vias respiratórias, o que pesa para quem já respira com dificuldade.</p>
+
+    <h2>O que os estudos mostram sobre pias e sifões de hospital?</h2>
+    <p>Esse alerta não é só nosso. A ciência vem documentando o problema há anos:</p>
+    <ul>
+      <li><strong>Revisão de 2017 (<em>Clinical Infectious Diseases</em>):</strong> reuniu 32 relatos, em 20 anos, de bactérias resistentes aos carbapenêmicos (antibióticos de último recurso) encontradas no sistema de água e esgoto de hospitais. A maioria estava ligada a surtos em UTI, com pacientes graves e imunossuprimidos. Ralos, pias e torneiras foram os pontos mais colonizados, e a <em>Pseudomonas aeruginosa</em> foi a bactéria mais encontrada.</li>
+      <li><strong>Surto numa UTI em Israel (2016–2017):</strong> 32 casos e 3 mortes. A investigação encontrou a mesma bactéria em duas saídas de pia e em 16 sifões da UTI.</li>
+      <li><strong>Carga de bactérias no ralo:</strong> um estudo de um hospital universitário da Bélgica lembra que o ralo debaixo da pia de hospital pode concentrar de 1 milhão a 10 bilhões de bactérias por mililitro. Na UTI estudada, 7 das 8 pias dos quartos de isolamento estavam contaminadas.</li>
+      <li><strong>A troca de ralos nos EUA:</strong> o Hospital da Universidade da Virgínia trocou ralos e sifões de uma UTI e tratou as pias com produto químico para conter a transmissão de bactérias resistentes. O tratamento químico foi abandonado porque as pias voltavam a ser colonizadas, e depois da troca surgiu um surto de outra bactéria, a <em>Serratia marcescens</em>.</li>
+    </ul>
+    <p>A lição que tiro disso: não existe solução mágica. A própria revisão de 2017 conclui que o que mais funciona é a combinação de medidas, com reforço da rotina de controle de infecção. Manutenção bem feita e hábito da equipe andam juntos.</p>
+
+    <h2>Quais pacientes não podem ficar expostos a mau cheiro ou esgoto?</h2>
+    <ul>
+      <li>Pacientes de UTI (adulto, pediátrica e neonatal)</li>
+      <li>Recém-nascidos, principalmente prematuros</li>
+      <li>Pacientes em quimioterapia ou com a imunidade muito baixa</li>
+      <li>Transplantados (de medula e de órgãos)</li>
+      <li>Grandes queimados</li>
+      <li>Pacientes em pós-operatório, com feridas abertas, cateteres ou sondas</li>
+      <li>Pacientes em hemodiálise</li>
+      <li>Pacientes com DPOC, asma grave ou outras doenças respiratórias</li>
+      <li>Gestantes e idosos frágeis</li>
+    </ul>
+
+    <h2>Quais microrganismos exigem atenção?</h2>
+    <ul>
+      <li><strong>Bactérias resistentes a antibióticos:</strong> <em>Klebsiella pneumoniae</em> (KPC), <em>Acinetobacter baumannii</em>, <em>Pseudomonas aeruginosa</em>, <em>Serratia marcescens</em> e <em>Enterobacter</em>. Podem causar pneumonia, infecção no sangue, infecção urinária e infecção no local da cirurgia.</li>
+      <li><strong><em>Legionella</em>:</strong> vive em sistemas de água mal cuidados e é transmitida pela inalação de gotículas (chuveiros, torneiras, torres de resfriamento). Pode causar pneumonia grave.</li>
+      <li><strong>Agentes de diarreia ligados ao esgoto:</strong> <em>E. coli</em>, norovírus e <em>Clostridioides difficile</em>, principalmente quando há refluxo.</li>
+      <li><strong>Fungos como o <em>Aspergillus</em>:</strong> se espalham com a poeira de obras e quebras. Por isso a própria manutenção precisa de controle em áreas com pacientes imunossuprimidos.</li>
+    </ul>
+
+    <figure>
+      <img src="../img/hospital-de-doencas-tropicais-goiania.webp" alt="Entrada do Hospital de Doenças Tropicais de Goiânia, prédio baixo com fachada verde, palmeiras e estacionamento" width="960" height="720" loading="lazy">
+      <figcaption>Hospital de Doenças Tropicais (HDT), em Goiânia. Foto ilustrativa: o hospital não tem relação com os casos e estudos citados neste artigo. Foto: Fronteira / <a href="''' + COMMONS + '''Hospital_de_Doen%C3%A7as_Tropicais,_Jardim_Bela_Vista,_Goi%C3%A2nia,_julho_de_2024_(1).jpg" rel="nofollow noopener" target="_blank">Wikimedia Commons</a>, licença ''' + CCBYSA + ''' (imagem reduzida).</figcaption>
+    </figure>
+
+    <h2>Quais áreas do hospital pedem cuidado redobrado?</h2>
+    <ul>
+      <li>UTI adulto, pediátrica e neonatal</li>
+      <li>Centro cirúrgico e sala de recuperação</li>
+      <li>Oncologia, hematologia e unidades de transplante</li>
+      <li>Hemodiálise</li>
+      <li>Central de Material e Esterilização (CME)</li>
+      <li>Cozinha, lactário e banco de leite</li>
+      <li>Pronto-socorro</li>
+      <li>Laboratório, expurgos e lavanderia</li>
+      <li>Quartos de isolamento</li>
+    </ul>
+    <p><strong>E nas clínicas?</strong> As áreas críticas são menores, mas a lógica é a mesma: sala de procedimentos, clínica de hemodiálise, posto de coleta de laboratório, expurgo e copa. Uma clínica pequena costuma ter poucos pontos de esgoto, e por isso um único sifão seco ou um ralo entupido já afeta todo o atendimento.</p>
+
+    <h2>Como deve ser a limpeza de ralos, pias e vasos sanitários?</h2>
+    <ul>
+      <li><strong>Pias de lavar as mãos:</strong> usar só para lavar as mãos. Restos de soro, medicação, comida ou café alimentam as bactérias que vivem no sifão.</li>
+      <li><strong>Nada guardado do lado da pia:</strong> materiais, medicamentos e insumos ficam fora da área de respingo.</li>
+      <li><strong>Torneiras:</strong> de preferência acionadas sem as mãos, com o jato que não caia direto dentro do ralo (isso espalha gotículas).</li>
+      <li><strong>Ralos:</strong> sifonados e com tampa. Em áreas críticas, o ideal é ter o mínimo possível de ralos no piso.</li>
+      <li><strong>Vasos sanitários:</strong> descarga com a tampa fechada e desinfecção diária com produto aprovado pela CCIH.</li>
+      <li><strong>Sifões:</strong> desinfecção periódica conforme o protocolo da instituição, sabendo que o produto químico, sozinho, tem efeito temporário.</li>
+      <li><strong>Registro:</strong> cada limpeza técnica e cada manutenção anotadas, com data, local e responsável.</li>
+    </ul>
+
+    <h2>Com que frequência fazer a manutenção preventiva?</h2>
+    <p>Não existe um número único na lei. A RDC 63/2011 da Anvisa exige que o serviço de saúde mantenha suas instalações em condições adequadas e seguras, o que na prática pede um plano de manutenção predial documentado (a ABNT NBR 5674 é a base para esse plano).</p>
+    <p>A tabela do início do artigo traz um ponto de partida. A lógica é simples: quanto mais grave o paciente e mais uso o ponto tem, menor o intervalo. Entupimento em área crítica é tratado como urgência, não entra em fila. Na cozinha, a frequência segue a de qualquer cozinha comercial: veja <a href="../limpeza-caixa-de-gordura/">de quanto em quanto tempo limpar a caixa de gordura</a>.</p>
+
+    <h2>Como a manutenção deve ser feita sem colocar pacientes em risco?</h2>
+    <p><strong>Antes do serviço</strong></p>
+    <ul>
+      <li>Autorização da CCIH e do enfermeiro responsável pelo setor</li>
+      <li>Avaliação de risco: quanto mais crítica a área, mais controle</li>
+      <li>Isolamento físico e sinalização da área</li>
+      <li>Pacientes próximos remanejados ou serviço feito em horário de menor movimento</li>
+    </ul>
+    <p><strong>Durante o serviço</strong></p>
+    <ul>
+      <li>EPI completo: luvas, avental impermeável, máscara PFF2, óculos e botas</li>
+      <li>Controle de respingos e gotículas: <a href="../como-funciona-hidrojateamento/">hidrojateamento</a> em área assistencial só com contenção</li>
+      <li>Tubulação nunca deixada aberta, para o ar do esgoto não entrar no ambiente</li>
+      <li>Ferramentas, mangueiras e equipamentos limpos e desinfetados, sem trazer sujeira de outro serviço</li>
+    </ul>
+    <p><strong>Depois do serviço</strong></p>
+    <ul>
+      <li>Limpeza terminal da área pela equipe de higienização</li>
+      <li>Resíduos descartados conforme o plano de resíduos da instituição (RDC 222/2018)</li>
+      <li>Relatório técnico com fotos, local, data e o que foi feito</li>
+    </ul>
+    <p>A equipe que entra num hospital precisa ter treinamento em biossegurança e vacinação em dia, principalmente contra hepatite B e tétano.</p>
+
+    <h2>O que a cozinha de um restaurante ensina sobre a do hospital?</h2>
+    <p>A cozinha de um hospital funciona como a de um restaurante grande: muita gordura, uso o dia inteiro e nenhum horário bom para parar. É o tipo de rede que mais atendemos em comércios, e o caso abaixo mostra por que o acesso à tubulação faz tanta diferença.</p>
+    <div class="caso">
+      <p><span class="rotulo">Caso real (restaurante em Goiânia):</span> a rede de esgoto do restaurante estava totalmente parada e não havia nenhuma caixa de inspeção para entrar na tubulação. Sem caixa, o caminho comum seria quebrar o piso. A solução foi abrir a fossa e entrar com a mangueira do hidrojato pelo cano que chega até ela, trabalhando em direção à obstrução, tomada por gordura e resíduos. Depois do serviço, a rede voltou a escoar.</p>
+      <p>Num hospital, o mesmo problema teria um peso maior: a cozinha não pode parar e uma quebra de piso levanta poeira perto de pacientes. Por isso caixas de inspeção acessíveis e mapeadas fazem parte de um bom plano de manutenção.</p>
+    </div>
+
+    ''' + video("D4aA6c9-8lc", "hidrojato entrando pela fossa de um restaurante", "Vídeo do hidrojato operando pelo cano dentro da fossa de um restaurante em Goiânia",
+                "Vídeo (caso real, 30 s): restaurante em Goiânia sem caixas de inspeção. O hidrojato entra pelo cano que chega à fossa para desobstruir a rede tomada por gordura.") + '''
+
+    <h2>O que a equipe pode fazer no dia a dia</h2>
+    <ul>
+      <li><strong>Ralo de quarto ou consultório vazio:</strong> jogar um pouco de água uma vez por semana. Isso repõe a água do sifão, que seca quando o ponto fica sem uso, e evita o cheiro.</li>
+      <li><strong>Ralinho ou grelha na pia da copa e da cozinha:</strong> segura os resíduos antes de chegarem ao cano.</li>
+      <li><strong>Avisar logo:</strong> escoamento lento, barulho de "gorgolejo" ou cheiro são os primeiros sinais. Quanto antes a manutenção for chamada, mais simples o serviço.</li>
+    </ul>
+
+    <h2>O que nunca fazer</h2>
+    <ul class="nao">
+      <li><strong>Misturar água sanitária com outros produtos</strong> (como amoníaco ou ácidos): a mistura libera gases tóxicos. Em ambiente fechado, com pacientes, é ainda mais perigoso.</li>
+      <li><strong>Usar soda cáustica:</strong> respinga, queima a pele e pode danificar a tubulação.</li>
+      <li><strong>Jogar água fervendo em cano de PVC:</strong> pode deformar as conexões.</li>
+      <li><strong>Descartar óleo, gordura ou restos de comida na pia:</strong> é a principal causa de entupimento nas cozinhas que atendemos. Veja <a href="../pode-jogar-oleo-na-pia/">como descartar o óleo</a>.</li>
+      <li><strong>Desmontar o sifão sem proteção:</strong> o resíduo de dentro é altamente contaminado.</li>
+    </ul>
+
+    <h2>Quando chamar uma equipe especializada?</h2>
+    <ul>
+      <li>Quando o cheiro volta mesmo com o ralo limpo e com água</li>
+      <li>Quando há refluxo, transbordamento ou escoamento lento em mais de um ponto</li>
+      <li>Quando o entupimento está em área crítica (UTI, centro cirúrgico, hemodiálise, CME)</li>
+      <li>Quando a caixa de gordura ou a rede geral precisam de hidrojateamento</li>
+      <li>Quando o hospital ou a clínica precisa montar ou revisar o plano de manutenção preventiva</li>
+    </ul>
+    <p>Para entender a gravidade de um entupimento, veja <a href="../niveis-de-entupimento/">os 4 níveis de entupimento</a>.</p>''',
+    faq=[
+        ("Ralo com cheiro em hospital é perigoso?", "Sim. Além de indicar falha na vedação do esgoto, pias e ralos hospitalares já foram identificados como reservatórios de bactérias resistentes a antibióticos em surtos de UTI."),
+        ("Com que frequência limpar a rede de esgoto de um hospital ou clínica?", "Como ponto de partida, áreas críticas recebem inspeção mensal e limpeza técnica trimestral, e a rede geral é revisada a cada seis meses. A rotina final é definida pela CCIH com a engenharia de manutenção."),
+        ("Trocar o sifão resolve a contaminação?", "Não sozinho. A troca pode ser necessária, mas estudos mostram que, sem protocolo e sem mudar a rotina da equipe, as pias voltam a ser colonizadas, e houve caso de surto de outra bactéria depois da troca."),
+        ("Quais áreas precisam de mais cuidado com a tubulação?", "UTIs, centro cirúrgico, hemodiálise, oncologia e transplante, CME, cozinha, lactário e quartos de isolamento. Em clínicas: sala de procedimentos, hemodiálise, coleta de laboratório, expurgo e copa."),
+        ("Pode fazer hidrojateamento dentro de um hospital?", "Pode, com autorização da CCIH, isolamento da área, contenção de respingos, EPI completo e limpeza terminal depois."),
+    ],
+    fontes=["kizny", "sheba", "degeyter", "uva", "anvisa_saude", "nbr5674", "sanepar", "campo"],
+    leia=["niveis-de-entupimento", "como-funciona-hidrojateamento", "limpeza-caixa-de-gordura"],
+)
+
+for a in (REDE, VASO, PISO, PIA, CAIXA, HIDRO, OLEO, RAIZES, CIMENTO, CAIXA_CEGA, HOSPITAL):
     gerar(a)
 
 atualizar_listas()
