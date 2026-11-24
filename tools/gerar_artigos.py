@@ -128,6 +128,14 @@ FONTES = {
                     "https://www.araujo.com.br/desentupidor-de-pias-e-ralos-diabo-verde-300g/33279.html"),
     "li_niveis": ('Lucas Nonato (LinkedIn). <a href="https://www.linkedin.com/pulse/os-4-n%C3%ADveis-de-entupimento-como-identificar-o-que-fazer-vieira-ixbuf" rel="noopener" target="_blank">Os 4 níveis de entupimento: como identificar e o que fazer</a>.',
                   "https://www.linkedin.com/pulse/os-4-n%C3%ADveis-de-entupimento-como-identificar-o-que-fazer-vieira-ixbuf"),
+    "icesp_decliv": ('Revista do ICESP. <a href="https://revistas.icesp.br/index.php/NEAD/article/download/3848/1913" rel="nofollow noopener" target="_blank">Artigo sobre instalações prediais de esgoto (NBR 8160)</a>: declividade de 2% para tubulações de até DN 75 e de 1% a partir de DN 100.',
+                     "https://revistas.icesp.br/index.php/NEAD/article/download/3848/1913"),
+    "ufg_gondim": ('Gondim, M. A.; Jardim, M. C. V.; Arantes, R. P. C. (2010). <a href="https://files.cercomp.ufg.br/weby/up/140/o/AVALIA%C3%87%C3%83O_DOS_ASPECTOS_CONSTRUTIVOS_DE_REDES_COLETORAS_DE_ESGOTO_ESTUDO_DE_CASO_PARA_A_REGI%C3%83O_METROPOLITANA_DE_GOI%C3%82NIA.pdf" rel="nofollow noopener" target="_blank">Avaliação dos aspectos construtivos de redes coletoras de esgoto: estudo de caso para a Região Metropolitana de Goiânia</a>. TCC de Engenharia Civil, UFG (orientador: Eraldo Henriques de Carvalho). Registra escavação de montante para jusante, que dificulta o controle da declividade, e cadastros que nem sempre refletem o campo.',
+                   "https://files.cercomp.ufg.br/weby/up/140/o/AVALIA%C3%87%C3%83O_DOS_ASPECTOS_CONSTRUTIVOS_DE_REDES_COLETORAS_DE_ESGOTO_ESTUDO_DE_CASO_PARA_A_REGI%C3%83O_METROPOLITANA_DE_GOI%C3%82NIA.pdf"),
+    "ufg_reis": ('Reis, R. P. A. (2012). <a href="https://revistas.ufg.br/reec/article/view/20805" rel="nofollow noopener" target="_blank">Influência da redução do consumo de água sobre o desempenho dos ramais e coletores prediais de esgoto</a>. <em>REEC — Revista Eletrônica de Engenharia Civil</em> (UFG), v. 5, n. 2. Associa a menor vazão ao aumento de entupimentos, de manutenção e de odores.',
+                 "https://revistas.ufg.br/reec/article/view/20805"),
+    "ufg_bucar": ('Bucar Filho, C. L. (2019). <a href="https://repositorio.bc.ufg.br/tede/handle/tede/10081" rel="nofollow noopener" target="_blank">Impacto das variáveis de projeto nas características físicas do escoamento de esgoto em tubulações prediais</a>. Dissertação de mestrado, UFG (orientador: Marcus André Siqueira Campos). Conclui que são necessárias mais pesquisas para a renovação da NBR 8160.',
+                  "https://repositorio.bc.ufg.br/tede/handle/tede/10081"),
     "campo": ("Experiência de campo da equipe BV Desentupidora (atendimentos em Goiânia, Itaberaí, Inhumas, Heitoraí e região).", None),
 }
 
@@ -145,6 +153,7 @@ ARTIGOS = {
     "caixa-cega-esgoto": "Caixa cega no esgoto: o que é e por que encarece o desentupimento",
     "desentupimento-hospitais-e-clinicas": "Desentupimento especializado em hospitais e clínicas",
     "gordura-endurecida-no-cano": "Gordura endurecida no cano: por que vira pedra e como remover",
+    "entupimento-recorrente": "Entupimento recorrente: gordura, cano sem caimento ou cano deformado?",
 }
 
 

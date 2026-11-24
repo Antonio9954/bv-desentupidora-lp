@@ -14,8 +14,9 @@ DATAS = {"niveis-de-entupimento": "2026-10-26", "rede-pluvial-entupida": "2026-1
          "limpeza-caixa-de-gordura": "2026-11-09", "como-funciona-hidrojateamento": "2026-11-09",
          "cimento-no-encanamento": "2026-11-10", "pode-jogar-oleo-na-pia": "2026-11-10",
          "caixa-cega-esgoto": "2026-11-14", "desentupimento-hospitais-e-clinicas": "2026-11-19",
-         "gordura-endurecida-no-cano": "2026-11-24"}
-FILA = []
+         "gordura-endurecida-no-cano": "2026-11-24",
+         "entupimento-recorrente": "2026-11-25"}
+FILA = ["entupimento-recorrente"]  # agendado para 25/11/2026
 # Artigos escritos à mão (não gerados aqui): entram no índice, llms.txt e sitemap, mas não no "Leia também".
 EXTRAS = ["historia-bv-desentupidora"]
 
@@ -63,6 +64,9 @@ LISTA = {
     "gordura-endurecida-no-cano": ("Gordura endurecida no cano em Goiânia: por que vira pedra e como remover sem danificar o encanamento",
                                    "Gordura comum x saponificada, o papel da soda cáustica, sonda rotativa x hidrojato e quando trocar o cano.",
                                    "por que a gordura vira pedra no cano (saponificação: ácidos graxos + cálcio formam sabão duro), como a soda cáustica contribui, se desentupidores de mercado como o Diabo Verde funcionam, qual método usar em cada nível (desengordurante no nível 1, sonda rotativa nos níveis 2 e 3, hidrojateamento no nível 4) e quando o cano pode ser recuperado ou precisa ser trocado."),
+    "entupimento-recorrente": ("Entupimento recorrente em Goiânia: como saber se é gordura, cano sem caimento ou cano deformado",
+                               "Como diferenciar gordura, contrapendente e cano amassado, e quando a sonda rotativa não basta.",
+                               "como diferenciar as 3 causas do entupimento que volta (gordura acumulada, pouco caimento ou contrapendente e cano deformado), por que o desentupimento resolve só por um tempo, declividade mínima da NBR 8160 (2% até 75 mm, 1% a partir de 100 mm), quando a sonda rotativa resolve e quando é preciso corrigir o trecho; caso real de rede pluvial achatada em Itaberaí (GO) com vídeo."),
 }
 
 LI = "https://www.linkedin.com/pulse/"
@@ -1501,7 +1505,155 @@ GORDURA_PEDRA = dict(
     leia=["niveis-de-entupimento", "como-funciona-hidrojateamento", "desentupir-pia-com-gordura"],
 )
 
-for a in (REDE, VASO, PISO, PIA, CAIXA, HIDRO, OLEO, RAIZES, CIMENTO, CAIXA_CEGA, HOSPITAL, GORDURA_PEDRA):
+# ---------------------------------------------------------------------------
+# Entupimento recorrente: gordura x caimento x cano deformado (pauta do Lucas, 24/11/2026; publicar 25/11)
+# O "exemplo ilustrativo" NÃO é caso real e está marcado assim no texto (decisão do Claude: não inventar caso real).
+# ---------------------------------------------------------------------------
+RECORRENTE = dict(
+    slug="entupimento-recorrente",
+    title="Entupimento recorrente em Goiânia: gordura, caimento ou cano?",
+    h1="Entupimento recorrente em Goiânia: como saber se é gordura, cano sem caimento ou cano deformado",
+    desc="Desentope e volta? Veja como diferenciar gordura, cano com pouca inclinação (contrapendente) e cano deformado, e quando corrigir a tubulação.",
+    migalha="Entupimento recorrente",
+    keywords="entupimento recorrente, entupimento que volta, cano sem caimento, contrapendente esgoto, declividade do esgoto, barriga no cano, cano amassado, sonda rotativa",
+    sobre=["Entupimento recorrente", "Declividade de tubulação de esgoto", "Gordura na tubulação", "Sonda rotativa", "NBR 8160"],
+    imagem=SITE + "/blog/img/declividade-cano-esgoto-certo-e-contrapendente.webp",
+    videos=["cjH3O35wWQI", "lk54797N6pM"],
+    resumo="Quando o entupimento volta, o desentupimento tratou o sintoma e a causa continuou no cano. As três causas mais comuns deixam sinais diferentes. Gordura: atinge pia e cozinha, volta em semanas e sai do cano em placas amareladas. Pouco caimento ou contrapendente (a “barriga”): a caixa de inspeção fica sempre com água parada, o ralo borbulha e o entupimento aparece sempre no mesmo ponto. Cano deformado: a ferramenta trava sempre na mesma distância, às vezes sai terra, e o trecho costuma passar sob garagem ou área com peso. Gordura sai com sonda rotativa ou hidrojato; pouco caimento e cano deformado só se resolvem de vez corrigindo ou trocando o trecho.",
+    corpo='''    <p>"Desentupiu e voltou" é a reclamação que mais escuto em 10 anos de serviço. Quase sempre a pessoa já gastou com produto, já chamou alguém, e o problema retornou em semanas. Isso não quer dizer que o serviço anterior foi mal feito: quer dizer que a causa não era só a sujeira. Abaixo explico como diferenciar as três causas mais comuns e o que resolve cada uma.</p>
+
+    <h2>Resumo: as 3 causas lado a lado</h2>
+    <div class="tabela-wrap">
+      <table>
+        <thead><tr><th>Causa</th><th>Sinais típicos</th><th>O que sai do cano</th><th>O que resolve</th></tr></thead>
+        <tbody>
+          <tr><td>Gordura acumulada</td><td>Pia e cozinha; volta em semanas; cheiro de gordura velha</td><td>Placas e pedaços amarelados ou acinzentados</td><td>Sonda rotativa ou hidrojato, e caixa de gordura em dia</td></tr>
+          <tr><td>Pouco caimento ou contrapendente</td><td>Caixa sempre com água parada; ralo borbulha; entope sempre no mesmo lugar</td><td>Lama, areia e sujeira assentada</td><td>Limpeza dá alívio; corrigir o caimento resolve</td></tr>
+          <tr><td>Cano deformado ou quebrado</td><td>Ferramenta trava sempre na mesma distância; trecho sob garagem ou árvore</td><td>Terra, pedaços de cano, raiz</td><td>Sonda rotativa abre passagem; trocar o trecho resolve</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>As causas também se somam. Um cano com barriga acumula gordura justamente no ponto baixo, e um cano amassado segura gordura e terra no estreitamento.</p>
+
+    <figure>
+      <img src="../img/causas-entupimento-recorrente-corte-do-cano.webp" alt="Ilustração em corte de três canos: um com crosta de gordura na parede, um com água parada e sujeira no fundo por falta de caimento e um achatado com terra dentro" width="1200" height="600" loading="lazy">
+      <figcaption>Ilustração: como cada causa aparece dentro do cano.</figcaption>
+    </figure>
+
+    <h2>Por que o desentupimento resolve, mas o problema volta?</h2>
+    <p>Desentupir é abrir passagem. Se o motivo do acúmulo continua lá, a sujeira volta a parar no mesmo ponto:</p>
+    <ul>
+      <li><strong>Com gordura</strong>, abrir só um furo no meio da crosta deixa a parede do cano áspera e estreita. O resto de comida prende ali de novo.</li>
+      <li><strong>Com pouco caimento</strong>, a água não tem velocidade para levar os sólidos. Eles assentam no trecho plano ou na barriga, entupimento após entupimento.</li>
+      <li><strong>Com cano deformado</strong>, o estreitamento é físico. A ferramenta passa, mas o cano continua amassado.</li>
+    </ul>
+    <p>Por isso, num entupimento que se repete, a pergunta não é só "o que entupiu", e sim "por que entupiu aqui de novo".</p>
+
+    <h2>Como saber se a causa é gordura?</h2>
+    <ul>
+      <li>O problema começa na pia da cozinha, no tanque ou na caixa de gordura.</li>
+      <li>Volta em semanas ou poucos meses, de forma gradual: primeiro a água desce devagar, depois para.</li>
+      <li>Quando o cano é aberto, saem placas, "pedras" ou pedaços de gordura grudados na parede.</li>
+      <li>A caixa de gordura fica cheia rápido ou está sem limpeza há muito tempo.</li>
+      <li>Já foi usada soda cáustica várias vezes. Ela tende a deixar a gordura mais dura, como explico em <a href="../gordura-endurecida-no-cano/">por que a gordura vira pedra no cano</a>.</li>
+    </ul>
+    <p>Gordura pura costuma ser a causa mais simples de resolver: com a parede do cano limpa por inteiro e a caixa de gordura em dia, o problema para de voltar. Se volta mesmo assim, desconfie também do caimento.</p>
+
+    ''' + video("cjH3O35wWQI", "o tanto de gordura no final do cano", "Gordura acumulada nas paredes internas de uma tubulação",
+                "Vídeo (caso real, 1 min 9 s): como a gordura se acumula nas paredes internas do cano até diminuir a passagem da água.") + '''
+
+    <h2>Como identificar uma tubulação com pouco caimento ou contrapendente?</h2>
+    <p>Esgoto funciona por gravidade. Para a água levar os sólidos, o cano precisa descer o tempo todo na direção da saída. A NBR 8160 recomenda declividade mínima de 2% para canos de até 75 mm e de 1% para canos de 100 mm ou mais. Na prática, isso é 2 cm de queda a cada metro nos canos finos e 1 cm por metro nos de 100 mm.</p>
+    <p><strong>Contrapendente</strong> é quando o cano sobe em algum trecho antes da saída. O caso mais comum é a "barriga": um pedaço que afundou e ficou mais baixo que o resto. Ali a água fica parada o tempo todo e a sujeira assenta.</p>
+
+    <figure>
+      <img src="../img/declividade-cano-esgoto-certo-e-contrapendente.webp" alt="Ilustração de três canos enterrados: um com caimento correto, um com barriga (contrapendente) acumulando água e sujeira e um com inclinação exagerada deixando sólidos para trás" width="1200" height="630" loading="lazy">
+      <figcaption>Ilustração: caimento correto, contrapendente (barriga) e inclinação exagerada.</figcaption>
+    </figure>
+
+    <p>Sinais que apontam para caimento errado:</p>
+    <ul>
+      <li><strong>Caixa de inspeção sempre com água parada</strong>, mesmo horas depois de ninguém usar nada. Numa rede com bom caimento, a caixa esvazia.</li>
+      <li><strong>Entope sempre no mesmo ponto.</strong> O técnico mede quanto a mola entrou e a obstrução está sempre na mesma distância.</li>
+      <li><strong>Ralo e vaso borbulham</strong> ou fazem barulho quando outro ponto da casa escoa.</li>
+      <li><strong>Sai muita lama e areia</strong> no desentupimento, e pouca gordura ou objeto.</li>
+      <li><strong>O problema começou depois de uma obra</strong>, de piso que afundou ou de um trecho de cano refeito.</li>
+    </ul>
+    <p>Inclinação demais também atrapalha. Em trechos muito íngremes, a água corre na frente e os sólidos ficam para trás, colados no fundo do cano. Na nossa experiência, isso aparece em emendas improvisadas e em reformas que mudaram a altura da saída.</p>
+    <p>A confirmação vem com medição: nível de mangueira ou nível a laser entre duas caixas, ou inspeção com câmera, que mostra a lâmina de água parada no trecho baixo.</p>
+    <p>Esse não é um problema raro em Goiânia. Um trabalho de conclusão de curso de Engenharia Civil da UFG, que acompanhou obras de redes coletoras de esgoto na Região Metropolitana de Goiânia, registrou práticas que dificultam o controle da declividade, como escavar a vala no sentido contrário ao que a norma indica, e cadastros que nem sempre batem com o que está enterrado. Outro estudo publicado pela revista de engenharia civil da UFG alerta que a redução do volume de água nas descargas, sem ajuste nos ramais e coletores, aumenta os entupimentos. Com menos água, o caimento faz ainda mais diferença.</p>
+
+    <h2>Como saber se o cano está deformado ou quebrado?</h2>
+    <ul>
+      <li>A mola ou o jato <strong>trava sempre no mesmo lugar</strong>, e a sensação é de bater numa parede, não numa sujeira mole.</li>
+      <li><strong>Sai terra, areia grossa ou pedaços de cano</strong>: sinal de rachadura ou emenda solta.</li>
+      <li>O trecho passa <strong>sob garagem, entrada de carro ou perto de árvore</strong>, ou foi enterrado raso.</li>
+      <li>Existe <strong>afundamento ou rachadura no piso</strong> em cima do trajeto do cano.</li>
+    </ul>
+
+    <div class="caso">
+      <p><span class="rotulo">Caso real (Itaberaí, GO, nov/2026):</span> em um sobradinho, a rede pluvial estava obstruída havia meses. O hidrojato não passava: o encanamento estava achatado e cheio de terra. A passagem foi aberta com sonda rotativa, até a água voltar a escorrer. Contei os detalhes no LinkedIn, em <a href="https://www.linkedin.com/pulse/o-hidrojato-n%C3%A3o-passou-sonda-rotativa-caso-da-rede-pluvial-vieira-hce4f" rel="noopener" target="_blank">O hidrojato não passou. A sonda rotativa passou</a>. A sonda resolveu a urgência, mas um cano achatado continua sendo um ponto estreito, e esse trecho é candidato a troca.</p>
+    </div>
+
+    ''' + video("lk54797N6pM", "sonda rotativa em rede pluvial achatada", "Rede pluvial com cano achatado e cheio de terra desobstruída com sonda rotativa",
+                "Vídeo (caso real, 41 s): rede pluvial achatada e cheia de terra; o hidrojato não passou e a sonda rotativa abriu a passagem.") + '''
+
+    <h2>Exemplo ilustrativo: quando as causas se juntam</h2>
+    <div class="caso">
+      <p><span class="rotulo">Exemplo ilustrativo (montado a partir de situações frequentes, não é um atendimento específico):</span> numa casa, a pia da cozinha entope a cada dois meses. Já usaram desentupidor de mercado e chamaram ajuda duas vezes; nas duas, saiu gordura e o problema voltou. Na terceira vez, o técnico anota até onde a mola entra: a obstrução está sempre a uns 6 metros, no trecho que passa sob a entrada da garagem. A câmera mostra água parada num pedaço de uns 2 metros, com gordura grudada só ali. Nesse cenário, a gordura não é a causa principal: ela é consequência da barriga. Limpar resolve por mais dois meses; corrigir o caimento daquele trecho resolve de vez.</p>
+    </div>
+    <p>O que esse exemplo mostra: anotar <strong>onde</strong> e <strong>de quanto em quanto tempo</strong> o entupimento acontece ajuda muito o diagnóstico.</p>
+
+    <h2>Quando a sonda rotativa resolve e quando é preciso corrigir a tubulação?</h2>
+    <div class="tabela-wrap">
+      <table>
+        <thead><tr><th>Situação</th><th>Sonda rotativa resolve?</th><th>Precisa corrigir o cano?</th></tr></thead>
+        <tbody>
+          <tr><td>Gordura em placas, cano em bom estado</td><td>Sim (ou hidrojato)</td><td>Não</td></tr>
+          <tr><td>Pouco caimento leve, sem barriga</td><td>Alivia; pede manutenção periódica</td><td>Às vezes não, se a limpeza preventiva der conta</td></tr>
+          <tr><td>Barriga ou contrapendente</td><td>Só temporariamente</td><td>Sim, refazer o trecho com caimento</td></tr>
+          <tr><td>Cano achatado ou com terra</td><td>Abre passagem na urgência</td><td>Sim, trocar o trecho deformado</td></tr>
+          <tr><td>Cano quebrado ou emenda solta</td><td>Não deve ser forçada</td><td>Sim</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Corrigir não significa quebrar a casa inteira. Na maioria das vezes é um trecho localizado, encontrado pela medição da mola e pela câmera. Veja <a href="../precisa-quebrar-piso-para-desentupir/">quando é preciso quebrar o piso</a>.</p>
+
+    <h2>O que dá para observar em casa?</h2>
+    <p>Algumas dicas que encanadores e moradores trocam em fóruns como o Reddit, e que ajudam no diagnóstico:</p>
+    <ul>
+      <li><strong>Anote as datas</strong> dos entupimentos e qual ponto parou primeiro.</li>
+      <li><strong>Abra a caixa de inspeção</strong> algumas horas depois de ninguém usar água. Se tiver água parada, desconfie do caimento depois dela.</li>
+      <li><strong>Teste do balde:</strong> jogue um balde de água limpa no ralo ou no vaso e observe a caixa seguinte. A água deve chegar e ir embora; se sobe e demora a baixar, o problema está depois dali.</li>
+      <li><strong>Repare no piso:</strong> trinca ou afundamento em cima do trajeto do cano é pista importante.</li>
+      <li><strong>Mantenha a caixa de gordura limpa</strong>, para tirar a gordura da lista de suspeitos. Veja <a href="../limpeza-caixa-de-gordura/">de quanto em quanto tempo limpar</a>.</li>
+    </ul>
+    <ul class="nao">
+      <li>Repetir soda cáustica a cada entupimento: não corrige caimento nem cano amassado e endurece a gordura.</li>
+      <li>Forçar arame ou vergalhão num ponto que trava sempre: pode furar o cano que já está fragilizado.</li>
+      <li>Refazer a rede inteira sem diagnóstico: muitas vezes o problema é um trecho só.</li>
+    </ul>
+
+    <h2>Quando chamar um profissional?</h2>
+    <ul>
+      <li>O entupimento voltou mais de uma vez no mesmo ano.</li>
+      <li>A caixa de inspeção vive com água parada.</li>
+      <li>Sai terra ou pedaço de cano no desentupimento.</li>
+      <li>Há afundamento no piso, mau cheiro constante ou retorno de água.</li>
+    </ul>
+    <p>Peça que o técnico diga <strong>onde</strong> estava a obstrução e <strong>o que saiu</strong> do cano. Com essas duas informações, já dá para saber se o próximo passo é manutenção ou correção. Para entender a gravidade, veja <a href="../niveis-de-entupimento/">os 4 níveis de entupimento</a>.</p>''',
+    faq=[
+        ("Por que o meu esgoto entope sempre no mesmo lugar?", "Normalmente porque ali existe um defeito físico: barriga, trecho sem caimento, emenda mal feita ou cano amassado. A sujeira para sempre nesse ponto. Limpar alivia; corrigir o trecho resolve."),
+        ("O que é contrapendente no esgoto?", "É quando o cano sobe em algum trecho antes da saída, em vez de descer. A água fica parada ali e os sólidos assentam, causando entupimentos repetidos."),
+        ("Qual a inclinação certa do cano de esgoto?", "A NBR 8160 recomenda declividade mínima de 2% para canos de até 75 mm (2 cm por metro) e de 1% para canos de 100 mm ou mais (1 cm por metro), de forma constante."),
+        ("Sonda rotativa resolve cano com barriga?", "Resolve a obstrução na hora, mas não corrige o caimento. Com a barriga no lugar, a sujeira volta a se acumular no mesmo ponto."),
+        ("Como saber se o cano está amassado sem quebrar o piso?", "Pela medição de onde a ferramenta trava sempre, pelo que sai do cano (terra, pedaços) e, para confirmar, com inspeção por câmera a partir de uma caixa ou ralo."),
+    ],
+    fontes=["nbr8160", "icesp_decliv", "ufg_gondim", "ufg_reis", "ufg_bucar", "li_sonda", "campo"],
+    leia=["gordura-endurecida-no-cano", "precisa-quebrar-piso-para-desentupir", "niveis-de-entupimento"],
+)
+
+for a in (REDE, VASO, PISO, PIA, CAIXA, HIDRO, OLEO, RAIZES, CIMENTO, CAIXA_CEGA, HOSPITAL, GORDURA_PEDRA, RECORRENTE):
     gerar(a)
 
 atualizar_listas()
