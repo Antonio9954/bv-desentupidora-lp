@@ -116,6 +116,18 @@ FONTES = {
             "https://www.healio.com/news/infectious-disease/20230426/hospital-surprised-by-outbreak-after-replacing-sink-drains-in-icu"),
     "anvisa_saude": ("Anvisa. RDC nº 50/2002 (projeto físico de estabelecimentos assistenciais de saúde), RDC nº 63/2011 (boas práticas de funcionamento dos serviços de saúde) e RDC nº 222/2018 (gerenciamento de resíduos de serviços de saúde).", None),
     "nbr5674": ("ABNT. <em>NBR 5674 — Manutenção de edificações: requisitos para o sistema de gestão de manutenção</em>.", None),
+    "uniceub": ('Melo, J. V. S. (2018). <a href="https://repositorio.uniceub.br/jspui/bitstream/prefix/13990/1/21467857.pdf" rel="nofollow noopener" target="_blank">Os impactos causados por aportes indevidos de rejeitos na rede coletora de esgoto no Distrito Federal</a>. Trabalho de Curso em Engenharia Civil, UniCEUB (orientador: Rogério Pinheiro Magalhães Carvalho). A seção sobre incrustações descreve a gordura que solidifica e adere à tubulação e o uso de soda cáustica, que a transforma em uma composição empedrada presa às paredes do cano.',
+                "https://repositorio.uniceub.br/jspui/bitstream/prefix/13990/1/21467857.pdf"),
+    "ncsu": ('NC State University (2011). <a href="https://news.ncsu.edu/?p=3985" rel="nofollow noopener" target="_blank">Fat in sewers turns into soap</a>. Resume o estudo de He, X. et al., <em>Evidence for fat, oil, and grease (FOG) deposit formation mechanisms in sewer lines</em> (Environmental Science &amp; Technology): os depósitos endurecidos são sais de cálcio de ácidos graxos, ou seja, sabão.',
+             "https://news.ncsu.edu/?p=3985"),
+    "williams2012": ('Williams, J. B. et al. (2012). <a href="https://pubmed.ncbi.nlm.nih.gov/23039918/" rel="nofollow noopener" target="_blank">Fat, oil and grease deposits in sewers: characterisation of deposits and formation mechanisms</a>. <em>Water Research</em>. Depósitos de redes do Reino Unido: o processo vai além do simples esfriamento da gordura e envolve saponificação com cálcio.',
+                     "https://pubmed.ncbi.nlm.nih.gov/23039918/"),
+    "epa_ducoste": ('EPA (Agência de Proteção Ambiental dos EUA), projeto de pesquisa R834264 (Ducoste, J. et al.). <a href="https://cfpub.epa.gov/ncer_abstracts/index.cfm/fuseaction/display.abstractDetail/abstract_id/8982/report/F" rel="nofollow noopener" target="_blank">Relatório final</a>. Os depósitos de gordura são sais de cálcio de ácidos graxos formados por saponificação; em laboratório, esses sais também se formaram com a quebra da gordura em meio alcalino.',
+                    "https://cfpub.epa.gov/ncer_abstracts/index.cfm/fuseaction/display.abstractDetail/abstract_id/8982/report/F"),
+    "diabo_verde": ('Drogaria Araujo. <a href="https://www.araujo.com.br/desentupidor-de-pias-e-ralos-diabo-verde-300g/33279.html" rel="nofollow noopener" target="_blank">Desentupidor de Pias e Ralos Diabo Verde 300g</a> (informações da embalagem): contém hidróxido de sódio, causa queimaduras graves e é indicado só para material orgânico.',
+                    "https://www.araujo.com.br/desentupidor-de-pias-e-ralos-diabo-verde-300g/33279.html"),
+    "li_niveis": ('Lucas Nonato (LinkedIn). <a href="https://www.linkedin.com/pulse/os-4-n%C3%ADveis-de-entupimento-como-identificar-o-que-fazer-vieira-ixbuf" rel="noopener" target="_blank">Os 4 níveis de entupimento: como identificar e o que fazer</a>.',
+                  "https://www.linkedin.com/pulse/os-4-n%C3%ADveis-de-entupimento-como-identificar-o-que-fazer-vieira-ixbuf"),
     "campo": ("Experiência de campo da equipe BV Desentupidora (atendimentos em Goiânia, Itaberaí, Inhumas, Heitoraí e região).", None),
 }
 
@@ -132,6 +144,7 @@ ARTIGOS = {
     "cimento-no-encanamento": "Cimento no encanamento: por que vira pedra dentro do cano e o que fazer",
     "caixa-cega-esgoto": "Caixa cega no esgoto: o que é e por que encarece o desentupimento",
     "desentupimento-hospitais-e-clinicas": "Desentupimento especializado em hospitais e clínicas",
+    "gordura-endurecida-no-cano": "Gordura endurecida no cano: por que vira pedra e como remover",
 }
 
 

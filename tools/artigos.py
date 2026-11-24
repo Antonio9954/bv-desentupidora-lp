@@ -5,14 +5,16 @@
 PUB = ["niveis-de-entupimento", "rede-pluvial-entupida", "vaso-sanitario-entupido",
        "precisa-quebrar-piso-para-desentupir", "desentupir-pia-com-gordura", "raizes-na-rede-pluvial",
        "limpeza-caixa-de-gordura", "como-funciona-hidrojateamento", "cimento-no-encanamento",
-       "pode-jogar-oleo-na-pia", "caixa-cega-esgoto", "desentupimento-hospitais-e-clinicas"]
+       "pode-jogar-oleo-na-pia", "caixa-cega-esgoto", "desentupimento-hospitais-e-clinicas",
+       "gordura-endurecida-no-cano"]
 DATAS = {"niveis-de-entupimento": "2026-10-26", "rede-pluvial-entupida": "2026-10-26",
          "vaso-sanitario-entupido": "2026-10-27", "historia-bv-desentupidora": "2026-11-02",
          "precisa-quebrar-piso-para-desentupir": "2026-11-02", "desentupir-pia-com-gordura": "2026-11-02",
          "raizes-na-rede-pluvial": "2026-11-07",
          "limpeza-caixa-de-gordura": "2026-11-09", "como-funciona-hidrojateamento": "2026-11-09",
          "cimento-no-encanamento": "2026-11-10", "pode-jogar-oleo-na-pia": "2026-11-10",
-         "caixa-cega-esgoto": "2026-11-14", "desentupimento-hospitais-e-clinicas": "2026-11-19"}
+         "caixa-cega-esgoto": "2026-11-14", "desentupimento-hospitais-e-clinicas": "2026-11-19",
+         "gordura-endurecida-no-cano": "2026-11-24"}
 FILA = []
 # Artigos escritos à mão (não gerados aqui): entram no índice, llms.txt e sitemap, mas não no "Leia também".
 EXTRAS = ["historia-bv-desentupidora"]
@@ -58,6 +60,9 @@ LISTA = {
     "desentupimento-hospitais-e-clinicas": ("Desentupimento especializado em hospitais e clínicas de Goiânia: riscos e como fazer a manutenção certa",
                                             "Por que ralo entupido ou com cheiro é risco para pacientes, as áreas críticas e como a manutenção deve ser feita.",
                                             "por que ralos, pias e sifões entupidos ou com mau cheiro são risco em hospitais e clínicas (estudos de surtos em UTI), pacientes e áreas que exigem cuidado, frequência de manutenção preventiva e como executar o serviço com autorização da CCIH, isolamento, EPI e registro."),
+    "gordura-endurecida-no-cano": ("Gordura endurecida no cano em Goiânia: por que vira pedra e como remover sem danificar o encanamento",
+                                   "Gordura comum x saponificada, o papel da soda cáustica, sonda rotativa x hidrojato e quando trocar o cano.",
+                                   "por que a gordura vira pedra no cano (saponificação: ácidos graxos + cálcio formam sabão duro), como a soda cáustica contribui, se desentupidores de mercado como o Diabo Verde funcionam, qual método usar em cada nível (desengordurante no nível 1, sonda rotativa nos níveis 2 e 3, hidrojateamento no nível 4) e quando o cano pode ser recuperado ou precisa ser trocado."),
 }
 
 LI = "https://www.linkedin.com/pulse/"
@@ -1336,7 +1341,167 @@ HOSPITAL = dict(
     leia=["niveis-de-entupimento", "como-funciona-hidrojateamento", "limpeza-caixa-de-gordura"],
 )
 
-for a in (REDE, VASO, PISO, PIA, CAIXA, HIDRO, OLEO, RAIZES, CIMENTO, CAIXA_CEGA, HOSPITAL):
+# ---------------------------------------------------------------------------
+# Gordura endurecida / saponificada (pauta do Lucas, 24/11/2026)
+# ---------------------------------------------------------------------------
+GORDURA_PEDRA = dict(
+    slug="gordura-endurecida-no-cano",
+    title="Gordura endurecida no cano em Goiânia: por que vira pedra",
+    h1="Gordura endurecida no cano em Goiânia: por que vira pedra e como remover sem danificar o encanamento",
+    desc="Por que a gordura vira pedra no cano, o papel da soda cáustica, quando usar sonda rotativa ou hidrojateamento e quando o cano precisa ser trocado.",
+    migalha="Gordura endurecida no cano",
+    keywords="gordura endurecida no cano, gordura saponificada, pedra de gordura no encanamento, incrustação de gordura, soda cáustica e gordura, sonda rotativa ou hidrojateamento, Diabo Verde funciona",
+    sobre=["Saponificação", "Gordura na tubulação", "Soda cáustica", "Hidrojateamento", "Sonda rotativa"],
+    imagem=SITE + "/blog/img/nivel-4-cano-de-gordura.webp",
+    linkedin="https://www.linkedin.com/pulse/como-gordura-entope-tubula%C3%A7%C3%B5es-caso-real-em-lucas-nonato-vieira-palhf",
+    videos=["bn_lcqH_SDA"],
+    resumo="A gordura vira pedra no cano por uma reação química chamada saponificação: com o tempo, a gordura se quebra em ácidos graxos, que se juntam ao cálcio da água e do esgoto e formam um tipo de sabão duro, insolúvel e grudado na parede do tubo. A soda cáustica acelera essa quebra e pode deixar a massa ainda mais dura. Desentupidores de mercado só ajudam em casos leves; com o cano estreitado (níveis 2 e 3) a sonda rotativa costuma resolver, e com a rede comprometida (nível 4) o caminho mais seguro é o hidrojateamento feito por técnico experiente. Curvas, diâmetro e estado do cano decidem o método, e isso só se confirma no local.",
+    corpo='''    <p>Quem já abriu um cano de cozinha antigo conhece a cena: em vez de uma gordura mole, sai uma crosta dura, cinza ou amarelada, que parece pedra e às vezes tem o formato do próprio cano. Em 10 anos de serviço, retirei muito disso de pias, caixas de gordura e redes de esgoto. Neste artigo explico, em palavras simples, por que a gordura endurece, qual é o papel da soda cáustica e como escolher o método de remoção sem estragar o encanamento.</p>
+
+    <h2>Resumo: qual método para cada nível de entupimento</h2>
+    <div class="tabela-wrap">
+      <table>
+        <thead><tr><th>Nível</th><th>Como está o cano</th><th>O que costuma resolver</th></tr></thead>
+        <tbody>
+          <tr><td>Nível 1</td><td>Água descendo devagar, camada fina de gordura</td><td>Desengordurante aplicado com alta pressão; limpeza do sifão</td></tr>
+          <tr><td>Nível 2</td><td>Um ponto parou, gordura já endurecendo no ramal</td><td>Sonda rotativa</td></tr>
+          <tr><td>Nível 3</td><td>Vários pontos ruins, placas de gordura no caminho</td><td>Sonda rotativa (às vezes com hidrojato para acabamento)</td></tr>
+          <tr><td>Nível 4</td><td>Rede comprometida, crosta de gordura saponificada</td><td>Hidrojateamento com técnico experiente</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>A tabela é um ponto de partida. Comprimento do trecho, quantidade de curvas, diâmetro e material do cano mudam a escolha. Se você ainda não sabe em que nível está o seu caso, veja <a href="../niveis-de-entupimento/">como identificar os 4 níveis de entupimento</a>.</p>
+
+    <h2>Por que a gordura vira pedra dentro do cano?</h2>
+    <p>Durante muito tempo se achou que a gordura só esfriava e grudava. Ela esfria, sim, mas isso explica apenas a gordura mole, aquela que derrete com água quente. A "pedra" é outra coisa. Pesquisadores da Universidade Estadual da Carolina do Norte, com apoio da agência ambiental dos EUA (EPA), analisaram depósitos tirados de redes de esgoto e concluíram que eles são, basicamente, sabão de cálcio. Um estudo com depósitos de redes do Reino Unido chegou à mesma conclusão.</p>
+    <p>Em palavras simples, o processo acontece em três etapas:</p>
+    <ol>
+      <li><strong>A gordura se quebra.</strong> Óleo e gordura são formados por ácidos graxos presos a uma molécula de glicerina. Com o tempo, a água, o calor e as bactérias do esgoto soltam esses ácidos graxos.</li>
+      <li><strong>Os ácidos graxos encontram o cálcio.</strong> O cálcio vem da própria água, de restos de alimentos e até do concreto das caixas e da rede.</li>
+      <li><strong>Forma-se um sabão duro.</strong> Ácido graxo + cálcio vira um sal que não se dissolve em água. É a saponificação, a mesma reação do sabão caseiro, só que com cálcio no lugar do sódio. O resultado é uma crosta granulada, parecida com arenito, que gruda na parede do cano e vai crescendo em camadas.</li>
+    </ol>
+    <p>Esse sabão de cálcio não derrete com água quente e não sai com detergente. Os próprios pesquisadores apontam que ele exige limpeza mecânica pesada, como o hidrojateamento.</p>
+
+    ''' + FOTO_GORDURA + '''
+
+    <h2>Qual a diferença entre gordura comum e gordura saponificada?</h2>
+    <div class="tabela-wrap">
+      <table>
+        <thead><tr><th></th><th>Gordura comum</th><th>Gordura saponificada</th></tr></thead>
+        <tbody>
+          <tr><td>Textura</td><td>Pastosa, pegajosa, parece manteiga</td><td>Dura, granulada, parece pedra ou arenito</td></tr>
+          <tr><td>Com água quente</td><td>Amolece e avança no cano</td><td>Não muda</td></tr>
+          <tr><td>Onde aparece</td><td>Sifão, começo do ramal, caixa de gordura</td><td>Parede do cano, curvas, trechos com pouca queda, rede depois da caixa</td></tr>
+          <tr><td>Como sai</td><td>Limpeza do sifão, ventosa, desengordurante</td><td>Sonda rotativa ou hidrojateamento</td></tr>
+          <tr><td>Sinal típico</td><td>Pia lenta que melhora depois de limpar</td><td>Entupimento que volta pouco tempo depois de desentupido</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>A soda cáustica ajuda ou piora a gordura endurecida?</h2>
+    <p>Na maioria dos casos, piora. A soda cáustica é hidróxido de sódio, um produto muito alcalino. Ela quebra a gordura muito rápido: é a mesma reação usada para fazer sabão em casa. Perto do ralo, isso pode até abrir uma passagem por algumas horas. O problema é o que acontece depois:</p>
+    <ul>
+      <li><strong>Acelera a quebra da gordura.</strong> Em laboratório, a quebra da gordura em meio alcalino também gerou os sais de cálcio que formam os depósitos. A soda entrega ao cano exatamente esse ambiente.</li>
+      <li><strong>Esquenta e empurra o problema.</strong> A reação da soda com a água libera calor. A gordura amolece, anda alguns metros, esfria num trecho mais difícil e endurece de novo lá.</li>
+      <li><strong>Vira uma massa empedrada.</strong> Um trabalho de conclusão de curso de Engenharia Civil do UniCEUB, sobre a rede de esgoto do Distrito Federal, descreve justamente isso: a soda usada para desentupir pia transforma a gordura em uma composição empedrada que adere às paredes da tubulação. O mesmo trabalho liga o problema à falta de caixa de gordura ou à falta de limpeza dela.</li>
+      <li><strong>Fica parada no cano.</strong> Com o cano totalmente fechado, o produto fica ali, corrosivo, esperando quem for abrir o sifão ou usar a ventosa.</li>
+    </ul>
+    <p>Na prática de campo, quando a pessoa conta que já jogou soda várias vezes, quase sempre encontramos a gordura mais dura e mais espalhada pela rede do que nos casos em que nada foi usado.</p>
+
+    <h2>Diabo Verde e outros desentupidores de mercado funcionam?</h2>
+    <p>Existem vários desentupidores e desengordurantes vendidos em mercado, como o Diabo Verde e outras marcas. Boa parte deles tem hidróxido de sódio na fórmula, a própria embalagem avisa que causam queimaduras graves e que servem para material orgânico, como gordura, cabelo e papel.</p>
+    <ul>
+      <li><strong>Onde podem ajudar:</strong> gordura recente, mole, perto do ralo, com a água ainda descendo (nível 1).</li>
+      <li><strong>Onde não resolvem:</strong> no nível 4, com a rede comprometida por crosta de gordura saponificada, dificilmente um produto de mercado resolve. Ele não alcança metros de cano e não dissolve sabão de cálcio. O risco é ficar parado no trecho entupido e piorar o endurecimento.</li>
+    </ul>
+    <p>Se for usar, siga a embalagem, use luva e óculos, nunca misture com outro produto e não use ventosa logo depois. Mais detalhes em <a href="../pode-jogar-oleo-na-pia/">o que não usar para desentupir</a>.</p>
+
+    <h2>Como remover a incrustação sem danificar o encanamento?</h2>
+    <p>A regra é tirar a gordura da parede do cano inteira, não só abrir um furo no meio dela, e escolher a ferramenta pelo nível e pelo tipo de tubulação.</p>
+    <h3>Nível 1: desengordurante com alta pressão</h3>
+    <p>Com a água ainda descendo e a camada de gordura fina, o desengordurante de alta pressão que usamos na BV Desentupidora já resolve: ele solta a gordura da parede enquanto a pressão leva o resíduo embora. Junto, vale limpar o sifão e a caixa de gordura.</p>
+    <h3>Níveis 2 e 3: sonda rotativa</h3>
+    <p>A sonda rotativa é um cabo de aço com uma ponteira que gira dentro do cano e raspa a parede. Ela resolve bem quando a gordura já endureceu em placas no ramal ou em alguns pontos da rede. Funciona bem em trechos com várias curvas, onde o cabo consegue acompanhar o caminho, e também em cano amassado ou com terra, onde o jato não passa. A ponteira e a velocidade precisam combinar com o diâmetro: ponteira grande demais num cano fino de PVC pode arranhar ou forçar as conexões.</p>
+    <h3>Nível 4: hidrojateamento</h3>
+    <p>Quando a gordura saponificada tomou a rede, o hidrojateamento é a opção mais segura. O jato de água em alta pressão sai por um bico com furos para trás e para os lados, quebra a crosta e lava a parede do cano em toda a volta, sem raspar com metal. Veja <a href="../como-funciona-hidrojateamento/">como funciona o hidrojateamento</a>.</p>
+    <p>Aqui a experiência do técnico conta muito. A pressão, o bico e a velocidade de avanço precisam ser escolhidos para cada cano: pressão alta demais num PVC antigo ou numa emenda mal feita pode causar estrago, e pressão baixa demais só faz um furo na crosta. Também é o técnico que percebe, pelo retorno da água e pelo que sai do cano, se a gordura acabou ou se ainda há trecho sujo.</p>
+    <h3>O que conta além do nível</h3>
+    <ul>
+      <li><strong>Curvas:</strong> cada joelho é um ponto onde a gordura acumula e onde a ferramenta precisa passar.</li>
+      <li><strong>Diâmetro:</strong> ramal de pia de 40 ou 50 mm pede ferramenta diferente de uma rede de 100 mm.</li>
+      <li><strong>Material e idade:</strong> PVC novo, PVC antigo, ferro fundido e manilha de barro aguentam esforços diferentes.</li>
+      <li><strong>Acesso:</strong> sifão, caixa de gordura e caixas de inspeção definem por onde entrar sem quebrar.</li>
+    </ul>
+    <p>Por isso essa escolha é feita no local, depois de olhar a tubulação, e não por telefone.</p>
+
+    <h2>Caso real: como a gordura para no encanamento</h2>
+    <div class="caso">
+      <p>No vídeo abaixo eu mostro, na prática, como a gordura vai grudando nas paredes do cano e estreitando a passagem da água até o entupimento voltar mesmo depois de desobstruído. É o mesmo processo que encontramos em um atendimento em Inhumas (GO), contado em detalhes no artigo <a href="https://www.linkedin.com/pulse/como-gordura-entope-tubula%C3%A7%C3%B5es-caso-real-em-lucas-nonato-vieira-palhf" rel="noopener" target="_blank">Como a gordura entope tubulações: caso real em Inhumas-GO</a>: a pia estava parada e, ao abrir a tubulação, o que travava a água eram pedras de gordura grudadas na parede do cano.</p>
+      <p>Nesses casos, abrir só um furo no meio da crosta resolve por poucos dias. O que impede a volta é remover a gordura da parede inteira.</p>
+    </div>
+
+    ''' + video("bn_lcqH_SDA", "como o cano enche de gordura", "Lucas Nonato mostra um cano com gordura grudada nas paredes internas",
+                "Vídeo (caso real): como a gordura gruda nas paredes do cano e estreita a passagem da água.") + '''
+
+    <p>A classificação dos níveis usada neste artigo é a mesma que expliquei no LinkedIn em <a href="https://www.linkedin.com/pulse/os-4-n%C3%ADveis-de-entupimento-como-identificar-o-que-fazer-vieira-ixbuf" rel="noopener" target="_blank">Os 4 níveis de entupimento: como identificar e o que fazer</a> e no <a href="../niveis-de-entupimento/">guia completo aqui do blog</a>.</p>
+
+    <h2>Como saber se a tubulação pode ser recuperada ou precisa ser trocada?</h2>
+    <p>Na maioria dos casos de gordura, o cano é recuperado: a gordura sai e o tubo continua bom. A troca entra em cena quando o problema não é mais só a gordura.</p>
+    <p><strong>Sinais de que dá para recuperar:</strong></p>
+    <ul>
+      <li>Depois da limpeza, a água volta a correr com vazão normal.</li>
+      <li>O cano não tem vazamento, trinca nem infiltração em volta.</li>
+      <li>O entupimento não volta em poucas semanas com o uso normal.</li>
+    </ul>
+    <p><strong>Sinais de que o trecho pode precisar ser trocado:</strong></p>
+    <ul class="nao">
+      <li>Cano de PVC amolecido, deformado ou achatado, comum depois de muita soda ou água fervendo.</li>
+      <li>Ferro fundido muito corroído por dentro, que solta lascas e volta a segurar gordura logo.</li>
+      <li>Trinca, emenda solta ou infiltração de esgoto no piso ou na parede.</li>
+      <li>"Barriga" no cano (trecho afundado sem queda), onde a água para e a gordura volta a acumular mesmo depois de limpo.</li>
+      <li>Crosta tão aderida que só sairia forçando o tubo, num trecho curto e fácil de trocar.</li>
+    </ul>
+    <p>Quando há dúvida, a inspeção com câmera depois da limpeza mostra o estado real da parede. Trocar o cano sem antes limpar e olhar por dentro costuma ser gasto desnecessário. Veja também <a href="../precisa-quebrar-piso-para-desentupir/">se é preciso quebrar o piso para desentupir</a>.</p>
+
+    <h2>Dicas caseiras: o que funciona e o que não fazer</h2>
+    <p>Algumas dicas que encanadores e moradores trocam em fóruns como o Reddit, e que fazem sentido para prevenção:</p>
+    <ul>
+      <li>Passe papel-toalha em panelas e pratos antes de lavar e jogue no lixo.</li>
+      <li>Guarde o óleo usado em garrafa PET e entregue num ponto de coleta.</li>
+      <li>Use peneira no ralo da pia e esvazie todo dia.</li>
+      <li>Uma vez por semana, deixe correr água quente da torneira com detergente por alguns minutos. É prevenção para gordura recente, não remove pedra de gordura.</li>
+      <li>Produtos com enzimas ou bactérias para manutenção de ralo são citados por muitos profissionais como uso preventivo, não para desentupir.</li>
+      <li>Limpe a caixa de gordura com frequência: veja <a href="../limpeza-caixa-de-gordura/">de quanto em quanto tempo limpar</a>.</li>
+    </ul>
+    <ul class="nao">
+      <li>Jogar soda cáustica repetidas vezes para "derreter" a pedra.</li>
+      <li>Jogar água fervendo em cano de PVC.</li>
+      <li>Misturar produtos de limpeza: pode liberar gás tóxico.</li>
+      <li>Empurrar arame, cabide ou vergalhão: fura o cano ou fica preso.</li>
+      <li>Usar ventosa logo depois de colocar produto químico.</li>
+    </ul>
+
+    <h2>Quando chamar um profissional?</h2>
+    <ul>
+      <li>O entupimento volta pouco tempo depois de desentupido.</li>
+      <li>Sifão limpo e ventosa não resolveram.</li>
+      <li>Já foi usada soda ou desentupidor químico e a água continua parada.</li>
+      <li>Mais de um ponto da casa está ruim, ou a caixa de gordura transborda.</li>
+      <li>Há mau cheiro, barulho de bolhas ou retorno de água.</li>
+    </ul>
+    <p>Se já colocou produto químico no cano, avise o técnico antes de ele abrir o sifão: isso muda a forma de trabalhar com segurança.</p>''',
+    faq=[
+        ("O que é gordura saponificada?", "É a gordura que reagiu com o cálcio da água e do esgoto e virou um tipo de sabão duro, que não se dissolve em água. É ela que forma as pedras grudadas na parede do cano."),
+        ("Soda cáustica dissolve pedra de gordura?", "Não. A soda pode abrir uma passagem em gordura recente perto do ralo, mas acelera a quebra da gordura e pode deixar a massa ainda mais dura e espalhada pela rede."),
+        ("Diabo Verde resolve entupimento de gordura?", "Pode ajudar em gordura recente e leve, com a água ainda descendo. Quando a rede já está comprometida por crosta de gordura (nível 4), dificilmente um produto de mercado resolve."),
+        ("Sonda rotativa ou hidrojateamento: qual é melhor para gordura?", "Depende do nível e do cano. A sonda rotativa resolve bem nos níveis 2 e 3 e em trechos com curvas ou cano amassado; no nível 4, com a rede tomada pela gordura, o hidrojateamento é o mais indicado."),
+        ("Hidrojateamento estraga o cano?", "Feito com pressão e bico adequados ao tipo de cano, não. O risco aparece com pressão errada em tubo antigo ou emenda frágil, por isso a experiência do técnico importa."),
+    ],
+    fontes=["uniceub", "ncsu", "williams2012", "epa_ducoste", "diabo_verde", "nbr8160", "li_niveis", "campo"],
+    leia=["niveis-de-entupimento", "como-funciona-hidrojateamento", "desentupir-pia-com-gordura"],
+)
+
+for a in (REDE, VASO, PISO, PIA, CAIXA, HIDRO, OLEO, RAIZES, CIMENTO, CAIXA_CEGA, HOSPITAL, GORDURA_PEDRA):
     gerar(a)
 
 atualizar_listas()
