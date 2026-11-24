@@ -16,7 +16,7 @@ Arquivos: o modelo de artigo fica em `blog-modelo/index.html` (fora de `publicar
 
 ## 2. Estrutura obrigatória (nesta ordem)
 
-1. **Título (H1)** com a palavra-chave no começo, como a pessoa pesquisaria.
+1. **Título (H1)** com a palavra-chave no começo, como a pessoa pesquisaria, e **"em Goiânia" logo depois dela** (ex.: "Vaso sanitário entupido em Goiânia: o que fazer passo a passo"; decisão do Antonio em 24/11/2026). O `<title>` também leva Goiânia e fica com até ~62 caracteres. "Em Goiânia" no título indica o assunto e a área atendida, não onde foi o caso: se o caso real for de outra cidade, o texto continua dizendo a cidade verdadeira.
 2. **Autor e data**: "Por Lucas Nonato — 10 anos em desentupimento e hidrojateamento em Goiânia e região". Data de publicação e de atualização.
 3. **Resumo rápido** (caixa no topo, 2 a 4 linhas) com a **resposta direta**. É o trecho que Google, ChatGPT e Gemini vão usar.
 4. **Tabela ou lista resumo**, quando o tema permitir.

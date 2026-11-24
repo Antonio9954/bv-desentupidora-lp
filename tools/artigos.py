@@ -22,40 +22,40 @@ LISTA = {
     "historia-bv-desentupidora": ("A história da BV Desentupidora: de Goiânia a Itaberaí e de volta à capital",
                                   "Como a BV começou em Goiânia em 2016, nasceu em Itaberaí em 2017 e voltou à capital.",
                                   "como a BV Desentupidora começou em Goiânia (2016), nasceu em Itaberaí (GO) em 2017 com Benedito Nonato Vieira Filho e voltou a Goiânia; quem é quem, as duas empresas, telefones e canais oficiais."),
-    "niveis-de-entupimento": ("Como saber se o entupimento é grave: os 4 níveis e o que fazer em cada um",
+    "niveis-de-entupimento": ("Entupimento em Goiânia: como saber se é grave pelos 4 níveis e o que fazer em cada um",
                               "Um guia para identificar o nível do entupimento, o que dá para resolver em casa e quando chamar um profissional.",
                               "como identificar se o entupimento é simples ou está na rede, o que resolver em casa, o que não fazer e quando chamar um profissional."),
-    "rede-pluvial-entupida": ("Rede pluvial entupida: sinais, causas e prevenção antes das chuvas",
+    "rede-pluvial-entupida": ("Rede pluvial entupida em Goiânia: sinais, causas e prevenção antes das chuvas",
                               "Como saber se a rede pluvial está entupida, o que mais entope e o que fazer antes das chuvas.",
                               "sinais de rede pluvial entupida, o que mais entope (caso real em Heitoraí, GO, com vídeo) e como prevenir antes das chuvas."),
-    "vaso-sanitario-entupido": ("Vaso sanitário entupido: o que fazer passo a passo",
+    "vaso-sanitario-entupido": ("Vaso sanitário entupido em Goiânia: o que fazer passo a passo",
                                 "Como usar a ventosa certa, o que nunca jogar no vaso e o sinal de que o problema está na rede.",
                                 "passo a passo com ventosa, o que não jogar no vaso e por que vaso e ralo entopem juntos (caso real em casa de eventos)."),
-    "precisa-quebrar-piso-para-desentupir": ("Precisa quebrar o piso para desentupir?",
+    "precisa-quebrar-piso-para-desentupir": ("Precisa quebrar o piso para desentupir em Goiânia?",
                                              "Por onde o profissional entra na tubulação sem quebrar e quando a quebra é inevitável.",
                                              "na maioria dos casos não: acessos usados, sonda rotativa x hidrojato e quando a quebra é inevitável (caso real em Itaberaí, GO)."),
-    "desentupir-pia-com-gordura": ("Como desentupir pia com gordura: o que funciona de verdade",
+    "desentupir-pia-com-gordura": ("Como desentupir pia com gordura em Goiânia: o que funciona de verdade",
                                    "Sifão, ventosa, o limite da água quente e quando a gordura já virou placa no cano.",
                                    "como a gordura vira placa no cano, passo a passo com sifão e ventosa e o que não fazer (caso real em Inhumas, GO)."),
-    "raizes-na-rede-pluvial": ("Raízes na rede pluvial: o alerta que canteiros perto da tubulação escondem",
+    "raizes-na-rede-pluvial": ("Raízes na rede pluvial em Goiânia: o alerta que canteiros perto da tubulação escondem",
                                "Como a raiz entra no cano, os sinais, a distância segura do canteiro e se é preciso quebrar o piso.",
                                "como a raiz de um canteiro entra na rede pluvial, sinais, distância segura, cimento no cano e caso real com 2 metros de raiz retirados sem quebrar o piso."),
-    "limpeza-caixa-de-gordura": ("Caixa de gordura: de quanto em quanto tempo limpar",
+    "limpeza-caixa-de-gordura": ("Caixa de gordura em Goiânia: de quanto em quanto tempo limpar",
                                  "Frequência de limpeza em casa e em restaurante, sinais de caixa cheia e o descarte da gordura.",
                                  "frequência de limpeza (3 a 6 meses em casa; mensal ou quinzenal em restaurante), sinais de caixa cheia e como limpar."),
-    "como-funciona-hidrojateamento": ("Como funciona o hidrojateamento",
+    "como-funciona-hidrojateamento": ("Como funciona o hidrojateamento em Goiânia",
                                       "O que é, por que resolve entupimento de gordura que volta e por que a técnica importa.",
                                       "o que é (1.500 a 4.000 PSI), quando usar, riscos para o cano e segurança em fossas (caso real em restaurante de Goiânia)."),
-    "cimento-no-encanamento": ("Cimento no encanamento: por que vira pedra dentro do cano e o que fazer se cair no ralo",
+    "cimento-no-encanamento": ("Cimento no encanamento em Goiânia: por que vira pedra dentro do cano e o que fazer se cair no ralo",
                                "Por que lavar ferramenta de obra no ralo entope, onde lavar e o que fazer nas primeiras horas.",
                                "por que o cimento endurece mesmo dentro do cano cheio d'água, onde lavar ferramentas de obra, o que fazer se cair cimento no ralo (hidrojato no mesmo dia) e mitos e verdades; caso real em Goiânia com vídeo comparando trecho limpo e trecho sujo."),
-    "pode-jogar-oleo-na-pia": ("Pode jogar óleo na pia? E o que não usar para desentupir",
+    "pode-jogar-oleo-na-pia": ("Pode jogar óleo na pia? Como descartar em Goiânia e o que não usar para desentupir",
                                "Por que o óleo entope, como descartar e o que nunca usar para desentupir.",
                                "por que óleo na pia entope, como descartar e o que não usar para desentupir: misturas de produtos, soda, água fervendo e arame."),
-    "caixa-cega-esgoto": ("Caixa cega no esgoto: o que é e por que encarece o desentupimento",
+    "caixa-cega-esgoto": ("Caixa cega no esgoto em Goiânia: o que é e por que encarece o desentupimento",
                           "A caixa de passagem lacrada debaixo do piso: por que o serviço fica mais caro, o mau cheiro e como evitar.",
                           "o que é caixa cega (caixa de passagem lacrada com contrapiso e piso), por que encarece o desentupimento, mau cheiro e infiltração, como se localiza a caixa (inclusive pelo som, com martelo de borracha) e caso real em uma jantinha no interior de Goiás, resolvido em 4 horas, com vídeos."),
-    "desentupimento-hospitais-e-clinicas": ("Desentupimento especializado em hospitais e clínicas: riscos e como fazer a manutenção certa",
+    "desentupimento-hospitais-e-clinicas": ("Desentupimento especializado em hospitais e clínicas de Goiânia: riscos e como fazer a manutenção certa",
                                             "Por que ralo entupido ou com cheiro é risco para pacientes, as áreas críticas e como a manutenção deve ser feita.",
                                             "por que ralos, pias e sifões entupidos ou com mau cheiro são risco em hospitais e clínicas (estudos de surtos em UTI), pacientes e áreas que exigem cuidado, frequência de manutenção preventiva e como executar o serviço com autorização da CCIH, isolamento, EPI e registro."),
 }
@@ -67,8 +67,8 @@ LI = "https://www.linkedin.com/pulse/"
 # ---------------------------------------------------------------------------
 REDE = dict(
     slug="rede-pluvial-entupida",
-    title="Rede pluvial entupida: sinais, causas e prevenção",
-    h1="Rede pluvial entupida: sinais, causas e prevenção antes das chuvas",
+    title="Rede pluvial entupida em Goiânia: sinais, causas e prevenção",
+    h1="Rede pluvial entupida em Goiânia: sinais, causas e prevenção antes das chuvas",
     desc="Como saber se a rede pluvial está entupida, o que costuma causar o problema e o que fazer antes das chuvas para o quintal e a calha não alagarem.",
     migalha="Rede pluvial entupida",
     keywords="rede pluvial entupida, ralo do quintal entupido, calha transbordando, água da chuva não escoa, desentupimento de rede pluvial",
@@ -173,8 +173,8 @@ REDE = dict(
 # ---------------------------------------------------------------------------
 VASO = dict(
     slug="vaso-sanitario-entupido",
-    title="Vaso sanitário entupido: o que fazer passo a passo",
-    h1="Vaso sanitário entupido: o que fazer passo a passo",
+    title="Vaso sanitário entupido em Goiânia: o que fazer passo a passo",
+    h1="Vaso sanitário entupido em Goiânia: o que fazer passo a passo",
     desc="O que fazer quando o vaso entope: como usar a ventosa certa, o que nunca jogar no vaso e o sinal de que o problema está na rede, não no vaso.",
     migalha="Vaso sanitário entupido",
     keywords="vaso sanitário entupido, como desentupir vaso, ventosa para vaso, vaso e ralo entupidos, o que não jogar no vaso",
@@ -272,8 +272,8 @@ VASO = dict(
 # ---------------------------------------------------------------------------
 PISO = dict(
     slug="precisa-quebrar-piso-para-desentupir",
-    title="Precisa quebrar o piso para desentupir? Quase nunca",
-    h1="Precisa quebrar o piso para desentupir?",
+    title="Precisa quebrar o piso para desentupir em Goiânia? Quase nunca",
+    h1="Precisa quebrar o piso para desentupir em Goiânia?",
     desc="Na maioria dos casos, não. Veja por onde o profissional entra na tubulação, quando quebrar é inevitável e como evitar obra para resolver um entupimento.",
     migalha="Quebrar o piso para desentupir",
     keywords="precisa quebrar piso para desentupir, desentupir sem quebrar, desentupimento sem quebra-quebra, caixa de inspeção, sonda rotativa",
@@ -364,8 +364,8 @@ PISO = dict(
 # ---------------------------------------------------------------------------
 PIA = dict(
     slug="desentupir-pia-com-gordura",
-    title="Como desentupir pia com gordura: o que funciona",
-    h1="Como desentupir pia com gordura: o que funciona de verdade",
+    title="Como desentupir pia com gordura em Goiânia: o que funciona",
+    h1="Como desentupir pia com gordura em Goiânia: o que funciona de verdade",
     desc="Passo a passo para desentupir pia de cozinha com gordura: limpar o sifão, ventosa, o limite da água quente e quando a gordura já virou placa na rede.",
     migalha="Desentupir pia com gordura",
     keywords="desentupir pia com gordura, pia da cozinha entupida, sifão entupido, gordura no cano, placa de gordura",
@@ -458,8 +458,8 @@ PIA = dict(
 # ---------------------------------------------------------------------------
 CAIXA = dict(
     slug="limpeza-caixa-de-gordura",
-    title="Caixa de gordura: de quanto em quanto tempo limpar",
-    h1="Caixa de gordura: de quanto em quanto tempo limpar",
+    title="Caixa de gordura em Goiânia: de quanto em quanto tempo limpar",
+    h1="Caixa de gordura em Goiânia: de quanto em quanto tempo limpar",
     desc="Com que frequência limpar a caixa de gordura em casa e em restaurante, os sinais de que ela está cheia e o que fazer com a gordura retirada.",
     migalha="Limpeza de caixa de gordura",
     keywords="limpeza de caixa de gordura, caixa de gordura cheia, de quanto em quanto tempo limpar caixa de gordura, caixa de gordura com mau cheiro",
@@ -551,8 +551,8 @@ CAIXA = dict(
 # ---------------------------------------------------------------------------
 HIDRO = dict(
     slug="como-funciona-hidrojateamento",
-    title="Como funciona o hidrojateamento (e quando usar)",
-    h1="Como funciona o hidrojateamento",
+    title="Como funciona o hidrojateamento em Goiânia (e quando usar)",
+    h1="Como funciona o hidrojateamento em Goiânia",
     desc="O que é hidrojateamento, por que ele resolve entupimento de gordura que volta, quais os riscos para o cano e por que a técnica de quem opera importa.",
     migalha="Como funciona o hidrojateamento",
     keywords="hidrojateamento, hidrojato, como funciona hidrojateamento, desentupimento com hidrojato, hidrojateamento restaurante",
@@ -641,8 +641,8 @@ HIDRO = dict(
 # ---------------------------------------------------------------------------
 OLEO = dict(
     slug="pode-jogar-oleo-na-pia",
-    title="Pode jogar óleo na pia? E o que não usar para desentupir",
-    h1="Pode jogar óleo na pia? E o que não usar para desentupir",
+    title="Pode jogar óleo na pia? Como descartar em Goiânia",
+    h1="Pode jogar óleo na pia? Como descartar em Goiânia e o que não usar para desentupir",
     desc="Por que óleo na pia entope o cano, como descartar certo e o que nunca usar para desentupir: misturas de produtos, soda cáustica, água fervendo e arame.",
     migalha="Pode jogar óleo na pia?",
     keywords="pode jogar óleo na pia, óleo na pia entope, como descartar óleo de cozinha, soda cáustica desentupir, misturar água sanitária e vinagre",
@@ -746,8 +746,8 @@ OLEO = dict(
 # ---------------------------------------------------------------------------
 RAIZES = dict(
     slug="raizes-na-rede-pluvial",
-    title="Raízes na rede pluvial: o risco dos canteiros perto do cano",
-    h1="Raízes na rede pluvial: o alerta que canteiros perto da tubulação escondem",
+    title="Raízes na rede pluvial em Goiânia: o risco dos canteiros",
+    h1="Raízes na rede pluvial em Goiânia: o alerta que canteiros perto da tubulação escondem",
     desc="Raízes de um canteiro entraram na rede pluvial e causaram 2 anos de alagamento. Veja os sinais, a distância segura e se é preciso quebrar o piso.",
     migalha="Raízes na rede pluvial",
     keywords="raízes na rede pluvial, raiz dentro do cano, canteiro perto da tubulação, quintal alagando quando chove, precisa quebrar para tirar raiz do cano",
@@ -905,8 +905,8 @@ RAIZES = dict(
 # ---------------------------------------------------------------------------
 CIMENTO = dict(
     slug="cimento-no-encanamento",
-    title="Cimento no encanamento: por que vira pedra e o que fazer",
-    h1="Cimento no encanamento: por que vira pedra dentro do cano e o que fazer se cair no ralo",
+    title="Cimento no encanamento em Goiânia: por que vira pedra e o que fazer",
+    h1="Cimento no encanamento em Goiânia: por que vira pedra dentro do cano e o que fazer se cair no ralo",
     desc="Lavar ferramenta de obra no ralo deixa cimento endurecido no cano. Veja por que a água não resolve, onde lavar e o que fazer se cair cimento na rede.",
     migalha="Cimento no encanamento",
     keywords="cimento no encanamento, cimento entupiu o cano, lavar ferramenta de obra no ralo, cimento no ralo o que fazer, como tirar cimento do cano, argamassa na tubulação",
@@ -1026,8 +1026,8 @@ CIMENTO = dict(
 # ---------------------------------------------------------------------------
 CAIXA_CEGA = dict(
     slug="caixa-cega-esgoto",
-    title="Caixa cega no esgoto: o que é e por que encarece o serviço",
-    h1="Caixa cega no esgoto: o que é e por que encarece o desentupimento",
+    title="Caixa cega no esgoto em Goiânia: por que encarece o serviço",
+    h1="Caixa cega no esgoto em Goiânia: o que é e por que encarece o desentupimento",
     desc="Caixa cega é a caixa de esgoto lacrada debaixo do piso. Veja por que ela encarece o desentupimento, causa mau cheiro e como evitar.",
     migalha="Caixa cega no esgoto",
     keywords="caixa cega, caixa cega esgoto, caixa de passagem lacrada, caixa de inspeção debaixo do piso, caixa de esgoto escondida, como achar caixa de esgoto",
@@ -1167,8 +1167,8 @@ CCBYSA = '<a href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt-br" re
 # CC BY-SA 4.0, com crédito) e a legenda diz que eles não têm relação com os casos citados (pedido do Antonio, 19/11/2026).
 HOSPITAL = dict(
     slug="desentupimento-hospitais-e-clinicas",
-    title="Desentupimento em hospitais e clínicas: riscos e cuidados",
-    h1="Desentupimento especializado em hospitais e clínicas: riscos e como fazer a manutenção certa",
+    title="Desentupimento em hospitais e clínicas de Goiânia: cuidados",
+    h1="Desentupimento especializado em hospitais e clínicas de Goiânia: riscos e como fazer a manutenção certa",
     desc="Por que ralo entupido ou com cheiro é risco em hospitais e clínicas, quais áreas exigem cuidado e como fazer a manutenção sem expor pacientes.",
     migalha="Desentupimento em hospitais e clínicas",
     keywords="desentupimento em hospitais, desentupimento em clínicas, entupimento em hospital, mau cheiro em ralo de hospital, sifão de pia hospitalar, manutenção preventiva hidrossanitária hospitalar, controle de infecção e esgoto",
