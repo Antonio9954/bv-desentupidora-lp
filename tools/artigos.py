@@ -1578,10 +1578,12 @@ RECORRENTE = dict(
       <li><strong>Ralo e vaso borbulham</strong> ou fazem barulho quando outro ponto da casa escoa.</li>
       <li><strong>Sai muita lama e areia</strong> no desentupimento, e pouca gordura ou objeto.</li>
       <li><strong>O problema começou depois de uma obra</strong>, de piso que afundou ou de um trecho de cano refeito.</li>
+      <li><strong>O imóvel é novo e entope desde a entrega.</strong> Caimento errado e <a href="../cimento-no-encanamento/">resto de obra no cano</a> são suspeitos fortes.</li>
     </ul>
     <p>Inclinação demais também atrapalha. Em trechos muito íngremes, a água corre na frente e os sólidos ficam para trás, colados no fundo do cano. Na nossa experiência, isso aparece em emendas improvisadas e em reformas que mudaram a altura da saída.</p>
     <p>A confirmação vem com medição: nível de mangueira ou nível a laser entre duas caixas, ou inspeção com câmera, que mostra a lâmina de água parada no trecho baixo.</p>
-    <p>Esse não é um problema raro em Goiânia. Um trabalho de conclusão de curso de Engenharia Civil da UFG, que acompanhou obras de redes coletoras de esgoto na Região Metropolitana de Goiânia, registrou práticas que dificultam o controle da declividade, como escavar a vala no sentido contrário ao que a norma indica, e cadastros que nem sempre batem com o que está enterrado. Outro estudo publicado pela revista de engenharia civil da UFG alerta que a redução do volume de água nas descargas, sem ajuste nos ramais e coletores, aumenta os entupimentos. Com menos água, o caimento faz ainda mais diferença.</p>
+    <p>Esse não é um problema raro em Goiânia. Um trabalho de conclusão de curso de Engenharia Civil da UFG analisou as instalações de esgoto de três empreendimentos residenciais de uma construtora da cidade e concluiu que foram poucos os casos com a declividade correta. Em alguns trechos, os pesquisadores encontraram até contradeclividade: o cano saía da caixa sifonada a 12 cm do teto e chegava ao tubo de queda a 10 cm, ou seja, subia no caminho em vez de descer. O engenheiro da obra relatou que, na entrega, a água às vezes só escoa mais devagar, ninguém percebe na vistoria, e pouco depois a tubulação entope. Entre as causas listadas estão declividade errada e entulho de obra dentro do cano. Os próprios autores avisam que o estudo olhou uma única construtora, mas o padrão é o mesmo que vemos em campo.</p>
+    <p>Outros trabalhos da UFG reforçam o quadro: um TCC sobre obras de redes coletoras na Região Metropolitana de Goiânia registrou práticas que dificultam o controle da declividade, e um artigo da revista de engenharia civil da universidade alerta que, com menos água nas descargas e sem ajuste nos ramais, os entupimentos aumentam. Com menos água, o caimento faz ainda mais diferença.</p>
 
     <h2>Como saber se o cano está deformado ou quebrado?</h2>
     <ul>
@@ -1649,7 +1651,7 @@ RECORRENTE = dict(
         ("Sonda rotativa resolve cano com barriga?", "Resolve a obstrução na hora, mas não corrige o caimento. Com a barriga no lugar, a sujeira volta a se acumular no mesmo ponto."),
         ("Como saber se o cano está amassado sem quebrar o piso?", "Pela medição de onde a ferramenta trava sempre, pelo que sai do cano (terra, pedaços) e, para confirmar, com inspeção por câmera a partir de uma caixa ou ralo."),
     ],
-    fontes=["nbr8160", "icesp_decliv", "ufg_gondim", "ufg_reis", "ufg_bucar", "li_sonda", "campo"],
+    fontes=["nbr8160", "icesp_decliv", "ufg_moreira", "ufg_gondim", "ufg_reis", "ufg_bucar", "li_sonda", "campo"],
     leia=["gordura-endurecida-no-cano", "precisa-quebrar-piso-para-desentupir", "niveis-de-entupimento"],
 )
 
