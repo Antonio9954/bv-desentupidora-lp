@@ -58,7 +58,7 @@ LISTA = {
     "caixa-cega-esgoto": ("Caixa cega no esgoto em Goiânia: o que é e por que encarece o desentupimento",
                           "A caixa de passagem lacrada debaixo do piso: por que o serviço fica mais caro, o mau cheiro e como evitar.",
                           "o que é caixa cega (caixa de passagem lacrada com contrapiso e piso), por que encarece o desentupimento, mau cheiro e infiltração, como se localiza a caixa (inclusive pelo som, com martelo de borracha) e caso real em uma jantinha no interior de Goiás, resolvido em 4 horas, com vídeos."),
-    "desentupimento-hospitais-e-clinicas": ("Desentupimento especializado em hospitais e clínicas de Goiânia: riscos e como fazer a manutenção certa",
+    "desentupimento-hospitais-e-clinicas": ("Desentupimento em hospitais e clínicas em Goiânia: riscos e como fazer a manutenção certa",
                                             "Por que ralo entupido ou com cheiro é risco para pacientes, as áreas críticas e como a manutenção deve ser feita.",
                                             "por que ralos, pias e sifões entupidos ou com mau cheiro são risco em hospitais e clínicas (estudos de surtos em UTI), pacientes e áreas que exigem cuidado, frequência de manutenção preventiva e como executar o serviço com autorização da CCIH, isolamento, EPI e registro."),
     "gordura-endurecida-no-cano": ("Gordura endurecida no cano em Goiânia: por que vira pedra e como remover sem danificar o encanamento",
@@ -1176,8 +1176,8 @@ CCBYSA = '<a href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt-br" re
 # CC BY-SA 4.0, com crédito) e a legenda diz que eles não têm relação com os casos citados (pedido do Antonio, 19/11/2026).
 HOSPITAL = dict(
     slug="desentupimento-hospitais-e-clinicas",
-    title="Desentupimento em hospitais e clínicas de Goiânia: cuidados",
-    h1="Desentupimento especializado em hospitais e clínicas de Goiânia: riscos e como fazer a manutenção certa",
+    title="Desentupimento em hospitais e clínicas em Goiânia: cuidados",
+    h1="Desentupimento em hospitais e clínicas em Goiânia: riscos e como fazer a manutenção certa",
     desc="Por que ralo entupido ou com cheiro é risco em hospitais e clínicas, quais áreas exigem cuidado e como fazer a manutenção sem expor pacientes.",
     migalha="Desentupimento em hospitais e clínicas",
     keywords="desentupimento em hospitais, desentupimento em clínicas, entupimento em hospital, mau cheiro em ralo de hospital, sifão de pia hospitalar, manutenção preventiva hidrossanitária hospitalar, controle de infecção e esgoto",

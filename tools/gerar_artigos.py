@@ -153,7 +153,7 @@ ARTIGOS = {
     "raizes-na-rede-pluvial": "Raízes na rede pluvial: o alerta que canteiros perto da tubulação escondem",
     "cimento-no-encanamento": "Cimento no encanamento: por que vira pedra dentro do cano e o que fazer",
     "caixa-cega-esgoto": "Caixa cega no esgoto: o que é e por que encarece o desentupimento",
-    "desentupimento-hospitais-e-clinicas": "Desentupimento especializado em hospitais e clínicas",
+    "desentupimento-hospitais-e-clinicas": "Desentupimento em hospitais e clínicas",
     "gordura-endurecida-no-cano": "Gordura endurecida no cano: por que vira pedra e como remover",
     "entupimento-recorrente": "Entupimento recorrente: gordura, cano sem caimento ou cano deformado?",
 }
