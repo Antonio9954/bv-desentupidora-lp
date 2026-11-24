@@ -97,6 +97,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://{{DOMINIO}}/blog/entupimento-recorrente/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://{{DOMINIO}}/blog/historia-bv-desentupidora/</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>

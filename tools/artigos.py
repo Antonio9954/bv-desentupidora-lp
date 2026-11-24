@@ -6,7 +6,7 @@ PUB = ["niveis-de-entupimento", "rede-pluvial-entupida", "vaso-sanitario-entupid
        "precisa-quebrar-piso-para-desentupir", "desentupir-pia-com-gordura", "raizes-na-rede-pluvial",
        "limpeza-caixa-de-gordura", "como-funciona-hidrojateamento", "cimento-no-encanamento",
        "pode-jogar-oleo-na-pia", "caixa-cega-esgoto", "desentupimento-hospitais-e-clinicas",
-       "gordura-endurecida-no-cano"]
+       "gordura-endurecida-no-cano", "entupimento-recorrente"]
 DATAS = {"niveis-de-entupimento": "2026-10-26", "rede-pluvial-entupida": "2026-10-26",
          "vaso-sanitario-entupido": "2026-10-27", "historia-bv-desentupidora": "2026-11-02",
          "precisa-quebrar-piso-para-desentupir": "2026-11-02", "desentupir-pia-com-gordura": "2026-11-02",
@@ -15,8 +15,8 @@ DATAS = {"niveis-de-entupimento": "2026-10-26", "rede-pluvial-entupida": "2026-1
          "cimento-no-encanamento": "2026-11-10", "pode-jogar-oleo-na-pia": "2026-11-10",
          "caixa-cega-esgoto": "2026-11-14", "desentupimento-hospitais-e-clinicas": "2026-11-19",
          "gordura-endurecida-no-cano": "2026-11-24",
-         "entupimento-recorrente": "2026-11-25"}
-FILA = ["entupimento-recorrente"]  # agendado para 25/11/2026
+         "entupimento-recorrente": "2026-11-24"}
+FILA = []
 # Artigos escritos à mão (não gerados aqui): entram no índice, llms.txt e sitemap, mas não no "Leia também".
 EXTRAS = ["historia-bv-desentupidora"]
 
