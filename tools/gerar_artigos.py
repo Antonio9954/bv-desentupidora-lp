@@ -138,6 +138,20 @@ FONTES = {
                  "https://revistas.ufg.br/reec/article/view/20805"),
     "ufg_bucar": ('Bucar Filho, C. L. (2019). <a href="https://repositorio.bc.ufg.br/tede/handle/tede/10081" rel="nofollow noopener" target="_blank">Impacto das variáveis de projeto nas características físicas do escoamento de esgoto em tubulações prediais</a>. Dissertação de mestrado, UFG (orientador: Marcus André Siqueira Campos). Conclui que são necessárias mais pesquisas para a renovação da NBR 8160.',
                   "https://repositorio.bc.ufg.br/tede/handle/tede/10081"),
+    "deca_cimento": ('Deca. <a href="https://produtos.deca.com.br/P.230.86/pdf/manuais-de-instalacao_p.230.86.pdf" rel="nofollow noopener" target="_blank">Instruções de instalação da bacia para caixa acoplada</a>. Fixação com parafusos e anel de vedação; é proibido assentar a bacia em cama de cimento, pela diferença de dilatação térmica, que pode trincar a louça.',
+                     "https://produtos.deca.com.br/P.230.86/pdf/manuais-de-instalacao_p.230.86.pdf"),
+    "sloan": ('Sloan. <a href="https://www.sloan.com/sites/default/files/2016-08/Standard%20_Urinal_Series_Guide_0.pdf" rel="nofollow noopener" target="_blank">Urinal Series: Repair Parts and Maintenance Guide</a>. Não usar produtos químicos cáusticos de desentupir (danificam o acabamento vitrificado) nem deixar descartar papel-toalha e bitucas no mictório.',
+              "https://www.sloan.com/sites/default/files/2016-08/Standard%20_Urinal_Series_Guide_0.pdf"),
+    "maldita": ('Maldita Ciencia (dez/2021). <a href="https://maldita.es/malditaciencia/20211204/vinagre-bicarbonato-desatascar-desague/" rel="nofollow noopener" target="_blank">¿Es buena idea echar vinagre y bicarbonato para desatascar un desagüe?</a> A mistura é uma neutralização (acetato de sódio, água e gás carbônico) e só ajuda em obstruções leves.',
+                "https://maldita.es/malditaciencia/20211204/vinagre-bicarbonato-desatascar-desague/"),
+    "bobvila_quente": ('Bob Vila. <a href="https://www.bobvila.com/articles/how-to-unclog-a-toilet/" rel="nofollow noopener" target="_blank">How to Unclog a Toilet</a>. Detergente e água quente (não fervendo) para entupimentos leves de vaso.',
+                       "https://www.bobvila.com/articles/how-to-unclog-a-toilet/"),
+    "plumbermag_mictorio": ('Plumber Magazine. <a href="https://www.plumbermag.com/how-to-articles/plumbing-commercial-troubleshooting/how-to-approach-servicing-urinals" rel="nofollow noopener" target="_blank">How to Approach Servicing Urinals</a>. O sifão interno do mictório é muito estreito: qualquer redução de passagem causa lentidão ou retorno.',
+                            "https://www.plumbermag.com/how-to-articles/plumbing-commercial-troubleshooting/how-to-approach-servicing-urinals"),
+    "rotorooter_mictorio": ('Roto-Rooter. <a href="https://www.rotorooter.com/blog/commercial-plumbing-problem-urinals/" rel="nofollow noopener" target="_blank">Commercial Plumbing Problem: Urinals</a>. Crosta de urina e calcário, papel e chiclete como causas de mictório entupido.',
+                            "https://www.rotorooter.com/blog/commercial-plumbing-problem-urinals/"),
+    "usp_48": ('USP. <a href="https://teses.usp.br/teses/disponiveis/3/3146/tde-27112017-153043/en.php" rel="nofollow noopener" target="_blank">Dissertação de mestrado sobre bacias sanitárias de 4,8 L/descarga</a> (Escola Politécnica). Nenhuma bacia projetada para 6,8 L/descarga e regulada para 4,8 L foi aprovada nos ensaios de laboratório.',
+               "https://teses.usp.br/teses/disponiveis/3/3146/tde-27112017-153043/en.php"),
     "campo": ("Experiência de campo da equipe BV Desentupidora (atendimentos em Goiânia, Itaberaí, Inhumas, Heitoraí e região).", None),
 }
 
@@ -156,6 +170,7 @@ ARTIGOS = {
     "desentupimento-hospitais-e-clinicas": "Desentupimento em hospitais e clínicas",
     "gordura-endurecida-no-cano": "Gordura endurecida no cano: por que vira pedra e como remover",
     "entupimento-recorrente": "Entupimento recorrente: gordura, cano sem caimento ou cano deformado?",
+    "como-desentupir-vaso-sanitario": "Como desentupir vaso sanitário: o que funciona e o que estraga o vaso",
 }
 
 

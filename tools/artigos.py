@@ -6,7 +6,7 @@ PUB = ["niveis-de-entupimento", "rede-pluvial-entupida", "vaso-sanitario-entupid
        "precisa-quebrar-piso-para-desentupir", "desentupir-pia-com-gordura", "raizes-na-rede-pluvial",
        "limpeza-caixa-de-gordura", "como-funciona-hidrojateamento", "cimento-no-encanamento",
        "pode-jogar-oleo-na-pia", "caixa-cega-esgoto", "desentupimento-hospitais-e-clinicas",
-       "gordura-endurecida-no-cano", "entupimento-recorrente"]
+       "gordura-endurecida-no-cano", "entupimento-recorrente", "como-desentupir-vaso-sanitario"]
 DATAS = {"niveis-de-entupimento": "2026-10-26", "rede-pluvial-entupida": "2026-10-26",
          "vaso-sanitario-entupido": "2026-10-27", "historia-bv-desentupidora": "2026-11-02",
          "precisa-quebrar-piso-para-desentupir": "2026-11-02", "desentupir-pia-com-gordura": "2026-11-02",
@@ -15,7 +15,8 @@ DATAS = {"niveis-de-entupimento": "2026-10-26", "rede-pluvial-entupida": "2026-1
          "cimento-no-encanamento": "2026-11-10", "pode-jogar-oleo-na-pia": "2026-11-10",
          "caixa-cega-esgoto": "2026-11-14", "desentupimento-hospitais-e-clinicas": "2026-11-19",
          "gordura-endurecida-no-cano": "2026-11-24",
-         "entupimento-recorrente": "2026-11-24"}
+         "entupimento-recorrente": "2026-11-24",
+         "como-desentupir-vaso-sanitario": "2026-11-25"}
 FILA = []
 # Artigos escritos à mão (não gerados aqui): entram no índice, llms.txt e sitemap, mas não no "Leia também".
 EXTRAS = ["historia-bv-desentupidora"]
@@ -67,6 +68,9 @@ LISTA = {
     "entupimento-recorrente": ("Entupimento recorrente em Goiânia: como saber se é gordura, cano sem caimento ou cano deformado",
                                "Como diferenciar gordura, contrapendente e cano amassado, e quando a sonda rotativa não basta.",
                                "como diferenciar as 3 causas do entupimento que volta (gordura acumulada, pouco caimento ou contrapendente e cano deformado), por que o desentupimento resolve só por um tempo, declividade mínima da NBR 8160 (2% até 75 mm, 1% a partir de 100 mm), quando a sonda rotativa resolve e quando é preciso corrigir o trecho; caso real de rede pluvial achatada em Itaberaí (GO) com vídeo."),
+    "como-desentupir-vaso-sanitario": ("Como desentupir vaso sanitário em Goiânia: o que funciona, o que estraga o vaso e quando o problema é a rede",
+                                       "Métodos caseiros comparados, por que não usar soda cáustica, vaso chumbado no chão e mictório de comércio.",
+                                       "primeiro teste (se a água volta pelo ralo do banheiro, o entupimento é na rede), métodos caseiros que funcionam (ventosa de vaso, detergente com água quente, filme plástico) e os que não funcionam (bicarbonato com vinagre, arame), por que soda cáustica mancha o esmalte do vaso e pode endurecer o entupimento, vaso chumbado com cimento (fabricantes proíbem; algumas empresas cobram a mais) e por que mictório de comércio entope com chiclete e papel."),
 }
 
 LI = "https://www.linkedin.com/pulse/"
@@ -265,7 +269,7 @@ VASO = dict(
       <li>O vaso entope de novo em poucos dias.</li>
       <li>O ralo do banheiro entope junto, ou a água sobe em outro ponto da casa.</li>
     </ul>
-    <p>Para entender a gravidade do seu caso, veja também <a href="../niveis-de-entupimento/">os 4 níveis de entupimento</a>.</p>''',
+    <p>Para entender a gravidade do seu caso, veja também <a href="../niveis-de-entupimento/">os 4 níveis de entupimento</a>. Se não tem ventosa em casa, veja <a href="../como-desentupir-vaso-sanitario/">como desentupir vaso sanitário: o que funciona e o que estraga o vaso</a>.</p>''',
     faq=[
         ("Pode usar soda cáustica no vaso entupido?", "Não é recomendado. A soda é corrosiva, perigosa para quem manuseia e não resolve objeto preso nem excesso de papel. Se não funcionar, ainda deixa o vaso cheio de produto para quem for fazer o serviço."),
         ("Qual desentupidor usar no vaso sanitário?", "O de ventosa com saia de borracha, próprio para vaso. A saia encaixa na saída do vaso e veda melhor que a ventosa reta de pia."),
@@ -1655,7 +1659,152 @@ RECORRENTE = dict(
     leia=["gordura-endurecida-no-cano", "precisa-quebrar-piso-para-desentupir", "niveis-de-entupimento"],
 )
 
-for a in (REDE, VASO, PISO, PIA, CAIXA, HIDRO, OLEO, RAIZES, CIMENTO, CAIXA_CEGA, HOSPITAL, GORDURA_PEDRA, RECORRENTE):
+# ---------------------------------------------------------------------------
+# Como desentupir vaso sanitário (métodos, erros, vaso chumbado, mictório) — 25/11/2026
+# ---------------------------------------------------------------------------
+DESENTUPIR_VASO = dict(
+    slug="como-desentupir-vaso-sanitario",
+    title="Como desentupir vaso sanitário em Goiânia: o que funciona",
+    h1="Como desentupir vaso sanitário em Goiânia: o que funciona, o que estraga o vaso e quando o problema é a rede",
+    desc="Detergente, filme plástico, bicarbonato, soda cáustica: o que desentope o vaso de verdade, o que mancha a louça e como saber se o entupimento está na rede.",
+    migalha="Como desentupir vaso sanitário",
+    keywords="como desentupir vaso sanitário, desentupir vaso sem desentupidor, detergente e água quente no vaso, soda cáustica no vaso, vaso chumbado no chão, mictório entupido, vaso entope toda hora",
+    sobre=["Vaso sanitário", "Desentupimento", "Mictório", "Soda cáustica", "Rede de esgoto"],
+    imagem="https://i.ytimg.com/vi/BjAMEKyD2ZQ/maxresdefault.jpg",
+    videos=["BjAMEKyD2ZQ"],
+    resumo="Antes de tentar qualquer coisa, olhe o ralo do banheiro: se, ao dar descarga ou jogar um balde de água no vaso, a água volta pelo ralo, o entupimento está na rede, não no vaso, e nenhuma receita caseira resolve. Se é só o vaso, o que funciona é ventosa própria para vaso e, sem ventosa, detergente com água quente (não fervendo) ou filme plástico na borda, sempre em entupimentos leves de papel e fezes. Nunca use soda cáustica no vaso: ela ataca o esmalte da louça, deixa manchas que não saem e, junto com gordura, pode endurecer o entupimento. Antes de chamar alguém, veja se o vaso está chumbado no chão com cimento: algumas empresas cobram mais por isso.",
+    corpo='''    <p>"Como desentupir o vaso?" é uma das perguntas que mais escuto, quase sempre depois de a pessoa já ter tentado duas ou três receitas da internet. Algumas funcionam, outras não fazem nada e algumas estragam o vaso. Aqui separo o que vale a pena tentar, o que eu não faria de jeito nenhum e quatro coisas que aprendi em 10 anos de serviço e que quase ninguém comenta. O passo a passo detalhado da ventosa está no artigo <a href="../vaso-sanitario-entupido/">vaso sanitário entupido: o que fazer passo a passo</a>.</p>
+
+    <h2>Resumo: o que cada método caseiro faz no vaso</h2>
+    <div class="tabela-wrap">
+      <table>
+        <thead><tr><th>Método</th><th>Funciona para</th><th>Limite ou risco</th></tr></thead>
+        <tbody>
+          <tr><td>Ventosa de vaso (com saia de borracha)</td><td>Papel e fezes presos na curva do vaso</td><td>Não tira objeto; precisa de água cobrindo a borracha</td></tr>
+          <tr><td>Detergente + água quente</td><td>Entupimento leve de papel e fezes</td><td>Só com espaço no vaso; água fervendo pode trincar a louça</td></tr>
+          <tr><td>Filme plástico na borda</td><td>Entupimento leve, perto da saída do vaso</td><td>Se não vedar bem, espirra; não resolve objeto</td></tr>
+          <tr><td>Bicarbonato + vinagre</td><td>Pouco além de cheiro e sujeira leve</td><td>A reação faz espuma, mas quase não tem força</td></tr>
+          <tr><td>Arame ou cabide</td><td>Não recomendo</td><td>Risca a louça e pode prender ainda mais o entupimento</td></tr>
+          <tr><td>Soda cáustica ou desentupidor de pia</td><td>Não use no vaso</td><td>Mancha o esmalte, endurece gordura, risco de queimadura</td></tr>
+          <tr><td>Água sanitária</td><td>Não desentope</td><td>Pura agride o esmalte; misturada com outro produto solta gás tóxico</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>O que olhar primeiro: o vaso entupiu ou foi a rede?</h2>
+    <p>A primeira coisa que eu olho em qualquer chamado de vaso não é o vaso: é o <strong>ralo do banheiro</strong>. Se, quando a pessoa dá descarga, a água volta pelo ralo do chão, o problema está na tubulação que recebe os dois, e não no vaso. Nesse caso, ventosa, detergente e filme plástico não alcançam o entupimento, e insistir só faz o esgoto subir pelo ralo.</p>
+    <p>Como testar sem fazer sujeira:</p>
+    <ul>
+      <li>Não dê várias descargas seguidas. Jogue meio balde de água no vaso, devagar, e olhe o ralo.</li>
+      <li>Se a água borbulha ou aparece no ralo, o entupimento está na rede ou numa caixa de inspeção cheia.</li>
+      <li>Se o ralo continua seco e só o vaso não desce, o problema está no vaso ou logo depois dele, e aí vale tentar os métodos abaixo.</li>
+      <li>Outros sinais de rede: o vaso borbulha quando a máquina de lavar esvazia, ou o ralo do box também ficou lento.</li>
+    </ul>
+
+    <div class="caso">
+      <p><span class="rotulo">Caso real (casa de eventos):</span> a água estava voltando pela privada e pelo ralo do banheiro ao mesmo tempo. Quando chegamos, eu e o Antonio olhamos os dois pontos e concluímos que não era só o vaso entupido: o entupimento estava na rede de passagem que recebe o vaso e o ralo. Para alcançar esse trecho, tiramos o vaso do lugar e desobstruímos a rede por ali. A retirada do vaso não teve custo a mais no serviço.</p>
+    </div>
+
+    ''' + video("BjAMEKyD2ZQ", "vaso e ralo entupidos juntos em uma casa de eventos", "Atendimento em uma casa de eventos com o vaso sanitário e o ralo do banheiro entupidos juntos",
+                "Vídeo (caso real, 1 min): vaso e ralo do banheiro entupidos juntos; o problema estava na rede, não no vaso.") + '''
+
+    <h2>Quais métodos caseiros funcionam de verdade?</h2>
+    <p>Valem para quando o ralo está normal e o entupimento é de papel ou fezes. Se caiu um objeto (brinquedo, frasco, celular), pule para a seção sobre <a href="../vaso-sanitario-entupido/">objeto no vaso</a>: empurrar com qualquer método só piora.</p>
+
+    <h3>1. Ventosa própria para vaso</h3>
+    <p>É o primeiro recurso. A ventosa de vaso tem uma "saia" de borracha que encaixa na saída; a reta, de pia, não veda direito. Com água cobrindo a borracha, faça movimentos firmes sem tirar a ventosa do lugar. Se depois de três ou quatro tentativas nada mudou, pare.</p>
+
+    <h3>2. Detergente com água quente</h3>
+    <p>É o truque mais repetido por encanadores americanos e em fóruns como o Reddit, e funciona em entupimento leve porque o detergente deixa o papel e as fezes escorregarem pela curva do vaso.</p>
+    <ol>
+      <li>Coloque cerca de meio copo de detergente no vaso e espere de 10 a 20 minutos.</li>
+      <li>Aqueça água até ficar bem quente, <strong>sem ferver</strong>. Água fervendo numa louça fria pode trincar o vaso.</li>
+      <li>Despeje de uma altura de mais ou menos a cintura, devagar, só até perto da borda.</li>
+      <li>Espere mais 20 a 30 minutos e teste com um balde de água, não com a descarga.</li>
+    </ol>
+    <p>Limite: se o vaso já está cheio até a borda, não há espaço para a água quente. Primeiro tire parte da água com uma caneca, de luva.</p>
+
+    <h3>3. Filme plástico na borda</h3>
+    <p>Seque bem a borda do vaso, estique três ou quatro camadas de filme plástico bem esticadas por cima, sem deixar fresta, e dê a descarga. O plástico estufa como um balão; empurre essa bolha com a mão, com cuidado, algumas vezes. A pressão faz o papel do vaso de "ventosa gigante". Se o filme soltar, para tudo: ele espirra.</p>
+
+    <h3>4. Bicarbonato com vinagre: por que quase não funciona</h3>
+    <p>A espuma impressiona, mas o que acontece é uma neutralização: o ácido do vinagre reage com o bicarbonato e sobra água, um sal e gás carbônico. Essa reação não tem força para empurrar um entupimento de vaso. Serve para cheiro e sujeira leve, não como desentupidor.</p>
+
+    <h2>Por que nunca jogar soda cáustica no vaso?</h2>
+    <p>Essa é a dica que eu mais repito. A soda cáustica e os desentupidores de pia em pó que levam hidróxido de sódio, como o Diabo Verde, não foram feitos para vaso sanitário:</p>
+    <ul class="nao">
+      <li><strong>Mancha a louça para sempre.</strong> A parte de dentro do vaso é coberta por um esmalte vidrado, que deixa a louça lisa. A soda ataca essa camada, e o que fica são manchas foscas que nenhuma limpeza tira. Fabricantes de louça sanitária avisam no manual: produto cáustico de desentupir danifica o acabamento vitrificado.</li>
+      <li><strong>Pode piorar o entupimento.</strong> Soda com gordura vira uma espécie de sabão duro. Junto com gordura e outros resíduos que já estão no cano, ela pode deixar o entupimento mais firme em vez de dissolver. Explico isso com mais detalhe em <a href="../gordura-endurecida-no-cano/">por que a gordura vira pedra no cano</a>.</li>
+      <li><strong>Não resolve o que costuma entupir o vaso.</strong> Papel em excesso, lenço umedecido e objetos não se dissolvem com soda.</li>
+      <li><strong>É perigosa.</strong> Esquenta, pode espirrar e queima a pele e os olhos. Se não funcionar, o vaso fica cheio de produto corrosivo para quem for desentupir depois.</li>
+    </ul>
+    <p>Água sanitária também não desentope. Pura, ela agride o esmalte, e misturada com outro produto de limpeza pode liberar gás tóxico.</p>
+
+    <h2>Antes de chamar o técnico: seu vaso está chumbado no chão?</h2>
+    <p>Olhe a base do vaso. Se ela está presa ao piso com cimento ou massa, formando uma "cama" de argamassa em volta, o vaso está chumbado. Isso é mais comum do que parece em casas mais antigas e em reformas feitas às pressas.</p>
+    <p>Por que isso importa:</p>
+    <ul>
+      <li><strong>Não é o jeito certo de instalar.</strong> Os fabricantes mandam fixar o vaso com parafusos e anel de vedação no esgoto. O manual da Deca, por exemplo, proíbe assentar a bacia em cama de cimento, porque a louça e o cimento dilatam de forma diferente e isso pode trincar o vaso.</li>
+      <li><strong>Pode mudar o preço.</strong> Na maioria dos entupimentos o vaso não sai do lugar. Mas quando é preciso tirar (objeto preso na curva, por exemplo), um vaso chumbado dá mais trabalho e corre risco de trincar ao soltar. Por isso, algumas empresas tratam esse caso como "serviço de difícil acesso" e cobram a mais. Foi o que aconteceu no caso da casa de eventos acima: para chegar na rede, o vaso precisou sair do lugar.</li>
+      <li><strong>Pergunte antes.</strong> Ao pedir orçamento, diga que o vaso é chumbado e pergunte se isso muda o valor. Na BV Desentupidora, vaso chumbado não muda o preço do serviço, mas vale perguntar a qualquer empresa antes, para não ter surpresa.</li>
+    </ul>
+
+    <h2>Mictório entupido em comércio, academia e shopping: por que entope tão fácil?</h2>
+    <p>O mictório de parede, desses de banheiro masculino de comércio, academia, shopping, posto e restaurante, é bem diferente do vaso. As frestas da grelha são pequenas e o caminho interno da água (o sifão da própria louça) é estreito. Por isso, qualquer coisa jogada ali, por menor que seja, tende a entupir ou fazer o mictório transbordar na próxima descarga.</p>
+    <p>O que costuma entupir mictório:</p>
+    <ul>
+      <li>Chiclete, que gruda na grelha e no sifão.</li>
+      <li>Bituca de cigarro, papel-toalha e papel de bala.</li>
+      <li>Tampinha, palito e lixo pequeno em geral.</li>
+      <li>Crosta de urina com calcário, que vai estreitando a passagem com o tempo.</li>
+    </ul>
+    <p>A recomendação que damos a todo cliente comercial é simples: coloque uma plaquinha acima de cada mictório dizendo <strong>"Favor não jogar chiclete, papéis ou lixo em geral no mictório"</strong>, e deixe uma lixeira por perto. Parece pouco, mas é o que mais reduz chamado de mictório entupido. Outras medidas que ajudam:</p>
+    <ul>
+      <li>Manter a tela ou grelha do mictório no lugar e limpar o que fica preso nela.</li>
+      <li>Incluir o mictório na limpeza diária e conferir se a descarga está liberando água suficiente.</li>
+      <li>Não usar soda cáustica nem desentupidor químico: além de não tirar chiclete nem bituca, mancha a louça igual ao vaso.</li>
+    </ul>
+
+    <h2>Por que o vaso entope toda hora?</h2>
+    <ul>
+      <li><strong>Pouca água na descarga.</strong> Os vasos vendidos no Brasil desde 2002 são feitos para funcionar com cerca de 6,8 litros por descarga. Caixa acoplada regulada para economizar demais, boia baixa ou o hábito de usar só o botão de meia descarga deixam o papel no meio do caminho. Um estudo da USP testou bacias de 6,8 litros reguladas para 4,8 litros e nenhuma foi aprovada nos ensaios de laboratório.</li>
+      <li><strong>Lenço umedecido e papel-toalha.</strong> Não se desfazem como o papel higiênico e se juntam na curva do vaso.</li>
+      <li><strong>Objeto preso na curva.</strong> Uma tampinha ou um brinquedo pequeno segura o papel de toda descarga.</li>
+      <li><strong>O problema está na rede.</strong> Se entope sempre e o ralo também dá sinal, pode ser caimento errado ou cano deformado. Veja <a href="../entupimento-recorrente/">entupimento recorrente: como saber a causa</a>.</li>
+    </ul>
+
+    <h2>O que não fazer</h2>
+    <ul class="nao">
+      <li>Dar várias descargas seguidas com o vaso entupido.</li>
+      <li>Jogar soda cáustica, desentupidor de pia ou água sanitária no vaso.</li>
+      <li>Misturar produtos de limpeza.</li>
+      <li>Usar a ventosa depois de colocar produto químico: espirra no rosto.</li>
+      <li>Jogar água fervendo.</li>
+      <li>Empurrar arame, cabide ou cabo de vassoura.</li>
+    </ul>
+
+    <h2>Quando chamar um profissional?</h2>
+    <ul>
+      <li>A água volta pelo ralo do banheiro ou sobe em outro ponto da casa.</li>
+      <li>Ventosa e detergente com água quente não resolveram depois de algumas tentativas.</li>
+      <li>Caiu um objeto e você não alcança com a mão.</li>
+      <li>O vaso entope de novo em poucos dias.</li>
+      <li>Em comércio, quando o mictório transborda ou vários pontos do banheiro ficam lentos.</li>
+    </ul>
+    <p>Para entender a gravidade do seu caso, veja também <a href="../niveis-de-entupimento/">os 4 níveis de entupimento</a>.</p>''',
+    faq=[
+        ("Como desentupir vaso sanitário sem desentupidor?", "Em entupimento leve de papel e fezes, coloque meio copo de detergente, espere uns 15 minutos e despeje água bem quente, sem ferver. Outra opção é esticar filme plástico na borda seca e dar a descarga. Se a água volta pelo ralo do banheiro, o problema está na rede e esses métodos não resolvem."),
+        ("Soda cáustica estraga o vaso sanitário?", "Sim. Ela ataca o esmalte vidrado da louça e deixa manchas que não saem. Além disso, junto com gordura pode endurecer o entupimento e é perigosa para quem manuseia."),
+        ("Bicarbonato com vinagre desentope vaso?", "Quase nunca. A reação faz espuma, mas é uma neutralização que gera água, sal e gás carbônico, sem força para empurrar o entupimento. Serve para cheiro e sujeira leve."),
+        ("Por que a água do vaso volta pelo ralo do banheiro?", "Porque o vaso e o ralo costumam dividir o mesmo trecho de tubulação. Se a água volta pelo ralo ao dar descarga, o entupimento está nesse trecho ou numa caixa de inspeção cheia, e precisa de equipamento profissional."),
+        ("Vaso chumbado no chão fica mais caro para desentupir?", "Na maioria dos casos o vaso nem sai do lugar. Quando é preciso tirar, o vaso chumbado dá mais trabalho e algumas empresas cobram a mais como serviço de difícil acesso. Pergunte antes de fechar o orçamento."),
+    ],
+    fontes=["deca_cimento", "sloan", "uniceub", "diabo_verde", "maldita", "bobvila_quente", "plumbermag_mictorio", "rotorooter_mictorio", "usp_48", "anvisa", "nbr8160", "campo"],
+    leia=["vaso-sanitario-entupido", "gordura-endurecida-no-cano", "entupimento-recorrente"],
+)
+
+
+for a in (REDE, VASO, PISO, PIA, CAIXA, HIDRO, OLEO, RAIZES, CIMENTO, CAIXA_CEGA, HOSPITAL, GORDURA_PEDRA, RECORRENTE, DESENTUPIR_VASO):
     gerar(a)
 
 atualizar_listas()
