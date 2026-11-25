@@ -229,7 +229,7 @@ VASO = dict(
     <p>Porque eles costumam dividir o mesmo trecho de tubulação até a caixa de inspeção. Quando os dois param ao mesmo tempo, ou quando o vaso borbulha na hora em que a máquina de lavar esvazia, o problema está nesse trecho comum ou numa caixa de inspeção já cheia. A ventosa no vaso não alcança esse ponto.</p>
 
     <div class="caso">
-      <p><span class="rotulo">Caso real (casa de eventos):</span> fomos chamados com o evento acontecendo. O vaso sanitário e o ralo do banheiro tinham parado juntos. Do lado de dentro parecia um problema no vaso, mas, como os dois pontos travaram ao mesmo tempo, o entupimento estava na rede que recebe os dois. Desobstruímos a tubulação pela caixa, sem quebrar nada, e o banheiro voltou a funcionar sem interromper o evento.</p>
+      <p><span class="rotulo">Caso real (casa de eventos):</span> fomos chamados com o evento acontecendo. O vaso sanitário e o ralo do banheiro tinham parado juntos. Do lado de dentro parecia um problema no vaso, mas, como os dois pontos travaram ao mesmo tempo, o entupimento estava na rede que recebe os dois. Para alcançar esse trecho, tiramos o vaso do lugar e desobstruímos a rede por ali, e o banheiro voltou a funcionar sem interromper o evento.</p>
     </div>
 
     ''' + video("BjAMEKyD2ZQ", "vaso e ralo entupidos juntos em uma casa de eventos", "Vídeo do atendimento em uma casa de eventos com o vaso sanitário e o ralo do banheiro entupidos juntos",
@@ -1702,7 +1702,7 @@ DESENTUPIR_VASO = dict(
     </ul>
 
     <div class="caso">
-      <p><span class="rotulo">Caso real (casa de eventos):</span> a água estava voltando pela privada e pelo ralo do banheiro ao mesmo tempo. Quando chegamos, olhamos os dois pontos e concluímos que não era só o vaso entupido: o entupimento estava na rede que recebe o vaso e o ralo. Desobstruímos essa rede e o banheiro voltou a funcionar.</p>
+      <p><span class="rotulo">Caso real (casa de eventos):</span> a água estava voltando pela privada e pelo ralo do banheiro ao mesmo tempo. Quando chegamos, eu e o Antonio olhamos os dois pontos e concluímos que não era só o vaso entupido: o entupimento estava na rede que recebe o vaso e o ralo. Para alcançar esse trecho, tiramos o vaso do lugar e desobstruímos a rede por ali. A retirada do vaso não teve custo a mais no serviço.</p>
     </div>
 
     ''' + video("BjAMEKyD2ZQ", "vaso e ralo entupidos juntos em uma casa de eventos", "Atendimento em uma casa de eventos com o vaso sanitário e o ralo do banheiro entupidos juntos",
